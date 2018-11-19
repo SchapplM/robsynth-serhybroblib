@@ -42,6 +42,10 @@ Für jedes Robotermodell gibt es den Unterordner `codegen` mit manuell erstellte
 
 Die Code-Generierung muss nur bei Modelländerung oder -erstellung durchgeführt werden, da die fertigen Funktionen ins Repo eingecheckt werden.
 
+Für jeden Roboter ist eine Datei `...kinematic_parameter_values.m` und `...kinematic_constraints_matlab.m` abgelegt. Diese dienen nur dazu, im HybrDyn-Repo die Testfunktionen automatisch ausführen zu können.
+
+Es gibt für jeden Roboter zwei Definitionsdateien `robot_env_...` mit Endung OL ("Open Loop", ohne kinematische Zwangsbedingungen) und CL ("Closed Loop", mit eingesetzten Minimalkoordinaten für die Eliminierung der Zwangsbedingungen). Diese Dateien werden durch das Kopierskript `prepare_maple_repo.sh` an die konkreten Implementierungen angepasst, damit die Informationen nur an einer Stelle gespeichert sind.
+
 ### Funktionen
 
 Benutzung der Datenbank:
