@@ -1,46 +1,76 @@
-# Funktionssammlung für Modelle hybrider Roboter
+# Bibliothek hybrider Roboter
 
-Dieses Repo enthält Modelle und Modultests für hybride Roboter (serielle Roboter mit parallelen Teilstrukturen oder kinematischen Zwangsbedingungen).
+Dieses Repo enthält eine Sammlung von Modellen hybrider Roboter (serielle Roboter mit parallelen Teilstrukturen bzw. sonstigen kinematischen Zwangsbedingungen).
 
 
 Moritz Schappler, schappler@imes.uni-hannover.de, 2018-04  
 (C) Institut für mechatronische Systeme, Universität Hannover
 
+## Benutzung
+
+Für die Benutzung des Repos muss mit dem Skript `hybroblib_path_init.m` aus dem Hauptordner die Pfadinitialisierung durchgeführt werden.
+
+### Abhängigkeiten
+
+Die Robotermodelle setzen die Toolbox imes-matlab und imes-matlab-robotics mit initialisiertem Pfad voraus.
+
 ## Aufbau
 
-Im Ordner `tb_code` befinden sich Unterordner für Systemmodelle verschiedener Roboter. Für jeden Roboter gibt es ein zusätzliches Systemmodell mit Endung "u". Bei diesem sind die kinematischen Zwangsbedingungen entfernt, also z.B. geschlossene Ketten geöffnet.
+Im Ordner `systems` befinden sich Unterordner für Systemmodelle verschiedener Roboter:
 
-Der Ordner `test` enthält Testfunktionen für die Berechnung der Dynamik basierend auf verschiedenen Darstellungen der kinematischen Zwangsbedingungen.
+* systems/fourbar1
+* systems/palh1m1
+* ...
 
-## Voraussetzungen
+Für jeden der Roboter gibt es unterschiedliche Implementierungen der kinematischen Zwangsbedingungen in einem weiteren Unterordner. Die Art der Implementierung ist dem Roboternamen als Kürzel angehängt:
 
-Es werden Folgende Repositorien als Abhängigkeit benötigt (Pfadinitialisierung notwendig):
+* ...IC (Herleitung der Dynamik durch implizite Zwangsbedingungsgleichungen und Projektion der vollständigen Dynamik auf die Minimalkoordinaten, "Implicit Constraints")
+* ...TE (Herleitung der Dynamik in Minimalkoordinaten durch trigonometrische Elimination der abhängigen (passiven) Gelenkwinkel in der Lagrange-Funktion)
+* ...DE1 (Herleitung der Dynamik in Minimalkoordinaten durch direkte Elimination der abhängigen Koordinaten)
+* ...DE2 (Herleitung wie in DE1, die Minimalkoordinaten werden aber erst substituiert, nachdem trigonometrische Additionstheoreme für parallele Drehachsen angewendet wurden)
 
-* IMES-Matlab-Toolbox
-* IMES-Robotik-Toolbox
-* Sammlung externer Matlab Toolboxen
+### Test-Funktionen
 
-Folgende Repositorien dienen zur Herleitung der Dynamikgleichungen
+Die jeweiligen Ordner der Roboter enthalten Testskripte mit Beispiel-Aufrufen und Visualisierungen.
 
-* HybridDyn (ehem. IRT-Maple-Toolbox)
+### Code-Generierung
+
+Für jedes Robotermodell gibt es den Unterordner `codegen` mit manuell erstellten Definitionen und Herleitungen der kinematischen Zwangsbedingungen. Für jeden Roboter gibt es die Bash-Skripte
+* `prepare_maple_repo.sh` zum Kopieren der Definitionsdateien in die Toolbox `HybrDyn`,
+* `generate_maple_code.sh` zum Erzeugen des Codes in der HybrDyn-Toolbox für alle Implementierungen,
+* `copy_generated_code.sh` zum Zurückkopieren des generierten Codes in diese Datenbank.
+
+Die Code-Generierung muss nur bei Modelländerung oder -erstellung durchgeführt werden, da die fertigen Funktionen ins Repo eingecheckt werden.
+
+### Funktionen
+
+Benutzung der Datenbank:
+
+* `hybroblib_create_robot_class.m`: Instanz einer Matlab-Klasse für einen Roboter erstellen, damit sind dann weitere Berechnungen mit dem Modell des Roboters möglich
+
+### Übersichtsdateien
+
+Alle Informationen der Roboterbibliothek liegen in csv-Dateien (Trennzeichen: Semikolon) vor. Dadurch ist eine automatische Verarbeitung und eine Versionsverwaltung möglich.
+
+#### Liste der Roboterparameter für ein Robotermodell
+
+Die Datei `systems/Robotername/models.csv` enthält mögliche Roboterparameter für das entsprechende Robotermodell.
+
+Die Tabelle enthält Zahlenwerte für die einzelnen Kinematik-Parameter aus der Variable `pkin` des HybrDyn-Repos sowie weitere Roboterdaten wie Gelenkwinkelgrenzen und ggf Traglast oder Masse.
 
 ## Liste von erfolgreich getesteten Robotern
 
 Folgende Roboter und Mechanismen wurden bisher erfolgreich getestet
 
-
 | Roboter | Name des Ordners | Art des Tests | Implementierung mit |
 | ---     |                  |---            |---                  |
-| 3. Arm KAS5 Modell 5| KAS5m5 | Elim., expl. ZB | HybridDyn |
-| 3. Arm KAS5 Modell 6| KAS5m6 | Elim., expl. ZB | HybridDyn |
-| 3. Arm KAS5 Modell 7| KAS5m7 | Elim., expl. ZB, impl. ZB | HybridDyn |
-| 3. Arm KAS7 Modell 1| KAS7m1 | Elim., expl. ZB | HybridDyn |
-
-Erklärung zu den Tests:
-* Elim.: Abhängige Gelenke aus den kinematischen Zwangsbedingungen werden in Dynamikgleichungen eliminiert
-* expl. ZB: Die explizite Form der Zwangsbedingungen dient zur Projektion der Gelenke der offenen Kette auf die geschlossene Kette
-* impl. ZB: Die implizite Form der Zwangsbedingungen wird dafür benutzt
+| Viergelenkkette | fourbar1 | Plausibilität/Visualisierung, Abgleich Implementierungen TE, DE, IC | HybrDyn |
+| 3. Arm KAS5 Modell 5| KAS5m5 | Elim., expl. ZB (noch nicht in neuer Dateistruktur) | HybridDyn |
+| 3. Arm KAS5 Modell 6| KAS5m6 | Elim., expl. ZB (noch nicht in neuer Dateistruktur) | HybridDyn |
+| 3. Arm KAS5 Modell 7| KAS5m7 | Elim., expl. ZB, impl. ZB (noch nicht in neuer Dateistruktur) | HybridDyn |
+| 3. Arm KAS7 Modell 1| KAS7m1 | Elim., expl. ZB (noch nicht in neuer Dateistruktur) | HybridDyn |
 
 ## Quellen <a name="quellen"></a> 
 
-* [NuelleSchTapLil2017] K. Nülle et al.: Projektabschlussbericht „3. Arm“ – Handwerker-Kraftassistenzsystem mit adaptiver Mensch-Technik-Interaktion
+* [Bejaoui2018_S749] A. Bejaoui: "Modellierung kinematischer Zwangsbedingungen für hybride serielle Roboter mit planaren Parallelmechanismen" (Studienarbeit bei Moritz Schappler)
+* [NuelleSchTapLil2017] K. Nülle, M. Schappler et al.: Projektabschlussbericht „3. Arm“ - Handwerker-Kraftassistenzsystem mit adaptiver Mensch-Technik-Interaktion
