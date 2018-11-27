@@ -1,6 +1,6 @@
 # MDH-Definition für Viergelenkkette (offene kinematische Zwangsbedingungen)
 
-robot_name := "fourbar1":
+robot_name := "fourbar1_OL":
 
 # Anzahl der verallgemeinerten Gelenkkoordinaten
 NQJ := 4:
@@ -12,8 +12,8 @@ qoffset := Matrix(NJ, 1, [0, Pi, 0, 0, 0]):
 theta:= Matrix(< qJ1(t), qJ2(t), qJ3(t), qJ4(t), 0>) + qoffset:
 alpha := Matrix(NJ, 1, [0, 0, 0, 0, 0]):
 d := Matrix(NJ, 1, [0, 0, 0, 0, 0]):
-a := Matrix(NJ, 1, <0, l2, l3, l1, l4>):
-v := Matrix(NJ,1, <0; 1; 2; 0; 4>):
+a := Matrix(NJ, 1, <0, l2, l1, l3, l4>):
+v := Matrix(NJ,1, <0; 1; 0; 2; 3>):
 
 b := Matrix(NJ,1):
 beta := Matrix(NJ,1):
