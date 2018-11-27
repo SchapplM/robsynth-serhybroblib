@@ -130,4 +130,14 @@ if ~isempty(RobName) % Falls Name des Parametrierten Modells gegeben
   RS.qDlim = [-PS.vmax(:), PS.vmax(:)];
   RS.qref = PS.qref(:);
   RS.descr = descr;
+  
+  % CAD-Modelle initialisieren, falls vorhanden
+  cadinidat = fullfile(repopath, robopath, ...
+    sprintf('CAD_%s',RobName), sprintf('%s_init_CAD.m', RobName));
+  if exist(cadinidat, 'file')
+    [p,f]=fileparts(cadinidat);
+    addpath(p);
+    eval(sprintf('RS = %s(RS, Name, RobName);', f));
+    rmpath(p);
+  end
 end
