@@ -1,6 +1,4 @@
 Name/lfdNr;Name2;Langname;Kinematik-Parameter;;;;;;;;;;;;;;;;;;;;;;;Minimalkoordinate qJ1;;;;;Minimalkoordinate qJ2;;;;;Minimalkoordinate qJ3;;;;;Minimalkoordinate qJ4;;;;;Allgemein;
 ;;;pkin 1;pkin 2;pkin 3;pkin 4;pkin5;pkin6;pkin7;pkin8;pkin9;pkin10;pkin11;pkin12;pkin13;pkin14;pkin15;pkin16;pkin17;pkin18;pkin19;pkin20;pkin21;pkin22;pkin23;qmin;qmax;vmax;VZ;just;qmin;qmax;vmax;VZ;just;qmin;qmax;vmax;VZ;just;qmin;qmax;vmax;VZ;just;Nenn-Traglast;Masse
 ;;;AB;AM;BC;BE;BG;BL;DA;DC;EP;GH;GP;HW;ML;OT2;T1D;T2A;T2T1;phi1;phi2;phi312;phi413;phi710;phi711;;;;;;;;;;;;;;;;;;;;;;
-palh1m1Bsp1;MPL800-Yaskawa;Grashoff-Bedingung erfüllt;02. Jan;3;03. Mai;3;43.224;2;4.472;3;3;2;4;2;03. Mai;4;2;2;2;0.4636;0.4636;20.944;10.472;0.8411;0.9626;-31.416;31.416;NA;1;0;0;15.708;NA;1;0;0;15.708;NA;1;0;-31.416;31.416;NA;1;0;NA;NA
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+palh1m1Bsp1;MPL800-Yaskawa;Grashoff-Bedingung erfüllt;2;3;3.5;3;4.5;2;4.472;3;3;2;4;2;3.5;4;2;2;2;0.4636;0.4636;2.0944;1.0472;0.8411;0.9626;-3.1416;3.1416;NA;1;0;0;1.5708;NA;1;0;0;1.5708;NA;1;0;-3.1416;3.1416;NA;1;0;NA;NA
