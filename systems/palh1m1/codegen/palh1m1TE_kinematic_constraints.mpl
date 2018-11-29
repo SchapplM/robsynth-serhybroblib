@@ -156,8 +156,8 @@ sin_eta27_s:=cos(phi711)*sin_eta3_s-cos_eta3_s*sin(phi711): # am 20.11 der neuen
 winkel3:=<<sin_xi1016|sin(xi1016_s)>;<cos_xi1016|cos(xi1016_s)>;<sin_xi3|sin(xi3_s)>;<cos_xi3|cos(xi3_s)>;<sin_xi2|sin(xi2_s)>;<cos_xi2|cos(xi2_s)>>:
 for i from 1 to 6 do
 	winkel3(i,2):=kintmp_subsexp_fourbar(i,2):  
-	cos_phi_s :=-(cos(phi711+phi710)*(sin(qJ3s)*cos_eta3_s+cos(qJ3s)*sin_eta3_s)+sin(phi711+phi710)*(cos(qJ3s)*cos_eta3_s-sin(qJ3s)*sin_eta3_s)):
-	sin_phi_s := -(cos(phi711+phi710)*(cos(qJ3s)*cos_eta3_s-sin(qJ3s)*sin_eta3_s)-sin(phi711+phi710)*(sin(qJ3s)*cos_eta3_s+cos(qJ3s)*sin_eta3_s)):
+	cos_phi_s :=(cos(phi711+phi710)*(sin(qJ3s)*cos_eta3_s-cos(qJ3s)*sin_eta3_s)+sin(phi711+phi710)*(cos(qJ3s)*cos_eta3_s+sin(qJ3s)*sin_eta3_s)):
+	sin_phi_s := (cos(phi711+phi710)*(cos(qJ3s)*cos_eta3_s+sin(qJ3s)*sin_eta3_s)-sin(phi711+phi710)*(sin(qJ3s)*cos_eta3_s-cos(qJ3s)*sin_eta3_s)):
 	winkel3(i,2):=subs({sin(qJ1s)=sin_phi_s},winkel3(i,2)): 
 	winkel3(i,2):=subs({cos(qJ1s)=cos_phi_s},winkel3(i,2)):
      winkel3(i,2) := subs({l1=BG}, winkel3(i,2)):
@@ -166,7 +166,7 @@ for i from 1 to 6 do
      winkel3(i,2) := subs({l4=GP}, winkel3(i,2)):
  end do:
 winkel3(1..6,1):
-sin_xi1016_s:=winkel3(1,2);
+sin_xi1016_s:=winkel3(1,2):
 cos_xi1016_s:=winkel3(2,2):
 sin_xi3_s:=winkel3(3,2):  # schon in MDH
 ;
@@ -176,7 +176,7 @@ sin_xi2_s:=winkel3(5,2):
 cos_xi2_s:=winkel3(6,2):
 cos_xi34_s:=cos_xi3_s*cos(phi413)+sin_xi3_s*sin(phi413): # am 20.11 der neuen fourbar1 angepasst
 ;
-sin_xi34_s:=cos_xi3_s*sin(phi413)-sin_xi3_s*cos(phi413): # am 20.11 der neuen fourbar1 angepasst
+sin_xi34_s:=-cos_xi3_s*sin(phi413)+sin_xi3_s*cos(phi413): # am 20.11 der neuen fourbar1 angepasst
 ;
 cos_xi413_s:=-cos_xi2_s:
 sin_xi413_s:=sin_xi2_s:

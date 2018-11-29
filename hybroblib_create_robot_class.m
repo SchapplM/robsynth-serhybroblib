@@ -31,11 +31,16 @@ robopath=fullfile(repopath, 'systems', Name);
 addpath(robopath);
 
 % Pfad für gewünschte Modellimplementierung hinzufügen
+% Viergelenkkette
 apd = fullfile(robopath, sprintf('matlabfcn_fourbar1%s', mdlsuffix));
 if exist(apd, 'file')
   addpath(apd);
 end
-
+% MPL800-Yaskawa
+apd = fullfile(robopath, sprintf('matlabfcn_palh1m1%s', mdlsuffix));
+if exist(apd, 'file')
+  addpath(apd);
+end
 %% Klassen-Instanz initialisieren
 % Strukturinformationen über das Modell holen
 eval(sprintf('[v_mdh, sigma_mdh, mu_mdh, NL] = %s%s_structural_kinematic_parameters();', Name, mdlsuffix));

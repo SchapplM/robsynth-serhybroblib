@@ -282,7 +282,7 @@ kintmp_subsexp := backup_kintmp_subsexp:</Text-field>
 <Group hide-input="false" labelreference="L3228" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
 <Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">winkel_neu(1..6,1)</Text-field>
 </Input>
-<Output><Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUkqbWNvbXBsZXRlRzYjL0krbW9kdWxlbmFtZUc2IkksVHlwZXNldHRpbmdHSShfc3lzbGliR0YnNiQtSShtZmVuY2VkR0YkNigtSSVtcm93R0YkNiYtSSdtdGFibGVHRiQ2Oi1JJG10ckdGJDYmLUkkbXRkR0YkNigtSSNtbkdGJDYkUSIwRicvJSxtYXRodmFyaWFudEdRJ25vcm1hbEYnLyUpcm93YWxpZ25HUSFGJy8lLGNvbHVtbmFsaWduR0ZDLyUrZ3JvdXBhbGlnbkdGQy8lKHJvd3NwYW5HUSIxRicvJStjb2x1bW5zcGFuR0ZKRkFGREZGRjRGNEY0RjRGNC8lJmFsaWduR1ElYXhpc0YnL0ZCUSliYXNlbGluZUYnL0ZFUSdjZW50ZXJGJy9GR1EnfGZybGVmdHxockYnLyUvYWxpZ25tZW50c2NvcGVHUSV0cnVlRicvJSxjb2x1bW53aWR0aEdRJWF1dG9GJy8lJndpZHRoR0Zlbi8lK3Jvd3NwYWNpbmdHUSYxLjBleEYnLyUuY29sdW1uc3BhY2luZ0dRJjAuOGVtRicvJSlyb3dsaW5lc0dRJW5vbmVGJy8lLGNvbHVtbmxpbmVzR0Zgby8lJmZyYW1lR0Zgby8lLWZyYW1lc3BhY2luZ0dRLDAuNGVtfjAuNWV4RicvJSplcXVhbHJvd3NHUSZmYWxzZUYnLyUtZXF1YWxjb2x1bW5zR0Zqby8lLWRpc3BsYXlzdHlsZUdGam8vJSVzaWRlR1EmcmlnaHRGJy8lMG1pbmxhYmVsc3BhY2luZ0dGXW8vJStmb3JlZ3JvdW5kR1EoWzAsMCwwXUYnLyUpcmVhZG9ubHlHRmpvRj5GPi9JK21zZW1hbnRpY3NHRiRRKkNvbFZlY3RvckYnLyUlb3BlbkdRJyZsc3FiO0YnLyUmY2xvc2VHUScmcnNxYjtGJ0ZpcC1GLDYoLUYvNiYtRjI2Oi1GNTYmLUY4NigtRjs2JkY9RmRwRmdwRj5GQUZERkZGSEZLRkFGREZGRmhxRmhxRmhxRmhxRmhxRk1GUC9GRUZhcEZURlZGWUZmbkZobkZbb0Zeb0Zhb0Zjb0Zlb0Zob0ZbcEZdcEZfcEZicEZkcEZncEY+RmRwRmdwRj4vRl1xUSJbRicvRmBxUSJdRic=">LV9JLFR5cGVzZXR0aW5nRzYkJSpwcm90ZWN0ZWRHSShfc3lzbGliRzYiSSxtcHJpbnRzbGFzaEdGKDYkNyMtSSdSVEFCTEVHRig2JSI1VSxfYyhSbHVZJT0tSSdNQVRSSVhHRig2IzcoNyMtSSNtbkc2JEYmL0krbW9kdWxlbmFtZUdGKEYkNiNRIjBGKEY0RjRGNEY0RjQmSSdWZWN0b3JHRiU2I0knY29sdW1uR0YoNyMtRjw2Iy9JJCVpZEdGKEYv</Equation></Text-field>
+<Output><Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUkqbWNvbXBsZXRlRzYjL0krbW9kdWxlbmFtZUc2IkksVHlwZXNldHRpbmdHSShfc3lzbGliR0YnNiQtSShtZmVuY2VkR0YkNigtSSVtcm93R0YkNiYtSSdtdGFibGVHRiQ2Oi1JJG10ckdGJDYmLUkkbXRkR0YkNigtSSNtbkdGJDYkUSIwRicvJSxtYXRodmFyaWFudEdRJ25vcm1hbEYnLyUpcm93YWxpZ25HUSFGJy8lLGNvbHVtbmFsaWduR0ZDLyUrZ3JvdXBhbGlnbkdGQy8lKHJvd3NwYW5HUSIxRicvJStjb2x1bW5zcGFuR0ZKRkFGREZGRjRGNEY0RjRGNC8lJmFsaWduR1ElYXhpc0YnL0ZCUSliYXNlbGluZUYnL0ZFUSdjZW50ZXJGJy9GR1EnfGZybGVmdHxockYnLyUvYWxpZ25tZW50c2NvcGVHUSV0cnVlRicvJSxjb2x1bW53aWR0aEdRJWF1dG9GJy8lJndpZHRoR0Zlbi8lK3Jvd3NwYWNpbmdHUSYxLjBleEYnLyUuY29sdW1uc3BhY2luZ0dRJjAuOGVtRicvJSlyb3dsaW5lc0dRJW5vbmVGJy8lLGNvbHVtbmxpbmVzR0Zgby8lJmZyYW1lR0Zgby8lLWZyYW1lc3BhY2luZ0dRLDAuNGVtfjAuNWV4RicvJSplcXVhbHJvd3NHUSZmYWxzZUYnLyUtZXF1YWxjb2x1bW5zR0Zqby8lLWRpc3BsYXlzdHlsZUdGam8vJSVzaWRlR1EmcmlnaHRGJy8lMG1pbmxhYmVsc3BhY2luZ0dGXW8vJStmb3JlZ3JvdW5kR1EoWzAsMCwwXUYnLyUpcmVhZG9ubHlHRmpvRj5GPi9JK21zZW1hbnRpY3NHRiRRKkNvbFZlY3RvckYnLyUlb3BlbkdRJyZsc3FiO0YnLyUmY2xvc2VHUScmcnNxYjtGJ0ZpcC1GLDYoLUYvNiYtRjI2Oi1GNTYmLUY4NigtRjs2JkY9RmRwRmdwRj5GQUZERkZGSEZLRkFGREZGRmhxRmhxRmhxRmhxRmhxRk1GUC9GRUZhcEZURlZGWUZmbkZobkZbb0Zeb0Zhb0Zjb0Zlb0Zob0ZbcEZdcEZfcEZicEZkcEZncEY+RmRwRmdwRj4vRl1xUSJbRicvRmBxUSJdRic=">LV9JLFR5cGVzZXR0aW5nRzYkJSpwcm90ZWN0ZWRHSShfc3lzbGliRzYiSSxtcHJpbnRzbGFzaEdGKDYkNyMtSSdSVEFCTEVHRig2JSI1NXQlb2V6bXVZJT0tSSdNQVRSSVhHRig2IzcoNyMtSSNtbkc2JEYmL0krbW9kdWxlbmFtZUdGKEYkNiNRIjBGKEY0RjRGNEY0RjQmSSdWZWN0b3JHRiU2I0knY29sdW1uR0YoNyMtRjw2Iy9JJCVpZEdGKEYv</Equation></Text-field>
 </Output>
 </Group>
 </Section>
@@ -428,8 +428,8 @@ end do:</EC-CodeEditor></CodeEditor-ExecGroup>
 </Input>
 </Group><CodeEditor-ExecGroup view="presentation" labelreference="L6" applyint="true" applyrational="true" display="code"><EC-CodeEditor id="CodeEditRegion2" expanded="true" visible="true" pixel-width="1414" pixel-height="232" code-language="text/maple" autofit="true" wrapping="false" show-border="true" code-line-numbers="true">for i from 1 to 6 do
 	winkel3(i,2):=kintmp_subsexp_fourbar(i,2):  
-	cos_phi_s :=-(cos(phi711+phi710)*(sin(qJ3s)*cos_eta3_s+cos(qJ3s)*sin_eta3_s)+sin(phi711+phi710)*(cos(qJ3s)*cos_eta3_s-sin(qJ3s)*sin_eta3_s)):
-	sin_phi_s := -(cos(phi711+phi710)*(cos(qJ3s)*cos_eta3_s-sin(qJ3s)*sin_eta3_s)-sin(phi711+phi710)*(sin(qJ3s)*cos_eta3_s+cos(qJ3s)*sin_eta3_s)):
+	cos_phi_s :=(cos(phi711+phi710)*(sin(qJ3s)*cos_eta3_s-cos(qJ3s)*sin_eta3_s)+sin(phi711+phi710)*(cos(qJ3s)*cos_eta3_s+sin(qJ3s)*sin_eta3_s)):
+	sin_phi_s := (cos(phi711+phi710)*(cos(qJ3s)*cos_eta3_s+sin(qJ3s)*sin_eta3_s)-sin(phi711+phi710)*(sin(qJ3s)*cos_eta3_s-cos(qJ3s)*sin_eta3_s)):
 	winkel3(i,2):=subs({sin(qJ1s)=sin_phi_s},winkel3(i,2)): 
 	winkel3(i,2):=subs({cos(qJ1s)=cos_phi_s},winkel3(i,2)):
      winkel3(i,2) := subs({l1=BG}, winkel3(i,2)):
@@ -449,7 +449,7 @@ end do:</EC-CodeEditor></CodeEditor-ExecGroup>
 <Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">cos_xi1016_s:=winkel3(2,2):</Text-field>
 </Input>
 </Group>
-<Group labelreference="L3040" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Group hide-input="false" labelreference="L3040" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
 <Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">sin_xi3_s:=winkel3(3,2):  # schon in MDH</Text-field>
 </Input>
 </Group>
@@ -470,7 +470,7 @@ end do:</EC-CodeEditor></CodeEditor-ExecGroup>
 </Input>
 </Group>
 <Group labelreference="L3045" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">sin_xi34_s:=cos_xi3_s*sin(phi413)-sin_xi3_s*cos(phi413): # am 20.11 der neuen fourbar1 angepasst</Text-field>
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">sin_xi34_s:=-cos_xi3_s*sin(phi413)+sin_xi3_s*cos(phi413): # am 20.11 der neuen fourbar1 angepasst</Text-field>
 </Input>
 </Group>
 <Group labelreference="L3046" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
