@@ -32,12 +32,7 @@ addpath(robopath);
 
 % Pfad für gewünschte Modellimplementierung hinzufügen
 % Viergelenkkette
-apd = fullfile(robopath, sprintf('matlabfcn_fourbar1%s', mdlsuffix));
-if exist(apd, 'file')
-  addpath(apd);
-end
-% MPL800-Yaskawa
-apd = fullfile(robopath, sprintf('matlabfcn_palh1m1%s', mdlsuffix));
+apd = fullfile(robopath, sprintf('matlabfcn_%s%s',Name, mdlsuffix));
 if exist(apd, 'file')
   addpath(apd);
 end
