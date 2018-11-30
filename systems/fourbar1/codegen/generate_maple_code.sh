@@ -14,10 +14,12 @@ if [ "$maplerepopath" == "" ]; then
   exit 2
 fi;
 
-deflist="robot_env_fourbar1TE
+deflist="robot_env_fourbar1IC
+robot_env_fourbar1TE
 robot_env_fourbar1DE1
-robot_env_fourbar1DE2"
-
+robot_env_fourbar1DE2
+"
+#
 
 cd $maplerepopath
 for df in $deflist; do

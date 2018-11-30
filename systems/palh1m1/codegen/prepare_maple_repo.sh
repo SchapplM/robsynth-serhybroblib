@@ -35,7 +35,7 @@ echo "# Anwendung der Additionstheoreme für parallele Drehachsen und dann Erset
 echo "codegen_kinematics_opt := true:" >> $defpath/robot_env_palh1m1DE2
 echo "codegen_kinematics_subsorder:=2:" >> $defpath/robot_env_palh1m1DE2
 
-cp $this_path/robot_env_palh1m1_OL $defpath/robot_env_palh1m1IC
+cp $this_path/robot_env_palh1m1IC $defpath/robot_env_palh1m1IC
 
 # Maple-Skripte (Kinematische Zwangsbedingungen)
 

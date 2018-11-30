@@ -11,4 +11,5 @@ maplerepopath=$1
 rsync -rv $maplerepopath/codeexport/palh1m1TE/matlabfcn/ ../matlabfcn_palh1m1TE
 rsync -rv $maplerepopath/codeexport/palh1m1DE1/matlabfcn/ ../matlabfcn_palh1m1DE1
 rsync -rv $maplerepopath/codeexport/palh1m1DE2/matlabfcn/ ../matlabfcn_palh1m1DE2
+rsync -rv $maplerepopath/codeexport/palh1m1DE2/matlabfcn/ ../matlabfcn_palh1m1IC
 

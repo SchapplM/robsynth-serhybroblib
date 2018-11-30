@@ -35,7 +35,10 @@ echo "# Anwendung der Additionstheoreme für parallele Drehachsen und dann Erset
 echo "codegen_kinematics_opt := true:" >> $defpath/robot_env_fourbar1DE2
 echo "codegen_kinematics_subsorder:=2:" >> $defpath/robot_env_fourbar1DE2
 
-#cp $this_path/robot_env_fourbar1_OL $defpath/robot_env_fourbar1IC
+cp $this_path/robot_env_fourbar1IC $defpath/robot_env_fourbar1IC
+sed -i "s/fourbar1/fourbar1IC/g" $defpath/robot_env_fourbar1IC
+echo "# Anwendung der Additionstheoreme für parallele Drehachsen" >> $defpath/robot_env_fourbar1IC
+echo "codegen_kinematics_opt := true:" >> $defpath/robot_env_fourbar1IC
 
 # Maple-Skripte (Kinematische Zwangsbedingungen)
 
@@ -46,8 +49,8 @@ cp $this_path/fourbar1DE_kinematic_constraints.mw $constrpath/fourbar1DE1_kinema
 cp $this_path/fourbar1DE_kinematic_constraints.mpl $constrpath/fourbar1DE2_kinematic_constraints.mpl
 cp $this_path/fourbar1DE_kinematic_constraints.mw $constrpath/fourbar1DE2_kinematic_constraints.mw
 
-#cp $this_path/fourbar1IC_kinematic_constraints_implicit.mpl $constrpath/fourbar1IC_kinematic_constraints_implicit.mpl
-#cp $this_path/fourbar1IC_kinematic_constraints_implicit.mw $constrpath/fourbar1IC_kinematic_constraints_implicit.mw
+cp $this_path/fourbar1IC_kinematic_constraints_implicit.mpl $constrpath/fourbar1IC_kinematic_constraints_implicit.mpl
+cp $this_path/fourbar1IC_kinematic_constraints_implicit.mw $constrpath/fourbar1IC_kinematic_constraints_implicit.mw
 
 # Werte für Kinematikparameter (für Modultests)
 #cp $this_path/fourbar1_kinematic_parameter_values.m $constrpath/fourbar1IC_kinematic_parameter_values.m
