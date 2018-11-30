@@ -1,6 +1,6 @@
 #MPL800 II-YASKAWA
 
-robot_name := "palh1m1TE":
+robot_name := "palh1m1":
 
 # Anzahl der verallgemeinerten Gelenkkoordinaten
 NQJ := 4:
