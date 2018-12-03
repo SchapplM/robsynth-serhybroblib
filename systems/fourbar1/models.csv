@@ -1,6 +1,6 @@
-Name/lfdNr;Name2;Langname;Kinematik-Parameter;;;;Minimalkoordinate qJ1;;;;;Allgemein;
-;;;pkin 1;pkin 2;pkin 3;pkin 4;qmin;qmax;vmax;VZ;just;Nenn-Traglast;Masse
-;;;l1;l2;l3;l4;;;;;;;
-fourbar1Bsp1;Viergelenkkette;Grashoff-Bedingung erfüllt;4.5;2;3;4;-6.2832;6.2832;NA;1;0;NA;NA
-fourbar1Bsp2;Viergelenkkette;Grashoff-Bedingung Grenzfall;4.5;2.5;3;4;-6.2832;6.2832;NA;1;0;NA;NA
-fourbar1Bsp3;Viergelenkkette;Grashoff-Bedingung nicht erfüllt;5;2;3;3.5;-2;2;NA;1;0;NA;NA
+Name/lfdNr;Name2;Langname;Kinematik-Parameter;;;;Minimalkoordinate qJ1;;;;;Allgemein;;
+;;;pkin 1;pkin 2;pkin 3;pkin 4;qmin;qmax;vmax;VZ;just;Nenn-Traglast;Masse;EELink
+;;;l1;l2;l3;l4;;;;;;;;
+fourbar1Bsp1;Viergelenkkette;Grashoff-Bedingung erfüllt;4.5;2;3;4;-6.2832;6.2832;NA;1;0;NA;NA;4
+fourbar1Bsp2;Viergelenkkette;Grashoff-Bedingung Grenzfall;4.5;2.5;3;4;-6.2832;6.2832;NA;1;0;NA;NA;4
+fourbar1Bsp3;Viergelenkkette;Grashoff-Bedingung nicht erfüllt;5;2;3;3.5;-2;2;NA;1;0;NA;NA;4

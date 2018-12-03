@@ -6,6 +6,7 @@
 
 % Quelle:
 % [Hunt1978] Hunt: Kinematic geometry of mechanisms,1978, Oxford Uni. Press
+% https://de.wikipedia.org/wiki/Kurbelschwinge
 
 % Moritz Schappler, moritz.schappler@imes.uni-hannover.de
 % (C) Institut für mechatronische Systeme, Universität Hannover
@@ -31,26 +32,36 @@ for q = linspace(RS_DE1.qlim(1), RS_DE1.qlim(2), 1000)
 end
 fprintf('Kinematik der Viergelenkkette für 1000 Kombinationen in unterschiedlichen Implementierungen getestet\n');
 
+% Ab jetzt nur noch mit einem Modell weiterrechnen und dieses Parametrieren
+RS = copy(RS_DE1);
+%% End-Effektor definieren
+% Kurbelschwinge: Das Endeffektor-Element ist die Schwinge (der Stab
+% mit Gestellbefestigung ohne Aktuierung
+l = RS.pkin(4);
+r_N_E = [-l/2;0;0];
+RS.update_EE(r_N_E);
+
+
 %% Gelenk-Trajektorie mit einem Umlauf 
-QE = RS_DE1.qlim';
+QE = RS.qlim';
 
 [Q,QD,QDD,t] = traj_trapez2_multipoint(QE, 1, 1e-1, 1e-2, 1e-3, 0.25);
 X = NaN(size(Q, 1), 6);
 for ii = 1:size(Q, 1)
-  T_0_Ei = RS_DE1.fkineEE(Q(ii,:)');
-  X(ii,:) = RS_DE1.t2x(T_0_Ei);
+  T_0_Ei = RS.fkineEE(Q(ii,:)');
+  X(ii,:) = RS.t2x(T_0_Ei);
 end
 
 %% Gelenkmomentenverlauf berechnen
 
 nt = size(Q,1);
-TAU = NaN(nt, RS_DE1.NQJ);
+TAU = NaN(nt, RS.NQJ);
 for i = 1:nt
   q_i = Q(i,:)';
   qD_i = QD(i,:)';
   qDD_i = QDD(i,:)';
   
-  tau_i = RS_DE1.invdyn(q_i, qD_i, qDD_i);
+  tau_i = RS.invdyn(q_i, qD_i, qDD_i);
   TAU(i,:) = tau_i;
 end
 
@@ -78,7 +89,7 @@ ylabel('tau [Nm]');
 grid on;
 
 
-s_plot = struct( 'ks', [1:RS_DE1.NJ, RS_DE1.NJ+2], 'straight', 0);
+s_plot = struct( 'ks', [1:RS.NJ, RS.NJ+2], 'straight', 0);
 q = 0;
 figure(2);clf;
 hold on;
@@ -87,8 +98,8 @@ xlabel('x [m]');
 ylabel('y [m]');
 zlabel('z [m]');
 view(3);
-title(RS_DE1.descr);
-RS_DE1.plot( q, s_plot );
+title(RS.descr);
+RS.plot( q, s_plot );
 
 
 s_anim = struct( 'gif_name', '');
@@ -100,5 +111,5 @@ xlabel('x [m]');
 ylabel('y [m]');
 zlabel('z [m]');
 view(3);
-title(RS_DE1.descr);
-RS_TE.anim( Q(1:50:end,:), s_anim, s_plot);
+title(RS.descr);
+RS.anim( Q(1:50:end,:), s_anim, s_plot);

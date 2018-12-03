@@ -122,6 +122,10 @@ if ~isempty(RobName) % Falls Name des Parametrierten Modells gegeben
       PS.vmax(kk) = value_vmax;
       PS.qref(kk) = value_qref;
     end
+    % Allgemeine Roboterdaten
+    c=c+1; value_mload   = str2double(csvline{c}); %#ok<NASGU>
+    c=c+1; value_mass   = str2double(csvline{c}); %#ok<NASGU>
+    c=c+1; value_EElink   = str2double(csvline{c});
   end
   
   % Aus Tabelle abgelesene Zahlenwerte in Roboterklasse hineinschreiben
@@ -130,6 +134,9 @@ if ~isempty(RobName) % Falls Name des Parametrierten Modells gegeben
   RS.qDlim = [-PS.vmax(:), PS.vmax(:)];
   RS.qref = PS.qref(:);
   RS.descr = descr;
+  % Nummer des EE-Segmentes setzen. Bei hybriden Robotern ist das nicht
+  % unbedingt das letzte in der MDH-Tabelle.
+  RS.I_EElink = value_EElink;
   
   % CAD-Modelle initialisieren, falls vorhanden
   cadinidat = fullfile(repopath, robopath, ...
