@@ -139,7 +139,7 @@ if ~isempty(RobName) % Falls Name des Parametrierten Modells gegeben
   RS.I_EElink = value_EElink;
   
   % CAD-Modelle initialisieren, falls vorhanden
-  cadinidat = fullfile(repopath, robopath, ...
+  cadinidat = fullfile(robopath, ...
     sprintf('CAD_%s',RobName), sprintf('%s_init_CAD.m', RobName));
   if exist(cadinidat, 'file')
     [p,f]=fileparts(cadinidat);

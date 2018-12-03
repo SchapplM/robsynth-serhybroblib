@@ -8,18 +8,20 @@
 % https://www.motoman.com/industrial-robots/mpl800-ii
 
 % Moritz Schappler, moritz.schappler@imes.uni-hannover.de
-% (C) Institut für mechatronische Systeme, Universität Hannover
+% (C) Institut für Mechatronische Systeme, Universität Hannover
 
 clear
 clc
 
 %% Definition der Roboterklassen
-RS_TE = hybroblib_create_robot_class('palh1m1', 'TE', 'palh1m1Bsp1');
-RS_DE1 = hybroblib_create_robot_class('palh1m1', 'DE1', 'palh1m1Bsp1');
-RS_DE2 = hybroblib_create_robot_class('palh1m1', 'DE2', 'palh1m1Bsp1');
+RS_TE = hybroblib_create_robot_class('palh1m1', 'TE', 'palh1m1YR1');
+RS_DE1 = hybroblib_create_robot_class('palh1m1', 'DE1', 'palh1m1YR1');
+RS_DE2 = hybroblib_create_robot_class('palh1m1', 'DE2', 'palh1m1YR1');
+
+TSS = RS_TE.gen_testsettings();
 %% Vergleich der Implementierungen
-for q = linspace(RS_TE.qlim(1), RS_TE.qlim(2), 1000)
-  q=rand(4,1); 
+for i = 1:TSS.n
+  q=TSS.Q(i,:)';
   T_DE1 = RS_DE1.fkine(q);
  % T_DE2 = RS_DE2.fkine(q);
   T_TE = RS_TE.fkine(q);
@@ -38,6 +40,17 @@ for ii = 1:size(Q, 1)
   T_0_Ei = RS_TE.fkineEE(Q(ii,:)');
   X(ii,:) = RS_TE.t2x(T_0_Ei);
 end
+
+
+%% CAD-Modell plotten
+s_plot = struct( 'ks', [1:RS_TE.NJ, RS_TE.NJ+2], 'mode', 2);
+q = pi/180*[0; -15; 30; 0];
+figure(5);clf;
+hold on;grid on;
+xlabel('x [m]');ylabel('y [m]');
+zlabel('z [m]');view(3);
+cadhdl=RS_TE.plot( q, s_plot );
+title(sprintf('CAD-Modell (%s)', RS_TE.descr));
 %% Gelenkmomentenverlauf berechnen
 nt = size(Q,1);
 TAU = NaN(nt, RS_TE.NQJ);
