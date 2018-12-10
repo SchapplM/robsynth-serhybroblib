@@ -20,6 +20,7 @@ Im Ordner `systems` befinden sich Unterordner für Systemmodelle verschiedener R
 
 * systems/fourbar1
 * systems/palh1m1
+* systems/palh2m1
 * ...
 
 Für jeden der Roboter gibt es unterschiedliche Implementierungen der kinematischen Zwangsbedingungen in einem weiteren Unterordner. Die Art der Implementierung ist dem Roboternamen als Kürzel angehängt:
@@ -69,10 +70,12 @@ Folgende Roboter und Mechanismen wurden bisher erfolgreich getestet
 | Roboter | Name des Ordners | Art des Tests | Implementierung mit |
 | ---     |                  |---            |---                  |
 | Viergelenkkette | fourbar1 | Plausibilität/Visualisierung, Abgleich Implementierungen TE, DE, IC | HybrDyn |
-| 3. Arm KAS5 Modell 5| KAS5m5 | Elim., expl. ZB (noch nicht in neuer Dateistruktur) | HybridDyn |
-| 3. Arm KAS5 Modell 6| KAS5m6 | Elim., expl. ZB (noch nicht in neuer Dateistruktur) | HybridDyn |
-| 3. Arm KAS5 Modell 7| KAS5m7 | Elim., expl. ZB, impl. ZB (noch nicht in neuer Dateistruktur) | HybridDyn |
-| 3. Arm KAS7 Modell 1| KAS7m1 | Elim., expl. ZB (noch nicht in neuer Dateistruktur) | HybridDyn |
+| 3T1R-Palettierroboter (3 Parallelogramme) | palh1m1 | Plausibilität Visualisierung, Kinematik | HybrDyn |
+| 3T1R-Palettierroboter (serielles Ersatzmodell) | palh2m1 | Kinematik, Abgleich Implementierungen DE | HybrDyn |
+| 3. Arm KAS5 Modell 5| KAS5m5 | Elim., expl. ZB (noch nicht in neuer Dateistruktur) | HybrDyn |
+| 3. Arm KAS5 Modell 6| KAS5m6 | Elim., expl. ZB (noch nicht in neuer Dateistruktur) | HybrDyn |
+| 3. Arm KAS5 Modell 7| KAS5m7 | Elim., expl. ZB, impl. ZB (noch nicht in neuer Dateistruktur) | HybrDyn |
+| 3. Arm KAS7 Modell 1| KAS7m1 | Elim., expl. ZB (noch nicht in neuer Dateistruktur) | HybrDyn |
 
 ## Quellen <a name="quellen"></a> 
 
