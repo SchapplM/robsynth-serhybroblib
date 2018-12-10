@@ -1,0 +1,29 @@
+# MDH-Definition für palh2m1
+# Serielles 5FG-Ersatzmodell eines hybriden 4FG-Palettierroboters
+# Die abhängige Gelenkachse des Roboters wird direkt durch die anderen Winkel ersetzt
+# Siehe auch: robot_env_S5RRRRR1 im Repo serrob_mdlbib
+# Siehe auch: robot_env_KAS7m1.example im Repo robot_dynamics-hybriddyn
+
+# Moritz Schappler, moritz.schappler@imes.uni-hannover.de, 2018-12
+# (C) Institut für Mechatronische Systeme, Universität Hannover
+
+robot_name := "palh2m1":
+
+NJ := 5:
+NL := 6: # inkl Basis
+NQJ := 4:
+v := Matrix(NJ,1,[0,1,2,3,4]):
+mu := Matrix(NJ,1,[1,1,1,0,1]):
+sigma := Matrix(NJ,1,[0,0,0,0,0]):
+beta := Matrix(NJ,1,[0,0,0,0,0]):
+b := Matrix(NJ,1,[0,0,0,0,0]):
+alpha := Matrix(NJ,1,[0,-Pi/2,0,0,Pi/2]):
+a := Matrix(NJ,1,[0,a2,a3,a4,a5]):
+theta := Matrix(NJ,1,[qJ_t(1,1),qJ_t(2,1),qJ_t(3,1),kintmp_t(1,1),qJ_t(4,1)]):
+d := Matrix(NJ,1,[d1,0,0,0,d5]):
+qoffset := Matrix(NJ,1,[0,0,0,0,0]):
+
+# Allgemeine Winkel (abhängige Gelenkkoordinate)
+kintmp_t := Matrix(1, 1, [rho4(t)]);
+kintmp_s := Matrix(1, 1, [rho4s]);
+
