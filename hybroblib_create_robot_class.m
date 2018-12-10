@@ -25,6 +25,13 @@
 
 function RS = hybroblib_create_robot_class(Name, mdlsuffix, RobName)
 
+if nargin < 2 || isempty(mdlsuffix)
+  mdlsuffix = '';
+end
+if nargin < 3
+  RobName = '';
+end
+
 %% Initialisierung
 repopath=fileparts(which('hybroblib_path_init.m'));
 robopath=fullfile(repopath, 'systems', Name);
@@ -38,7 +45,7 @@ if exist(apd, 'file')
 end
 %% Klassen-Instanz initialisieren
 % Strukturinformationen über das Modell holen
-eval(sprintf('[v_mdh, sigma_mdh, mu_mdh, NL] = %s%s_structural_kinematic_parameters();', Name, mdlsuffix));
+eval(sprintf('[v_mdh, sigma_mdh, mu_mdh, NL, NKP] = %s%s_structural_kinematic_parameters();', Name, mdlsuffix));
 NJ = length(v_mdh);
 NQJ = sum(mu_mdh==1);
 
@@ -47,24 +54,16 @@ PS = struct('beta',  NaN(NJ,1), 'b', NaN(NJ,1), ...
             'alpha', NaN(NJ,1), 'a', NaN(NJ,1), ...
             'theta', NaN(NJ,1), 'd', NaN(NJ,1), ...
             'sigma', sigma_mdh, 'offset', NaN(NJ,1), ...
-            'pkin', [], 'v', v_mdh, ...
+            'pkin', NaN(NKP,1), 'v', v_mdh, ...
             'mu', mu_mdh, ...
             'm', NaN(NL,1), 'mrSges', NaN(NL,3), 'Ifges', NaN(NL,6), ...
             'NJ', NJ, 'NL', NL, 'NQJ', NQJ, ...
             'qmin', NaN(NQJ,1), 'qmax', NaN(NQJ,1), 'vmax', NaN(NQJ,1), 'qref', NaN(NQJ,1));
 
-% Klassen-Instanz erstellen
-RS = SerRob(PS, [Name,mdlsuffix]);
-
-% Klassen-Instanz vorbereiten
-RS = RS.fill_fcn_handles(false);
-
-% Kinematik-Parameter initialisieren, um deren Dimension zu erhalten
-pkin=RS.update_pkin();
-
 %% Kinematik-Parameter aus Tabelle der Modellparameter laden
 % In diesem Abschnitt belegte Variablen mit Standardwerten initialisieren:
 descr = '';
+value_EElink = NL-1; % Standardmäßig letztes Segment
 % Parameter aus Tabelle holen
 if ~isempty(RobName) % Falls Name des Parametrierten Modells gegeben
   found = false; % Marker, ob Parametersatz gefunden wurde
@@ -94,8 +93,8 @@ if ~isempty(RobName) % Falls Name des Parametrierten Modells gegeben
     % Daten aus csv-Zeile extrahieren
     c = 3; % erste Drei Zeilen nicht betrachten (sind allgemeine Felder des Roboters)
     descr = sprintf('%s %s', csvline{2}, csvline{3});
-    for kk = 1:length(pkin) % über alle Kinematik-Parameter in pkin
-      c=c+1; pkin(kk) = str2double(csvline{c});
+    for kk = 1:length(PS.pkin) % über alle Kinematik-Parameter in pkin
+      c=c+1; PS.pkin(kk) = str2double(csvline{c});
     end
     for kk = 1:NQJ % über alle Minimalkoordinaten
       c=c+1; value_qmin   = str2double(csvline{c});
@@ -127,16 +126,7 @@ if ~isempty(RobName) % Falls Name des Parametrierten Modells gegeben
     c=c+1; value_mass   = str2double(csvline{c}); %#ok<NASGU>
     c=c+1; value_EElink   = str2double(csvline{c});
   end
-  
-  % Aus Tabelle abgelesene Zahlenwerte in Roboterklasse hineinschreiben
-  RS.update_mdh(pkin);
-  RS.qlim = [PS.qmin(:), PS.qmax(:)];
-  RS.qDlim = [-PS.vmax(:), PS.vmax(:)];
-  RS.qref = PS.qref(:);
-  RS.descr = descr;
-  % Nummer des EE-Segmentes setzen. Bei hybriden Robotern ist das nicht
-  % unbedingt das letzte in der MDH-Tabelle.
-  RS.I_EElink = value_EElink;
+
   
   % CAD-Modelle initialisieren, falls vorhanden
   cadinidat = fullfile(robopath, ...
@@ -148,3 +138,23 @@ if ~isempty(RobName) % Falls Name des Parametrierten Modells gegeben
     rmpath(p);
   end
 end
+
+%% Klasse initialisieren
+
+% Klassen-Instanz erstellen
+RS = SerRob(PS, [Name,mdlsuffix]);
+
+% Klassen-Instanz vorbereiten
+RS = RS.fill_fcn_handles(false);
+
+% Kinematik-Parameter initialisieren, um deren Dimension zu erhalten
+RS.pkin = PS.pkin;
+
+RS.qlim = [PS.qmin(:), PS.qmax(:)];
+RS.qDlim = [-PS.vmax(:), PS.vmax(:)];
+RS.qref = PS.qref(:);
+RS.descr = descr;
+
+% Nummer des EE-Segmentes setzen. Bei hybriden Robotern ist das nicht
+% unbedingt das letzte in der MDH-Tabelle.
+RS.I_EElink = value_EElink;
