@@ -126,17 +126,6 @@ if ~isempty(RobName) % Falls Name des Parametrierten Modells gegeben
     c=c+1; value_mass   = str2double(csvline{c}); %#ok<NASGU>
     c=c+1; value_EElink   = str2double(csvline{c});
   end
-
-  
-  % CAD-Modelle initialisieren, falls vorhanden
-  cadinidat = fullfile(robopath, ...
-    sprintf('CAD_%s',RobName), sprintf('%s_init_CAD.m', RobName));
-  if exist(cadinidat, 'file')
-    [p,f]=fileparts(cadinidat);
-    addpath(p);
-    eval(sprintf('RS = %s(RS, Name, RobName);', f));
-    rmpath(p);
-  end
 end
 
 %% Klasse initialisieren
@@ -147,8 +136,8 @@ RS = SerRob(PS, [Name,mdlsuffix]);
 % Klassen-Instanz vorbereiten
 RS = RS.fill_fcn_handles(false);
 
-% Kinematik-Parameter initialisieren, um deren Dimension zu erhalten
-RS.pkin = PS.pkin;
+% Kinematik-Parameter initialisieren
+RS.update_mdh(PS.pkin)
 
 RS.qlim = [PS.qmin(:), PS.qmax(:)];
 RS.qDlim = [-PS.vmax(:), PS.vmax(:)];
@@ -158,3 +147,13 @@ RS.descr = descr;
 % Nummer des EE-Segmentes setzen. Bei hybriden Robotern ist das nicht
 % unbedingt das letzte in der MDH-Tabelle.
 RS.I_EElink = value_EElink;
+
+%% CAD-Modelle initialisieren, falls vorhanden
+cadinidat = fullfile(robopath, ...
+  sprintf('CAD_%s',RobName), sprintf('%s_init_CAD.m', RobName));
+if exist(cadinidat, 'file')
+  [p,f]=fileparts(cadinidat);
+  addpath(p);
+  eval(sprintf('RS = %s(RS, Name, RobName);', f));
+  rmpath(p);
+end
