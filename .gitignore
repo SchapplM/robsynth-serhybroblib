@@ -1,6 +1,5 @@
 *.mex*
 *~
-tb_code/*/tmp
 slprj
-codegen
+**/matlabfcn*/codegen
 .~lock.*.csv#
