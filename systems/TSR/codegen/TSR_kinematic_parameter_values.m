@@ -1,0 +1,9 @@
+L1=650; % Lange Seite Parallelogramm 1: LH, BC
+L2=800; % Lange Seite Parallelogramm 2
+L3=400; % Gemeinsamer Teil von Fünfgelenkkette und Parallelogramm 2
+L4=820; % Seite der Fünfgelenkkette verbunden mit Paralellogramm 2: DE
+L5=200; % Kurze Seite Parallelogramm 1 (q1): BH,CL
+L6=300; % Kurze Seite Parallelogramm 2 (Endeffektor)
+e=170; % Abstand der Antriebe
+phi05=120*pi/180; % Winkel Parallelogramm 1 gegen Antriebe
+phi1=90*pi/180; % Winkel zwischen Parallelogrammen

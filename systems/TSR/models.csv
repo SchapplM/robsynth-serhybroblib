@@ -1,0 +1,4 @@
+Name/lfdNr;Name2;Langname;Kinematik-Parameter;;;;;;;;;Minimalkoordinate qJ1;;;;;Minimalkoordinate qJ2;;;;;Allgemein;;
+;;;pkin 1;pkin 2;pkin 3;pkin 4;pkin 5;pkin 6;pkin 7;pkin 8;pkin 9;qmin;qmax;vmax;VZ;just;qmin;qmax;vmax;VZ;just;Nenn-Traglast;Masse;EELink
+;;;L1;L2;L3;L4;L5;L6;e;phi05;phi1;;;;;;;;;;;;;
+TSR2040;TSR2040;Robowin TSR2040;0.65;0.8;0.4;0.82;0.2;0.3;0.17;2.0944;1.5708;-0.6109;1.5708;NA;1;0;-0.6109;1.5708;NA;1;0;NA;NA;3

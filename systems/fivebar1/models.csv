@@ -1,0 +1,4 @@
+Name/lfdNr;Name2;Langname;Kinematik-Parameter;;;;;Minimalkoordinate qJ1;;;;;Minimalkoordinate qJ2;;;;;Allgemein;;
+;;;pkin 1;pkin 2;pkin 3;pkin 4;pkin 5;qmin;qmax;vmax;VZ;just;qmin;qmax;vmax;VZ;just;Nenn-Traglast;Masse;EELink
+;;;AB;AE;BC;CD;ED;;;;;;;;;;;;;
+fivebar1Bsp1;Fünfgelenkkette;Fünfgelenkkette Bejaoui2018_S749;5.5;2.9;3.1;4.5;4;-1.2;1.2;NA;1;0;-2.4;2.4;NA;1;0;NA;NA;4
