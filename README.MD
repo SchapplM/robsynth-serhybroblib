@@ -70,6 +70,8 @@ Folgende Roboter und Mechanismen wurden bisher erfolgreich getestet
 | Roboter | Name des Ordners | Art des Tests | Implementierung mit |
 | ---     |                  |---            |---                  |
 | Viergelenkkette | fourbar1 | Plausibilität/Visualisierung, Abgleich Implementierungen TE, DE, IC | HybrDyn |
+| Fünfgelenkkette | fivebar1 | Plausibilität/Visualisierung
+| 2T0R-Palettierroboter (2 Parallelogramme, 1 Fünfgelenkkette) | TSR | Plausibilität Visualisierung | HybrDyn |
 | 3T1R-Palettierroboter (3 Parallelogramme) | palh1m1 | Plausibilität Visualisierung, Kinematik | HybrDyn |
 | 3T1R-Palettierroboter (serielles Ersatzmodell) | palh2m1 | Kinematik, Abgleich Implementierungen DE | HybrDyn |
 | 3. Arm KAS5 Modell 5| KAS5m5 | Elim., expl. ZB (noch nicht in neuer Dateistruktur) | HybrDyn |
