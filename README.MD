@@ -4,7 +4,7 @@ Dieses Repo enthält eine Sammlung von Modellen hybrider Roboter (serielle Robot
 
 
 Moritz Schappler, schappler@imes.uni-hannover.de, 2018-04  
-(C) Institut für mechatronische Systeme, Universität Hannover
+(C) Institut für Mechatronische Systeme, Universität Hannover
 
 ## Benutzung
 
@@ -33,6 +33,7 @@ Für jeden der Roboter gibt es unterschiedliche Implementierungen der kinematisc
 ### Test-Funktionen
 
 Die jeweiligen Ordner der Roboter enthalten Testskripte mit Beispiel-Aufrufen und Visualisierungen.
+Das Skript `hybroblib_test_all_models.m` ruft alle Testfunktionen nacheinander auf und dient zum Gesamt-Test dieses Repos.
 
 ### Code-Generierung
 
