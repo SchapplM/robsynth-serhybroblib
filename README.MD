@@ -75,6 +75,7 @@ Folgende Roboter und Mechanismen wurden bisher erfolgreich getestet
 | 2T0R-Palettierroboter (2 Parallelogramme, 1 Fünfgelenkkette) | TSR | Plausibilität Visualisierung | HybrDyn |
 | 3T1R-Palettierroboter (3 Parallelogramme) | palh1m1 | Plausibilität Visualisierung, Kinematik | HybrDyn |
 | 3T1R-Palettierroboter (serielles Ersatzmodell) | palh2m1 | Kinematik, Abgleich Implementierungen DE | HybrDyn |
+| 3T1R-Palettierroboter (serielles Ersatzmodell, mit anderen Parametern) | palh2m2 | Validiert gegen Lenze-Daten | HybrDyn |
 | 3. Arm KAS5 Modell 5| KAS5m5 | Elim., expl. ZB (noch nicht in neuer Dateistruktur) | HybrDyn |
 | 3. Arm KAS5 Modell 6| KAS5m6 | Elim., expl. ZB (noch nicht in neuer Dateistruktur) | HybrDyn |
 | 3. Arm KAS5 Modell 7| KAS5m7 | Elim., expl. ZB, impl. ZB (noch nicht in neuer Dateistruktur) | HybrDyn |
