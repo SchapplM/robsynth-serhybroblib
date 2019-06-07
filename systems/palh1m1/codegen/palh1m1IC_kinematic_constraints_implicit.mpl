@@ -54,7 +54,7 @@ tmp := Transpose( Matrix(T_2_12(1..3,1..3)) ) . Matrix(T_2_15(1..3,1..3));  # nu
 ;
  combine(tmp); # nur anzeigen lassen für h1r
 ;
-h2r:=-(qJ3(t)+phi312+qJ12(t)-qJ8(t)-qJ9(t))+Pi/2:
+h2r:=(qJ3(t)+phi312+qJ12(t)-qJ8(t)-qJ9(t))+3*Pi/2:
 # VGK GRÜN 2-3-4-13-16-10-7-2
 # Schleife (2-3)-(3-4)-(4-13)
 T_2_13 := combine( Matrix(Trf(1..4,1..4, 3)) . Matrix(Trf(1..4,1..4,4)) . Matrix(Trf(1..4,1..4,13))):

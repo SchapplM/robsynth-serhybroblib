@@ -14,8 +14,10 @@ if [ "$maplerepopath" == "" ]; then
 fi;
 
 deflist="
-robot_env_palh1m1DE2
-robot_env_palh1m1IC"
+robot_env_palh1m1IC
+"
+##robot_env_palh1m1DE2
+##robot_env_palh1m1IC
 ## robot_env_palh1m1DE1
 ## robot_env_palh1m1TE
 

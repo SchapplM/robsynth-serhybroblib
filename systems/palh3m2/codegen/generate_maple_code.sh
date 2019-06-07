@@ -1,6 +1,5 @@
 #!/bin/bash -e
 # Starte die Code-Generierung für den Roboter
-# Argument 1: Pfad zum HybrDyn-Repo
 
 # Moritz Schappler, moritz.schappler@imes.uni-hannover.de, 2018-07
 # (C) Institut für mechatronische Systeme, Leibniz Universität Hannover
@@ -15,16 +14,17 @@ if [ "$maplerepopath" == "" ]; then
 fi;
 
 deflist="
-robot_env_fourbar1TE
+robot_env_palh3m2TE
 "
-##robot_env_fourbar1IC
-##robot_env_fourbar1TE
-##robot_env_fourbar1DE1
-##robot_env_fourbar1DE2
+
+## robot_env_palh3m2DE1
+## robot_env_palh3m2DE2
+## robot_env_palh3m2TE
+## robot_env_palh3m2IC
 
 cd $maplerepopath
 for df in $deflist; do
   echo "Starte Generierung für $df"
   cp robot_codegen_definitions/$df robot_codegen_definitions/robot_env
-  ./robot_codegen_start.sh -p --fixb_only --notest 
+  ./robot_codegen_start.sh --fixb_only -p --notest
 done

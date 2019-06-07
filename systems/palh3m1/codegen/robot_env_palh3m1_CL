@@ -1,0 +1,49 @@
+#KUKA KR700PA
+
+robot_name := "palh3m1":
+
+# Anzahl der verallgemeinerten Gelenkkoordinaten   #(aktive Gelenk q1 q2 q3 q4)
+NQJ := 4:
+# Anzahl der Gelenke (mit virtuellen Schnittgelenken, denen kein Körper zugeordnet ist). #(Gleich wie die Anzahl von MDH)
+NJ := 12:
+# Anzahl der Starrkörper (mit Basis; also 8 bewegte Körper) #(ohne Endeffektor)
+NL := 9:
+
+# aktive Gekenke offset  (beobachten von MDH Tabelle um Z)    12X1 Matrix                    
+qoffset := Matrix(12, 1, [0, 0, Pi, 0, 0, 0, 0, Pi, 0, 0, Pi, 0]):
+
+# rotation um Z
+theta := <qJ1(t); qJ2(t); qJ3(t); kintmp_t(1,1); qJ4(t); kintmp_t(2,1); kintmp_t(3,1); kintmp_t(4,1); 0; 0; kintmp_t(5,1); kintmp_t(6,1)> + qoffset:
+
+# rotation um X
+alpha := Matrix(12, 1, [0, Pi/2, 0, 0, Pi/2, Pi/2, 0, 0, 0, 0, 0, 0]):
+
+# Translation entlang Z
+d := Matrix(12, 1, [OT1, 0, 0, 0, HW, 0, 0, 0, 0, 0, 0, 0]):
+
+# Translation entlang X
+a := Matrix(12, 1, [0, T1A, AB, BG, GH, -DT2, AB, BE, DC, -EP, BC, GP]):
+
+
+# vor-Index
+v := Matrix(12,1, <0; 1; 2; 3; 4; 1; 2; 7; 6; 8; 7; 4>):
+
+# Rotation um Z (MDH) 
+beta := Matrix(12,1, [0, 0, 0, 0, 0, 0, 0, -phi78, 0, Pi, phi79, phi410]):
+
+# Translation entlang Z (MDH)
+b := Matrix(12, 1, [0, 0, 0, 0, 0, T1T2, 0, 0, 0, 0, 0, 0]):
+
+# Nur Drehgelenke
+# Aktive Gelenk oder Passive Gekenk
+mu:=Matrix(<1,1,1,0,1,0,0,0,0,0,0,0>):
+# Gelenktyp, 0:Drehgelenk, 1:Schubgelenk, 2: virtuell
+sigma:=Matrix(<0,0,0,0,0,0,0,0,0,0,2,2>):
+
+# Allgemeine Winkel # 9x1 Matrix() #passive Winkel #konstante Variable und zeitabhängig Variable
+kintmp_t := Matrix(6, 1, [xi34(t), eta16(t), eta27(t), xi78(t), eta79(t), xi410(t)]):
+kintmp_s := Matrix(6, 1, [xi34_s, eta16_s, eta27_s, xi78_s, eta79_s, xi410_s]):
+
+# 0:Parallelorgram, 1: general Closed Loop
+Kettetyp := 1:
+

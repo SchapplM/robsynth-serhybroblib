@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Worksheet>
-<Version major="2018" minor="1"/>
+<Version major="2018" minor="0"/>
 <Label-Scheme value="2" prefix=""/>
 <View-Properties presentation="false" autoexpanding_sections="true" UserProfileName="Maple Default Profile" NumericFormat-ApplyInteger="true" NumericFormat-ApplyRational="true" NumericFormat-ApplyExponent="false" editable="true">
 </View-Properties>
-<MapleNet-Properties prettyprint="3" warnlevel="3" preplot="" helpbrowser="standard" displayprecision="-1" echo="1" unitattributes="&quot;fontweight&quot; = &quot;bold&quot;" imaginaryunit="I" longdelim="true" elisiontermsthreshold="10000" elisiondigitsafter="100" elisiondigitsbefore="100" plotdevice="inline" errorbreak="1" plotoptions="" plotdriver="opengl" quiet="false" elisiontermsbefore="100" elisiontermsafter="100" screenwidth="79" indentamount="4" plotoutput="terminal" screenpixelheight="1200" rtablesize="10" useclientjvm="true" labelwidth="20" postplot="" typesetting="extended" ansi="false" ansicolor="[]" elisiondigitsthreshold="10000" showassumed="1" ansilprint="false" errorcursor="false" labelling="true" screenheight="25" prompt="&gt; " verboseproc="1" latexwidth="8.0" ShowLabels="true"/>
+<MapleNet-Properties prettyprint="3" warnlevel="3" preplot="" helpbrowser="standard" displayprecision="-1" echo="1" unitattributes="&quot;fontweight&quot; = &quot;bold&quot;" imaginaryunit="I" longdelim="true" elisiontermsthreshold="10000" elisiondigitsafter="100" elisiondigitsbefore="100" plotdevice="inline" errorbreak="1" plotoptions="" plotdriver="opengl" quiet="false" elisiontermsbefore="100" elisiontermsafter="100" screenwidth="79" indentamount="4" plotoutput="terminal" screenpixelheight="1200" rtablesize="10" useclientjvm="true" labelwidth="20" postplot="" typesetting="extended" ansi="false" elisiondigitsthreshold="10000" showassumed="1" errorcursor="false" labelling="true" screenheight="25" prompt="&gt; " verboseproc="1" latexwidth="8.0" ShowLabels="true"/>
 <Styles>
 <Font name="Heading 1" background="[255,255,255]" bold="true" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="18" subscript="false" superscript="false" underline="false" placeholder="false"/>
 <Font name="Warning" background="[255,255,255]" bold="false" executable="false" family="Courier New" foreground="[0,0,255]" italic="false" opaque="false" readonly="true" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
@@ -88,37 +88,57 @@
     <Task-category name="&lt;default&gt;"/>
 </Task-table>
 <Task/><Presentation-Block>
-<Group view="code" labelreference="L2134" drawlabel="true">
-<Input><Text-field style="Heading 1" layout="Heading 1">Vierachsroboter implizit</Text-field>
+<Group view="code" labelreference="L2298" drawlabel="true">
+<Input><Text-field style="Heading 1" layout="Heading 1"><Font encoding="UTF-8">Berechne kinematische Zwangsbedingungen f\303\274r Viergelenkkette</Font></Text-field>
+</Input>
+</Group>
+<Group labelreference="L2297" drawlabel="true">
+<Input><Text-field style="Heading 2" layout="Heading 2">Einleitung
+</Text-field><Text-field style="Normal" layout="Normal"><Font encoding="UTF-8">Die impliziten kinematischen Zwangsbedingungen werden aufgestellt: Annahme : Alle MDH-Winkel seien unabh\303\244ngig und die Kette sei offen</Font>
+
+<Font encoding="UTF-8">fourbar1_OL -&gt; Viergelenkkette, modellierung impliziten der Zwangsbedingungen mit Ausdr\303\274cken einer offenen Kette  und basierend auf der MDH-Tabelle. </Font></Text-field><Text-field style="Normal" layout="Normal"><Font encoding="UTF-8">Bei Matlab: Abh\303\244ngige Winkel durch die Ausdr\303\274cke von TE aus der Datei &quot;fourbar1TE_kinconstr_expl_mdh_sym_varpar&quot; ersetzen.</Font></Text-field>
+</Input>
+</Group>
+<Group labelreference="L2296" drawlabel="true">
+<Input><Text-field style="Heading 2" layout="Heading 2">Quelle</Text-field><Text-field style="Normal" layout="Normal"><Font encoding="UTF-8">SA Bejaoui: Bejaoui2018_S749; &quot;Modellierung kinematischer Zwangsbedingungen f\303\274r hybride serielle Roboter mit planaren Parallelmechanismen&quot;</Font></Text-field>
+</Input>
+</Group>
+<Group labelreference="L2299" drawlabel="true">
+<Input><Text-field style="Heading 2" layout="Heading 2">Autor</Text-field><Text-field style="Normal" layout="Normal">Abderahman Bejaoui
+Studienarbeit bei: Moritz Schappler, schappler@irt.uni-hannover.de, 2018-08</Text-field><Text-field style="Normal" layout="Normal">(C) Institut fuer Mechatronische Systeme, Leibniz Universitaet Hannover</Text-field>
+</Input>
+</Group></Presentation-Block><Presentation-Block>
+<Group view="code" labelreference="L2284" drawlabel="true">
+<Input><Text-field style="Heading 1" layout="Heading 1"></Text-field>
 </Input>
 </Group></Presentation-Block>
 <Section collapsed="false" isCollapsible="true" drawButton="true" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60"><Title><Text-field style="Heading 1" layout="Heading 1">Initialisierung</Text-field></Title><Presentation-Block>
-<Group view="code" labelreference="L2137" drawlabel="true">
+<Group view="code" labelreference="L2282" drawlabel="true">
 <Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">restart:</Text-field>
 </Input>
 </Group>
-<Group view="code" labelreference="L2144" drawlabel="true">
+<Group view="code" labelreference="L2250" drawlabel="true">
 <Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">kin_constraints_exist<Font encoding="UTF-8"> := true: # F\303\274r Speicherung</Font></Text-field>
 </Input>
 </Group>
-<Group view="code" labelreference="L2132" drawlabel="true">
+<Group view="code" labelreference="L2288" drawlabel="true">
 <Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"><Font encoding="UTF-8">with(StringTools): # F\303\274r Zeitausgabe</Font>
 with(LinearAlgebra):
 with(codegen):
 with(CodeGeneration):</Text-field>
 </Input>
 </Group></Presentation-Block><Presentation-Block>
-<Group view="code" labelreference="L2145" drawlabel="true">
+<Group view="code" labelreference="L2246" drawlabel="true">
 <Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">codegen_act := true:
 codegen_opt := 1: # Geringerer Optimierungsgrad. Sonst zu lange.
 <Font encoding="UTF-8">codegen_debug := 0: # Zur Code-Generierung auch f\303\274r Nicht-Inert-Ausdr\303\274cke</Font></Text-field>
 </Input>
 </Group></Presentation-Block><Presentation-Block>
-<Group labelreference="L2136" drawlabel="true">
+<Group labelreference="L2281" drawlabel="true">
 <Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">read &quot;../helper/proc_MatlabExport&quot;:</Text-field>
 </Input>
 </Group>
-<Group view="code" labelreference="L2141" drawlabel="true">
+<Group view="code" labelreference="L2251" drawlabel="true">
 <Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">read &quot;../transformation/proc_rotx&quot;:
 read &quot;../transformation/proc_roty&quot;:
 read &quot;../transformation/proc_rotz&quot;:
@@ -126,198 +146,130 @@ read &quot;../transformation/proc_trotz&quot;:
 read &quot;../transformation/proc_transl&quot;:</Text-field>
 </Input>
 </Group></Presentation-Block><Presentation-Block>
-<Group labelreference="L2146" drawlabel="true">
+<Group labelreference="L2247" drawlabel="true">
 <Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">read &quot;../helper/proc_convert_s_t&quot;:
 read &quot;../helper/proc_convert_t_s&quot;:
 read &quot;../robot_codegen_constraints/proc_subs_kintmp_exp&quot;:
 read &quot;../helper/proc_intersect_circle&quot;:</Text-field>
 </Input>
 </Group></Presentation-Block><Presentation-Block>
-<Group view="code" labelreference="L2135" drawlabel="true">
+<Group view="code" labelreference="L2286" drawlabel="true">
 <Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"><Font encoding="UTF-8">with(RealDomain): # Schr\303\244nkt alle Funktionen auf den reellen Bereich ein. Muss nach Definition von MatlabExport kommen. Sonst geht dieses nicht.</Font></Text-field>
 </Input>
 </Group></Presentation-Block><Presentation-Block>
-<Group labelreference="L2133" drawlabel="true">
+<Group labelreference="L2289" drawlabel="true">
 <Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">read &quot;../robot_codegen_definitions/robot_env&quot;:</Text-field>
 </Input>
 </Group>
-<Group view="code" labelreference="L2138" drawlabel="true">
+<Group view="code" labelreference="L2292" drawlabel="true">
 <Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">read sprintf(&quot;../codeexport/%s/tmp/tree_floatb_definitions&quot;, robot_name):</Text-field>
 </Input>
 </Group></Presentation-Block><Presentation-Block>
-<Group labelreference="L2139" drawlabel="true">
+<Group labelreference="L2294" drawlabel="true">
 <Input><Text-field style="Text" layout="Normal">Ergebnisse der Kinematik laden</Text-field>
 </Input>
 </Group>
-<Group hide-input="false" labelreference="L2143" drawlabel="true">
+<Group hide-input="false" labelreference="L2248" drawlabel="true">
 <Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">read sprintf(&quot;../codeexport/%s/tmp/kinematics_floatb_%s_rotmat_maple.m&quot;, robot_name, base_method_name);
 Trf := Trf:
 Trf_c := Trf_c:</Text-field>
 </Input>
 </Group>
-<Group view="code" hide-input="false" labelreference="L2243" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Group view="code" hide-input="false" labelreference="L2275" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
 <Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">Trf</Text-field>
 </Input>
 </Group></Presentation-Block>
-<Section collapsed="false" isCollapsible="true" drawButton="true" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60"><Title><Text-field style="Heading 2" layout="Heading 2">VGK Gelb 1-6-11-7-2-1</Text-field></Title>
-<Group labelreference="L2150" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field style="Text" layout="Normal">Schleife (1-6)-(6-14)</Text-field>
+<Section collapsed="false" isCollapsible="true" drawButton="true" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60"><Title><Text-field style="Heading 2" layout="Heading 2">Fourbar1 0-1-2-4-5-3-0</Text-field></Title>
+<Group labelreference="L2264" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field style="Text" layout="Normal">Schleife 0-1-2-4</Text-field>
 </Input>
 </Group>
-<Group labelreference="L2148" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">T_1_14 := combine( Matrix(Trf(1..4,1..4, 6)) . Matrix(Trf(1..4,1..4,14))):</Text-field>
+<Group hide-input="false" labelreference="L2262" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">T_0_4 := combine(Matrix(Trf(1..4,1..4, 1)) . Matrix(Trf(1..4,1..4,2)). Matrix(Trf(1..4,1..4, 4)));</Text-field>
 </Input>
 </Group>
-<Group labelreference="L2149" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field style="Text" layout="Normal">Schleife (1-2)-(2-7)-(7-11)</Text-field>
+<Group labelreference="L2261" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field style="Text" layout="Normal">Schleife 0-3-5</Text-field>
 </Input>
 </Group>
-<Group labelreference="L2151" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">T_1_11:= combine( Matrix(Trf(1..4,1..4, 2)) . Matrix(Trf(1..4,1..4,7)) . Matrix(Trf(1..4,1..4,11))):</Text-field>
+<Group hide-input="false" labelreference="L2265" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">T_0_5:= combine(Matrix(Trf(1..4,1..4, 3)) . Matrix(Trf(1..4,1..4,5)));</Text-field>
 </Input>
 </Group>
-<Group hide-input="false" labelreference="L2152" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">h1t := T_1_14(1..3,4) - T_1_11(1..3,4);</Text-field>
+<Group hide-input="false" labelreference="L2258" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">h1t := T_0_5(1..3,4) - T_0_4(1..3,4);</Text-field>
 </Input>
 </Group>
-<Group labelreference="L2237" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"></Text-field>
+<Group hide-input="false" labelreference="L2260" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">tmp := Transpose( Matrix(T_0_5(1..3,1..3)) ) . Matrix(T_0_4(1..3,1..3));  #<Font encoding="UTF-8"> nur anzeigen lassen f\303\274r h1r</Font></Text-field>
 </Input>
 </Group>
-<Group hide-input="false" labelreference="L2230" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">#tmp := Transpose( Matrix(T_1_14(1..3,1..3)) ) . Matrix(T_1_11<Font encoding="UTF-8">(1..3,1..3));  nur anzeigen lassen f\303\274r h1r</Font></Text-field>
-</Input>
-</Group>
-<Group hide-input="false" labelreference="L2231" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">#combine(tmp);# <Font encoding="UTF-8">nur anzeigen lassen f\303\274r h1r</Font></Text-field>
-</Input>
-</Group>
-<Group labelreference="L2229" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">h1r := -(-qJ6(t)+qJ2(t)+qJ7(t)+phi711+qJ11(t))+Pi/2:</Text-field>
-</Input>
-</Group>
-</Section>
-<Section collapsed="false" isCollapsible="true" drawButton="true" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60"><Title><Text-field style="Heading 2" layout="Heading 2">VGK PINK 2-3-12-15-9-8-2</Text-field></Title>
-<Group labelreference="L2154" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field style="Text" layout="Normal">Schleife (2-3)-(3-12)</Text-field>
-</Input>
-</Group>
-<Group labelreference="L2157" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">T_2_12 := combine(Matrix(Trf(1..4,1..4, 3)) . Matrix(Trf(1..4,1..4,12))):</Text-field>
-</Input>
-</Group>
-<Group labelreference="L2156" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field style="Text" layout="Normal">Schleife (2-8)-(8-9)-(9-15)</Text-field>
-</Input>
-</Group>
-<Group labelreference="L2155" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">T_2_15:= combine(Matrix(Trf(1..4,1..4, 8)) . Matrix(Trf(1..4,1..4,9)).Matrix(Trf(1..4,1..4, 15))):</Text-field>
-</Input>
-</Group>
-<Group hide-input="false" labelreference="L2158" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">h2t := T_2_12(1..3,4) - T_2_15(1..3,4):</Text-field>
-</Input>
-</Group>
-<Group hide-input="false" labelreference="L2236" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">tmp := Transpose( Matrix(T_2_12(1..3,1..3)) ) . Matrix(T_2_15(1..3,1..3));  #<Font encoding="UTF-8"> nur anzeigen lassen f\303\274r h1r</Font></Text-field>
-</Input>
-</Group>
-<Group hide-input="false" labelreference="L2235" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Group hide-input="false" labelreference="L2259" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
 <Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"> combine(tmp); <Font encoding="UTF-8"># nur anzeigen lassen f\303\274r h1r</Font></Text-field>
 </Input>
 </Group>
-<Group labelreference="L2239" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">h2r:=(qJ3(t)+phi312+qJ12(t)-qJ8(t)-qJ9(t))+3*Pi/2:</Text-field>
-</Input>
-</Group>
-</Section>
-<Section collapsed="false" isCollapsible="true" drawButton="true" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60"><Title><Text-field style="Heading 2" layout="Heading 2"><Font encoding="UTF-8">VGK GR\303\234N 2-3-4-13-16-10-7-2</Font></Text-field></Title>
-<Group labelreference="L2163" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field style="Text" layout="Normal">Schleife (2-3)-(3-4)-(4-13)</Text-field>
-</Input>
-</Group>
-<Group labelreference="L2162" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">T_2_13 := combine( Matrix(Trf(1..4,1..4, 3)) . Matrix(Trf(1..4,1..4,4)) . Matrix(Trf(1..4,1..4,13))):</Text-field>
-</Input>
-</Group>
-<Group labelreference="L2161" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field style="Text" layout="Normal">Schleife (2-7)-(7-10)-(10-16)</Text-field>
-</Input>
-</Group>
-<Group labelreference="L2164" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">T_2_16:= combine( Matrix(Trf(1..4,1..4, 7)) . Matrix(Trf(1..4,1..4,10)).Matrix(Trf(1..4,1..4,16)) ):</Text-field>
-</Input>
-</Group>
-<Group hide-input="false" labelreference="L2160" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">h3t := T_2_13(1..3,4) - T_2_16(1..3,4):</Text-field>
-</Input>
-</Group>
-<Group hide-input="false" labelreference="L2242" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">#tmp := Transpose( Matrix(T_2_13(1..3,1..3)) ) . Matrix(T_2_16(1..3,1..3)); <Font encoding="UTF-8"> nur anzeigen lassen f\303\274r h2r</Font></Text-field>
-</Input>
-</Group>
-<Group hide-input="false" labelreference="L2241" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">#combine(tmp); <Font encoding="UTF-8"> nur anzeigen lassen f\303\274r h3r</Font></Text-field>
-</Input>
-</Group>
-<Group labelreference="L2240" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">h3r:=-(qJ3(t)+qJ4(t)+phi413+qJ13(t)-qJ7(t)+phi710-qJ10(t))+5*Pi/2:</Text-field>
+<Group hide-input="false" labelreference="L2268" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">h1r:=Pi-(-qJ3(t)+qJ1(t)+qJ2(t)+qJ4(t));</Text-field>
 </Input>
 </Group>
 </Section>
 <Section collapsed="false" isCollapsible="true" drawButton="true" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60"><Title><Text-field style="Heading 1" layout="Heading 1">Zusammenstellen aller Zwangsbedingungen</Text-field></Title><Presentation-Block>
-<Group view="code" hide-input="false" labelreference="L2226" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">implconstr_t := &lt;h1t([1, 3],1);h2t([1, 2],1);h3t([1, 2],1); h1r; h2r; h3r&gt;; # TODO: In h1r, h2r, h3r muss das richtige drinstehen.</Text-field>
+<Group view="code" hide-input="false" labelreference="L2254" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">implconstr_t := &lt;h1t([1, 2]);h1r&gt;; </Text-field>
 </Input>
 </Group>
-<Group view="code" hide-input="false" labelreference="L2227" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Group view="code" hide-input="false" labelreference="L2255" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
 <Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">implconstr_s := convert_t_s(implconstr_t):</Text-field>
 </Input>
 </Group></Presentation-Block>
 </Section>
 <Section collapsed="false" isCollapsible="true" drawButton="true" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60"><Title><Text-field style="Heading 1" layout="Heading 1"><Font encoding="UTF-8">Exportiere Code f\303\274r folgende Skripte</Font></Text-field></Title><Presentation-Block>
-<Group view="code" labelreference="L2214" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Group view="code" labelreference="L2283" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
 <Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">kin_constraints_exist:=true:</Text-field>
 </Input>
 </Group>
-<Group view="code" labelreference="L2209" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Group view="code" labelreference="L2280" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
 <Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">save implconstr_t, implconstr_s, kin_constraints_exist, sprintf(&quot;../codeexport/%s/tmp/kinematic_constraints_implicit_maple.m&quot;, robot_name):</Text-field>
 </Input>
 </Group></Presentation-Block><Presentation-Block>
-<Group view="code" labelreference="L2217" drawlabel="true">
+<Group view="code" labelreference="L2291" drawlabel="true">
 <Input><Text-field style="Text" layout="Normal"><Font encoding="UTF-8">Exportieren des vollst\303\244ndigen Ausdruckes</Font></Text-field>
 </Input>
 </Group>
-<Group view="code" labelreference="L2210" drawlabel="true">
+<Group view="code" labelreference="L2290" drawlabel="true">
 <Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">if codegen_act then
   MatlabExport(implconstr_s, sprintf(&quot;../codeexport/%s/tmp/kinconstr_impl_matlab.m&quot;, robot_name), 2):
 end if:</Text-field>
 </Input>
 </Group></Presentation-Block><Presentation-Block>
-<Group view="code" labelreference="L2212" drawlabel="true">
+<Group view="code" labelreference="L2287" drawlabel="true">
 <Input><Text-field style="Text" layout="Normal"><Font encoding="UTF-8">Liste mit abh\303\244ngigen konstanten Kinematikparametern erstellen (wichtig f\303\274r Matlab-Funktionsgenerierung)</Font></Text-field>
 </Input>
 </Group>
-<Group view="code" labelreference="L2211" drawlabel="true">
+<Group view="code" labelreference="L2285" drawlabel="true">
 <Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">read &quot;../helper/proc_list_constant_expressions&quot;;</Text-field>
 </Input>
 </Group>
-<Group view="code" labelreference="L2216" drawlabel="true">
+<Group view="code" labelreference="L2295" drawlabel="true">
 <Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">kc_symbols := Matrix(list_constant_expressions( implconstr_s )):</Text-field>
 </Input>
 </Group>
-<Group view="code" labelreference="L2215" drawlabel="true">
+<Group view="code" labelreference="L2293" drawlabel="true">
 <Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">save kc_symbols, sprintf(&quot;../codeexport/%s/tmp/kinematic_implicit_constraints_symbols_list_maple&quot;, robot_name):</Text-field>
 </Input>
 </Group>
-<Group view="code" labelreference="L2220" drawlabel="true">
+<Group view="code" labelreference="L2249" drawlabel="true">
 <Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">MatlabExport(Transpose(kc_symbols), sprintf(&quot;../codeexport/%s/tmp/kinematic_implicit_constraints_symbols_list_matlab.m&quot;, robot_name), 2):</Text-field>
 </Input>
 </Group></Presentation-Block>
 </Section><Presentation-Block>
-<Group view="code" labelreference="L2238" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Group view="code" labelreference="L2270" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
 <Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"></Text-field>
 </Input>
 </Group></Presentation-Block>
 </Section>
+<Group labelreference="L1" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"></Text-field>
+</Input>
+</Group>
 </Worksheet>

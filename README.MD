@@ -71,11 +71,16 @@ Folgende Roboter und Mechanismen wurden bisher erfolgreich getestet
 | Roboter | Name des Ordners | Art des Tests | Implementierung mit |
 | ---     |                  |---            |---                  |
 | Viergelenkkette | fourbar1 | Plausibilität/Visualisierung, Abgleich Implementierungen TE, DE, IC | HybrDyn |
+| Parallelogramm | fourbar2 | Abgleich über palh3m2 | HybrDyn |
+| Drehbar aufgerichtete Viergelenkkette | fourbar3 | Validierung SA Shan | HybrDyn |
 | Fünfgelenkkette | fivebar1 | Plausibilität/Visualisierung
 | 2T0R-Palettierroboter (2 Parallelogramme, 1 Fünfgelenkkette) | TSR | Plausibilität Visualisierung | HybrDyn |
 | 3T1R-Palettierroboter (3 Parallelogramme) | palh1m1 | Plausibilität Visualisierung, Kinematik | HybrDyn |
 | 3T1R-Palettierroboter (serielles Ersatzmodell) | palh2m1 | Kinematik, Abgleich Implementierungen DE | HybrDyn |
 | 3T1R-Palettierroboter (serielles Ersatzmodell, mit anderen Parametern) | palh2m2 | Validiert gegen Lenze-Daten | HybrDyn |
+| 3T1R-Palettierroboter (2 Parallelogramme, Herleitung über allgemeine Viergelenkkette) | palh3m1 | Plausibilität | HybrDyn |
+| 3T1R-Palettierroboter (2 Parallelogramme, Herleitung über Parallelogramm) | palh3m2 | Plausibilität | HybrDyn |
+
 | 3. Arm KAS5 Modell 5| KAS5m5 | Elim., expl. ZB (noch nicht in neuer Dateistruktur) | HybrDyn |
 | 3. Arm KAS5 Modell 6| KAS5m6 | Elim., expl. ZB (noch nicht in neuer Dateistruktur) | HybrDyn |
 | 3. Arm KAS5 Modell 7| KAS5m7 | Elim., expl. ZB, impl. ZB (noch nicht in neuer Dateistruktur) | HybrDyn |
@@ -83,5 +88,7 @@ Folgende Roboter und Mechanismen wurden bisher erfolgreich getestet
 
 ## Quellen <a name="quellen"></a> 
 
+* [Shan2019_S828] W. Shan: "Reduktion der Modellkomplexität von seriell-hybriden Palettierrobotern
+" (Studienarbeit bei Moritz Schappler)
 * [Bejaoui2018_S749] A. Bejaoui: "Modellierung kinematischer Zwangsbedingungen für hybride serielle Roboter mit planaren Parallelmechanismen" (Studienarbeit bei Moritz Schappler)
 * [NuelleSchTapLil2017] K. Nülle, M. Schappler et al.: Projektabschlussbericht „3. Arm“ - Handwerker-Kraftassistenzsystem mit adaptiver Mensch-Technik-Interaktion

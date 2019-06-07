@@ -16,7 +16,9 @@
 # (C) Institut fuer mechatronische Systeme, Leibniz Universitaet Hannover
 # Initialisierung
 # Import 
-restart:
+interface(warnlevel=0): # Unterdrücke die folgende Warnung.
+restart: # Gibt eine Warnung, wenn über Terminal-Maple mit read gestartet wird.
+interface(warnlevel=3):
 kin_constraints_exist := true: # Für Speicherung
 ;
 with(StringTools): # Für Zeitausgabe
@@ -71,7 +73,7 @@ backup_kintmp_qs := kintmp_qs:
 backup_kintmp_qt := kintmp_qt:
 backup_kintmp_subsexp := kintmp_subsexp:
 
-read sprintf("../codeexport/fourbar1TE/tmp/kinematic_constraints_maple_inert"): # noch relevant ? alles über kintmp_subsexp
+read sprintf("../codeexport/fourbar1TE/tmp/kinematic_constraints_maple_inert.m"): # mit .m datei wird es schneller
 ;
 kintmp_subsexp_fourbar := kintmp_subsexp:
 kintmp_qs_fourbar := kintmp_qs:
@@ -91,8 +93,7 @@ winkel_neu(6,2) := subs({qJ1s=phi_s}, kintmp_subsexp_fourbar(6,2)):
 kintmp_qs := backup_kintmp_qs:
 kintmp_qt := backup_kintmp_qt:
 kintmp_subsexp := backup_kintmp_subsexp:
-winkel_neu(1..6,1)
-;
+winkel_neu(1..6,1):
 # Viergelenkkette 1: A-M-L-B
 winkel1:=<<sin_rho28|sin(rho28_s)>;<cos_rho28|cos(rho28_s)>;<sin_rho312|sin(rho312_s)>;<cos_rho312|cos(rho312_s)>;<sin_rho89|sin(rho89_s)>;<cos_rho89|cos(rho89_s)>>:
 for i from 1 to 6 do
@@ -143,7 +144,7 @@ cos_eta1_s:=winkel2(2,2):
 sin_eta3_s:=winkel2(3,2):
 cos_eta3_s:=winkel2(4,2):
 sin_eta4_s:=winkel2(5,2): 
-cos_eta4_s:=winkel2(6,2); 
+cos_eta4_s:=winkel2(6,2):
 cos_eta16_s:=cos(phi1)*cos_eta1_s-sin(phi1)*sin_eta1_s:
 sin_eta16_s:=cos(phi1)*sin_eta1_s+cos_eta1_s*sin(phi1):
 cos_eta711_s:=-cos_eta4_s:
@@ -201,15 +202,15 @@ kintmp_subsexp(17,2):=sin_xi413_s:
 kintmp_subsexp(18,2):=cos_xi413_s:
 kintmp_subsexp(11..18,1):
 # Kintmp_qs
-kintmp_qs(1,1):=arctan(sin_xi34_s,cos_xi34_s):
-kintmp_qs(2,1):=arctan(sin_eta16_s,cos_eta16_s):
-kintmp_qs(3,1):=arctan(sin_eta27_s,cos_eta27_s):
-kintmp_qs(4,1):=arctan(sin_rho28_s,cos_rho28_s):
-kintmp_qs(5,1):=arctan(sin_rho89_s,cos_rho89_s):
-kintmp_qs(6,1):=arctan(sin_xi1016_s,cos_xi1016_s):
-kintmp_qs(7,1):=arctan(sin_eta711_s,cos_eta711_s):
-kintmp_qs(8,1):=arctan(sin_rho312_s,cos_rho312_s):
-kintmp_qs(9,1):=arctan(sin_xi413_s,cos_xi413_s):
+kintmp_qs(1,1):=%arctan(sin_xi34_s,cos_xi34_s):
+kintmp_qs(2,1):=%arctan(sin_eta16_s,cos_eta16_s):
+kintmp_qs(3,1):=%arctan(sin_eta27_s,cos_eta27_s):
+kintmp_qs(4,1):=%arctan(sin_rho28_s,cos_rho28_s):
+kintmp_qs(5,1):=%arctan(sin_rho89_s,cos_rho89_s):
+kintmp_qs(6,1):=%arctan(sin_xi1016_s,cos_xi1016_s):
+kintmp_qs(7,1):=%arctan(sin_eta711_s,cos_eta711_s):
+kintmp_qs(8,1):=%arctan(sin_rho312_s,cos_rho312_s):
+kintmp_qs(9,1):=%arctan(sin_xi413_s,cos_xi413_s):
 # Export
 kintmp_qt := convert_s_t(kintmp_qs):
 save kintmp_subsexp, sprintf("../codeexport/%s/tmp/kinematic_constraints_kintmp_subsexp_maple", robot_name):

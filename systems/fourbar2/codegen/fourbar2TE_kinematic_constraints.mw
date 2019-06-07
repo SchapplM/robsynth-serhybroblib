@@ -4,7 +4,7 @@
 <Label-Scheme value="2" prefix=""/>
 <View-Properties presentation="true" autoexpanding_sections="true" UserProfileName="Maple Default Profile" NumericFormat-ApplyInteger="true" NumericFormat-ApplyRational="true" NumericFormat-ApplyExponent="false" editable="true">
 </View-Properties>
-<MapleNet-Properties prettyprint="3" warnlevel="3" preplot="" helpbrowser="standard" displayprecision="-1" echo="1" unitattributes="&quot;fontweight&quot; = &quot;bold&quot;" imaginaryunit="I" longdelim="true" elisiontermsthreshold="10000" elisiondigitsafter="100" elisiondigitsbefore="100" plotdevice="inline" errorbreak="1" plotoptions="" plotdriver="opengl" quiet="false" elisiontermsbefore="100" elisiontermsafter="100" screenwidth="79" indentamount="4" plotoutput="terminal" screenpixelheight="1080" rtablesize="10" useclientjvm="true" labelwidth="20" postplot="" typesetting="extended" ansi="false" elisiondigitsthreshold="10000" showassumed="1" errorcursor="false" labelling="true" screenheight="25" prompt="&gt; " verboseproc="1" latexwidth="8.0" ShowLabels="true"/>
+<MapleNet-Properties prettyprint="3" warnlevel="3" preplot="" helpbrowser="standard" displayprecision="-1" echo="1" unitattributes="&quot;fontweight&quot; = &quot;bold&quot;" imaginaryunit="I" longdelim="true" elisiontermsthreshold="10000" elisiondigitsafter="100" elisiondigitsbefore="100" plotdevice="inline" errorbreak="1" plotoptions="" plotdriver="opengl" quiet="false" elisiontermsbefore="100" elisiontermsafter="100" screenwidth="79" indentamount="4" plotoutput="terminal" screenpixelheight="1200" rtablesize="10" useclientjvm="true" labelwidth="20" postplot="" typesetting="extended" ansi="false" elisiondigitsthreshold="10000" showassumed="1" errorcursor="false" labelling="true" screenheight="25" prompt="&gt; " verboseproc="1" latexwidth="8.0" ShowLabels="true"/>
 <Styles>
 <Font name="Heading 1" background="[255,255,255]" bold="true" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="18" subscript="false" superscript="false" underline="false" placeholder="false"/>
 <Font name="Warning" background="[255,255,255]" bold="false" executable="false" family="Courier New" foreground="[0,0,255]" italic="false" opaque="false" readonly="true" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
@@ -89,39 +89,39 @@
 </Task-table>
 <Task/><Presentation-Block>
 <Group view="code" labelreference="L7" drawlabel="true">
-<Input><Text-field style="Heading 1" layout="Heading 1"><Font encoding="UTF-8">Berechne kinematische Zwangsbedingungen f\303\274r Viergelenkkette</Font></Text-field>
+<Input><Text-field style="Heading 1" layout="Heading 1"><Font encoding="UTF-8">Berechne kinematische Zwangsbedingungen f\303\274r Viergelenkkette mit Parallelogram</Font></Text-field>
 </Input>
 </Group>
 <Group labelreference="L2266" drawlabel="true">
 <Input><Text-field style="Heading 2" layout="Heading 2">Einleitung
 </Text-field><Text-field style="Normal" layout="Normal"><Font encoding="UTF-8">Die kinematischen Zwangsbedingungen werden als Ersetzungsausdruck f\303\274r die abh\303\244ngigen Winkel aufgestellt.</Font>
 
-<Font encoding="UTF-8">fourbar1TE -&gt; Viergelenkkette, modellierung der Zwangsbedingungen mit Ausdr\303\274cken f\303\274r trigonometrische Elimination
+<Font encoding="UTF-8">fourbar2TE -&gt; Viergelenkkette, modellierung der Zwangsbedingungen mit Ausdr\303\274cken f\303\274r trigonometrische Elimination
 </Font>kinematic_constraint -&gt; Kinematische Zwangsbedingungen</Text-field>
 </Input>
 </Group>
 <Group labelreference="L2268" drawlabel="true">
-<Input><Text-field style="Heading 2" layout="Heading 2">Quelle</Text-field><Text-field style="Normal" layout="Normal"><Font encoding="UTF-8">SA Bejaoui: Bejaoui2018_S749; &quot;Modellierung kinematischer Zwangsbedingungen f\303\274r hybride serielle Roboter mit planaren Parallelmechanismen&quot;</Font></Text-field>
+<Input><Text-field style="Heading 2" layout="Heading 2">Quelle</Text-field><Text-field style="Normal" layout="Normal"><Font encoding="UTF-8">SA Bejaoui: Bejaoui2018_S749; &quot;Modellierung kinematischer Zwangsbedingungen f\303\274r hybride serielle Roboter mit planaren Parallelmechanismen&quot;</Font></Text-field><Text-field style="Normal" layout="Normal"><Font encoding="UTF-8">SA Shan: Shan2019_S828, &quot;Reduktion der Modellkomplexit\303\244t von seriell-hybriden Palettierrobotern&quot;</Font></Text-field>
 </Input>
 </Group>
 <Group labelreference="L2267" drawlabel="true">
-<Input><Text-field style="Heading 2" layout="Heading 2">Autor</Text-field><Text-field style="Normal" layout="Normal">Abderahman Bejaoui
+<Input><Text-field style="Heading 2" layout="Heading 2">Autor</Text-field><Text-field style="Heading 2" layout="Heading 2">todo</Text-field><Text-field style="Normal" layout="Normal">Abderahman Bejaoui</Text-field><Text-field style="Normal" layout="Normal">Weipu Shan
 Studienarbeit bei: Moritz Schappler, schappler@irt.uni-hannover.de, 2018-08</Text-field><Text-field style="Normal" layout="Normal">(C) Institut fuer Mechatronische Systeme, Leibniz Universitaet Hannover</Text-field><Text-field style="Text" layout="Normal"></Text-field>
 </Input>
 </Group></Presentation-Block>
 <Section collapsed="false" isCollapsible="true" drawButton="true" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60"><Title><Text-field style="Heading 1" layout="Heading 1">Initialisierung</Text-field></Title><Presentation-Block>
 <Group view="code" labelreference="L1770" drawlabel="true">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"><Font encoding="UTF-8">interface(warnlevel=0): # Unterdr\303\274cke die folgende Warnung.
-restart: # Gibt eine Warnung, wenn \303\274ber Terminal-Maple mit read gestartet wird.
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"><Font encoding="UTF-8">interface(warnlevel=0): 	# Unterdr\303\274cke die folgende Warnung.
+restart: 			# Gibt eine Warnung, wenn \303\274ber Terminal-Maple mit read gestartet wird.
 </Font>interface(warnlevel=3):</Text-field>
 </Input>
 </Group>
 <Group view="code" labelreference="L2108" drawlabel="true">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">kin_constraints_exist<Font encoding="UTF-8"> := true: # F\303\274r Speicherung</Font></Text-field>
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">kin_constraints_exist<Font encoding="UTF-8"> := true: 	# F\303\274r Speicherung</Font></Text-field>
 </Input>
 </Group>
 <Group view="code" labelreference="L2004" drawlabel="true">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"><Font encoding="UTF-8">with(StringTools): # F\303\274r Zeitausgabe</Font>
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"><Font encoding="UTF-8">with(StringTools): 		# F\303\274r Zeitausgabe</Font>
 with(LinearAlgebra):
 with(codegen):
 with(CodeGeneration):</Text-field>
@@ -133,8 +133,8 @@ with(CodeGeneration):</Text-field>
 </Group></Presentation-Block><Presentation-Block>
 <Group view="code" labelreference="L2105" drawlabel="true">
 <Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">codegen_act := true:
-codegen_opt := 1: # Geringerer Optimierungsgrad. Sonst zu lange.
-<Font encoding="UTF-8">codegen_debug := 0: # Zur Code-Generierung auch f\303\274r Nicht-Inert-Ausdr\303\274cke</Font></Text-field>
+codegen_opt := 1: 		# Geringerer Optimierungsgrad. Sonst zu lange.
+<Font encoding="UTF-8">codegen_debug := 0: 		  # Zur Code-Generierung auch f\303\274r Nicht-Inert-Ausdr\303\274cke</Font></Text-field>
 </Input>
 </Group></Presentation-Block><Presentation-Block>
 <Group labelreference="L2110" drawlabel="true">
@@ -155,7 +155,7 @@ read &quot;../helper/proc_intersect_circle&quot;:</Text-field>
 </Input>
 </Group></Presentation-Block><Presentation-Block>
 <Group view="code" labelreference="L2102" drawlabel="true">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"><Font encoding="UTF-8">with(RealDomain): # Schr\303\244nkt alle Funktionen auf den reellen Bereich ein. Muss nach Definition von MatlabExport kommen. Sonst geht dieses nicht.</Font></Text-field>
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"><Font encoding="UTF-8">with(RealDomain): 		# Schr\303\244nkt alle Funktionen auf den reellen Bereich ein. Muss nach Definition von MatlabExport kommen. Sonst geht dieses nicht.</Font></Text-field>
 </Input>
 </Group></Presentation-Block><Presentation-Block>
 <Group labelreference="L1573" drawlabel="true">
@@ -234,8 +234,6 @@ end do:</Text-field>
 <Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"><Font encoding="UTF-8">printf(&quot;Beginn der Berechnungen. %s\134n&quot;, FormatTime(&quot;%Y-%m-%d %H:%M:%S&quot;)):
 </Font>st := time():</Text-field>
 </Input>
-<Output><Text-field style="Line Printed Output" layout="Line Printed Output">Beginn der Berechnungen. 2018-11-27 14:44:32</Text-field>
-</Output>
 </Group>
 <Group view="code" labelreference="L2040" drawlabel="true">
 <Input><Text-field style="Text" layout="Normal">Reihenfolge, in der die Winkel der Parallelstruktur berechnet werden. Hilft beim exportieren von Code, wenn beim Debuggen in der gleichen Reihenfolge ausgegeben wird.</Text-field>
@@ -245,167 +243,14 @@ end do:</Text-field>
 <Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">Reihenfolge_kintmp := &lt;1;3;2&gt;:</Text-field>
 </Input>
 </Group></Presentation-Block>
-<Section collapsed="false" isCollapsible="true" drawButton="true" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60"><Title><Text-field style="Heading 1" layout="Heading 1">Zwangsbedingung mit Kreisschnittpunkt C zur Bestimmung von rho</Text-field></Title>
-<Group labelreference="L2143" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input>
-</Input>
-</Group>
-<Group hide-input="false" labelreference="L2129" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">r_p1:= &lt; l1 , 0 &gt;: # Punkt B</Text-field>
-</Input>
-</Group>
-<Group hide-input="false" labelreference="L2130" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">r_p2:= &lt; l2*cos(qJ1s) , l2*sin(qJ1s)&gt; : # Punkt D</Text-field>
-</Input>
-</Group>
-<Group labelreference="L2131" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">r1:=l4:</Text-field>
-</Input>
-</Group>
-<Group labelreference="L2132" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">r2:=l3:</Text-field>
-</Input>
-</Group>
-<Group hide-input="false" labelreference="L2133" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">A:=intersect_circle(r_p1, r_p2, r1, r2):</Text-field>
-</Input>
-</Group>
-<Group hide-input="false" labelreference="L2136" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">r_s1x:=simplify(A(1,1),trig):</Text-field>
-</Input>
-</Group>
-<Group hide-input="false" labelreference="L2135" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">r_s1y:=simplify(A(2,1),trig):</Text-field>
-</Input>
-</Group>
-<Group hide-input="false" labelreference="L2139" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">r_acx:=l2*cos(qJ1s) + l3*(-cos(rho_s)*cos(qJ1s)+sin(rho_s)*sin(qJ1s)): # aus Homogener Trafo</Text-field>
-</Input>
-</Group>
-<Group hide-input="false" labelreference="L2138" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">r_acy:=l2*sin(qJ1s)- l3*(cos(rho_s)*sin(qJ1s)+sin(rho_s)*cos(qJ1s)):  # aus Homogener Trafo</Text-field>
-</Input>
-</Group>
-<Group hide-input="false" labelreference="L2141" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">f1:=r_s1x-r_acx=0: # GL1</Text-field>
-</Input>
-</Group>
-<Group hide-input="false" labelreference="L2140" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">f2:=r_s1y-r_acy=0: # GL2</Text-field>
-</Input>
-</Group>
-</Section>
-<Section collapsed="false" isCollapsible="true" drawButton="true" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60"><Title><Text-field style="Heading 1" layout="Heading 1"><Font encoding="UTF-8">Zwangsbedingungen f\303\274r eta , zweiter Weg zum Kreisschnittpunkt C</Font></Text-field></Title>
-<Group hide-input="false" labelreference="L2148" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">r_acx2:=l1-l4*cos(eta_s):</Text-field>
-</Input>
-</Group>
-<Group hide-input="false" labelreference="L2150" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">r_acy2:=l4*sin(eta_s):</Text-field>
-</Input>
-</Group>
-<Group hide-input="false" labelreference="L2147" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">f11:=r_s1x-r_acx2=0: # GL3</Text-field>
-</Input>
-</Group>
-<Group hide-input="false" labelreference="L2149" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">f12:=r_s1y-r_acy2=0: # GL4</Text-field>
-</Input>
-</Group>
-</Section>
-<Section collapsed="false" isCollapsible="true" drawButton="true" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60"><Title><Text-field style="Heading 1" layout="Heading 1"><Font encoding="UTF-8">Zwangsbedingungen f\303\274r xi , zwei Wege zum Punkt D</Font></Text-field></Title>
-<Group labelreference="L2158" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">r_adx1:=l2*cos(qJ1s):</Text-field>
-</Input>
-</Group>
-<Group labelreference="L2153" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">r_ady1:=l2*sin(qJ1s):</Text-field>
-</Input>
-</Group>
-<Group hide-input="false" labelreference="L2157" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">r_adx2:=l1-l4*cos(eta_s)+l3*(cos(eta_s)*cos(xi_s)-sin(eta_s)*sin(xi_s)):</Text-field>
-</Input>
-</Group>
-<Group hide-input="false" labelreference="L2154" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">r_ady2:=l4*sin(eta_s)-l3*(cos(eta_s)*sin(xi_s)+sin(eta_s)*cos(xi_s)): # hier schon einen Fehler erkannt</Text-field>
-</Input>
-</Group>
-<Group hide-input="false" labelreference="L2155" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">f21:=r_adx1-r_adx2=0: # GL5</Text-field>
-</Input>
-</Group>
-<Group hide-input="false" labelreference="L2156" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">f22:=r_ady1-r_ady2=0: # GL6</Text-field>
-</Input>
-</Group>
-</Section>
 <Section collapsed="false" isCollapsible="true" drawButton="true" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60"><Title><Text-field style="Heading 1" layout="Heading 1">Bestimme Winkel</Text-field></Title>
-<Group hide-input="false" labelreference="L2185" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">sol:=simplify(solve({f1,f2},[cos(rho_s),sin(rho_s)]),trig):</Text-field>
-</Input>
-</Group>
-<Group labelreference="L2187" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">sol:=op(sol):</Text-field>
-</Input>
-</Group>
-<Group hide-input="false" labelreference="L2191" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">cos(rho_s):=simplify(rhs(sol[1]),trig):</Text-field>
-</Input>
-</Group>
-<Group hide-input="false" labelreference="L2188" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">sin(rho_s):=simplify(rhs(sol[2]),trig):</Text-field>
-</Input>
-</Group>
-<Group labelreference="L2206" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"># eta bestimmen</Text-field>
-</Input>
-</Group>
-<Group hide-input="false" labelreference="L2198" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">sol1:=solve({f11,f12},{cos(eta_s),sin(eta_s)}): </Text-field>
-</Input>
-</Group>
-<Group labelreference="L2229" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">assign(sol1):</Text-field>
-</Input>
-</Group>
-<Group hide-input="false" labelreference="L2200" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">cos(eta1_s):=simplify(rhs(sol1[1]),trig): </Text-field>
-</Input>
-</Group>
-<Group hide-input="false" labelreference="L2199" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">sin(eta1_s):=simplify(rhs(sol1[2]),trig):</Text-field>
-</Input>
-</Group>
-<Group labelreference="L2207" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"># xi bestimmen</Text-field>
-</Input>
-</Group>
-<Group hide-input="false" labelreference="L2205" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">sol2:=solve({f21,f22},{cos(xi_s),sin(xi_s)}):</Text-field>
-</Input>
-</Group>
-<Group labelreference="L2202" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">sol2:=op(sol2):</Text-field>
-</Input>
-</Group>
-<Group hide-input="false" labelreference="L2204" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">cos(xi_s):=simplify(rhs(sol2[1]),trig):</Text-field>
-</Input>
-</Group>
-<Group hide-input="false" labelreference="L2246" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">convert_s_t(cos(xi_s)):</Text-field>
-</Input>
-</Group>
-<Group hide-input="false" labelreference="L2203" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">sin(xi_s):=simplify(rhs(sol2[2]),trig):</Text-field>
-</Input>
-</Group>
-<Group labelreference="L2264" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">cos(eta_s):=-cos(eta1_s):</Text-field>
-</Input>
-</Group>
-<Group labelreference="L2265" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">sin(eta_s):=sin(eta1_s):</Text-field>
+<Group hide-input="false" labelreference="L2304" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">sin(rho_s) := sin(Pi-qJ1s):
+cos(rho_s) := cos(Pi-qJ1s):
+sin(eta_s) := sin(qJ1s):
+cos(eta_s) := cos(qJ1s):
+sin(xi_s) := sin(qJ1s):
+cos(xi_s) := cos(qJ1s):</Text-field>
 </Input>
 </Group>
 </Section>
@@ -438,8 +283,6 @@ end do:</Text-field>
 <Group view="code" hide-input="false" labelreference="L2215" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
 <Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">kintmp_subsexp(6,2):=cos(xi_s):</Text-field>
 </Input>
-<Output><Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUkqbWNvbXBsZXRlRzYjL0krbW9kdWxlbmFtZUc2IkksVHlwZXNldHRpbmdHSShfc3lzbGliR0YnNiQtSShtZmVuY2VkR0YkNigtSSVtcm93R0YkNiYtSSdtdGFibGVHRiQ2Ny1JJG10ckdGJDYmLUkkbXRkR0YkNigtRi82Ji1JI21pR0YkNiVRJ2FyY3RhbkYnLyUnaXRhbGljR1EmZmFsc2VGJy8lLG1hdGh2YXJpYW50R1Enbm9ybWFsRictSSNtb0dGJDYtUTAmQXBwbHlGdW5jdGlvbjtGJ0ZDLyUmZmVuY2VHRkIvJSpzZXBhcmF0b3JHRkIvJSlzdHJldGNoeUdGQi8lKnN5bW1ldHJpY0dGQi8lKGxhcmdlb3BHRkIvJS5tb3ZhYmxlbGltaXRzR0ZCLyUnYWNjZW50R0ZCLyUnbHNwYWNlR1EmMC4wZW1GJy8lJ3JzcGFjZUdGWi1GLDYkLUYvNigtSSZtZnJhY0dGJDYoLUYvNiYtRi82Ji1GLDYkLUYvNictRkc2LVEqJnVtaW51czA7RidGQ0ZKRkxGTkZQRlJGVEZWL0ZZUSwwLjIyMjIyMjJlbUYnL0ZmbkZqby1GLzYmLUY9NiVRI2wxRicvRkFRJXRydWVGJy9GRFEnaXRhbGljRictRkc2LVExJkludmlzaWJsZVRpbWVzO0YnRkNGSkZMRk5GUEZSRlRGVkZYRmVuLUYvNiYtRj02JVEkY29zRidGQEZDRkYtRiw2JC1GLzYmLUY9NiVRJXFKMXNGJ0ZhcEZjcC8lK2ZvcmVncm91bmRHUShbMCwwLDBdRicvJSlyZWFkb25seUdGQkZDRkNGQ0ZDLUZHNi1RJyZwbHVzO0YnRkNGSkZMRk5GUEZSRlRGVkZpb0ZbcC1GPTYlUSNsMkYnRmFwRmNwRkNGQ0ZlcC1JJm1zcXJ0R0YkNiMtRi82JUZmby1GLzYmLUYsNiQtRi82KUZmby1GLzYqLUkjbW5HRiQ2JFEiMkYnRkNGZXBGaHBGZXBGXnBGZXBGXHJGQ0ZpcS1JJW1zdXBHRiQ2JUZecEZccy8lMXN1cGVyc2NyaXB0c2hpZnRHUSIwRidGaXEtRi82Ji1GLDYkLUYvNihGXHJGaXEtRj02JVEjbDNGJ0ZhcEZjcC1GRzYtUSgmbWludXM7RidGQ0ZKRkxGTkZQRlJGVEZWRmlvRltwLUY9NiVRI2w0RidGYXBGY3BGQ0ZDRmVwLUYsNiQtRi82KEZcckZfdEZcdEZpcUZidEZDRkNGQ0ZDRkNGZXAtRiw2JC1GLzYpRmZvRmpyRmlxRmBzRmlxLUYvNiYtRiw2JC1GLzYoRlxyRmlxRlx0RmlxRmJ0RkNGQ0ZlcC1GLDYkLUYvNihGXHJGX3RGXHRGX3RGYnRGQ0ZDRkNGQ0ZDRkNGQ0ZDRmlxLUYvNihGXnBGZXAtRi82Ji1GPTYlUSRzaW5GJ0ZARkNGRkZdcUZDRmVwLUYsNiQtRi82LUZmb0ZqckZpcUZgc0ZpcS1GYXM2JUZcckZcc0Zjc0ZpcS1GYXM2JUZcdEZcc0Zjc0ZfdC1GYXM2JUZidEZcc0Zjc0ZDRkNGQ0ZDLUYvNiZGXHRGZXAtRiw2JC1GLzYpRmZvRmpyRmlxRmBzRmlxRmJ2RkNGQ0ZDLyUubGluZXRoaWNrbmVzc0dRIjFGJy8lK2Rlbm9tYWxpZ25HUSdjZW50ZXJGJy8lKW51bWFsaWduR0Zjdy8lKWJldmVsbGVkR0ZCLUZHNi1RIixGJ0ZDRkovRk1GYnBGTkZQRlJGVEZWRlgvRmZuUSwwLjMzMzMzMzNlbUYnLUZcbzYoLUYvNidGZm8tRi82KEZfckZlcEZpdUZlcEZecEZDRl90LUYvNiYtRiw2JC1GLzYmRlxwRl90RlxyRkNGQ0ZlcEZedkZDRkNGaHZGXndGYXdGZHdGZndGZHFGZ3FGQ0ZDRkMvJSlyb3dhbGlnbkdRIUYnLyUsY29sdW1uYWxpZ25HRlx5LyUrZ3JvdXBhbGlnbkdGXHkvJShyb3dzcGFuR0Zgdy8lK2NvbHVtbnNwYW5HRmB3Rmp4Rl15Rl95LUY1NiYtRjg2KC1GLzYmRjxGRi1GLDYkLUYvNigtRlxvNihGX3ItRi82JkZcdEZlcEZidEZDRl53RmF3RmR3RmZ3Rmh3LUZcbzYoLUYvNixGanJGX3RGYHNGX3RGYnZGaXFGZHZGaXFGZnZGQ0ZhekZed0Zhd0Zkd0Zmd0ZkcUZncUZDRkNGQ0ZqeEZdeUZfeUZheUZjeUZqeEZdeUZfeS1GNTYmLUY4NigtRi82JkY8RkYtRiw2JC1GLzYoLUZcbzYoLUYvNiYtRi82Ji1GLDYkLUYvNidGZm8tRi82JkZcckZlcEZocEZDRmlxRl5wRkNGQ0ZlcEZfckZDRmlxLUYvNihGXHJGZXBGaXVGZXAtRiw2JC1GLzYtRmZvRmpyRmlxRmBzRmlxRmJ2Rl90RmR2RmlxRmZ2RkNGQ0ZDRkMtRi82KEZcc0ZlcEZidEZlcEZqdkZDRl53RmF3RmR3RmZ3Rmh3LUYvNiVGZm8tRlxvNigtRi82J0Zmby1GLzYoRlxyRmVwRml1RmVwRl9yRkNGaXEtRi82JkZnW2xGZXBGX1xsRkNGQ0ZjXGxGXndGYXdGZHdGZndGQ0ZkcUZncUZDRkNGQ0ZqeEZdeUZfeUZheUZjeUZqeEZdeUZfeS8lJmFsaWduR1ElYXhpc0YnL0ZbeVEpYmFzZWxpbmVGJy9GXnlGY3cvRmB5USd8ZnJsZWZ0fGhyRicvJS9hbGlnbm1lbnRzY29wZUdGYnAvJSxjb2x1bW53aWR0aEdRJWF1dG9GJy8lJndpZHRoR0ZbXmwvJStyb3dzcGFjaW5nR1EmMS4wZXhGJy8lLmNvbHVtbnNwYWNpbmdHUSYwLjhlbUYnLyUpcm93bGluZXNHUSVub25lRicvJSxjb2x1bW5saW5lc0dGZl5sLyUmZnJhbWVHRmZebC8lLWZyYW1lc3BhY2luZ0dRLDAuNGVtfjAuNWV4RicvJSplcXVhbHJvd3NHRkIvJS1lcXVhbGNvbHVtbnNHRkIvJS1kaXNwbGF5c3R5bGVHRkIvJSVzaWRlR1EmcmlnaHRGJy8lMG1pbmxhYmVsc3BhY2luZ0dGY15sRmRxRmdxRkNGQy9JK21zZW1hbnRpY3NHRiRRKkNvbFZlY3RvckYnLyUlb3BlbkdRJyZsc3FiO0YnLyUmY2xvc2VHUScmcnNxYjtGJ0ZpX2wtRiw2KC1GLzYmLUYyNjctRjU2Ji1GODYoLUYvNigtRj02J0Y/RkBGZHFGZ3FGQ0ZGLUYsNiYtRi82KC1GXG82KS1GLzYmLUYvNigtRi82KC1GLDYmLUYvNiktRkc2L0Zob0ZkcUZncUZDRkpGTEZORlBGUkZURlZGaW9GW3AtRi82KC1GPTYnRmBwRmFwRmRxRmdxRmNwRmVwLUYvNigtRj02J0ZccUZARmRxRmdxRkNGRi1GLDYmLUYvNiYtRj02J0ZjcUZhcEZkcUZncUZjcEZkcUZncUZDRmRxRmdxRkNGZHFGZ3FGQ0ZkcUZncUZDLUZHNi9RIitGJ0ZkcUZncUZDRkpGTEZORlBGUkZURlZGaW9GW3AtRj02J0ZeckZhcEZkcUZncUZjcEZkcUZncUZDRmRxRmdxRkNGZXAtRmByNiQtRi82J0ZgYmwtRi82KC1GLDYmLUYvNitGYGJsLUYvNiwtRl1zNiZGX3NGZHFGZ3FGQ0ZlcEZmYmxGZXBGZGJsRmVwRmNjbEZkcUZncUZDRmBjbC1GLzYmLUZhczYlRmRibEZhZGxGY3NGZHFGZ3FGQ0ZgY2wtRi82KC1GLDYmLUYvNipGY2NsRmBjbC1GPTYnRl50RmFwRmRxRmdxRmNwLUZHNi9GYXRGZHFGZ3FGQ0ZKRkxGTkZQRlJGVEZWRmlvRltwLUY9NidGZHRGYXBGZHFGZ3FGY3BGZHFGZ3FGQ0ZkcUZncUZDRmVwLUYsNiYtRi82KkZjY2xGX2VsRl1lbEZgY2xGYWVsRmRxRmdxRkNGZHFGZ3FGQ0ZkcUZncUZDRmRxRmdxRkNGZHFGZ3FGQ0ZlcC1GLDYmLUYvNitGYGJsRl9kbEZgY2xGY2RsRmBjbC1GLzYoLUYsNiYtRi82KkZjY2xGYGNsRl1lbEZgY2xGYWVsRmRxRmdxRkNGZHFGZ3FGQ0ZlcC1GLDYmLUYvNipGY2NsRl9lbEZdZWxGX2VsRmFlbEZkcUZncUZDRmRxRmdxRkNGZHFGZ3FGQ0ZkcUZncUZDRmRxRmdxRkNGZHFGZ3FGQ0ZkcUZncUZDRmRxRmRxRmdxRkNGYGNsLUYvNipGZGJsRmVwLUYvNigtRj02J0ZddkZARmRxRmdxRkNGRkZqYmxGZHFGZ3FGQ0ZlcC1GLDYmLUYvNi9GYGJsRl9kbEZgY2xGY2RsRmBjbC1GLzYmLUZhczYlRmNjbEZhZGxGY3NGZHFGZ3FGQ0ZgY2wtRi82Ji1GYXM2JUZdZWxGYWRsRmNzRmRxRmdxRkNGX2VsLUYvNiYtRmFzNiVGYWVsRmFkbEZjc0ZkcUZncUZDRmRxRmdxRkNGZHFGZ3FGQ0ZkcUZncUZDRmRxRmdxRkNGZHFGZ3FGQy1GLzYoRl1lbEZlcC1GLDYmLUYvNitGYGJsRl9kbEZgY2xGY2RsRmBjbEZfZ2xGZHFGZ3FGQ0ZkcUZncUZDRmRxRmdxRkNGXndGYXdGZHdGZndGZHEtRkc2L0Zqd0ZkcUZncUZDRkpGW3hGTkZQRlJGVEZWRlhGXHgtRlxvNiktRi82Ji1GLzYpRmBibC1GLzYqRmVjbEZlcEZnZmxGZXBGZGJsRmRxRmdxRkNGX2VsLUYvNigtRiw2Ji1GLzYoRmJibEZfZWxGY2NsRmRxRmdxRkNGZHFGZ3FGQ0ZlcEZbZ2xGZHFGZ3FGQ0ZkcUZncUZDRmRxRmdxRkNGW2hsRl53RmF3RmR3RmZ3RmRxRmRxRmdxRkNGZHFGZ3FGQ0ZkcUZncUZDRmp4Rl15Rl95RmF5RmN5Rmp4Rl15Rl95LUY1NiYtRjg2KC1GLzYoRl5hbEZGLUYsNiYtRi82KC1GXG82KS1GLzYmRmVjbEZkcUZncUZDLUYvNihGXWVsRmVwRmFlbEZkcUZncUZDRl53RmF3RmR3RmZ3RmRxRmFobC1GXG82KS1GLzYmLUYvNi5GX2RsRl9lbEZjZGxGX2VsRl9nbEZgY2xGY2dsRmBjbEZnZ2xGZHFGZ3FGQ0ZkcUZncUZDRl9qbEZed0Zhd0Zkd0Zmd0ZkcUZkcUZncUZDRmRxRmdxRkNGZHFGZ3FGQ0ZqeEZdeUZfeUZheUZjeUZqeEZdeUZfeS1GNTYmLUY4NigtRi82KEZeYWxGRi1GLDYmLUYvNigtRi82KC1GXG82KS1GXXM2JkZgd0ZkcUZncUZDRmFkbEZed0Zhd0Zkd0Zmd0ZkcUZlcC1GXG82KS1GLzYmLUYvNigtRi82KC1GLDYmLUYvNilGYGJsLUYvNihGY2NsRmVwRmZibEZkcUZncUZDRmBjbEZkYmxGZHFGZ3FGQ0ZkcUZncUZDRmVwRmVjbEZkcUZncUZDRmBjbC1GLzYqRmNjbEZlcEZnZmxGZXAtRiw2Ji1GLzYvRmBibEZfZGxGYGNsRmNkbEZgY2xGX2dsRl9lbEZjZ2xGYGNsRmdnbEZkcUZncUZDRmRxRmdxRkNGZHFGZ3FGQ0ZkcUZncUZDRmRxRmdxRkMtRi82KEZhZWxGZXBGXWhsRmRxRmdxRkNGXndGYXdGZHdGZndGZHFGZHFGZ3FGQ0ZhaGwtRi82J0ZgYmwtRi82KEZjW21GZXAtRlxvNiktRi82Ji1GLzYpRmBibC1GLzYqRmNjbEZlcEZnZmxGZXBGZWNsRmRxRmdxRkNGYGNsLUYvNihGX1xtRmVwRmdcbUZkcUZncUZDRmRxRmdxRkNGZHFGZ3FGQ0ZbXW1GXndGYXdGZHdGZndGZHFGZHFGZ3FGQ0ZkcUZncUZDRmRxRmdxRkNGZHFGZ3FGQ0ZkcUZncUZDRmp4Rl15Rl95RmF5RmN5Rmp4Rl15Rl95Rl9dbEZiXWxGZF1sRmVdbEZnXWxGaV1sRlxebEZeXmxGYV5sRmRebEZnXmxGaV5sRltfbEZeX2xGYF9sRmJfbEZkX2xGZ19sRmRxRmdxRkNGZHFGZ3FGQy9GXWBsUSJbRicvRmBgbFEiXUYn">LUkobWZlbmNlZEc2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYoLUklbXJvd0dGJDYjLUknbXRhYmxlR0YkNjctSSRtdHJHRiQ2Ji1JJG10ZEdGJDYoLUYsNiUtSSNtaUdGJDYnUSdhcmN0YW5GJy8lJ2l0YWxpY0dRJmZhbHNlRicvJStmb3JlZ3JvdW5kR1EoWzAsMCwwXUYnLyUpcmVhZG9ubHlHRj8vJSxtYXRodmFyaWFudEdRJ25vcm1hbEYnLUkjbW9HRiQ2LVEwJkFwcGx5RnVuY3Rpb247RidGRS8lJmZlbmNlR0Y/LyUqc2VwYXJhdG9yR0Y/LyUpc3RyZXRjaHlHRj8vJSpzeW1tZXRyaWNHRj8vJShsYXJnZW9wR0Y/LyUubW92YWJsZWxpbWl0c0dGPy8lJ2FjY2VudEdGPy8lJ2xzcGFjZUdRJjAuMGVtRicvJSdyc3BhY2VHRmZuLUYjNiYtRiw2JS1JJm1mcmFjR0YkNiktRiw2Iy1GLDYlLUYsNiUtRiM2Ji1GLDYmLUZJNi9RKiZ1bWludXMwO0YnRkBGQ0ZFRkxGTkZQRlJGVEZWRlgvRmVuUSwwLjIyMjIyMjJlbUYnL0ZobkZecC1GLDYlLUY6NidRI2wxRicvRj5RJXRydWVGJ0ZARkMvRkZRJ2l0YWxpY0YnLUZJNi1RMSZJbnZpc2libGVUaW1lcztGJ0ZFRkxGTkZQRlJGVEZWRlhGWkZnbi1GLDYlLUY6NidRJGNvc0YnRj1GQEZDRkVGSC1GIzYmLUYsNiMtRjo2J1ElcUoxc0YnRmVwRkBGQ0ZncEZARkNGRS1GSTYvUSIrRidGQEZDRkVGTEZORlBGUkZURlZGWEZdcEZfcC1GOjYnUSNsMkYnRmVwRkBGQ0ZncEZARkNGRUZpcC1JJm1zcXJ0R0YkNiQtRiw2JEZqby1GLDYlLUYjNiYtRiw2KEZqby1GLDYpLUkjbW5HRiQ2JlEiMkYnRkBGQ0ZFRmlwRlxxRmlwRmJwRmlwRltyRmhxLUYsNiMtSSVtc3VwR0YkNiVGYnBGW3MvJTFzdXBlcnNjcmlwdHNoaWZ0R1EiMEYnRmhxLUYsNiUtRiM2Ji1GLDYnRltyRmhxLUY6NidRI2wzRidGZXBGQEZDRmdwLUZJNi9RKCZtaW51cztGJ0ZARkNGRUZMRk5GUEZSRlRGVkZYRl1wRl9wLUY6NidRI2w0RidGZXBGQEZDRmdwRkBGQ0ZFRmlwLUYjNiYtRiw2J0ZbckZgdEZddEZocUZjdEZARkNGRUZARkNGRUZpcC1GIzYmLUYsNihGam9GaXJGaHFGX3NGaHEtRiw2JS1GIzYmLUYsNidGW3JGaHFGXXRGaHFGY3RGQEZDRkVGaXAtRiM2Ji1GLDYnRltyRmB0Rl10RmB0RmN0RkBGQ0ZFRkBGQ0ZFRkBGaHEtRiw2J0ZicEZpcC1GLDYlLUY6NidRJHNpbkYnRj1GQEZDRkVGSEZhcUZpcC1GIzYmLUYsNixGam9GaXJGaHFGX3NGaHEtRiw2Iy1GYnM2JUZbckZbc0Zkc0ZocS1GLDYjLUZiczYlRl10RltzRmRzRmB0LUYsNiMtRmJzNiVGY3RGW3NGZHNGQEZDRkUtRiw2JUZddEZpcC1GIzYmLUYsNihGam9GaXJGaHFGX3NGaHFGY3ZGQEZDRkUvJS5saW5ldGhpY2tuZXNzR1EiMUYnLyUrZGVub21hbGlnbkdRJ2NlbnRlckYnLyUpbnVtYWxpZ25HRmp3LyUpYmV2ZWxsZWRHRj9GQC1GSTYvUSIsRidGQEZDRkVGTC9GT0ZmcEZQRlJGVEZWRlhGWi9GaG5RLDAuMzMzMzMzM2VtRictRl5vNiktRiw2Iy1GLDYmRmpvLUYsNidGXnJGaXBGanVGaXBGYnBGYHQtRiw2JS1GIzYmLUYsNiVGYHBGYHRGW3JGQEZDRkVGaXBGX3ZGX3dGZXdGaHdGW3hGXXhGQEZARkNGRS8lKXJvd2FsaWduR1EhRicvJSxjb2x1bW5hbGlnbkdGZXkvJStncm91cGFsaWduR0ZleS8lKHJvd3NwYW5HRmd3LyUrY29sdW1uc3BhbkdGZ3dGY3lGZnlGaHktRjI2Ji1GNTYoLUYsNiVGOUZILUYjNiYtRiw2JS1GXm82KS1GLDYjRl5yLUYsNiVGXXRGaXBGY3RGZXdGaHdGW3hGXXhGQEZfeC1GXm82KS1GLDYjLUYsNitGaXJGYHRGX3NGYHRGY3ZGaHFGZ3ZGaHFGW3dGXFtsRmV3Rmh3Rlt4Rl14RkBGQEZDRkVGY3lGZnlGaHlGanlGXHpGY3lGZnlGaHktRjI2Ji1GNTYoLUYsNiVGOUZILUYjNiYtRiw2JS1GLDYlLUZebzYpLUZcczYmRmd3RkBGQ0ZFRltzRmV3Rmh3Rlt4Rl14RkBGaXAtRl5vNiktRiw2Iy1GLDYlLUYsNiUtRiM2Ji1GLDYmRmpvLUYsNiVGW3JGaXBGXHFGaHFGYnBGQEZDRkVGaXBGXnJGaHEtRiw2J0ZbckZpcEZqdUZpcC1GIzYmLUYsNixGam9GaXJGaHFGX3NGaHFGY3ZGYHRGZ3ZGaHFGW3dGQEZDRkUtRiw2JUZjdEZpcEZhd0Zld0Zod0ZbeEZdeEZARl94LUYsNiRGam8tRiw2JUZgXGxGaXAtRl5vNiktRiw2Iy1GLDYmRmpvLUYsNidGW3JGaXBGanVGaXBGXnJGaHEtRiw2JUZcXWxGaXBGZF1sRmhdbEZld0Zod0ZbeEZdeEZARkBGQ0ZFRmN5RmZ5Rmh5Rmp5Rlx6RmN5RmZ5Rmh5LyUmYWxpZ25HUSVheGlzRicvRmR5USliYXNlbGluZUYnL0ZneUZqdy9GaXlRJ3xmcmxlZnR8aHJGJy8lL2FsaWdubWVudHNjb3BlR0ZmcC8lLGNvbHVtbndpZHRoR1ElYXV0b0YnLyUmd2lkdGhHRmRfbC8lK3Jvd3NwYWNpbmdHUSYxLjBleEYnLyUuY29sdW1uc3BhY2luZ0dRJjAuOGVtRicvJSlyb3dsaW5lc0dRJW5vbmVGJy8lLGNvbHVtbmxpbmVzR0ZfYGwvJSZmcmFtZUdGX2BsLyUtZnJhbWVzcGFjaW5nR1EsMC40ZW1+MC41ZXhGJy8lKmVxdWFscm93c0dGPy8lLWVxdWFsY29sdW1uc0dGPy8lLWRpc3BsYXlzdHlsZUdGPy8lJXNpZGVHUSZyaWdodEYnLyUwbWlubGFiZWxzcGFjaW5nR0ZcYGxGQEZDRkUvJSVvcGVuR1EiW0YnLyUmY2xvc2VHUSJdRic=</Equation></Text-field>
-</Output>
 </Group></Presentation-Block>
 <Section collapsed="false" isCollapsible="true" drawButton="true" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60"><Title><Text-field style="Heading 1" layout="Heading 1">Kintmp_qs</Text-field></Title>
 <Group labelreference="L2261" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
@@ -466,11 +309,11 @@ Quelle: http://www.mapleprimes.com/questions/207601-Remove-Assumptions</Text-fie
 </Input>
 </Group>
 <Group labelreference="L2301" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">mkdir(sprintf(&quot;../codeexport/fourbar1TE/&quot;));</Text-field>
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">mkdir(sprintf(&quot;../codeexport/foubar1TE/&quot;));</Text-field>
 </Input>
 </Group>
 <Group labelreference="L2302" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">mkdir(sprintf(&quot;../codeexport/fourbar1TE/tmp/&quot;));</Text-field>
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">mkdir(sprintf(&quot;../codeexport/foubar1TE/tmp/&quot;));</Text-field>
 </Input>
 </Group>
 <Group labelreference="L2303" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
@@ -496,8 +339,6 @@ Quelle: http://www.mapleprimes.com/questions/207601-Remove-Assumptions</Text-fie
 <Group view="code" labelreference="L2021" drawlabel="true">
 <Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"><Font encoding="UTF-8">printf(&quot;Ausdr\303\274cke f\303\274r kintmp_subsexp gespeichert (Maple). %s. CPU-Zeit bis hier: %1.2fs.\134n&quot;, FormatTime(&quot;%Y-%m-%d %H:%M:%S&quot;), time()-st):</Font></Text-field>
 </Input>
-<Output><Text-field style="Line Printed Output" layout="Line Printed Output"><Font encoding="UTF-8">Ausdr\303\274cke f\303\274r kintmp_subsexp gespeichert (Maple). 2018-11-27 14:44:41. CPU-Zeit bis hier: 4.77s.</Font></Text-field>
-</Output>
 </Group>
 <Group view="code" labelreference="L1735" drawlabel="true">
 <Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">for i from 1 to RowDimension(kintmp_s) do
@@ -522,8 +363,6 @@ end do:</Text-field>
 <Group view="code" labelreference="L2125" drawlabel="true">
 <Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"><Font encoding="UTF-8">printf(&quot;Ausdr\303\274cke mit Inert-Arctan exportiert (Matlab). %s. CPU-Zeit bis hier: %1.2fs.\134n&quot;, FormatTime(&quot;%Y-%m-%d %H:%M:%S&quot;), time()-st):</Font></Text-field>
 </Input>
-<Output><Text-field style="Line Printed Output" layout="Line Printed Output"><Font encoding="UTF-8">Ausdr\303\274cke mit Inert-Arctan exportiert (Matlab). 2018-11-27 14:44:41. CPU-Zeit bis hier: 4.77s.</Font></Text-field>
-</Output>
 </Group>
 <Group view="code" labelreference="L2124" drawlabel="true">
 <Input><Text-field style="Text" layout="Normal"><Font encoding="UTF-8">Liste mit abh\303\244ngigen konstanten Kinematikparametern erstellen (wichtig f\303\274r Matlab-Funktionsgenerierung)</Font></Text-field>
@@ -536,8 +375,6 @@ end do:</Text-field>
 <Group view="code" hide-input="false" labelreference="L2122" drawlabel="true">
 <Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">kc_symbols := Matrix(list_constant_expressions( kintmp_subsexp ));</Text-field>
 </Input>
-<Output><Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUkqbWNvbXBsZXRlRzYjL0krbW9kdWxlbmFtZUc2IkksVHlwZXNldHRpbmdHSShfc3lzbGliR0YnNiQtSSVtcm93R0YkNiYtSSNtaUdGJDYlUStrY19zeW1ib2xzRicvJSdpdGFsaWNHUSV0cnVlRicvJSxtYXRodmFyaWFudEdRJ2l0YWxpY0YnLUkjbW9HRiQ2LVEpJkFzc2lnbjtGJy9GNlEnbm9ybWFsRicvJSZmZW5jZUdRJmZhbHNlRicvJSpzZXBhcmF0b3JHRkAvJSlzdHJldGNoeUdGQC8lKnN5bW1ldHJpY0dGQC8lKGxhcmdlb3BHRkAvJS5tb3ZhYmxlbGltaXRzR0ZALyUnYWNjZW50R0ZALyUnbHNwYWNlR1EsMC4yNzc3Nzc4ZW1GJy8lJ3JzcGFjZUdGTy1JKG1mZW5jZWRHRiQ2KC1GLDYmLUknbXRhYmxlR0YkNjUtSSRtdHJHRiQ2KS1JJG10ZEdGJDYoLUYvNiVRI2wxRidGMkY1LyUpcm93YWxpZ25HUSFGJy8lLGNvbHVtbmFsaWduR0Zfby8lK2dyb3VwYWxpZ25HRl9vLyUocm93c3BhbkdRIjFGJy8lK2NvbHVtbnNwYW5HRmZvLUZobjYoLUYvNiVRI2wyRidGMkY1Rl1vRmBvRmJvRmRvRmdvLUZobjYoLUYvNiVRI2wzRidGMkY1Rl1vRmBvRmJvRmRvRmdvLUZobjYoLUYvNiVRI2w0RidGMkY1Rl1vRmBvRmJvRmRvRmdvRl1vRmBvRmJvLyUmYWxpZ25HUSVheGlzRicvRl5vUSliYXNlbGluZUYnL0Zhb1EnY2VudGVyRicvRmNvUSd8ZnJsZWZ0fGhyRicvJS9hbGlnbm1lbnRzY29wZUdGNC8lLGNvbHVtbndpZHRoR1ElYXV0b0YnLyUmd2lkdGhHRmVxLyUrcm93c3BhY2luZ0dRJjEuMGV4RicvJS5jb2x1bW5zcGFjaW5nR1EmMC44ZW1GJy8lKXJvd2xpbmVzR1Elbm9uZUYnLyUsY29sdW1ubGluZXNHRmByLyUmZnJhbWVHRmByLyUtZnJhbWVzcGFjaW5nR1EsMC40ZW1+MC41ZXhGJy8lKmVxdWFscm93c0dGQC8lLWVxdWFsY29sdW1uc0dGQC8lLWRpc3BsYXlzdHlsZUdGQC8lJXNpZGVHUSZyaWdodEYnLyUwbWlubGFiZWxzcGFjaW5nR0Zdci8lK2ZvcmVncm91bmRHUShbMCwwLDBdRicvJSlyZWFkb25seUdGQEY8RjwvSSttc2VtYW50aWNzR0YkUSdNYXRyaXhGJy8lJW9wZW5HUScmbHNxYjtGJy8lJmNsb3NlR1EnJnJzcWI7RidGaHNGPC1GUzYoLUYsNiYtRlg2NS1GZW42KS1GaG42KC1GLzYnRlxvRjJGY3NGZnNGNUZdb0Zgb0Zib0Zkb0Znby1GaG42KC1GLzYnRl1wRjJGY3NGZnNGNUZdb0Zgb0Zib0Zkb0Znby1GaG42KC1GLzYnRmJwRjJGY3NGZnNGNUZdb0Zgb0Zib0Zkb0Znby1GaG42KC1GLzYnRmdwRjJGY3NGZnNGNUZdb0Zgb0Zib0Zkb0Znb0Zdb0Zgb0Zib0ZocEZbcUZdcUZfcUZhcUZjcUZmcUZocUZbckZeckZhckZjckZlckZockZqckZcc0Zec0Zhc0Zjc0Zmc0Y8RmNzRmZzRjwvRlx0USJbRicvRl90USJdRic=">LUkobWZlbmNlZEc2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYoLUklbXJvd0dGJDYjLUknbXRhYmxlR0YkNjUtSSRtdHJHRiQ2KS1JJG10ZEdGJDYoLUkjbWlHRiQ2J1EjbDFGJy8lJ2l0YWxpY0dRJXRydWVGJy8lK2ZvcmVncm91bmRHUShbMCwwLDBdRicvJSlyZWFkb25seUdRJmZhbHNlRicvJSxtYXRodmFyaWFudEdRJ2l0YWxpY0YnLyUpcm93YWxpZ25HUSFGJy8lLGNvbHVtbmFsaWduR0ZJLyUrZ3JvdXBhbGlnbkdGSS8lKHJvd3NwYW5HUSIxRicvJStjb2x1bW5zcGFuR0ZQLUY1NigtRjg2J1EjbDJGJ0Y7Rj5GQUZERkdGSkZMRk5GUS1GNTYoLUY4NidRI2wzRidGO0Y+RkFGREZHRkpGTEZORlEtRjU2KC1GODYnUSNsNEYnRjtGPkZBRkRGR0ZKRkxGTkZRRkdGSkZMLyUmYWxpZ25HUSVheGlzRicvRkhRKWJhc2VsaW5lRicvRktRJ2NlbnRlckYnL0ZNUSd8ZnJsZWZ0fGhyRicvJS9hbGlnbm1lbnRzY29wZUdGPS8lLGNvbHVtbndpZHRoR1ElYXV0b0YnLyUmd2lkdGhHRmlvLyUrcm93c3BhY2luZ0dRJjEuMGV4RicvJS5jb2x1bW5zcGFjaW5nR1EmMC44ZW1GJy8lKXJvd2xpbmVzR1Elbm9uZUYnLyUsY29sdW1ubGluZXNHRmRwLyUmZnJhbWVHRmRwLyUtZnJhbWVzcGFjaW5nR1EsMC40ZW1+MC41ZXhGJy8lKmVxdWFscm93c0dGQy8lLWVxdWFsY29sdW1uc0dGQy8lLWRpc3BsYXlzdHlsZUdGQy8lJXNpZGVHUSZyaWdodEYnLyUwbWlubGFiZWxzcGFjaW5nR0ZhcEY+RkEvRkVRJ25vcm1hbEYnLyUlb3BlbkdRIltGJy8lJmNsb3NlR1EiXUYn</Equation></Text-field>
-</Output>
 </Group>
 <Group view="code" labelreference="L2121" drawlabel="true">
 <Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">save kc_symbols, sprintf(&quot;../codeexport/%s/tmp/kinematic_constraints_symbols_list_maple&quot;, robot_name):</Text-field>
@@ -546,22 +383,14 @@ end do:</Text-field>
 <Group view="code" labelreference="L2128" drawlabel="true">
 <Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">MatlabExport(kc_symbols, sprintf(&quot;../codeexport/%s/tmp/kinematic_constraints_symbols_list_matlab.m&quot;,robot_name),2);</Text-field>
 </Input>
-<Output><Text-field style="Line Printed Output" layout="Line Printed Output">Exported Matlab code to ../codeexport/fourbar1TE/tmp/kinematic_constraints_symbols_list_matlab.m (CPUTime: 0.03s)</Text-field>
-</Output>
 </Group></Presentation-Block>
 </Section><Presentation-Block>
 <Group view="code" labelreference="L2118" drawlabel="true">
 <Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"><Font encoding="UTF-8">printf(&quot;Fertig. %s. CPU-Zeit bis hier: %1.2fs.\134n&quot;, FormatTime(&quot;%Y-%m-%d %H:%M:%S&quot;), time()-st):</Font></Text-field>
 </Input>
-<Output><Text-field style="Line Printed Output" layout="Line Printed Output">Fertig. 2018-11-27 14:44:41. CPU-Zeit bis hier: 4.92s.</Text-field>
-</Output>
 </Group>
 <Group hide-input="false" labelreference="L2127" drawlabel="true">
 <Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"></Text-field>
-</Input>
-</Group></Presentation-Block><Presentation-Block>
-<Group view="presentation" inline-output="false" labelreference="L2" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field style="Text" layout="Normal"><Equation executable="true" style="2D Math" input-equation="" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYlLUkjbWlHRiQ2I1EhRicvJStleGVjdXRhYmxlR1EmZmFsc2VGJy8lLG1hdGh2YXJpYW50R1Enbm9ybWFsRic=">LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYjLUkjbWlHRiQ2I1EhRic=</Equation></Text-field>
 </Input>
 </Group></Presentation-Block>
 </Worksheet>

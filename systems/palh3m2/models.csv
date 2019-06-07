@@ -1,0 +1,5 @@
+Name/lfdNr;Name2;Langname;Kinematik-Parameter;;;;;;;;;;;;;;;;;;;Minimalkoordinate qJ1;;;;;Minimalkoordinate qJ2;;;;;Minimalkoordinate qJ3;;;;;Minimalkoordinate qJ4;;;;;Allgemein;;
+;;;pkin 1;pkin2;pkin3;pkin4;pkin5;pkin6;pkin7;pkin8;pkin9;pkin10;pkin11;pkin12;pkin13;pkin14;pkin15;pkin16;pkin17;pkin18;pkin19;qmin;qmax;vmax;VZ;just;qmin;qmax;vmax;VZ;just;qmin;qmax;vmax;VZ;just;qmin;qmax;vmax;VZ;just;Nenn-Traglast;Masse;EELink
+;;;AB;BC;BE;BG;DA;DC;DT2;EP;GH;GP;HW;OT1;T1A;T1T2;phi1;phi2;phi410;phi78;phi79;;;;;;;;;;;;;;;;;;;;;;;
+palh3m2Bsp1;Palettierroboter;Beispielparameter;1.300;0.800;0.500;1.300;0.800;1.300;0.220;1.300;0.300;0.500;0.300;0.900;0.420;0.480;0.6435;0.6435;0.9273;0.5586;1.0122;-3.1416;3.1416;NA;1;0;0;1.5708;NA;1;0;0;1.5708;NA;1;0;-3.1416;3.1416;NA;1;0;NA;NA;5
+palh3m2KR1;KUKA;KR700PA;1.300;0.800;0.500;1.300;0.800;1.300;0.220;1.300;0.300;0.500;0.300;0.900;0.420;0.480;0.6435;0.6435;0.9273;0.5586;1.0122;-3.1416;3.1416;NA;1;0;0;1.5708;NA;1;0;0;1.5708;NA;1;0;-3.1416;3.1416;NA;1;0;NA;NA;5
