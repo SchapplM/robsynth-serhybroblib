@@ -80,7 +80,8 @@ Folgende Roboter und Mechanismen wurden bisher erfolgreich getestet
 | 3T1R-Palettierroboter (serielles Ersatzmodell, mit anderen Parametern) | palh2m2 | Validiert gegen Lenze-Daten | HybrDyn |
 | 3T1R-Palettierroboter (2 Parallelogramme, Herleitung über allgemeine Viergelenkkette) | palh3m1 | Plausibilität | HybrDyn |
 | 3T1R-Palettierroboter (2 Parallelogramme, Herleitung über Parallelogramm) | palh3m2 | Plausibilität | HybrDyn |
-
+| Planare Hybrid-PKM-Beinkette (Parallelogramm-Fünfgelenkkette) | hybBKplanar | MA Brünger | HybrDyn |
+| Räumliche Hybrid-PKM-Beinkette (Parallelogramm-Fünfgelenkkette) | hybBKspatial | MA Brünger | HybrDyn |
 | 3. Arm KAS5 Modell 5| KAS5m5 | Elim., expl. ZB (noch nicht in neuer Dateistruktur) | HybrDyn |
 | 3. Arm KAS5 Modell 6| KAS5m6 | Elim., expl. ZB (noch nicht in neuer Dateistruktur) | HybrDyn |
 | 3. Arm KAS5 Modell 7| KAS5m7 | Elim., expl. ZB, impl. ZB (noch nicht in neuer Dateistruktur) | HybrDyn |
@@ -90,5 +91,6 @@ Folgende Roboter und Mechanismen wurden bisher erfolgreich getestet
 
 * [Shan2019_S828] W. Shan: "Reduktion der Modellkomplexität von seriell-hybriden Palettierrobotern
 " (Studienarbeit bei Moritz Schappler)
+* [Brünger2019_M832] A. Brünger: "Vergleich der Leistungsmerkmale und Modellierung von parallelen Robotern mit hybriden und seriellen Beinketten" (Masterarbeit bei Moritz Schappler)
 * [Bejaoui2018_S749] A. Bejaoui: "Modellierung kinematischer Zwangsbedingungen für hybride serielle Roboter mit planaren Parallelmechanismen" (Studienarbeit bei Moritz Schappler)
 * [NuelleSchTapLil2017] K. Nülle, M. Schappler et al.: Projektabschlussbericht „3. Arm“ - Handwerker-Kraftassistenzsystem mit adaptiver Mensch-Technik-Interaktion

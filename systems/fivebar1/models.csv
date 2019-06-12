@@ -1,4 +1,7 @@
-Name/lfdNr;Name2;Langname;Kinematik-Parameter;;;;;Minimalkoordinate qJ1;;;;;Minimalkoordinate qJ2;;;;;Allgemein;;
+﻿Name/lfdNr;Name2;Langname;Kinematik-Parameter;;;;;Minimalkoordinate qJ1;;;;;Minimalkoordinate qJ2;;;;;Allgemein;;
 ;;;pkin 1;pkin 2;pkin 3;pkin 4;pkin 5;qmin;qmax;vmax;VZ;just;qmin;qmax;vmax;VZ;just;Nenn-Traglast;Masse;EELink
 ;;;AB;AE;BC;CD;ED;;;;;;;;;;;;;
 fivebar1Bsp1;Fünfgelenkkette;Fünfgelenkkette Bejaoui2018_S749;5.5;2.9;3.1;4.5;4;-1.2;1.2;NA;1;0;-2.4;2.4;NA;1;0;NA;NA;4
+fivebar1Bsp2;Fünfgelenkkette;Fünfgelenkkette AB gleich 0;0;2;4;2;4;2.5;3;NA;1;0;1.0;1.5;NA;1;0;NA;NA;4
+fivebar1Bsp3;Fünfgelenkkette;Fünfgelenkkette Brünger;5;3.5;6;2.5;3.5;0;1.0472;NA;1;0;1.9199;3.3161;NA;1;0;NA;NA;4
+fivebar1Bsp4;Fünfgelenkkette;Fünfgelenkkette TsrMaße;0.17;0.65;0.4;0.82;0.4;-0.087;-3.141;NA;1;0;0.087;2.094;NA;1;0;NA;NA;4
