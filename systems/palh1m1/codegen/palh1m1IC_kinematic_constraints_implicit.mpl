@@ -24,10 +24,10 @@ read "../robot_codegen_constraints/proc_subs_kintmp_exp":
 read "../helper/proc_intersect_circle":
 with(RealDomain): # Schränkt alle Funktionen auf den reellen Bereich ein. Muss nach Definition von MatlabExport kommen. Sonst geht dieses nicht.
 ;
-read "../robot_codegen_definitions/robot_env":
-read sprintf("../codeexport/%s/tmp/tree_floatb_definitions", robot_name):
+read "../robot_codegen_definitions/robot_env_IC":
+read sprintf("../codeexport/%s/tmp/tree_floatb_definitions", robot_name_OL):
 # Ergebnisse der Kinematik laden
-read sprintf("../codeexport/%s/tmp/kinematics_floatb_%s_rotmat_maple.m", robot_name, base_method_name);
+read sprintf("../codeexport/%s/tmp/kinematics_floatb_%s_rotmat_maple.m", robot_name_OL, base_method_name);
 Trf := Trf:
 Trf_c := Trf_c:
 Trf

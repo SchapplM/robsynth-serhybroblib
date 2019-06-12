@@ -14,7 +14,9 @@ if [ "$maplerepopath" == "" ]; then
 fi;
 
 deflist="
-robot_env_palh1m1IC
+robot_env_palh1m1TE
+robot_env_palh1m1DE1
+robot_env_palh1m1DE2
 "
 ##robot_env_palh1m1DE2
 ##robot_env_palh1m1IC
@@ -27,3 +29,7 @@ for df in $deflist; do
   cp robot_codegen_definitions/$df robot_codegen_definitions/robot_env
   ./robot_codegen_start.sh --fixb_only --minimal --notest
 done
+
+
+cp robot_codegen_definitions/robot_env_palh1m1OL robot_codegen_definitions/robot_env
+./robot_codegen_start.sh --fixb_only --ic --minimal
