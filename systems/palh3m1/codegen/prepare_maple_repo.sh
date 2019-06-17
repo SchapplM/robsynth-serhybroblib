@@ -36,7 +36,9 @@ constrpath=$maplerepopath/robot_codegen_constraints
  echo "codegen_kinematics_opt := true:" >> $defpath/robot_env_palh3m1DE2
  echo "codegen_kinematics_subsorder:=2:" >> $defpath/robot_env_palh3m1DE2
 
- cp $this_path/robot_env_palh3m1IC $defpath/robot_env_palh3m1IC
+ cp $this_path/robot_env_palh3m1OL $defpath/robot_env_palh3m1OL
+ 
+ cp $this_path/robot_env_palh3m1IC $defpath/robot_env_IC
 
 # Maple-Skripte (Kinematische Zwangsbedingungen)
 

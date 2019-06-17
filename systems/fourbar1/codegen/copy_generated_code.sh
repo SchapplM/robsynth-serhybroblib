@@ -11,7 +11,8 @@ maplerepopath=$1
 cp -a $maplerepopath/codeexport/fourbar1TE/matlabfcn/ ../matlabfcn_fourbar1TE
 cp -a $maplerepopath/codeexport/fourbar1DE1/matlabfcn/ ../matlabfcn_fourbar1DE1
 cp -a $maplerepopath/codeexport/fourbar1DE2/matlabfcn/ ../matlabfcn_fourbar1DE2
-cp -a $maplerepopath/codeexport/fourbar1DE2/matlabfcn/ ../matlabfcn_fourbar1IC
+cp -a $maplerepopath/codeexport/fourbar1OL/matlabfcn/ ../matlabfcn_fourbar1OL
+cp -a $maplerepopath/codeexport/fourbar1IC/matlabfcn/ ../matlabfcn_fourbar1IC
 
 # rsync -rv $maplerepopath/codeexport/fourbar1TE/matlabfcn/ ../matlabfcn_fourbar1TE
 # rsync -rv $maplerepopath/codeexport/fourbar1DE1/matlabfcn/ ../matlabfcn_fourbar1DE1

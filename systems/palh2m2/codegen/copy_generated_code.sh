@@ -8,5 +8,6 @@
 
 maplerepopath=$1
 
-rsync -rv $maplerepopath/codeexport/palh2m2/matlabfcn/ ../matlabfcn_palh2m2
-
+cp -a $maplerepopath/codeexport/palh2m2DE/matlabfcn/ ../matlabfcn_palh2m2DE
+cp -a $maplerepopath/codeexport/palh2m2IC/matlabfcn/ ../matlabfcn_palh2m2IC
+cp -a $maplerepopath/codeexport/palh2m2OL/matlabfcn/ ../matlabfcn_palh2m2OL

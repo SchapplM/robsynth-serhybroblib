@@ -28,6 +28,7 @@ read "../robot_codegen_definitions/robot_env_IC":
 read sprintf("../codeexport/%s/tmp/tree_floatb_definitions", robot_name_OL):
 # Ergebnisse der Kinematik laden
 read sprintf("../codeexport/%s/tmp/kinematics_floatb_%s_rotmat_maple.m", robot_name_OL, base_method_name);
+read "../robot_codegen_definitions/robot_env_IC":
 Trf := Trf:
 Trf_c := Trf_c:
 Trf

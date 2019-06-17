@@ -13,11 +13,14 @@ if [ "$maplerepopath" == "" ]; then
   exit 2
 fi;
 
-deflist="robot_env_palh2m2"
+deflist="robot_env_palh2m2DE"
 
 cd $maplerepopath
 for df in $deflist; do
   echo "Starte Generierung für $df"
-  cp robot_codegen_definitions/examples/$df robot_codegen_definitions/robot_env
-  ./robot_codegen_start.sh --fixb_only -p --notest
+  cp robot_codegen_definitions/$df robot_codegen_definitions/robot_env
+  ./robot_codegen_start.sh --fixb_only --notest -p --minimal
 done
+
+cp robot_codegen_definitions/robot_env_palh2m2OL robot_codegen_definitions/robot_env
+./robot_codegen_start.sh --fixb_only --ic --minimal

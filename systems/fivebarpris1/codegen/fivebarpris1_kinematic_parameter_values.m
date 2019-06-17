@@ -1,0 +1,1 @@
+AB=2; TD=2.5; CB=5; CE=2; EP=2; HC= 2; OT=3; TA=2; AD=TD+TA;

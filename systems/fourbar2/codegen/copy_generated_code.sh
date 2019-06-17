@@ -8,10 +8,11 @@
 
 maplerepopath=$1
 
-cp -a $maplerepopath/codeexport/fourbar2TE/matlabfcn/ ../matlabfcn_fourbar2TE
-#cp -a $maplerepopath/codeexport/fourbar2DE1/matlabfcn/ ../matlabfcn_fourbar2DE1
-#cp -a $maplerepopath/codeexport/fourbar2DE2/matlabfcn/ ../matlabfcn_fourbar2DE2
-#cp -a $maplerepopath/codeexport/fourbar2DE2/matlabfcn/ ../matlabfcn_fourbar2IC
+cp -a $maplerepopath/codeexport/fourbar2TE/matlabfcn ../matlabfcn_fourbar2TE
+cp -a $maplerepopath/codeexport/fourbar2OL/matlabfcn/ ../matlabfcn_fourbar2OL
+cp -a $maplerepopath/codeexport/fourbar2IC/matlabfcn/ ../matlabfcn_fourbar2IC
+cp -a $maplerepopath/codeexport/fourbar2DE1/matlabfcn/ ../matlabfcn_fourbar2DE1 
+cp -a $maplerepopath/codeexport/fourbar2DE2/matlabfcn/ ../matlabfcn_fourbar2DE2
 
 # rsync -rv $maplerepopath/codeexport/fourbar2TE/matlabfcn/ ../matlabfcn_fourbar2TE
 # rsync -rv $maplerepopath/codeexport/fourbar2DE1/matlabfcn/ ../matlabfcn_fourbar2DE1

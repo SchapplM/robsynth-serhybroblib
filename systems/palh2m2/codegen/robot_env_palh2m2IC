@@ -1,0 +1,6 @@
+# Name der Viergelenkkette (für impl. kinematische Zwangsbedingungen)
+
+robot_name := "palh2m2IC":
+robot_name_OL := "palh2m2OL":
+robot_name_DE := "palh2m2DE":
+robot_name_TE := "palh2m2TE":

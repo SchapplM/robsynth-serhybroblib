@@ -151,6 +151,7 @@ read &quot;../helper/proc_intersect_circle&quot;:</Text-field>
 </Group>
 <Group hide-input="false" labelreference="L2143" drawlabel="true">
 <Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">read sprintf(&quot;../codeexport/%s/tmp/kinematics_floatb_%s_rotmat_maple.m&quot;, robot_name_OL, base_method_name);
+read &quot;../robot_codegen_definitions/robot_env_IC&quot;:
 Trf := Trf:
 Trf_c := Trf_c:</Text-field>
 </Input>

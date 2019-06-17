@@ -1,0 +1,6 @@
+# Name der Viergelenkkette (für impl. kinematische Zwangsbedingungen)
+
+robot_name := "fivebar1IC":
+robot_name_OL := "fivebar1IOL":
+robot_name_DE := "fivebar1IDE":
+robot_name_TE := "fivebar1ITE":

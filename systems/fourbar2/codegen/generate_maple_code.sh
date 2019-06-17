@@ -16,6 +16,8 @@ fi;
 
 deflist="
 robot_env_fourbar2TE
+robot_env_fourbar2DE1
+robot_env_fourbar2DE2
 "
 ##robot_env_fourbar2IC
 ##robot_env_fourbar2TE
@@ -28,3 +30,6 @@ for df in $deflist; do
   cp robot_codegen_definitions/$df robot_codegen_definitions/robot_env
   ./robot_codegen_start.sh -p --fixb_only --notest
 done
+
+cp robot_codegen_definitions/robot_env_fourbar2OL robot_codegen_definitions/robot_env
+./robot_codegen_start.sh --fixb_only --ic --minimal

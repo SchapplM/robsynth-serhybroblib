@@ -1,0 +1,6 @@
+# Name der Viergelenkkette (für impl. kinematische Zwangsbedingungen)
+
+robot_name := "fourbarprisIC":
+robot_name_OL := "fourbarprisOL":
+robot_name_DE := "fourbarprisDE":
+robot_name_TE := "fourbarprisTE":

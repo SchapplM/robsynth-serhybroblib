@@ -8,10 +8,12 @@
 
 maplerepopath=$1
 
- cp -a $maplerepopath/codeexport/palh3m1TE/matlabfcn ../matlabfcn_palh3m1TE
- #cp -a $maplerepopath/codeexport/palh3m1IC/matlabfcn/ ../matlabfcn_palh3m1IC
-# cp -a $maplerepopath/codeexport/palh3m1DE1/matlabfcn/ ../matlabfcn_palh3m1DE1
-# cp -a $maplerepopath/codeexport/palh3m1DE2/matlabfcn/ ../matlabfcn_palh3m1DE2
+cp -a $maplerepopath/codeexport/palh3m1TE/matlabfcn ../matlabfcn_palh3m1TE
+cp -a $maplerepopath/codeexport/palh3m1OL/matlabfcn/ ../matlabfcn_palh3m1OL
+cp -a $maplerepopath/codeexport/palh3m1IC/matlabfcn/ ../matlabfcn_palh3m1IC
+cp -a $maplerepopath/codeexport/palh3m1DE1/matlabfcn/ ../matlabfcn_palh3m1DE1
+cp -a $maplerepopath/codeexport/palh3m1DE2/matlabfcn/ ../matlabfcn_palh3m1DE2
+
 ## rsync -rv $maplerepopath/codeexport/palh3m1TE/matlabfcn/ ../matlabfcn_palh3m1TE
 ## rsync -rv $maplerepopath/codeexport/palh3m1DE1/matlabfcn/ ../matlabfcn_palh3m1DE1
 ## rsync -rv $maplerepopath/codeexport/palh3m1DE2/matlabfcn/ ../matlabfcn_palh3m1DE2

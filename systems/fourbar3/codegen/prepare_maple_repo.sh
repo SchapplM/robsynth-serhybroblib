@@ -35,10 +35,9 @@ echo "# Anwendung der Additionstheoreme für parallele Drehachsen und dann Erset
 echo "codegen_kinematics_opt := true:" >> $defpath/robot_env_fourbar3DE2
 echo "codegen_kinematics_subsorder:=2:" >> $defpath/robot_env_fourbar3DE2
 
-cp $this_path/robot_env_fourbar3IC $defpath/robot_env_fourbar3IC
-sed -i "s/fourbar3/fourbar3IC/g" $defpath/robot_env_fourbar3IC
-echo "# Anwendung der Additionstheoreme für parallele Drehachsen" >> $defpath/robot_env_fourbar3IC
-echo "codegen_kinematics_opt := true:" >> $defpath/robot_env_fourbar3IC
+cp $this_path/robot_env_fourbar3OL $defpath/robot_env_fourbar3OL
+
+cp $this_path/robot_env_fourbar3IC $defpath/robot_env_IC
 
 # Maple-Skripte (Kinematische Zwangsbedingungen)
 

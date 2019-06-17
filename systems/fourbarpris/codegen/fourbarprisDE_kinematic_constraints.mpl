@@ -1,7 +1,6 @@
 
-# 4-Achsroboter von Lenze
-# Voraussetzung:
-# Viergelenkkette muss mit der Toolbox berechnet worden sein (Arbeitsblatt "vgk_kinematic_constraints.mw")
+# Slider_Crank
+
 # Autor
 # Abderahman Bejaoui
 # Studienarbeit bei: Moritz Schappler, moritz.schappler@imes.uni-hannover.de, 2018-08
@@ -36,10 +35,10 @@ read "../robot_codegen_definitions/robot_env":
 read sprintf("../codeexport/%s/tmp/tree_floatb_definitions",robot_name):
 # Variable mit Winkeln der Nebenstruktur nur in Abhängigkeit der verallgemeinerten Koordinaten
 
-qJ_t:= <qJ1(t),qJ2(t),qJ3(t),qJ4(t)>:
-qJ_s:= <qJ1s,qJ2s,qJ3s,qJ4s>:
+qJ_t:= <qJ1(t)>:
+qJ_s:= <qJ1s>:
 # Ergebnisse von Trigonometrischer Elimination lesen
-read sprintf("../codeexport/lpal/tmp/kinematic_constraints_maple_inert.m"):
+read sprintf("../codeexport/fourbarprisTE/tmp/kinematic_constraints_maple_inert.m"):
 kin_constraints_exist := kin_constraints_exist:
 kintmp_qs := kintmp_qs:
 kintmp_qt := kintmp_qt:
@@ -67,7 +66,4 @@ kc_symbols := Matrix(list_constant_expressions( kintmp_qs ));
 save kc_symbols, sprintf("../codeexport/%s/tmp/kinematic_constraints_symbols_list_maple", robot_name):
 MatlabExport(kc_symbols, sprintf("../codeexport/%s/tmp/kinematic_constraints_symbols_list_matlab.m",robot_name),2);
 #printf("Fertig. %s. CPU-Zeit bis hier: %1.2fs.\n", FormatTime("%Y-%m-%d %H:%M:%S"), time()-st):
-kintmp_qs(1,1);
-kc_symbols(1,1);
-kintmp_qs(2,1);
 

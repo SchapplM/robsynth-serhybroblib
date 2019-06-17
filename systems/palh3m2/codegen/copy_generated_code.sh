@@ -9,6 +9,7 @@
 maplerepopath=$1
 
  cp -a $maplerepopath/codeexport/palh3m2TE/matlabfcn ../matlabfcn_palh3m2TE
+ cp -a $maplerepopath/codeexport/palh3m2OL/matlabfcn/ ../matlabfcn_palh3m2OL
  cp -a $maplerepopath/codeexport/palh3m2IC/matlabfcn/ ../matlabfcn_palh3m2IC
  cp -a $maplerepopath/codeexport/palh3m2DE1/matlabfcn/ ../matlabfcn_palh3m2DE1
  cp -a $maplerepopath/codeexport/palh3m2DE2/matlabfcn/ ../matlabfcn_palh3m2DE2

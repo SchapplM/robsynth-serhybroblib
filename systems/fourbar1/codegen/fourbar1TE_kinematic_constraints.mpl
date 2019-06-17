@@ -140,9 +140,9 @@ kintmp_qs(3,1):=arctan(sin(xi_s),cos(xi_s)):
 # Die Annahmen sind im Ausdruck bereits in den Variablen gespeichert. Ersetze das "~"-Zeichen.
 # Quelle: http://www.mapleprimes.com/questions/207601-Remove-Assumptions
 winkel := <<sin_xi|sin(xi_s)>; <cos_xi|cos(xi_s)>; <sin_rho | sin(rho_s)>; <cos_rho | cos(rho_s)>;<sin_eta | sin(eta_s)>; <cos_eta | cos(eta_s)>>:
-mkdir(sprintf("../codeexport/foubar1TE/"));
-mkdir(sprintf("../codeexport/foubar1TE/tmp/"));
-save winkel, sprintf("../codeexport/fourbar1TE/tmp/kinematic_constraints_maple_inert"):
+#mkdir(sprintf("../codeexport/fourbar1TE/"));
+#mkdir(sprintf("../codeexport/fourbar1TE/tmp/"));
+save winkel, sprintf("../codeexport/%s/tmp/%s_angles_trig_elim", robot_name, robot_name):
 kintmp_qt := convert_s_t(kintmp_qs):
 # Speichere Maple-Ausdruck (Eingabe-Format und internes Format)
 save kintmp_subsexp, sprintf("../codeexport/%s/tmp/kinematic_constraints_kintmp_subsexp_maple", robot_name):

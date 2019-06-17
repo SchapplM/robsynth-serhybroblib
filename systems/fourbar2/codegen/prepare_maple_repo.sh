@@ -35,7 +35,11 @@ echo "# Anwendung der Additionstheoreme für parallele Drehachsen und dann Erset
 echo "codegen_kinematics_opt := true:" >> $defpath/robot_env_fourbar2DE2
 echo "codegen_kinematics_subsorder:=2:" >> $defpath/robot_env_fourbar2DE2
 
-cp $this_path/robot_env_fourbar2IC $defpath/robot_env_fourbar2IC
+
+cp $this_path/robot_env_fourbar2OL $defpath/robot_env_fourbar2OL
+
+cp $this_path/robot_env_fourbar2IC $defpath/robot_env_IC
+
 ##sed -i "s/fourbar2/fourbar2IC/g" $defpath/robot_env_fourbar2IC
 ##echo "# Anwendung der Additionstheoreme für parallele Drehachsen" >> $defpath/robot_env_fourbar2IC
 ##echo "codegen_kinematics_opt := true:" >> $defpath/robot_env_fourbar2IC

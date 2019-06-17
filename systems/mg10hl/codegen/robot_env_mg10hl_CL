@@ -1,0 +1,27 @@
+#kawasaki_mg10hl
+
+robot_name := "mg10hl":
+
+# Anzahl der verallgemeinerten Gelenkkoordinaten
+NQJ := 6:
+# Anzahl der Gelenke (mit virtuellen Schnittgelenken, denen kein Körper zugeordnet ist).
+NJ := 15:
+# Anzahl der Starrkörper (mit Basis; also 12 bewegte Körper)
+NL := 13:
+qoffset := Matrix(15, 1, [0, Pi/2, Pi, Pi-phi3, Pi, 0, -Pi/2, 0, 0, 0, Pi, Pi, 0, 0, 0]):
+theta := <qJ1(t);qJ2(t);kintmp_t(1,1);-kintmp_t(3,1);kintmp_t(2,1);qJ3(t);qJ4(t);qJ5(t);kintmp_t(3,1);kintmp_t(4,1);kintmp_t(5,1);kintmp_t(6,1);0; 0; 0> + qoffset:                     
+alpha := Matrix(15, 1, [0, Pi/2, 0, 0, 0, Pi/2, -Pi/2, Pi/2, 0, Pi/2, 0, 0, -Pi/2, 0, -Pi/2]):
+
+d := Matrix(15, 1, [OT, 0, 0, 0, 0, PM, 0, LW, 0, 0, 0, 0, qJ6(t), 0, -HP]):  
+a := Matrix(15, 1, [0, TA, AC, CG, GP, 0, 0, 0, 0, -TE, GK, ED, 0, -DC, 0]):
+v := Matrix(15,1, <0; 1; 2; 3; 4; 5; 6; 7; 4; 1; 9; 10; 11; 3; 5>):
+beta := Matrix(15,1,[0, 0, phi23, phi34, 0, Pi/2, 0, Pi/2, 0, 0, 0, 0, -Pi/2, 0, -Pi/2]):
+b := Matrix(15,1,[0, 0, 0, 0, 0, 0, ML, 0, 0, 0, 0, 0, 0, 0, 0]):
+
+# Nur Drehgelenke
+mu:=Matrix(<1,1,0,0,0,1,1,1,0,0,0,0,1,0,0>):
+sigma:=Matrix(<0,0,0,0,0,0,0,0,0,0,0,0,1,2,2>):
+
+# Allgemeine Winkel
+kintmp_t := Matrix(6, 1,[rho23(t),eta45(t),eta49(t),rho110(t),eta911(t),rho1012(t)]):
+kintmp_s := Matrix(6, 1,[rho23_s,eta45_s,eta49_s,rho110_s,eta911_s,rho1012_s]):
