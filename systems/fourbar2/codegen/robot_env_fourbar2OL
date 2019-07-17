@@ -12,7 +12,7 @@ NL := 4: # 3 bewegte Körper und Basis
 # aktive Gekenke offset  (beobachten von MDH Tabelle um Z)    5X1 Matrix  
 qoffset := Matrix(NJ, 1, [0, Pi, 0, 0, 0]):
 
-theta:= Matrix(< qJ1(t), qJ2(t), qJ3(t), qJ4(t)>, 0>) + qoffset:
+theta:= Matrix(< qJ1(t), qJ2(t), qJ3(t), qJ4(t), 0>) + qoffset:
 alpha := Matrix(NJ, 1, [0, 0, 0, 0, 0]):
 d := Matrix(NJ, 1, [0, 0, 0, 0, 0]):
 a := Matrix(NJ, 1, <0, l2, l1, l1, l2>):
