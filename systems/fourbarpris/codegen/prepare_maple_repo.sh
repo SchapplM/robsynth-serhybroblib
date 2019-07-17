@@ -5,7 +5,7 @@
 # Argument 1: Pfad zum HybrDyn-Repo
 
 # Moritz Schappler, moritz.schappler@imes.uni-hannover.de, 2018-11
-# (C) Institut für mechatronische Systeme, Universität Hannover
+# (C) Institut für Mechatronische Systeme, Universität Hannover
 
 maplerepopath=$1
 this_path=$(pwd)

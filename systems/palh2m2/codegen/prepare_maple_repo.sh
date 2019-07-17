@@ -5,7 +5,7 @@
 # Argument 1: Pfad zum HybrDyn-Repo
 
 # Moritz Schappler, moritz.schappler@imes.uni-hannover.de, 2018-11
-# (C) Institut für mechatronische Systeme, Universität Hannover
+# (C) Institut für Mechatronische Systeme, Universität Hannover
 
 maplerepopath=$1
 this_path=$(pwd)
@@ -22,11 +22,11 @@ cp $this_path/robot_env_palh2m2 $defpath/robot_env_palh2m2DE
 sed -i "s/palh2m2/palh2m2DE/g" $defpath/robot_env_palh2m2DE
 
  cp $this_path/robot_env_palh2m2OL $defpath/robot_env_palh2m2OL
- 
+
  cp $this_path/robot_env_palh2m2IC $defpath/robot_env_IC
 
 # Maple-Skripte (Kinematische Zwangsbedingungen)
 cp $this_path/palh2m2_kinematic_constraints.mpl $constrpath/palh2m2DE_kinematic_constraints.mpl
-cp $this_path/palh2m2_kinematic_constraints.mw  $constrpath/palh2m2DE_kinematic_constraints.mw 
+cp $this_path/palh2m2_kinematic_constraints.mw  $constrpath/palh2m2DE_kinematic_constraints.mw
 cp $this_path/palh2m2IC_kinematic_constraints_implicit.mpl $constrpath/palh2m2IC_kinematic_constraints_implicit.mpl
-cp $this_path/palh2m2IC_kinematic_constraints_implicit.mw  $constrpath/palh2m2IC_kinematic_constraints_implicit.mw 
+cp $this_path/palh2m2IC_kinematic_constraints_implicit.mw  $constrpath/palh2m2IC_kinematic_constraints_implicit.mw
