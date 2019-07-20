@@ -3,19 +3,14 @@
 # Dieses Skript im Ordner ausführen, in dem es liegt.
 # Argument 1: Pfad zum HybrDyn-Repo
 
-# Moritz Schappler, schappler@irt.uni-hannover.de, 2018-09
+# Moritz Schappler, moritz.schappler@imes.uni-hannover.de, 2018-09
 # (C) Institut für Mechatronische Systeme, Leibniz Universität Hannover
 
 maplerepopath=$1
-
-cp -a $maplerepopath/codeexport/palh1m1TE/matlabfcn/ ../matlabfcn_palh1m1TE
-cp -a $maplerepopath/codeexport/palh1m1OL/matlabfcn/ ../matlabfcn_palh1m1OL
-cp -a $maplerepopath/codeexport/palh1m1IC/matlabfcn/ ../matlabfcn_palh1m1IC
-cp -a $maplerepopath/codeexport/palh1m1DE1/matlabfcn/ ../matlabfcn_palh1m1DE1 
-cp -a $maplerepopath/codeexport/palh1m1DE2/matlabfcn/ ../matlabfcn_palh1m1DE2
-
-##rsync -rv $maplerepopath/codeexport/palh1m1TE/matlabfcn/ ../matlabfcn_palh1m1TE
-##rsync -rv $maplerepopath/codeexport/palh1m1DE1/matlabfcn/ ../matlabfcn_palh1m1DE1
-##rsync -rv $maplerepopath/codeexport/palh1m1DE2/matlabfcn/ ../matlabfcn_palh1m1DE2
-##rsync -rv $maplerepopath/codeexport/palh1m1IC/matlabfcn/ ../matlabfcn_palh1m1IC
+mkdir -p ../matlabfcn_palh1m1TE ../matlabfcn_palh1m1DE1 ../matlabfcn_palh1m1DE2 ../matlabfcn_palh1m1OL ../matlabfcn_palh1m1IC
+cp $maplerepopath/codeexport/palh1m1TE/matlabfcn/* ../matlabfcn_palh1m1TE
+cp $maplerepopath/codeexport/palh1m1DE1/matlabfcn/* ../matlabfcn_palh1m1DE1
+cp $maplerepopath/codeexport/palh1m1DE2/matlabfcn/* ../matlabfcn_palh1m1DE2
+cp $maplerepopath/codeexport/palh1m1OL/matlabfcn/* ../matlabfcn_palh1m1OL
+cp $maplerepopath/codeexport/palh1m1IC/matlabfcn/* ../matlabfcn_palh1m1IC
 

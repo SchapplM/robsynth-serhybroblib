@@ -3,20 +3,14 @@
 # Dieses Skript im Ordner ausführen, in dem es liegt.
 # Argument 1: Pfad zum HybrDyn-Repo
 
-# Moritz Schappler, schappler@irt.uni-hannover.de, 2018-09
+# Moritz Schappler, moritz.schappler@imes.uni-hannover.de, 2018-09
 # (C) Institut für Mechatronische Systeme, Leibniz Universität Hannover
 
 maplerepopath=$1
-
- cp -a $maplerepopath/codeexport/TSRTE/matlabfcn ../matlabfcn_TSRTE
- cp -a $maplerepopath/codeexport/TSROL/matlabfcn/ ../matlabfcn_TSROL
- cp -a $maplerepopath/codeexport/TSRIC/matlabfcn/ ../matlabfcn_TSRIC
- cp -a $maplerepopath/codeexport/TSRDE1/matlabfcn/ ../matlabfcn_TSRDE1
- cp -a $maplerepopath/codeexport/TSRDE2/matlabfcn/ ../matlabfcn_TSRDE2
- 
- 
-## rsync -rv $maplerepopath/codeexport/TSRTE/matlabfcn/ ../matlabfcn_TSRTE
-## rsync -rv $maplerepopath/codeexport/TSRDE1/matlabfcn/ ../matlabfcn_TSRDE1
-## rsync -rv $maplerepopath/codeexport/TSRDE2/matlabfcn/ ../matlabfcn_TSRDE2
-## rsync -rv $maplerepopath/codeexport/TSRIC/matlabfcn/ ../matlabfcn_TSRIC
+mkdir -p ../matlabfcn_TSRTE ../matlabfcn_TSRDE1 ../matlabfcn_TSRDE2 ../matlabfcn_TSROL ../matlabfcn_TSRIC
+cp $maplerepopath/codeexport/TSRTE/matlabfcn/* ../matlabfcn_TSRTE
+cp $maplerepopath/codeexport/TSRDE1/matlabfcn/* ../matlabfcn_TSRDE1
+cp $maplerepopath/codeexport/TSRDE2/matlabfcn/* ../matlabfcn_TSRDE2
+cp $maplerepopath/codeexport/TSROL/matlabfcn/* ../matlabfcn_TSROL
+cp $maplerepopath/codeexport/TSRIC/matlabfcn/* ../matlabfcn_TSRIC
 
