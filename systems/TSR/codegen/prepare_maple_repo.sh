@@ -52,6 +52,7 @@ echo "codegen_kinematics_opt := false:" >> $defpath/robot_env_TSRTE
 
 # Werte für Kinematikparameter (für Modultests)
 
+ cp $this_path/TSR_kinematic_parameter_values.m $constrpath/TSROL_kinematic_parameter_values.m
  cp $this_path/TSR_kinematic_parameter_values.m $constrpath/TSRIC_kinematic_parameter_values.m
  cp $this_path/TSR_kinematic_parameter_values.m $constrpath/TSRTE_kinematic_parameter_values.m
  cp $this_path/TSR_kinematic_parameter_values.m $constrpath/TSRDE1_kinematic_parameter_values.m

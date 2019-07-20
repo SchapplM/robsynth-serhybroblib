@@ -52,6 +52,7 @@ cp $this_path/fivebarpris1IC_kinematic_constraints_implicit.mpl $constrpath/five
 cp $this_path/fivebarpris1IC_kinematic_constraints_implicit.mw $constrpath/fivebarpris1IC_kinematic_constraints_implicit.mw
 
 # Werte für Kinematikparameter (für Modultests)
+cp $this_path/fivebarpris1_kinematic_parameter_values.m $constrpath/fivebarpris1OL_kinematic_parameter_values.m
 cp $this_path/fivebarpris1_kinematic_parameter_values.m $constrpath/fivebarpris1IC_kinematic_parameter_values.m
 cp $this_path/fivebarpris1_kinematic_parameter_values.m $constrpath/fivebarpris1TE_kinematic_parameter_values.m
 cp $this_path/fivebarpris1_kinematic_parameter_values.m $constrpath/fivebarpris1DE1_kinematic_parameter_values.m

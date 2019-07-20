@@ -64,7 +64,7 @@ cp $this_path/fourbar2_kinematic_parameter_values.m $constrpath/fourbar2DE1_kine
 cp $this_path/fourbar2_kinematic_parameter_values.m $constrpath/fourbar2DE2_kinematic_parameter_values.m
 
 # Winkelgrenzen für die Modultests
-#cp $this_path/fourbar2_kinematic_constraints_matlab.m $constrpath/fourbar2IC_kinematic_constraints_matlab.m
+cp $this_path/fourbar2_kinematic_constraints_matlab.m $constrpath/fourbar2IC_kinematic_constraints_matlab.m
 cp $this_path/fourbar2_kinematic_constraints_matlab.m $constrpath/fourbar2TE_kinematic_constraints_matlab.m
 cp $this_path/fourbar2_kinematic_constraints_matlab.m $constrpath/fourbar2DE1_kinematic_constraints_matlab.m
 cp $this_path/fourbar2_kinematic_constraints_matlab.m $constrpath/fourbar2DE2_kinematic_constraints_matlab.m

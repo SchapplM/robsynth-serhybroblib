@@ -52,6 +52,7 @@ cp $this_path/mg10hlIC_kinematic_constraints_implicit.mpl $constrpath/mg10hlIC_k
 cp $this_path/mg10hlIC_kinematic_constraints_implicit.mw $constrpath/mg10hlIC_kinematic_constraints_implicit.mw
 
 # Werte für Kinematikparameter (für Modultests)
+cp $this_path/mg10hl_kinematic_parameter_values.m $constrpath/mg10hlOL_kinematic_parameter_values.m
 cp $this_path/mg10hl_kinematic_parameter_values.m $constrpath/mg10hlIC_kinematic_parameter_values.m
 cp $this_path/mg10hl_kinematic_parameter_values.m $constrpath/mg10hlTE_kinematic_parameter_values.m
 cp $this_path/mg10hl_kinematic_parameter_values.m $constrpath/mg10hlDE1_kinematic_parameter_values.m

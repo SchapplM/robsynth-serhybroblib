@@ -52,6 +52,7 @@ cp $this_path/palh1m1IC_kinematic_constraints_implicit.mpl $constrpath/palh1m1IC
 cp $this_path/palh1m1IC_kinematic_constraints_implicit.mw $constrpath/palh1m1IC_kinematic_constraints_implicit.mw
 
 # Werte für Kinematikparameter (für Modultests)
+cp $this_path/palh1m1_kinematic_parameter_values.m $constrpath/palh1m1OL_kinematic_parameter_values.m
 cp $this_path/palh1m1_kinematic_parameter_values.m $constrpath/palh1m1IC_kinematic_parameter_values.m
 cp $this_path/palh1m1_kinematic_parameter_values.m $constrpath/palh1m1TE_kinematic_parameter_values.m
 cp $this_path/palh1m1_kinematic_parameter_values.m $constrpath/palh1m1DE1_kinematic_parameter_values.m

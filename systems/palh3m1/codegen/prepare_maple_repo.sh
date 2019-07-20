@@ -53,6 +53,7 @@ constrpath=$maplerepopath/robot_codegen_constraints
 
 # Werte für Kinematikparameter (für Modultests)
 
+ cp $this_path/palh3m1_kinematic_parameter_values.m $constrpath/palh3m1OL_kinematic_parameter_values.m
  cp $this_path/palh3m1_kinematic_parameter_values.m $constrpath/palh3m1IC_kinematic_parameter_values.m
  cp $this_path/palh3m1_kinematic_parameter_values.m $constrpath/palh3m1TE_kinematic_parameter_values.m
  cp $this_path/palh3m1_kinematic_parameter_values.m $constrpath/palh3m1DE1_kinematic_parameter_values.m

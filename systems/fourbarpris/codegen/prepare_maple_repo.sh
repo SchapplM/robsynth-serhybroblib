@@ -52,6 +52,7 @@ cp $this_path/fourbarprisIC_kinematic_constraints_implicit.mpl $constrpath/fourb
 cp $this_path/fourbarprisIC_kinematic_constraints_implicit.mw $constrpath/fourbarprisIC_kinematic_constraints_implicit.mw
 
 # Werte für Kinematikparameter (für Modultests)
+cp $this_path/fourbarpris_kinematic_parameter_values.m $constrpath/fourbarprisOL_kinematic_parameter_values.m
 cp $this_path/fourbarpris_kinematic_parameter_values.m $constrpath/fourbarprisIC_kinematic_parameter_values.m
 cp $this_path/fourbarpris_kinematic_parameter_values.m $constrpath/fourbarprisTE_kinematic_parameter_values.m
 cp $this_path/fourbarpris_kinematic_parameter_values.m $constrpath/fourbarprisDE1_kinematic_parameter_values.m

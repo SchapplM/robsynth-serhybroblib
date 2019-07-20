@@ -52,13 +52,14 @@ cp $this_path/fourbar1IC_kinematic_constraints_implicit.mpl $constrpath/fourbar1
 cp $this_path/fourbar1IC_kinematic_constraints_implicit.mw $constrpath/fourbar1IC_kinematic_constraints_implicit.mw
 
 # Werte für Kinematikparameter (für Modultests)
-#cp $this_path/fourbar1_kinematic_parameter_values.m $constrpath/fourbar1IC_kinematic_parameter_values.m
+cp $this_path/fourbar1_kinematic_parameter_values.m $constrpath/fourbar1OL_kinematic_parameter_values.m
+cp $this_path/fourbar1_kinematic_parameter_values.m $constrpath/fourbar1IC_kinematic_parameter_values.m
 cp $this_path/fourbar1_kinematic_parameter_values.m $constrpath/fourbar1TE_kinematic_parameter_values.m
 cp $this_path/fourbar1_kinematic_parameter_values.m $constrpath/fourbar1DE1_kinematic_parameter_values.m
 cp $this_path/fourbar1_kinematic_parameter_values.m $constrpath/fourbar1DE2_kinematic_parameter_values.m
 
 # Winkelgrenzen für die Modultests
-#cp $this_path/fourbar1_kinematic_constraints_matlab.m $constrpath/fourbar1IC_kinematic_constraints_matlab.m
+cp $this_path/fourbar1_kinematic_constraints_matlab.m $constrpath/fourbar1IC_kinematic_constraints_matlab.m
 cp $this_path/fourbar1_kinematic_constraints_matlab.m $constrpath/fourbar1TE_kinematic_constraints_matlab.m
 cp $this_path/fourbar1_kinematic_constraints_matlab.m $constrpath/fourbar1DE1_kinematic_constraints_matlab.m
 cp $this_path/fourbar1_kinematic_constraints_matlab.m $constrpath/fourbar1DE2_kinematic_constraints_matlab.m
