@@ -16,6 +16,8 @@ fi;
 
 deflist="
 robot_env_fourbar3TE
+robot_env_fourbar3DE1
+robot_env_fourbar3DE2
 "
 ##robot_env_fourbar3IC
 ##robot_env_fourbar3TE
@@ -26,5 +28,5 @@ cd $maplerepopath
 for df in $deflist; do
   echo "Starte Generierung für $df"
   cp robot_codegen_definitions/$df robot_codegen_definitions/robot_env
-  ./robot_codegen_start.sh -p --fixb_only --notest 
+  ./robot_codegen_start.sh -p --fixb_only
 done

@@ -19,8 +19,8 @@ cd $maplerepopath
 for df in $deflist; do
   echo "Starte Generierung für $df"
   cp robot_codegen_definitions/$df robot_codegen_definitions/robot_env
-  ./robot_codegen_start.sh --fixb_only --notest -p --minimal
+  ./robot_codegen_start.sh --fixb_only -p
 done
 
 cp robot_codegen_definitions/robot_env_palh2m1OL robot_codegen_definitions/robot_env
-./robot_codegen_start.sh --fixb_only --ic --minimal
+./robot_codegen_start.sh --fixb_only --ic

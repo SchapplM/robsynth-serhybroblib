@@ -14,6 +14,7 @@ if [ "$maplerepopath" == "" ]; then
 fi;
 
 deflist="
+robot_env_fivebarpris1TE
 robot_env_fivebarpris1DE1
 robot_env_fivebarpris1DE2
 "
@@ -26,9 +27,9 @@ cd $maplerepopath
 for df in $deflist; do
   echo "Starte Generierung für $df"
   cp robot_codegen_definitions/$df robot_codegen_definitions/robot_env
-  ./robot_codegen_start.sh --fixb_only --minimal --notest
+  ./robot_codegen_start.sh -p --fixb_only
 done
 
 
 cp robot_codegen_definitions/robot_env_fivebarpris1OL robot_codegen_definitions/robot_env
-./robot_codegen_start.sh --fixb_only --ic --minimal
+./robot_codegen_start.sh --fixb_only --ic
