@@ -25,3 +25,5 @@ sigma := Matrix(<0,1,0,0,2>):
 mu:=Matrix(<0,1,0,0,0>):
 
 codegen_kinematics_opt := false:
+
+codegen_opt := 1:

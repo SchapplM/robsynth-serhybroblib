@@ -1,4 +1,6 @@
-AB=2; BC=3.5; BE=3; BG=4.5; DC=3; EP=3; GP=4; T1A=2; DT2=2; T1T2=2;
+%AB=2; BC=3.5; BE=3; BG=4.5; DC=3; EP=3; GP=4; T1A=2; DT2=2; T1T2=2;
+%GH=2;  HW=2; OT1=2; 
+AB=2; BC=3.5; BE=2; BG=3; DC=4; EP=3; GP=4; T1A=2; DT2=sqrt(3)/2; T1T2=1;
 GH=2;  HW=2; OT1=2; 
 
 % konstaner Winkel fuer VGK ABCD , fuer Rechnung der ZW erforderlich
@@ -15,8 +17,6 @@ T2S = T1T2 - T1S;
 AS = sqrt(T1A^2+T1S^2);
 DS = sqrt(T2S^2+DT2^2);
 DA = AS + DS;
-
-
 
 % konstaner Winkel fuer VGK BEFG
 BT3=2;phi79=acos(BT3/BC); 

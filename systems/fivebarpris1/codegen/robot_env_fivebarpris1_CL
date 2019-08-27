@@ -26,3 +26,5 @@ mu := Matrix(<1,0,1,0,1,1,1,0,0>):
 kintmp_t := Matrix(3, 1,[rho12(t),rho34(t),rho48(t)]):
 kintmp_s := Matrix(3, 1,[rho12_s,rho34_s,rho48_s]):
 
+codegen_opt := 1:
+

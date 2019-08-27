@@ -13,17 +13,10 @@ hybrdyn_repo_path=`cat hybrdyn_repo_path`
 systems="
 fourbar1
 fourbar2
-fourbar3
 fivebar1
-fivebarpris1
-fourbarpris
-palh2m1
-palh2m2
-palh1m1
-palh3m2
-mg10hl
-TSR
+palh1m2
 palh3m1
+palh3m2
 "
 
 

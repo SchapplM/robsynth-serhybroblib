@@ -4,3 +4,5 @@ robot_name := "TSRIC":
 robot_name_OL := "TSROL":
 robot_name_DE := "TSRDE":
 robot_name_TE := "TSRTE":
+
+codegen_opt := 1:

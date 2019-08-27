@@ -1,38 +1,47 @@
-##KUKA KR700PA
+#KUKA KR700PA
 
 robot_name := "palh3m1OL":
 
-# Anzahl der verallgemeinerten Gelenkkoordinaten, ohne virtuell Gelenkkoordinate
+# Anzahl der verallgemeinerten Gelenkkoordinaten   #(aktive Gelenk q1 q2 q3 q4)
 NQJ := 10:
-# Anzahl der Gelenke (mit virtuellen Schnittgelenken, denen kein Körper zugeordnet ist).
+# Anzahl der Gelenke (mit virtuellen Schnittgelenken, denen kein Körper zugeordnet ist). #(Gleich wie die Anzahl von MDH)
 NJ := 12:
-# Anzahl der Starrkörper (mit Basis; also 8 bewegte Körper)
+# Anzahl der Starrkörper (mit Basis; also 8 bewegte Körper) #(ohne Endeffektor)
 NL := 9:
 
-# wie CL
+# aktive Gekenke offset  (beobachten von MDH Tabelle um Z)    12X1 Matrix                    
 qoffset := Matrix(12, 1, [0, 0, Pi, 0, 0, 0, 0, Pi, 0, 0, Pi, 0]):
 
-# Virtuell Gelenkkoordinate == 0, sonst qJ
-theta :=  Matrix(12,1,[qJ1(t),qJ2(t),qJ3(t),qJ4(t),qJ5(t),qJ6(t),qJ7(t),qJ8(t),qJ9(t),qJ10(t),0,0]) + qoffset:
-# wie CL
+# rotation um Z
+theta := <qJ1(t); qJ2(t); qJ3(t); qJ4(t); qJ5(t); qJ6(t); qJ7(t); qJ8(t); 0; 0; qJ9(t); qJ10(t)> + qoffset:
+
+# rotation um X
 alpha := Matrix(12, 1, [0, Pi/2, 0, 0, Pi/2, Pi/2, 0, 0, 0, 0, 0, 0]):
-# wie CL
+
+# Translation entlang Z
 d := Matrix(12, 1, [OT1, 0, 0, 0, HW, 0, 0, 0, 0, 0, 0, 0]):
-# wie CL
+
+# Translation entlang X
 a := Matrix(12, 1, [0, T1A, AB, BG, GH, -DT2, AB, BE, DC, -EP, BC, GP]):
-# wie CL
+
+
+# vor-Index
 v := Matrix(12,1, <0; 1; 2; 3; 4; 1; 2; 7; 6; 8; 7; 4>):
 
-# wie CL
+# Rotation um Z (MDH) 
 beta := Matrix(12,1, [0, 0, 0, 0, 0, 0, 0, -phi78, 0, Pi, phi79, phi410]):
-# wie CL
+
+# Translation entlang Z (MDH)
 b := Matrix(12, 1, [0, 0, 0, 0, 0, T1T2, 0, 0, 0, 0, 0, 0]):
 
-
-# Nur Drehgelenke  wie CL
-sigma:=Matrix(<0,0,0,0,0,0,0,0,0,0,2,2>):
+# Nur Drehgelenke
+# Aktive Gelenk oder Passive Gekenk
 mu:=Matrix(<1,1,1,0,1,0,0,0,0,0,0,0>):
+# Gelenktyp, 0:Drehgelenk, 1:Schubgelenk, 2: virtuell
+sigma:=Matrix(<0,0,0,0,0,0,0,0,2,2,0,0>):
 
 # 0:Parallelorgram, 1: general Closed Loop
 Kettetyp := 1:
+
+codegen_opt := 1:
 

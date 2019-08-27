@@ -32,3 +32,5 @@ b := Matrix(12, 1, [0, 0, 0, 0, 0, T1T2, 0, 0, 0, 0, 0, 0]):
 # Nur Drehgelenke  wie CL
 sigma:=Matrix(<0,0,0,0,0,0,0,0,0,0,2,2>):
 mu:=Matrix(<1,1,1,0,1,0,0,0,0,0,0,0>):
+
+codegen_opt := 1:
