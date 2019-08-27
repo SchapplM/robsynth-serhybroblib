@@ -7,10 +7,10 @@
 # (C) Institut für Mechatronische Systeme, Leibniz Universität Hannover
 
 maplerepopath=$1
-mkdir -p ../matlabfcn_fiveparpris1TE ../matlabfcn_fiveparpris1DE1 ../matlabfcn_fiveparpris1DE2 ../matlabfcn_fiveparpris1OL ../matlabfcn_fiveparpris1IC
-cp $maplerepopath/codeexport/fiveparpris1TE/matlabfcn/* ../matlabfcn_fiveparpris1TE
-cp $maplerepopath/codeexport/fiveparpris1DE1/matlabfcn/* ../matlabfcn_fiveparpris1DE1
-cp $maplerepopath/codeexport/fiveparpris1DE2/matlabfcn/* ../matlabfcn_fiveparpris1DE2
-cp $maplerepopath/codeexport/fiveparpris1OL/matlabfcn/* ../matlabfcn_fiveparpris1OL
-cp $maplerepopath/codeexport/fiveparpris1IC/matlabfcn/* ../matlabfcn_fiveparpris1IC
+mkdir -p ../matlabfcn_fivebarpris1TE ../matlabfcn_fivebarpris1DE1 ../matlabfcn_fivebarpris1DE2 ../matlabfcn_fivebarpris1OL ../matlabfcn_fivebarpris1IC
+cp $maplerepopath/codeexport/fivebarpris1TE/matlabfcn/* ../matlabfcn_fivebarpris1TE
+cp $maplerepopath/codeexport/fivebarpris1DE1/matlabfcn/* ../matlabfcn_fivebarpris1DE1
+cp $maplerepopath/codeexport/fivebarpris1DE2/matlabfcn/* ../matlabfcn_fivebarpris1DE2
+cp $maplerepopath/codeexport/fivebarpris1OL/matlabfcn/* ../matlabfcn_fivebarpris1OL
+cp $maplerepopath/codeexport/fivebarpris1IC/matlabfcn/* ../matlabfcn_fivebarpris1IC
 

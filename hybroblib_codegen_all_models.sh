@@ -13,18 +13,19 @@ hybrdyn_repo_path=`cat hybrdyn_repo_path`
 systems="
 fourbar1
 fourbar2
-palh3m2
-palh3m1
-palh1m1
-fivebar1
-TSR
-palh2m1
-palh2m2
 fourbar3
-mg10hl
+fivebar1
 fivebarpris1
 fourbarpris
+palh2m1
+palh2m2
+palh1m1
+palh3m2
+mg10hl
+TSR
+palh3m1
 "
+
 
 for mdl in $systems; do
   echo "Starte Code-Generierung für alle Teilmodelle von $mdl"

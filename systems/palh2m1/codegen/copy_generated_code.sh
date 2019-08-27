@@ -7,10 +7,10 @@
 # (C) Institut für Mechatronische Systeme, Leibniz Universität Hannover
 
 maplerepopath=$1
-mkdir -p ../matlabfcn_palh2m1TE ../matlabfcn_palh2m1DE1 ../matlabfcn_palh2m1DE2 ../matlabfcn_palh2m1OL ../matlabfcn_palh2m1IC
-cp $maplerepopath/codeexport/palh2m1TE/matlabfcn/* ../matlabfcn_palh2m1TE
-cp $maplerepopath/codeexport/palh2m1DE1/matlabfcn/* ../matlabfcn_palh2m1DE1
-cp $maplerepopath/codeexport/palh2m1DE2/matlabfcn/* ../matlabfcn_palh2m1DE2
+mkdir -p ../matlabfcn_palh2m1DE ../matlabfcn_palh2m1OL ../matlabfcn_palh2m1IC
+#cp $maplerepopath/codeexport/palh2m1TE/matlabfcn/* ../matlabfcn_palh2m1TE
+#cp $maplerepopath/codeexport/palh2m1DE1/matlabfcn/* ../matlabfcn_palh2m1DE1
+cp $maplerepopath/codeexport/palh2m1DE2/matlabfcn/* ../matlabfcn_palh2m1DE
 cp $maplerepopath/codeexport/palh2m1OL/matlabfcn/* ../matlabfcn_palh2m1OL
 cp $maplerepopath/codeexport/palh2m1IC/matlabfcn/* ../matlabfcn_palh2m1IC
 
