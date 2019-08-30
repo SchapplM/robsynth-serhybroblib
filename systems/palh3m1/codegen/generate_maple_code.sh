@@ -19,11 +19,6 @@ robot_env_palh3m1DE1
 robot_env_palh3m1DE2
 "
 
-## robot_env_palh3m1DE1
-## robot_env_palh3m1DE2
-## robot_env_palh3m1TE
-## robot_env_palh3m1IC
-
 cd $maplerepopath
 for df in $deflist; do
   echo "Starte Generierung für $df"

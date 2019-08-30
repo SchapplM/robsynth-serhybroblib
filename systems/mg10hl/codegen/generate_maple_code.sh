@@ -18,10 +18,6 @@ robot_env_mg10hlTE
 robot_env_mg10hlDE1
 robot_env_mg10hlDE2
 "
-##robot_env_mg10hlDE2
-##robot_env_mg10hlIC
-## robot_env_mg10hlDE1
-## robot_env_mg10hlTE
 
 cd $maplerepopath
 for df in $deflist; do

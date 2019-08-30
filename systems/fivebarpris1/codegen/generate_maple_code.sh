@@ -18,10 +18,6 @@ robot_env_fivebarpris1TE
 robot_env_fivebarpris1DE1
 robot_env_fivebarpris1DE2
 "
-##robot_env_fivebarpris1DE2
-##robot_env_fivebarpris1IC
-## robot_env_fivebarpris1DE1
-## robot_env_fivebarpris1TE
 
 cd $maplerepopath
 for df in $deflist; do

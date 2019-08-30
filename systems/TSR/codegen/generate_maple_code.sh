@@ -19,11 +19,6 @@ robot_env_TSRDE1
 robot_env_TSRDE2
 "
 
-## robot_env_TSRDE1
-## robot_env_TSRDE2
-## robot_env_TSRTE
-## robot_env_TSRIC
-
 cd $maplerepopath
 for df in $deflist; do
   echo "Starte Generierung für $df"

@@ -28,4 +28,4 @@ for df in $deflist; do
 done
 
 cp robot_codegen_definitions/robot_env_fourbar2OL robot_codegen_definitions/robot_env
-./robot_codegen_start.sh --fixb_only --ic
+./robot_codegen_start.sh --fixb_only --ic -p

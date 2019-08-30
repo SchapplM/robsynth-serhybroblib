@@ -8,9 +8,9 @@
 
 maplerepopath=$1
 mkdir -p ../matlabfcn_fourbar2TE ../matlabfcn_fourbar2DE1 ../matlabfcn_fourbar2DE2 ../matlabfcn_fourbar2OL ../matlabfcn_fourbar2IC
-cp $maplerepopath/codeexport/fourbar2TE/matlabfcn/* ../matlabfcn_fourbar2TE
-cp $maplerepopath/codeexport/fourbar2DE1/matlabfcn/* ../matlabfcn_fourbar2DE1
-cp $maplerepopath/codeexport/fourbar2DE2/matlabfcn/* ../matlabfcn_fourbar2DE2
-cp $maplerepopath/codeexport/fourbar2OL/matlabfcn/* ../matlabfcn_fourbar2OL
-cp $maplerepopath/codeexport/fourbar2IC/matlabfcn/* ../matlabfcn_fourbar2IC
+cp -u $maplerepopath/codeexport/fourbar2TE/matlabfcn/*.* ../matlabfcn_fourbar2TE
+cp -u $maplerepopath/codeexport/fourbar2DE1/matlabfcn/*.* ../matlabfcn_fourbar2DE1
+cp -u $maplerepopath/codeexport/fourbar2DE2/matlabfcn/*.* ../matlabfcn_fourbar2DE2
+cp -u $maplerepopath/codeexport/fourbar2OL/matlabfcn/*.* ../matlabfcn_fourbar2OL
+cp -u $maplerepopath/codeexport/fourbar2IC/matlabfcn/*.* ../matlabfcn_fourbar2IC
 

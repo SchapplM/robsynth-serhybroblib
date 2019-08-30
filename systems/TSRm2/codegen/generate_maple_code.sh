@@ -19,11 +19,6 @@ robot_env_TSRm2DE1
 robot_env_TSRm2DE2
 "
 
-## robot_env_TSRm2DE1
-## robot_env_TSRm2DE2
-## robot_env_TSRm2TE
-## robot_env_TSRm2IC
-
 cd $maplerepopath
 for df in $deflist; do
   echo "Starte Generierung für $df"
@@ -32,4 +27,4 @@ for df in $deflist; do
 done
 
 cp robot_codegen_definitions/robot_env_TSRm2OL robot_codegen_definitions/robot_env
-./robot_codegen_start.sh --fixb_only --ic -p --notest
+./robot_codegen_start.sh --fixb_only --ic -p

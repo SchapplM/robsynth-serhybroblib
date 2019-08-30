@@ -19,10 +19,7 @@ robot_env_fourbar3TE
 robot_env_fourbar3DE1
 robot_env_fourbar3DE2
 "
-##robot_env_fourbar3IC
-##robot_env_fourbar3TE
-##robot_env_fourbar3DE1
-##robot_env_fourbar3DE2
+
 
 cd $maplerepopath
 for df in $deflist; do

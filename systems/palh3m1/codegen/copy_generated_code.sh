@@ -8,9 +8,9 @@
 
 maplerepopath=$1
 mkdir -p ../matlabfcn_palh3m1TE ../matlabfcn_palh3m1DE1 ../matlabfcn_palh3m1DE2 ../matlabfcn_palh3m1OL ../matlabfcn_palh3m1IC
-cp $maplerepopath/codeexport/palh3m1TE/matlabfcn/* ../matlabfcn_palh3m1TE
-cp $maplerepopath/codeexport/palh3m1DE1/matlabfcn/* ../matlabfcn_palh3m1DE1
-cp $maplerepopath/codeexport/palh3m1DE2/matlabfcn/* ../matlabfcn_palh3m1DE2
-cp $maplerepopath/codeexport/palh3m1OL/matlabfcn/* ../matlabfcn_palh3m1OL
-cp $maplerepopath/codeexport/palh3m1IC/matlabfcn/* ../matlabfcn_palh3m1IC
+cp -u $maplerepopath/codeexport/palh3m1TE/matlabfcn/*.* ../matlabfcn_palh3m1TE
+cp -u $maplerepopath/codeexport/palh3m1DE1/matlabfcn/*.* ../matlabfcn_palh3m1DE1
+cp -u $maplerepopath/codeexport/palh3m1DE2/matlabfcn/*.* ../matlabfcn_palh3m1DE2
+cp -u $maplerepopath/codeexport/palh3m1OL/matlabfcn/*.* ../matlabfcn_palh3m1OL
+cp -u $maplerepopath/codeexport/palh3m1IC/matlabfcn/*.* ../matlabfcn_palh3m1IC
 

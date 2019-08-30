@@ -18,10 +18,6 @@ robot_env_fourbarprisTE
 robot_env_fourbarprisDE1
 robot_env_fourbarprisDE2
 "
-##robot_env_fourbarprisDE2
-##robot_env_fourbarprisIC
-## robot_env_fourbarprisDE1
-## robot_env_fourbarprisTE
 
 cd $maplerepopath
 for df in $deflist; do
@@ -32,4 +28,4 @@ done
 
 
 cp robot_codegen_definitions/robot_env_fourbarprisOL robot_codegen_definitions/robot_env
-./robot_codegen_start.sh --fixb_only --ic
+./robot_codegen_start.sh --fixb_only --ic -p
