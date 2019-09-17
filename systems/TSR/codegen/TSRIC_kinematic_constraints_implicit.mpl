@@ -66,6 +66,7 @@ h3t := T_2_12(1..3,4) - T_2_15(1..3,4):
 ;
 #combine(tmp);  nur anzeigen lassen für h3r
 ;
+h3r:= qJ6(t) + qJ12(t) - qJ3(t) - qJ9(t):
 # Zusätzliche Zwangsbedingung (6 und 8 sind gleiche Körper)
 h4:=pi/2 - qJ8(t) - qJ9(t) + qJ2(t):
 # Zusammenstellen aller Zwangsbedingungen
