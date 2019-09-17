@@ -3,7 +3,7 @@
 Dieses Repo enthält eine Sammlung von Modellen hybrider Roboter (serielle Roboter mit parallelen Teilstrukturen bzw. sonstigen kinematischen Zwangsbedingungen).
 
 
-Moritz Schappler, schappler@imes.uni-hannover.de, 2018-04  
+Moritz Schappler, moritz.schappler@imes.uni-hannover.de, 2018-04  
 (C) Institut für Mechatronische Systeme, Universität Hannover
 
 ## Benutzung
@@ -29,6 +29,8 @@ Für jeden der Roboter gibt es unterschiedliche Implementierungen der kinematisc
 * ...TE (Herleitung der Dynamik in Minimalkoordinaten durch trigonometrische Elimination der abhängigen (passiven) Gelenkwinkel in der Lagrange-Funktion)
 * ...DE1 (Herleitung der Dynamik in Minimalkoordinaten durch direkte Elimination der abhängigen Koordinaten)
 * ...DE2 (Herleitung wie in DE1, die Minimalkoordinaten werden aber erst substituiert, nachdem trigonometrische Additionstheoreme für parallele Drehachsen angewendet wurden)
+
+Die Ansätze werden in [SchapplerLilHad2019](#quellen) und in der Dokumentation des HybrDyn-Repos beschrieben.
 
 ### Test-Funktionen
 
@@ -95,3 +97,4 @@ Folgende Roboter und Mechanismen wurden bisher erfolgreich getestet:
 * [Brünger2019_M832] A. Brünger: "Vergleich der Leistungsmerkmale und Modellierung von parallelen Robotern mit hybriden und seriellen Beinketten" (Masterarbeit bei Moritz Schappler)
 * [Bejaoui2018_S749] A. Bejaoui: "Modellierung kinematischer Zwangsbedingungen für hybride serielle Roboter mit planaren Parallelmechanismen" (Studienarbeit bei Moritz Schappler)
 * [NuelleSchTapLil2017] K. Nülle, M. Schappler et al.: Projektabschlussbericht „3. Arm“ - Handwerker-Kraftassistenzsystem mit adaptiver Mensch-Technik-Interaktion
+* [SchapplerLilHad2019] Schappler, M. and Lilge, T. and Haddadin, S.: Kinematics and Dynamics Model via Explicit Trigonometric Elimination of Kinematic Constraints for a Force Assistance Exoskeleton (2019)
