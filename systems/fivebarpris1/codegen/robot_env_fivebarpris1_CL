@@ -1,0 +1,30 @@
+#Roboter aus Viergelenkkette und Schubgelenk
+
+robot_name := "fivebarpris1":
+
+# Anzahl der verallgemeinerten Gelenkkoordinaten
+NQJ := 5:
+# Anzahl der Gelenke (mit virtuellen Schnittgelenken, denen kein Körper zugeordnet ist).
+NJ := 9:
+# Anzahl der Starrkörper (mit Basis; also 7 bewegte Körper)
+NL := 8:
+                        
+qoffset := Matrix(9, 1, [0, 0, 0, Pi/2, 0, 0, Pi/2, 0, 0]):
+theta := <qJ1(t);kintmp_t(1,1);0;kintmp_t(2,1);qJ3(t);qJ4(t);qJ5(t);kintmp_t(3,1);0> + qoffset:
+alpha := Matrix(9, 1, [0, Pi/2, -Pi/2, Pi/2, 0, -Pi/2, Pi/2, 0, 0]):
+d := Matrix(9, 1, [OT, 0, qJ2(t)+HC, 0, 0, EP, 0, 0, 0]):
+a := Matrix(9, 1, [0, -TD, 0, 0, CE, 0, TA, CB, AB]):
+v := Matrix(9,1, <0; 1; 2; 3; 4; 5; 1; 4; 7>):
+ 
+beta := Matrix(9,1,[0, 0, -Pi/2, 0, 0, -Pi/2, 0, -Pi, 0]):
+b := Matrix(9,1,[0, 0, 0, 0, 0, 0, 0, 0, 0]):
+
+# Nur Drehgelenke
+sigma := Matrix(9, 1, [0,0,1,0,0,0,0,0,2]):
+mu := Matrix(<1,0,1,0,1,1,1,0,0>):
+# Allgemeine Winkel
+kintmp_t := Matrix(3, 1,[rho12(t),rho34(t),rho48(t)]):
+kintmp_s := Matrix(3, 1,[rho12_s,rho34_s,rho48_s]):
+
+codegen_opt := 1:
+

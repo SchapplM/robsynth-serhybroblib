@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Worksheet>
+<Version major="2017" minor="0"/>
+<Label-Scheme value="2" prefix=""/>
+<View-Properties presentation="false" autoexpanding_sections="true" UserProfileName="Maple Default Profile" NumericFormat-ApplyInteger="true" NumericFormat-ApplyRational="true" NumericFormat-ApplyExponent="false">
+</View-Properties>
+<MapleNet-Properties prettyprint="3" warnlevel="3" preplot="" helpbrowser="standard" contextmenusize="automatic" displayprecision="-1" echo="1" unitattributes="&quot;fontweight&quot; = &quot;bold&quot;" imaginaryunit="I" longdelim="true" elisiontermsthreshold="10000" elisiondigitsafter="100" elisiondigitsbefore="100" plotdevice="inline" errorbreak="1" plotoptions="" plotdriver="opengl" quiet="false" elisiontermsbefore="100" elisiontermsafter="100" screenwidth="79" indentamount="4" plotoutput="terminal" screenpixelheight="1080" rtablesize="10" useclientjvm="true" labelwidth="20" postplot="" typesetting="extended" ansi="false" elisiondigitsthreshold="10000" showassumed="1" errorcursor="false" labelling="true" screenheight="25" prompt="&gt; " verboseproc="1" latexwidth="8.0" ShowLabels="true"/>
+<Styles>
+<Font name="Heading 1" background="[255,255,255]" bold="true" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="18" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Warning" background="[255,255,255]" bold="false" executable="false" family="Courier New" foreground="[0,0,255]" italic="false" opaque="false" readonly="true" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="2D Output" background="[255,255,255]" bold="false" executable="false" family="Times New Roman" foreground="[0,0,255]" italic="false" opaque="false" readonly="true" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Heading 4" background="[255,255,255]" bold="false" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="true" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Line Printed Output" background="[255,255,255]" bold="false" executable="false" family="Courier New" foreground="[0,0,255]" italic="false" opaque="false" readonly="true" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Heading 2" background="[255,255,255]" bold="true" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="16" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Maple Output" background="[255,255,255]" bold="false" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="2D Inert Output" background="[255,255,255]" bold="false" executable="true" family="Times New Roman" foreground="[144,144,144]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Heading 3" background="[255,255,255]" bold="true" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="true" opaque="false" readonly="false" size="14" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Diagnostic" background="[255,255,255]" bold="false" executable="false" family="Courier New" foreground="[40,120,40]" italic="false" opaque="false" readonly="true" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Ordered List 1" background="[255,255,255]" bold="false" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Maple Input" background="[255,255,255]" bold="true" executable="true" family="Courier New" foreground="[120,0,14]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Text Output" background="[255,255,255]" bold="false" executable="false" family="Courier New" foreground="[0,0,255]" italic="false" opaque="false" readonly="true" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Ordered List 2" background="[255,255,255]" bold="false" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Ordered List 3" background="[255,255,255]" bold="false" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Ordered List 4" background="[255,255,255]" bold="false" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Ordered List 5" background="[255,255,255]" bold="false" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Annotation Title" background="[255,255,255]" bold="true" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="18" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Header and Footer" background="[255,255,255]" bold="false" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="10" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="HyperlinkError" background="[255,255,255]" bold="false" executable="false" family="Courier New" foreground="[255,0,255]" italic="false" opaque="false" readonly="true" size="12" subscript="false" superscript="false" underline="true" placeholder="false"/>
+<Font name="Atomic Variable" background="[255,255,255]" bold="false" executable="false" family="Times New Roman" foreground="[175,0,175]" italic="true" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="HyperlinkWarning" background="[255,255,255]" bold="false" executable="false" family="Courier New" foreground="[0,0,255]" italic="false" opaque="false" readonly="true" size="12" subscript="false" superscript="false" underline="true" placeholder="false"/>
+<Font name="Dictionary Hyperlink" background="[255,255,255]" bold="false" executable="false" family="Times New Roman" foreground="[147,0,15]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="true" placeholder="false"/>
+<Font name="2D Math" background="[255,255,255]" bold="false" executable="true" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Bullet Item" background="[255,255,255]" bold="false" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Maple Plot" background="[255,255,255]" bold="false" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Annotation Text" background="[255,255,255]" bold="false" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="List Item" background="[255,255,255]" bold="false" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Dash Item" background="[255,255,255]" bold="false" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="2D Input" background="[255,255,255]" bold="false" executable="true" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Error" background="[255,255,255]" bold="false" executable="false" family="Courier New" foreground="[255,0,255]" italic="false" opaque="false" readonly="true" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Title" background="[255,255,255]" bold="true" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="18" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Text" background="[255,255,255]" bold="false" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Normal" background="[255,255,255]" bold="false" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Caption Reference" background="[255,255,255]" bold="true" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Code" background="[255,255,255]" bold="false" executable="false" family="Courier New" foreground="[255,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Maple Input Placeholder" background="[255,255,255]" bold="true" executable="true" family="Courier New" foreground="[200,0,200]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="true"/>
+<Font name="Equation Label" background="[255,255,255]" bold="true" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Author" background="[255,255,255]" bold="false" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Hyperlink" background="[255,255,255]" bold="false" executable="false" family="Times New Roman" foreground="[0,128,128]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="true" placeholder="false"/>
+<Font name="Caption Text" background="[255,255,255]" bold="true" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Layout name="Heading 1" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="8" spacebelow="4" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Warning" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="0" spacebelow="0" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Heading 4" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="0" spacebelow="0" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Line Printed Output" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="0" spacebelow="0" linebreak="any" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Heading 2" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="8" spacebelow="2" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Maple Output" alignment="centred" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.3" spaceabove="0" spacebelow="0" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Heading 3" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="0" spacebelow="0" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Diagnostic" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="0" spacebelow="0" linebreak="any" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Ordered List 1" alignment="left" bullet="numeric" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="3" spacebelow="3" linebreak="space" pagebreak-before="false" initial="-1" bulletsuffix="."/>
+<Layout name="Text Output" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="0" spacebelow="0" linebreak="newline" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Ordered List 2" alignment="left" bullet="alphabetic" firstindent="0" leftmargin="36" rightmargin="0" linespacing="0.0" spaceabove="3" spacebelow="3" linebreak="space" pagebreak-before="false" initial="-1" bulletsuffix="."/>
+<Layout name="Ordered List 3" alignment="left" bullet="roman" firstindent="0" leftmargin="72" rightmargin="0" linespacing="0.0" spaceabove="3" spacebelow="3" linebreak="space" pagebreak-before="false" initial="-1" bulletsuffix="."/>
+<Layout name="Ordered List 4" alignment="left" bullet="ALPHABETIC" firstindent="0" leftmargin="108" rightmargin="0" linespacing="0.0" spaceabove="3" spacebelow="3" linebreak="space" pagebreak-before="false" initial="-1" bulletsuffix="."/>
+<Layout name="Ordered List 5" alignment="left" bullet="ROMAN" firstindent="0" leftmargin="144" rightmargin="0" linespacing="0.0" spaceabove="3" spacebelow="3" linebreak="space" pagebreak-before="false" initial="-1" bulletsuffix="."/>
+<Layout name="Annotation Title" alignment="centred" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="12" spacebelow="12" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="HyperlinkError" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="0" spacebelow="0" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="HyperlinkWarning" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="0" spacebelow="0" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Bullet Item" alignment="left" bullet="dot" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="3" spacebelow="3" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Maple Plot" alignment="centred" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="0" spacebelow="0" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="List Item" alignment="left" bullet="indent" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="3" spacebelow="3" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Dash Item" alignment="left" bullet="dash" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="3" spacebelow="3" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Error" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="0" spacebelow="0" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Title" alignment="centred" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="12" spacebelow="12" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Normal" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="0" spacebelow="0" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Author" alignment="centred" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="8" spacebelow="8" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Pencil-style name="Pencil 1" pen-color="[0,0,0]" pen-height="1.0" pen-width="1.0" pen-opacity="1.0"/>
+<Pencil-style name="Pencil 2" pen-color="[0,0,255]" pen-height="1.0" pen-width="1.0" pen-opacity="1.0"/>
+<Pencil-style name="Pencil 3" pen-color="[0,0,0]" pen-height="3.0" pen-width="3.0" pen-opacity="1.0"/>
+<Pencil-style name="Pencil 4" pen-color="[0,0,255]" pen-height="3.0" pen-width="3.0" pen-opacity="1.0"/>
+<Pencil-style name="Pencil 5" pen-color="[255,0,0]" pen-height="5.0" pen-width="5.0" pen-opacity="1.0"/>
+<Highlighter-style name="Highlighter 5" pen-color="[255,255,0]" pen-height="48.0" pen-width="48.0" pen-opacity="0.8"/>
+<Highlighter-style name="Highlighter 3" pen-color="[51,255,0]" pen-height="24.0" pen-width="24.0" pen-opacity="0.8"/>
+<Highlighter-style name="Highlighter 4" pen-color="[0,255,255]" pen-height="32.0" pen-width="32.0" pen-opacity="0.8"/>
+<Highlighter-style name="Highlighter 1" pen-color="[255,153,255]" pen-height="12.0" pen-width="8.0" pen-opacity="0.8"/>
+<Highlighter-style name="Highlighter 2" pen-color="[255,204,0]" pen-height="14.0" pen-width="14.0" pen-opacity="0.8"/>
+</Styles>
+<Startup-Code startupcode=""/>
+<Task-table>
+    <Task-category name="&lt;default&gt;"/>
+</Task-table>
+<Task/>
+<Group labelreference="L3105" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field style="Text" bold="true" size="28" layout="Normal"><Font size="28" bold="true">MG10HL von Kawasaki
+</Font><Font size="12" bold="false">Voraussetzung:
+Slider_crank muss mit der Toolbox berechnet worden sein (Arbeitsblatt &quot;slcr_kinematic_constraints.mw&quot;)</Font></Text-field><Text-field style="Text" bold="true" size="28" layout="Normal"><Font size="12" bold="false">Viergelenkkette muss mit der Toolbox berechnet worden sein (Arbeitsblatt &quot;vgk_kinematic_constraints.mw&quot;)</Font></Text-field>
+</Input>
+</Group><Presentation-Block>
+<Group view="code" labelreference="L3104" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field style="Heading 2" layout="Heading 2">Autor</Text-field><Text-field style="Normal" layout="Normal">Abderahman Bejaoui</Text-field><Text-field style="Normal" layout="Normal">Studienarbeit bei: Moritz Schappler, moritz.schappler@imes.uni-hannover.de, 2018-09</Text-field><Text-field style="Normal" layout="Normal">(C) Institut fuer mechatronische Systeme, Leibniz Universitaet Hannover</Text-field>
+</Input>
+</Group>
+<Group view="code" labelreference="L3101" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field style="Heading 2" layout="Heading 2">Quellen</Text-field><Text-field style="Normal" layout="Normal">TODO</Text-field><Text-field style="Text" layout="Normal"></Text-field>
+</Input>
+</Group></Presentation-Block>
+<Section collapsed="false" isCollapsible="true" drawButton="true" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60"><Title><Text-field style="Heading 1" layout="Heading 1">Initialisierung</Text-field></Title>
+<Section collapsed="false" isCollapsible="true" drawButton="true" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60"><Title><Text-field style="Heading 2" layout="Heading 2">Import </Text-field></Title><Presentation-Block>
+<Group view="code" labelreference="L3095" drawlabel="true">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">restart:</Text-field>
+</Input>
+</Group>
+<Group view="code" labelreference="L3102" drawlabel="true">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">kin_constraints_exist<Font encoding="UTF-8"> := true: # F\303\274r Speicherung</Font></Text-field>
+</Input>
+</Group>
+<Group view="code" labelreference="L3111" drawlabel="true">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"><Font encoding="UTF-8">with(StringTools): # F\303\274r Zeitausgabe</Font>
+with(LinearAlgebra):
+with(codegen):
+with(CodeGeneration):</Text-field>
+</Input>
+</Group>
+<Group view="code" labelreference="L3110" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">#with(ListTools):</Text-field>
+</Input>
+</Group></Presentation-Block><Presentation-Block>
+<Group view="code" labelreference="L3103" drawlabel="true">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">codegen_act := true:
+codegen_opt := 1: # Geringerer Optimierungsgrad. Sonst zu lange.
+<Font encoding="UTF-8">codegen_debug := 0: # Zur Code-Generierung auch f\303\274r Nicht-Inert-Ausdr\303\274cke</Font></Text-field>
+</Input>
+</Group></Presentation-Block><Presentation-Block>
+<Group labelreference="L3090" drawlabel="true">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">read &quot;../helper/proc_MatlabExport&quot;:</Text-field>
+</Input>
+</Group>
+<Group view="code" labelreference="L3092" drawlabel="true">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">read &quot;../transformation/proc_rotx&quot;:
+read &quot;../transformation/proc_roty&quot;:
+read &quot;../transformation/proc_rotz&quot;:</Text-field>
+</Input>
+</Group></Presentation-Block><Presentation-Block>
+<Group labelreference="L3109" drawlabel="true">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">read &quot;../helper/proc_convert_s_t&quot;:
+read &quot;../helper/proc_convert_t_s&quot;:
+read &quot;../robot_codegen_constraints/proc_subs_kintmp_exp&quot;:</Text-field>
+</Input>
+</Group></Presentation-Block><Presentation-Block>
+<Group view="code" labelreference="L3097" drawlabel="true">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"><Font encoding="UTF-8">with(RealDomain): # Schr\303\244nkt alle Funktionen auf den reellen Bereich ein. Muss nach Definition von MatlabExport kommen. Sonst geht dieses nicht.</Font></Text-field>
+</Input>
+</Group></Presentation-Block><Presentation-Block>
+<Group labelreference="L3099" drawlabel="true">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">read &quot;../robot_codegen_definitions/robot_env&quot;:</Text-field>
+</Input>
+</Group>
+<Group view="code" labelreference="L3087" drawlabel="true">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">read sprintf(&quot;../codeexport/%s/tmp/tree_floatb_definitions&quot;,robot_name):</Text-field>
+</Input>
+</Group></Presentation-Block>
+</Section><Presentation-Block>
+<Group view="code" labelreference="L3100" drawlabel="true">
+<Input><Text-field style="Text" layout="Normal"><Font encoding="UTF-8">Variable mit Winkeln der Nebenstruktur nur in Abh\303\244ngigkeit der verallgemeinerten Koordinaten</Font></Text-field>
+</Input>
+</Group>
+<Group view="code" hide-input="false" labelreference="L3091" drawlabel="true">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">kintmp_qs := Matrix(RowDimension(kintmp_s),1):</Text-field>
+</Input>
+</Group>
+<Group view="code" hide-input="false" labelreference="L3096" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">qJ_t:= &lt;qJ1(t),qJ2(t),qJ3(t),qJ4(t),qJ5(t),qJ6(t)&gt;:</Text-field>
+</Input>
+</Group>
+<Group view="code" hide-input="false" labelreference="L3093" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">qJ_s:= &lt;qJ1s,qJ2s,qJ3s,qJ4s,qJ5,qJ6s&gt;:</Text-field>
+</Input>
+</Group>
+<Group view="code" labelreference="L3094" drawlabel="true">
+<Input><Text-field style="Text" layout="Normal">Konstante Winkel bereits hineinschreiben </Text-field>
+</Input>
+</Group>
+<Group view="code" labelreference="L3088" drawlabel="true">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">for i from 1 to RowDimension(kintmp_s) do
+  if diff(kintmp_s(i,1), t) = 0 then
+    kintmp_qs(i,1) := kintmp_s(i,1):
+  end if:
+end do:</Text-field>
+</Input>
+</Group>
+<Group view="code" labelreference="L3098" drawlabel="true">
+<Input><Text-field style="Text" layout="Normal"><Font encoding="UTF-8">Variablen definieren f\303\274r die Hilfswinkel</Font></Text-field><Text-field style="Text" layout="Normal"></Text-field>
+</Input>
+</Group>
+<Group view="code" labelreference="L3089" drawlabel="true">
+<Input><Text-field style="Text" layout="Normal"><Font encoding="UTF-8">Ersetzungsausdr\303\274cke definieren.
+</Font>Speichere Sinus und Cosinus der Winkel direkt ab, da diese in den Rotationsmatrizen direkt auftreten.
+Spalte 1: Zu suchender Ausdruck (sin oder cos eines Winkels)
+Spalte 2: Einzusetzender Ausdruck.
+<Font encoding="UTF-8">Dadurch werden arctan-Ausdr\303\274cke in der direkten Kinematik reduziert.
+\303\204hnliches Vorgehen wie in [1].</Font></Text-field>
+</Input>
+</Group>
+<Group view="code" labelreference="L3107" drawlabel="true">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">kintmp_subsexp := Matrix(2*RowDimension(kintmp_s),2):</Text-field>
+</Input>
+</Group>
+<Group view="code" labelreference="L3108" drawlabel="true">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">for i from 1 to RowDimension(kintmp_s) do
+  kintmp_subsexp(2*i-1, 1) := sin(kintmp_s(i,1)):
+  kintmp_subsexp(2*i,   1) := cos(kintmp_s(i,1)):
+<Font encoding="UTF-8">  # Initialisierung der rechten Spalte mit gleichen Werten. Sp\303\244ter nur Ersetzung, wenn Vorteilhaft.
+</Font>  kintmp_subsexp(2*i-1, 2) := kintmp_subsexp(2*i-1, 1):
+  kintmp_subsexp(2*i,   2) := kintmp_subsexp(2*i,   1):
+end do:</Text-field>
+</Input>
+</Group>
+<Group view="code" labelreference="L3112" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">read sprintf(&quot;../codeexport/fourbar1TE/tmp/fourbar1TE_angles_trig_elim&quot;):</Text-field>
+</Input>
+</Group></Presentation-Block>
+<Group labelreference="L3106" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">read sprintf(&quot;../codeexport/fourbarprisTE/tmp/fourbarprisTE_angles_trig_elim&quot;):</Text-field>
+</Input>
+</Group>
+</Section>
+<Group labelreference="L1" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"></Text-field>
+</Input>
+</Group>
+<Section collapsed="false" isCollapsible="true" drawButton="true" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60"><Title><Text-field style="Heading 1" layout="Heading 1">Viergelenkkette A-C-D-E</Text-field></Title>
+<Group labelreference="L3113" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">winkel1:=&lt;&lt;sin_rho910|sin(rho910_s)&gt;;&lt;cos_rho910|cos(rho910_s)&gt;;&lt;sin_rho19|sin(rho19_s)&gt;;&lt;cos_rho19|cos(rho19_s)&gt;;&lt;sin_rho3|sin(rho3_s)&gt;;&lt;cos_rho3|cos(rho3_s)&gt;&gt;:</Text-field>
+</Input>
+</Group>
+</Section><CodeEditor-ExecGroup view="presentation" labelreference="L3116" applyint="true" applyrational="true" display="code"><EC-CodeEditor id="CodeEditRegion0" expanded="true" visible="true" pixel-width="1280" pixel-height="232" code-language="text/maple" autoexpand="true" wrapping="false" show-border="true" code-line-numbers="true">for i from 1 to 6 do
+	winkel1(i,2):=winkel(i,2):  
+     cos_phi_s :=sin(qJ2s)*cos(phi23)+cos(qJ2s)*sin(phi23):
+	sin_phi_s := cos(qJ2s)*cos(phi23)-sin(qJ2s)*sin(phi23):
+	winkel1(i,2):=subs({sin(phi_s)=sin_phi_s},winkel1(i,2)): 
+	winkel1(i,2):=subs({cos(phi_s)=cos_phi_s},winkel1(i,2)):
+     winkel1(i,2) := subs({l1=AC}, winkel1(i,2)):
+     winkel1(i,2) := subs({l2=AE}, winkel1(i,2)):
+     winkel1(i,2) := subs({l3=ED}, winkel1(i,2)):
+     winkel1(i,2) := subs({l4=DC}, winkel1(i,2)):
+end do:</EC-CodeEditor></CodeEditor-ExecGroup>
+<Group labelreference="L3118" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">winkel1(1..6,1):</Text-field>
+</Input>
+</Group>
+<Group labelreference="L3120" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"><Font encoding="UTF-8">sin_rho910_s:=winkel1(1,2): # f\303\274r kintmp_subsexp</Font></Text-field>
+</Input>
+</Group>
+<Group labelreference="L3122" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"><Font encoding="UTF-8">cos_rho910_s:=winkel1(2,2): # f\303\274r </Font>kintmp_subsexp</Text-field>
+</Input>
+</Group>
+<Group labelreference="L3121" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"><Font encoding="UTF-8">sin_rho19_s:=winkel1(3,2): # f\303\274r </Font>kintmp_subsexp</Text-field>
+</Input>
+</Group>
+<Group labelreference="L3123" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">cos_rho19_s:=winkel1(4,2):  <Font encoding="UTF-8"># f\303\274r </Font>kintmp_subsexp</Text-field>
+</Input>
+</Group>
+<Group labelreference="L3124" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">sin_rho3_s:=winkel1(5,2):</Text-field>
+</Input>
+</Group>
+<Group labelreference="L3125" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">cos_rho3_s:=winkel1(6,2):</Text-field>
+</Input>
+</Group>
+<Group labelreference="L3126" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">cos_rho23_s:=-cos_rho3_s: <Font encoding="UTF-8"># f\303\274r </Font>kintmp_subsexp</Text-field>
+</Input>
+</Group>
+<Group labelreference="L3127" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">sin_rho23_s:=sin_rho3_s:  <Font encoding="UTF-8"># f\303\274r </Font>kintmp_subsexp</Text-field>
+</Input>
+</Group>
+<Section collapsed="false" isCollapsible="true" drawButton="true" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60"><Title><Text-field style="Heading 1" layout="Heading 1">Schubkurbel G-P-K</Text-field></Title>
+<Group labelreference="L3129" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">winkel2:=&lt;&lt;sin_eta1112|sin(eta1112_s)&gt;;&lt;cos_eta1112|cos(eta1112_s)&gt;;&lt;sin_eta3|sin(eta3_s)&gt;;&lt;cos_eta3|cos(eta3_s)&gt;;&lt;sin_eta45|sin(eta45_s)&gt;;&lt;cos_eta45|cos(eta45_s)&gt;&gt;:</Text-field>
+</Input>
+</Group>
+</Section><CodeEditor-ExecGroup view="presentation" labelreference="L3132" applyint="true" applyrational="true" display="code"><EC-CodeEditor id="CodeEditRegion1" expanded="true" visible="true" pixel-width="1297" pixel-height="147" code-language="text/maple" autoexpand="true" wrapping="false" show-border="true" code-line-numbers="true">for i from 1 to 6 do
+	winkel2(i,2):=winkel_fourbarpris(i,2):  
+	winkel2(i,2):=subs({qJ1s=qJ6s},winkel2(i,2)): 
+	winkel2(i,2) := subs({GK=GK}, winkel2(i,2)):
+     winkel2(i,2) := subs({GP=GP}, winkel2(i,2)):
+     winkel2(i,2) := subs({HP=HP}, winkel2(i,2)):
+end do:</EC-CodeEditor></CodeEditor-ExecGroup>
+<Group hide-input="false" labelreference="L3133" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">winkel2</Text-field>
+</Input>
+</Group>
+<Group labelreference="L3134" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">sin_eta1112_s:=winkel2(1,2): <Font encoding="UTF-8"># f\303\274r </Font>kintmp_subsexp</Text-field>
+</Input>
+</Group>
+<Group labelreference="L3135" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">cos_eta1112_s:=winkel2(2,2): <Font encoding="UTF-8"># f\303\274r </Font>kintmp_subsexp</Text-field>
+</Input>
+</Group>
+<Group labelreference="L3136" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">sin_eta3_s:=winkel2(3,2): </Text-field>
+</Input>
+</Group>
+<Group labelreference="L3137" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">cos_eta3_s:=winkel2(4,2):</Text-field>
+</Input>
+</Group>
+<Group labelreference="L3138" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">sin_eta45_s:=winkel2(5,2): <Font encoding="UTF-8"># f\303\274r </Font>kintmp_subsexp</Text-field>
+</Input>
+</Group>
+<Group labelreference="L3139" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">cos_eta45_s:=winkel2(6,2): <Font encoding="UTF-8"># f\303\274r </Font>kintmp_subsexp</Text-field>
+</Input>
+</Group>
+<Group labelreference="L3140" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">sin_eta411_s:=sin_eta3_s: <Font encoding="UTF-8"># f\303\274r </Font>kintmp_subsexp</Text-field>
+</Input>
+</Group>
+<Group labelreference="L3141" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">cos_eta411_s:=-cos_eta3_s: <Font encoding="UTF-8"># f\303\274r </Font>kintmp_subsexp</Text-field>
+</Input>
+</Group>
+<Group labelreference="L3142" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">cos_eta34_s:=-(cos_eta411_s*cos(phi3)-sin_eta411_s*sin(phi3)):  <Font encoding="UTF-8"># f\303\274r </Font>kintmp_subsexp</Text-field>
+</Input>
+</Group>
+<Group labelreference="L3143" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">sin_eta34_s:=sin_eta411_s*cos(phi3)+cos_eta411_s*sin(phi3):  <Font encoding="UTF-8"># f\303\274r </Font>kintmp_subsexp</Text-field>
+</Input>
+</Group>
+<Section collapsed="false" isCollapsible="true" drawButton="true" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60"><Title><Text-field style="Heading 1" layout="Heading 1">Kintmp_subsexp</Text-field></Title>
+<Group hide-input="false" labelreference="L3162" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">kintmp_subsexp(1,2):=sin_rho23_s:</Text-field>
+</Input>
+</Group>
+<Group labelreference="L3157" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">kintmp_subsexp(2,2):=cos_rho23_s:</Text-field>
+</Input>
+</Group>
+<Group labelreference="L3159" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">kintmp_subsexp(3,2):=sin_eta34_s:</Text-field>
+</Input>
+</Group>
+<Group labelreference="L3155" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">kintmp_subsexp(4,2):=cos_eta34_s:</Text-field>
+</Input>
+</Group>
+<Group labelreference="L3150" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">kintmp_subsexp(5,2):=sin_eta45_s:</Text-field>
+</Input>
+</Group>
+<Group labelreference="L3152" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">kintmp_subsexp(6,2):=cos_eta45_s:</Text-field>
+</Input>
+</Group>
+<Group labelreference="L3147" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">kintmp_subsexp(7,2):=sin_rho19_s:</Text-field>
+</Input>
+</Group>
+<Group labelreference="L3149" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">kintmp_subsexp(8,2):=cos_rho19_s:</Text-field>
+</Input>
+</Group>
+<Group labelreference="L3164" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">kintmp_subsexp(9,2):=sin_rho910_s:</Text-field>
+</Input>
+</Group>
+<Group labelreference="L3165" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">kintmp_subsexp(10,2):=cos_rho910_s:</Text-field>
+</Input>
+</Group>
+<Group hide-input="false" labelreference="L3160" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">kintmp_subsexp(11,2):=sin_eta411_s:</Text-field>
+</Input>
+</Group>
+<Group labelreference="L3163" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">kintmp_subsexp(12,2):=cos_eta411_s:</Text-field>
+</Input>
+</Group>
+<Group labelreference="L3158" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">kintmp_subsexp(13,2):=sin_eta1112_s:</Text-field>
+</Input>
+</Group>
+<Group labelreference="L3154" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">kintmp_subsexp(14,2):=cos_eta1112_s:</Text-field>
+</Input>
+</Group>
+<Group hide-input="false" labelreference="L3186" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">kintmp_subsexp(11..14,1);</Text-field>
+</Input>
+</Group>
+<Group labelreference="L3213" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"><Equation executable="true" style="2D Input" input-equation="" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYlLUkjbWlHRiQ2I1EhRicvJStleGVjdXRhYmxlR1EmZmFsc2VGJy8lLG1hdGh2YXJpYW50R1Enbm9ybWFsRic=">JSFH</Equation></Text-field>
+</Input>
+</Group>
+<Section collapsed="false" isCollapsible="true" drawButton="true" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60"><Title><Text-field style="Heading 1" layout="Heading 1">Kintmp_qs</Text-field></Title>
+<Group labelreference="L3202" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">kintmp_qs(1,1):=arctan(sin_rho23_s,cos_rho23_s):</Text-field>
+</Input>
+</Group>
+<Group labelreference="L3205" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">kintmp_qs(2,1):=arctan(sin_eta34_s,cos_eta34_s):</Text-field>
+</Input>
+</Group>
+<Group labelreference="L3206" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">kintmp_qs(3,1):=arctan(sin_eta45_s,cos_eta45_s):</Text-field>
+</Input>
+</Group>
+<Group labelreference="L3203" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">kintmp_qs(4,1):=arctan(sin_rho19_s,cos_rho19_s):</Text-field>
+</Input>
+</Group>
+<Group labelreference="L3207" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">kintmp_qs(5,1):=arctan(sin_rho910_s,cos_rho910_s):</Text-field>
+</Input>
+</Group>
+<Group labelreference="L3208" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">kintmp_qs(6,1):=arctan(sin_eta411_s,cos_eta411_s):</Text-field>
+</Input>
+</Group>
+<Group labelreference="L3209" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">kintmp_qs(7,1):=arctan(sin_eta1112_s,cos_eta1112_s):</Text-field>
+</Input>
+</Group>
+</Section>
+<Section collapsed="false" isCollapsible="true" drawButton="true" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60"><Title><Text-field style="Heading 1" layout="Heading 1">Export</Text-field></Title>
+<Group labelreference="L3183" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">kintmp_qt := convert_s_t(kintmp_qs):</Text-field>
+</Input>
+</Group><Presentation-Block>
+<Group view="code" labelreference="L3181" drawlabel="true">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">save kintmp_subsexp, sprintf(&quot;../codeexport/%s/tmp/kinematic_constraints_kintmp_subsexp_maple&quot;, robot_name):</Text-field>
+</Input>
+</Group>
+<Group view="code" labelreference="L3178" drawlabel="true">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">save kintmp_subsexp, sprintf(&quot;../codeexport/%s/tmp/kinematic_constraints_kintmp_subsexp_maple.m&quot;, robot_name):</Text-field>
+</Input>
+</Group></Presentation-Block><Presentation-Block>
+<Group view="code" labelreference="L3176" drawlabel="true">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"><Font encoding="UTF-8">#printf(&quot;Ausdr\303\274cke f\303\274r kintmp_subsexp gespeichert (Maple). %s. CPU-Zeit bis hier: %1.2fs.\134n&quot;, FormatTime(&quot;%Y-%m-%d %H:%M:%S&quot;), time()-st):</Font></Text-field>
+</Input>
+</Group>
+<Group view="code" labelreference="L3179" drawlabel="true">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">for i from 1 to RowDimension(kintmp_s) do
+  tmp := kintmp_qs(i):
+  save tmp, sprintf(&quot;../codeexport/%s/tmp/kinematic_constraints_maple_inert_kintmpq_%d&quot;,robot_name, i):
+  save tmp, sprintf(&quot;../codeexport/%s/tmp/kinematic_constraints_maple_inert_kintmpq_%d.m&quot;, robot_name, i):
+end do:</Text-field>
+</Input>
+</Group>
+<Group view="code" labelreference="L3174" drawlabel="true">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">save kin_constraints_exist, kintmp_qs, kintmp_qt,kintmp_subsexp, sprintf(&quot;../codeexport/%s/tmp/kinematic_constraints_maple_inert&quot; ,robot_name):</Text-field>
+</Input>
+</Group>
+<Group view="code" labelreference="L3168" drawlabel="true">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">save kin_constraints_exist, kintmp_qs, kintmp_qt, kintmp_subsexp, sprintf(&quot;../codeexport/%s/tmp/kinematic_constraints_maple_inert.m&quot;, robot_name):</Text-field>
+</Input>
+</Group>
+<Group view="code" labelreference="L3184" drawlabel="true">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">save kintmp_qs, sprintf(&quot;../codeexport/%s/tmp/kinematic_constraints_kintmp_qs_maple_inert&quot;, robot_name):</Text-field>
+</Input>
+</Group></Presentation-Block><Presentation-Block>
+<Group view="code" labelreference="L3182" drawlabel="true">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"><Font encoding="UTF-8">#printf(&quot;Ausdr\303\274cke mit Inert-Arctan exportiert (Matlab). %s. CPU-Zeit bis hier: %1.2fs.\134n&quot;, FormatTime(&quot;%Y-%m-%d %H:%M:%S&quot;), time()-st):</Font></Text-field>
+</Input>
+</Group>
+<Group view="code" labelreference="L3170" drawlabel="true">
+<Input><Text-field style="Text" layout="Normal"><Font encoding="UTF-8">Liste mit abh\303\244ngigen konstanten Kinematikparametern erstellen (wichtig f\303\274r Matlab-Funktionsgenerierung)</Font></Text-field>
+</Input>
+</Group>
+<Group view="code" labelreference="L3177" drawlabel="true">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">read &quot;../helper/proc_list_constant_expressions&quot;;</Text-field>
+</Input>
+</Group>
+<Group view="code" hide-input="false" labelreference="L3180" drawlabel="true">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">kc_symbols := Matrix(list_constant_expressions( kintmp_subsexp ));</Text-field>
+</Input>
+</Group>
+<Group view="code" hide-input="false" labelreference="L3175" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">#kc_symbols :=Transpose(kc_symbols);</Text-field>
+</Input>
+</Group>
+<Group view="code" labelreference="L3169" drawlabel="true">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">save kc_symbols, sprintf(&quot;../codeexport/%s/tmp/kinematic_constraints_symbols_list_maple&quot;, robot_name):</Text-field>
+</Input>
+</Group>
+<Group view="code" hide-input="false" labelreference="L3171" drawlabel="true">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">MatlabExport(kc_symbols, sprintf(&quot;../codeexport/%s/tmp/kinematic_constraints_symbols_list_matlab.m&quot;,robot_name),2);</Text-field>
+</Input>
+</Group></Presentation-Block>
+</Section><Presentation-Block>
+<Group view="code" labelreference="L3172" drawlabel="true">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"><Font encoding="UTF-8">#printf(&quot;Fertig. %s. CPU-Zeit bis hier: %1.2fs.\134n&quot;, FormatTime(&quot;%Y-%m-%d %H:%M:%S&quot;), time()-st):</Font></Text-field>
+</Input>
+</Group>
+<Group labelreference="L3212" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"><Equation executable="true" style="2D Input" input-equation="" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYlLUkjbWlHRiQ2I1EhRicvJStleGVjdXRhYmxlR1EmZmFsc2VGJy8lLG1hdGh2YXJpYW50R1Enbm9ybWFsRic=">JSFH</Equation></Text-field>
+</Input>
+</Group>
+<Group view="code" hide-input="false" labelreference="L3214" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">kc_symbols(11)</Text-field>
+</Input>
+</Group>
+<Group labelreference="L3215" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"></Text-field>
+</Input>
+</Group></Presentation-Block>
+</Section>
+</Worksheet>

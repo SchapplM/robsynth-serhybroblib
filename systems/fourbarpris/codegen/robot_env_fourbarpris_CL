@@ -1,0 +1,31 @@
+# MDH-Definition für
+#Schubkurbel
+# Zum Aufbau des Modells, siehe Dokumentations-Repo. Zur Bedeutung der Eingaben in dieser Datei, siehe Maple-Repo
+
+robot_name := "fourbarpris":
+
+# Anzahl der verallgemeinerten Gelenkkoordinaten
+NQJ := 1:
+# Anzahl der Gelenke
+NJ := 5:
+# Anzahl der Köper(3 mit Basis)
+NL:=4:
+qoffset := Matrix(NJ, 1, [Pi, 0, Pi, Pi, Pi/2]):
+theta:= Matrix(< kintmp_t(1,1), 0, kintmp_t(2,1), kintmp_t(3,1), 0>) + qoffset:
+alpha := Matrix(NJ, 1, [0, -Pi/2, 0, 0,Pi/2]):
+d := Matrix(NJ, 1, [0, qJ1(t), 0, 0, 0]):
+a := Matrix(NJ, 1, [GK, 0, 0, GP, 0]):
+v := Matrix(NJ,1, <0; 1; 0; 3; 2>):
+
+b := Matrix(5,1,[0, 0, 0, 0, HP]):
+beta := Matrix(5,1,[0, -Pi/2, 0, 0, 0]):
+
+# Nur Drehgelenke
+sigma := Matrix(<0,1,0,0,2>):
+mu:=Matrix(<0,1,0,0,0>):
+
+# Allgemeine Winkel
+kintmp_t := Matrix(3, 1, [rho(t),eta(t),xi(t)]);
+kintmp_s := Matrix(3, 1, [rho_s,eta_s,xi_s]);
+
+codegen_opt := 1:

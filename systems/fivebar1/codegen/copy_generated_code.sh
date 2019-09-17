@@ -3,13 +3,14 @@
 # Dieses Skript im Ordner ausführen, in dem es liegt.
 # Argument 1: Pfad zum HybrDyn-Repo
 
-# Moritz Schappler, schappler@irt.uni-hannover.de, 2018-09
+# Moritz Schappler, moritz.schappler@imes.uni-hannover.de, 2018-09
 # (C) Institut für Mechatronische Systeme, Leibniz Universität Hannover
 
 maplerepopath=$1
-
-rsync -rv $maplerepopath/codeexport/fivebar1TE/matlabfcn/ ../matlabfcn_fivebar1TE
-#rsync -rv $maplerepopath/codeexport/fivebar1DE1/matlabfcn/ ../matlabfcn_fivebar1DE1
-#rsync -rv $maplerepopath/codeexport/fivebar1DE2/matlabfcn/ ../matlabfcn_fivebar1DE2
-#rsync -rv $maplerepopath/codeexport/fivebar1DE2/matlabfcn/ ../matlabfcn_fivebar1IC
+mkdir -p ../matlabfcn_fivebar1TE ../matlabfcn_fivebar1DE1 ../matlabfcn_fivebar1DE2 ../matlabfcn_fivebar1OL ../matlabfcn_fivebar1IC
+cp -u $maplerepopath/codeexport/fivebar1TE/matlabfcn/*.* ../matlabfcn_fivebar1TE
+cp -u $maplerepopath/codeexport/fivebar1DE1/matlabfcn/*.* ../matlabfcn_fivebar1DE1
+cp -u $maplerepopath/codeexport/fivebar1DE2/matlabfcn/*.* ../matlabfcn_fivebar1DE2
+cp -u $maplerepopath/codeexport/fivebar1OL/matlabfcn/*.* ../matlabfcn_fivebar1OL
+cp -u $maplerepopath/codeexport/fivebar1IC/matlabfcn/*.* ../matlabfcn_fivebar1IC
 

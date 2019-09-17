@@ -1,0 +1,27 @@
+#MP800-Yaskawa
+
+robot_name := "palh1m1OL":
+
+# Anzahl der verallgemeinerten Gelenkkoordinaten
+NQJ := 13:
+# Anzahl der Gelenke (mit virtuellen Schnittgelenken, denen kein Körper zugeordnet ist).
+NJ := 16:
+# Anzahl der Starrkörper (mit Basis; also 9 bewegte Körper)
+NL := 11:
+
+qoffset := Matrix(16, 1, [0, Pi/2, 3*Pi/2, 0, 0, 0, 0, 0, Pi, Pi, Pi, Pi, 0, 0, 0, 0]):
+theta :=  Matrix(16,1,[qJ1(t),qJ2(t),qJ3(t),qJ4(t),qJ5(t),qJ6(t),qJ7(t),qJ8(t),qJ9(t),qJ10(t),qJ11(t),qJ12(t),qJ13(t),0,0,0]) + qoffset:
+alpha := Matrix(16, 1, [0, Pi/2, 0, 0, Pi/2, Pi/2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]):
+d := Matrix(16, 1, [OT2, 0, 0, 0, HW, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]):
+a := Matrix(16, 1, [0, T2A, AB, BG, GH, -T1D, AB, 0, AM, BE, BC, BL, GP, DC, ML, -EP]):
+v := Matrix(16,1, <0; 1; 2; 3; 4; 1; 2; 2; 8; 7; 7; 3; 4; 6; 9; 10>):
+
+beta := Matrix(16,1,[0, 0, 0, 0, 0, 0, 0, 0, 0, -phi710, phi711,  phi312, phi413, 0, 0, Pi]):
+b := Matrix(16,1,[0, 0, 0, 0, 0, -T2T1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]):
+
+# Nur Drehgelenke
+sigma:=Matrix(<0,0,0,0,0,0,0,0,0,0,0,0,0,2,2,2>):
+mu:=Matrix(<1,1,1,0,1,0,0,0,0,0,0,0,0,0,0,0>):
+
+codegen_opt := 1:
+

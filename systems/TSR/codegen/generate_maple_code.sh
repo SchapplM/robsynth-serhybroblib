@@ -13,7 +13,11 @@ if [ "$maplerepopath" == "" ]; then
   exit 2
 fi;
 
-deflist="robot_env_TSRTE"
+deflist="
+robot_env_TSRTE
+robot_env_TSRDE1
+robot_env_TSRDE2
+"
 
 cd $maplerepopath
 for df in $deflist; do
@@ -21,3 +25,6 @@ for df in $deflist; do
   cp robot_codegen_definitions/$df robot_codegen_definitions/robot_env
   ./robot_codegen_start.sh --fixb_only -p
 done
+
+cp robot_codegen_definitions/robot_env_TSROL robot_codegen_definitions/robot_env
+./robot_codegen_start.sh --fixb_only --ic -p

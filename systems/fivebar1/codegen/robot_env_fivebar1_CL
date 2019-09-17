@@ -28,4 +28,4 @@ sigma:=Matrix(<0,0,0,0,0,2>):
 kintmp_t := Matrix(3, 1, [rho(t),eta(t),xi(t)]);
 kintmp_s := Matrix(3, 1, [rho_s,eta_s,xi_s]);
 
-codegen_kinematics_opt := false:
+codegen_opt := 1:

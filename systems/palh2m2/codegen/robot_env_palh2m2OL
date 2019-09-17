@@ -1,0 +1,25 @@
+# MDH-Definition für palh2m2
+# Serielles 5FG-Ersatzmodell eines hybriden 4FG-Palettierroboters
+# Modifikation gegenüber palh2m1: d1,d5 weg, Winkel-Offset zur Berücksichtigung von Achs-Offset A3
+# Die abhängige Gelenkachse des Roboters wird direkt durch die anderen Winkel ersetzt
+# Siehe auch: robot_env_S5RRRRR1 im Repo serrob_mdlbib
+
+# Moritz Schappler, moritz.schappler@imes.uni-hannover.de, 2019-03
+# (C) Institut für Mechatronische Systeme, Universität Hannover
+
+robot_name := "palh2m2OL":
+
+NJ := 6:
+NL := 7:
+NQJ := 6:
+v := Matrix(NJ,1,[0,1,2,3,4,5]):
+mu := Matrix(NJ,1,[1,1,0,1,0,1]):    				
+sigma := Matrix(NJ,1,[0,0,0,0,0,0]): 				
+beta := Matrix(NJ,1,[0,0,0,0,0,0]):  				
+b := Matrix(NJ,1,[0,0,0,0,0,0]):     				
+alpha := Matrix(NJ,1,[0,Pi/2,0,0,0,-Pi/2]):          
+a := Matrix(NJ,1,[0,A2Off,L1,A3Off,L2,A4Off]):	
+d := Matrix(NJ,1,[0,0,0,0,0,0]):					
+qoffset := Matrix(NJ,1):						
+theta := Matrix(NJ,1,[qJ_t(1,1),qJ_t(2,1),qJ_t(3,1),qJ_t(4,1),qJ_t(5,1),qJ_t(6,1)]):
+

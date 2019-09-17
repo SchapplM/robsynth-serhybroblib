@@ -5,7 +5,7 @@
 # Argument 1: Pfad zum HybrDyn-Repo
 
 # Moritz Schappler, moritz.schappler@imes.uni-hannover.de, 2018-11
-# (C) Institut für mechatronische Systeme, Universität Hannover
+# (C) Institut für Mechatronische Systeme, Universität Hannover
 
 maplerepopath=$1
 this_path=$(pwd)
@@ -35,10 +35,9 @@ echo "# Anwendung der Additionstheoreme für parallele Drehachsen und dann Erset
 echo "codegen_kinematics_opt := true:" >> $defpath/robot_env_fourbar3DE2
 echo "codegen_kinematics_subsorder:=2:" >> $defpath/robot_env_fourbar3DE2
 
-cp $this_path/robot_env_fourbar3IC $defpath/robot_env_fourbar3IC
-sed -i "s/fourbar3/fourbar3IC/g" $defpath/robot_env_fourbar3IC
-echo "# Anwendung der Additionstheoreme für parallele Drehachsen" >> $defpath/robot_env_fourbar3IC
-echo "codegen_kinematics_opt := true:" >> $defpath/robot_env_fourbar3IC
+cp $this_path/robot_env_fourbar3OL $defpath/robot_env_fourbar3OL
+
+cp $this_path/robot_env_fourbar3IC $defpath/robot_env_IC
 
 # Maple-Skripte (Kinematische Zwangsbedingungen)
 
@@ -53,13 +52,14 @@ cp $this_path/fourbar3IC_kinematic_constraints_implicit.mpl $constrpath/fourbar3
 cp $this_path/fourbar3IC_kinematic_constraints_implicit.mw $constrpath/fourbar3IC_kinematic_constraints_implicit.mw
 
 # Werte für Kinematikparameter (für Modultests)
-#cp $this_path/fourbar3_kinematic_parameter_values.m $constrpath/fourbar3IC_kinematic_parameter_values.m
+cp $this_path/fourbar3_kinematic_parameter_values.m $constrpath/fourbar3OL_kinematic_parameter_values.m
+cp $this_path/fourbar3_kinematic_parameter_values.m $constrpath/fourbar3IC_kinematic_parameter_values.m
 cp $this_path/fourbar3_kinematic_parameter_values.m $constrpath/fourbar3TE_kinematic_parameter_values.m
 cp $this_path/fourbar3_kinematic_parameter_values.m $constrpath/fourbar3DE1_kinematic_parameter_values.m
 cp $this_path/fourbar3_kinematic_parameter_values.m $constrpath/fourbar3DE2_kinematic_parameter_values.m
 
 # Winkelgrenzen für die Modultests
-#cp $this_path/fourbar3_kinematic_constraints_matlab.m $constrpath/fourbar3IC_kinematic_constraints_matlab.m
+cp $this_path/fourbar3_kinematic_constraints_matlab.m $constrpath/fourbar3IC_kinematic_constraints_matlab.m
 cp $this_path/fourbar3_kinematic_constraints_matlab.m $constrpath/fourbar3TE_kinematic_constraints_matlab.m
 cp $this_path/fourbar3_kinematic_constraints_matlab.m $constrpath/fourbar3DE1_kinematic_constraints_matlab.m
 cp $this_path/fourbar3_kinematic_constraints_matlab.m $constrpath/fourbar3DE2_kinematic_constraints_matlab.m

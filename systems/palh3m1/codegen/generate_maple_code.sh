@@ -15,16 +15,16 @@ fi;
 
 deflist="
 robot_env_palh3m1TE
+robot_env_palh3m1DE1
+robot_env_palh3m1DE2
 "
-
-## robot_env_palh3m1DE1
-## robot_env_palh3m1DE2
-## robot_env_palh3m1TE
-## robot_env_palh3m1IC
 
 cd $maplerepopath
 for df in $deflist; do
   echo "Starte Generierung für $df"
   cp robot_codegen_definitions/$df robot_codegen_definitions/robot_env
-  ./robot_codegen_start.sh -p --fixb_only #--notest
+  ./robot_codegen_start.sh -p --fixb_only
 done
+
+cp robot_codegen_definitions/robot_env_palh3m1OL robot_codegen_definitions/robot_env
+./robot_codegen_start.sh --fixb_only --ic -p

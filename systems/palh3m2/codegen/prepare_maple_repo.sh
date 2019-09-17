@@ -5,7 +5,7 @@
 # Argument 1: Pfad zum HybrDyn-Repo
 
 # Moritz Schappler, moritz.schappler@imes.uni-hannover.de, 2018-11
-# (C) Institut für mechatronische Systeme, Universität Hannover
+# (C) Institut für Mechatronische Systeme, Universität Hannover
 
 maplerepopath=$1
 this_path=$(pwd)
@@ -36,7 +36,9 @@ constrpath=$maplerepopath/robot_codegen_constraints
  echo "codegen_kinematics_opt := true:" >> $defpath/robot_env_palh3m2DE2
  echo "codegen_kinematics_subsorder:=2:" >> $defpath/robot_env_palh3m2DE2
 
- cp $this_path/robot_env_palh3m2IC $defpath/robot_env_palh3m2IC
+ cp $this_path/robot_env_palh3m2OL $defpath/robot_env_palh3m2OL
+
+ cp $this_path/robot_env_palh3m2IC $defpath/robot_env_IC
 
 # Maple-Skripte (Kinematische Zwangsbedingungen)
 
@@ -51,6 +53,7 @@ constrpath=$maplerepopath/robot_codegen_constraints
 
 # Werte für Kinematikparameter (für Modultests)
 
+ cp $this_path/palh3m2_kinematic_parameter_values.m $constrpath/palh3m2OL_kinematic_parameter_values.m
  cp $this_path/palh3m2_kinematic_parameter_values.m $constrpath/palh3m2IC_kinematic_parameter_values.m
  cp $this_path/palh3m2_kinematic_parameter_values.m $constrpath/palh3m2TE_kinematic_parameter_values.m
  cp $this_path/palh3m2_kinematic_parameter_values.m $constrpath/palh3m2DE1_kinematic_parameter_values.m

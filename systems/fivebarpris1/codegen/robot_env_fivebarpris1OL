@@ -1,0 +1,27 @@
+#Roboter aus Viergelenkkette und Schubgelenk
+
+robot_name := "fivebarpris1OL":
+
+# Anzahl der verallgemeinerten Gelenkkoordinaten
+NQJ := 8:
+# Anzahl der Gelenke (mit virtuellen Schnittgelenken, denen kein Körper zugeordnet ist).
+NJ := 9:
+# Anzahl der Starrkörper (mit Basis; also 7 bewegte Körper)
+NL := 8:
+                        
+qoffset := Matrix(9, 1, [0, 0, 0, Pi/2, 0, 0, Pi/2, 0, 0]):
+theta := <qJ1(t);qJ2(t);0;qJ4(t);qJ5(t);qJ6(t);qJ7(t);qJ8(t);0> + qoffset:
+alpha := Matrix(9, 1, [0, Pi/2, -Pi/2, Pi/2, 0, -Pi/2, Pi/2, 0, 0]):
+d := Matrix(9, 1, [OT, 0, qJ3(t), 0, 0, EP, 0, 0, 0]):
+a := Matrix(9, 1, [0, -TD, 0, 0, CE, 0, TA, CB, AB]):
+v := Matrix(9,1, <0; 1; 2; 3; 4; 5; 1; 4; 7>):
+ 
+beta := Matrix(9,1,[0, 0, -Pi/2, 0, 0, -Pi/2, 0, -Pi, 0]):
+b := Matrix(9,1,[0, 0, 0, 0, 0, 0, 0, 0, 0]):
+
+# Nur Drehgelenke
+sigma := Matrix(9, 1, [0,0,1,0,0,0,0,0,2]):
+mu := Matrix(<1,0,1,0,1,1,1,0,0>):
+
+codegen_opt := 1:
+

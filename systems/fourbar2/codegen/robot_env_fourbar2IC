@@ -1,36 +1,8 @@
-# MDH-Definition für Viergelenkkette (offene kinematische Zwangsbedingungen)
-# Parallelogram
+# Name der Viergelenkkette (für impl. kinematische Zwangsbedingungen)
+
 robot_name := "fourbar2IC":
+robot_name_OL := "fourbar2OL":
+robot_name_DE := "fourbar2DE":
+robot_name_TE := "fourbar2TE":
 
-# Anzahl der verallgemeinerten Gelenkkoordinaten
-NQJ := 4:
-# Anzahl der Gelenke (mit virtuellen Schnittgelenken, denen kein Körper zugeordnet ist). #(Gleich wie die Anzahl von MDH)
-NJ := 5:
-# Anzahl der Körper 
-NL := 4: # 3 bewegte Körper und Basis
-
-# aktive Gekenke offset  (beobachten von MDH Tabelle um Z)    5X1 Matrix  
-qoffset := Matrix(NJ, 1, [0, Pi, 0, 0, 0]):
-
-theta:= Matrix(< qJ1(t), qJ2(t), qJ3(t), qJ4(t)>, 0>) + qoffset:
-alpha := Matrix(NJ, 1, [0, 0, 0, 0, 0]):
-d := Matrix(NJ, 1, [0, 0, 0, 0, 0]):
-a := Matrix(NJ, 1, <0, l2, l1, l1, l2>):
-v := Matrix(NJ,1, <0; 1; 0; 2; 3>):
-
-b := Matrix(NJ,1):
-beta := Matrix(NJ,1):
-
-# Nur Drehgelenke
-# Gelenktyp, 0:Drehgelenk, 1:Schubgelenk, 2: virtuell
-sigma := Matrix(<0,0,0,0,2>):
-# 1: Aktive Gelenk, 0: Passive Gekenk
-mu:=Matrix(<1,0,0,0,0>):
-
-codegen_kinematics_opt := true:
-
-# 0:Parallelorgram, 1: general Closed Loop
-Kettetyp := 0:
-
-
-
+codegen_opt := 1:

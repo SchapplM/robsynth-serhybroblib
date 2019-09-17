@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Worksheet>
-<Version major="2018" minor="1"/>
+<Version major="2019" minor="0"/>
 <Label-Scheme value="2" prefix=""/>
 <View-Properties presentation="false" autoexpanding_sections="true" UserProfileName="Maple Default Profile" NumericFormat-ApplyInteger="true" NumericFormat-ApplyRational="true" NumericFormat-ApplyExponent="false" editable="true">
 </View-Properties>
-<MapleNet-Properties prettyprint="3" warnlevel="3" preplot="" helpbrowser="standard" displayprecision="-1" echo="1" unitattributes="&quot;fontweight&quot; = &quot;bold&quot;" imaginaryunit="I" longdelim="true" elisiontermsthreshold="10000" elisiondigitsafter="100" elisiondigitsbefore="100" plotdevice="inline" errorbreak="1" plotoptions="" plotdriver="opengl" quiet="false" elisiontermsbefore="100" elisiontermsafter="100" screenwidth="79" indentamount="4" plotoutput="terminal" screenpixelheight="1200" rtablesize="10" useclientjvm="true" labelwidth="20" postplot="" typesetting="extended" ansi="false" ansicolor="[]" elisiondigitsthreshold="10000" showassumed="1" ansilprint="false" errorcursor="false" labelling="true" screenheight="25" prompt="&gt; " verboseproc="1" latexwidth="8.0" ShowLabels="true"/>
+<MapleNet-Properties prettyprint="3" warnlevel="3" compactdisplay="false" preplot="" helpbrowser="standard" displayprecision="-1" echo="1" unitattributes="&quot;fontweight&quot; = &quot;bold&quot;" imaginaryunit="I" longdelim="true" elisiontermsthreshold="10000" elisiondigitsafter="100" elisiondigitsbefore="100" plotdevice="inline" errorbreak="1" plotoptions="" plotdriver="opengl" quiet="false" elisiontermsbefore="100" elisiontermsafter="100" historytimestamp="false" screenwidth="79" indentamount="4" plotoutput="terminal" screenpixelheight="1080" rtablesize="[10, 10]" useclientjvm="true" labelwidth="20" postplot="" typesetting="extended" ansi="false" ansicolor="[]" elisiondigitsthreshold="10000" showassumed="1" ansilprint="false" trailingsemicolon="true" errorcursor="false" labelling="true" screenheight="25" prompt="&gt; " verboseproc="1" latexwidth="8.0" ShowLabels="true"/>
 <Styles>
 <Font name="Heading 1" background="[255,255,255]" bold="true" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="18" subscript="false" superscript="false" underline="false" placeholder="false"/>
 <Font name="Warning" background="[255,255,255]" bold="false" executable="false" family="Courier New" foreground="[0,0,255]" italic="false" opaque="false" readonly="true" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
@@ -284,8 +284,6 @@ kintmp_subsexp := backup_kintmp_subsexp:</Text-field>
 <Group hide-input="false" labelreference="L3228" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
 <Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">winkel_neu(1..6,1):</Text-field>
 </Input>
-<Output><Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUkqbWNvbXBsZXRlRzYjL0krbW9kdWxlbmFtZUc2IkksVHlwZXNldHRpbmdHSShfc3lzbGliR0YnNiQtSShtZmVuY2VkR0YkNigtSSVtcm93R0YkNiYtSSdtdGFibGVHRiQ2Oi1JJG10ckdGJDYmLUkkbXRkR0YkNigtSSNtbkdGJDYkUSIwRicvJSxtYXRodmFyaWFudEdRJ25vcm1hbEYnLyUpcm93YWxpZ25HUSFGJy8lLGNvbHVtbmFsaWduR0ZDLyUrZ3JvdXBhbGlnbkdGQy8lKHJvd3NwYW5HUSIxRicvJStjb2x1bW5zcGFuR0ZKRkFGREZGRjRGNEY0RjRGNC8lJmFsaWduR1ElYXhpc0YnL0ZCUSliYXNlbGluZUYnL0ZFUSdjZW50ZXJGJy9GR1EnfGZybGVmdHxockYnLyUvYWxpZ25tZW50c2NvcGVHUSV0cnVlRicvJSxjb2x1bW53aWR0aEdRJWF1dG9GJy8lJndpZHRoR0Zlbi8lK3Jvd3NwYWNpbmdHUSYxLjBleEYnLyUuY29sdW1uc3BhY2luZ0dRJjAuOGVtRicvJSlyb3dsaW5lc0dRJW5vbmVGJy8lLGNvbHVtbmxpbmVzR0Zgby8lJmZyYW1lR0Zgby8lLWZyYW1lc3BhY2luZ0dRLDAuNGVtfjAuNWV4RicvJSplcXVhbHJvd3NHUSZmYWxzZUYnLyUtZXF1YWxjb2x1bW5zR0Zqby8lLWRpc3BsYXlzdHlsZUdGam8vJSVzaWRlR1EmcmlnaHRGJy8lMG1pbmxhYmVsc3BhY2luZ0dGXW8vJStmb3JlZ3JvdW5kR1EoWzAsMCwwXUYnLyUpcmVhZG9ubHlHRmpvRj5GPi9JK21zZW1hbnRpY3NHRiRRKkNvbFZlY3RvckYnLyUlb3BlbkdRJyZsc3FiO0YnLyUmY2xvc2VHUScmcnNxYjtGJ0ZpcC1GLDYoLUYvNiYtRjI2Oi1GNTYmLUY4NigtRjs2JkY9RmRwRmdwRj5GQUZERkZGSEZLRkFGREZGRmhxRmhxRmhxRmhxRmhxRk1GUC9GRUZhcEZURlZGWUZmbkZobkZbb0Zeb0Zhb0Zjb0Zlb0Zob0ZbcEZdcEZfcEZicEZkcEZncEY+RmRwRmdwRj4vRl1xUSJbRicvRmBxUSJdRic=">LUkobWZlbmNlZEc2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYoLUklbXJvd0dGJDYjLUknbXRhYmxlR0YkNjotSSRtdHJHRiQ2Ji1JJG10ZEdGJDYoLUkjbW5HRiQ2JlEiMEYnLyUrZm9yZWdyb3VuZEdRKFswLDAsMF1GJy8lKXJlYWRvbmx5R1EmZmFsc2VGJy8lLG1hdGh2YXJpYW50R1Enbm9ybWFsRicvJSlyb3dhbGlnbkdRIUYnLyUsY29sdW1uYWxpZ25HRkYvJStncm91cGFsaWduR0ZGLyUocm93c3BhbkdRIjFGJy8lK2NvbHVtbnNwYW5HRk1GREZHRklGMUYxRjFGMUYxLyUmYWxpZ25HUSVheGlzRicvRkVRKWJhc2VsaW5lRicvRkhRJnJpZ2h0RicvRkpRJ3xmcmxlZnR8aHJGJy8lL2FsaWdubWVudHNjb3BlR1EldHJ1ZUYnLyUsY29sdW1ud2lkdGhHUSVhdXRvRicvJSZ3aWR0aEdGaG4vJStyb3dzcGFjaW5nR1EmMS4wZXhGJy8lLmNvbHVtbnNwYWNpbmdHUSYwLjhlbUYnLyUpcm93bGluZXNHUSVub25lRicvJSxjb2x1bW5saW5lc0dGY28vJSZmcmFtZUdGY28vJS1mcmFtZXNwYWNpbmdHUSwwLjRlbX4wLjVleEYnLyUqZXF1YWxyb3dzR0ZALyUtZXF1YWxjb2x1bW5zR0ZALyUtZGlzcGxheXN0eWxlR0ZALyUlc2lkZUdGVi8lMG1pbmxhYmVsc3BhY2luZ0dGYG9GO0Y+RkEvJSVvcGVuR1EiW0YnLyUmY2xvc2VHUSJdRic=</Equation></Text-field>
-</Output>
 </Group>
 </Section>
 <Section collapsed="false" isCollapsible="true" drawButton="true" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60"><Title><Text-field style="Heading 1" layout="Heading 1">Viergelenkkette 1: A-M-L-B</Text-field></Title>
@@ -392,8 +390,6 @@ end do:</EC-CodeEditor></CodeEditor-ExecGroup>
 <Group hide-input="false" labelreference="L3029" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
 <Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">cos_eta4_s:=winkel2(6,2):</Text-field>
 </Input>
-<Output><Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYmLUkjbWlHRiQ2JVErY29zX2V0YTRfc0YnLyUnaXRhbGljR1EldHJ1ZUYnLyUsbWF0aHZhcmlhbnRHUSdpdGFsaWNGJy1JI21vR0YkNi1RKSZBc3NpZ247RicvRjNRJ25vcm1hbEYnLyUmZmVuY2VHUSZmYWxzZUYnLyUqc2VwYXJhdG9yR0Y9LyUpc3RyZXRjaHlHRj0vJSpzeW1tZXRyaWNHRj0vJShsYXJnZW9wR0Y9LyUubW92YWJsZWxpbWl0c0dGPS8lJ2FjY2VudEdGPS8lJ2xzcGFjZUdRLDAuMjc3Nzc3OGVtRicvJSdyc3BhY2VHRkwtSSZtZnJhY0dGJDYoLUYjNiwtRiM2Ki1JI21uR0YkNiRRIjJGJ0Y5LUY2Ni1RMSZJbnZpc2libGVUaW1lcztGJ0Y5RjtGPkZARkJGREZGRkgvRktRJjAuMGVtRicvRk5GaG4tSShtZmVuY2VkR0YkNiQtRiM2Ji1GIzYmLUYjNiYtRiw2JVEkc2luRicvRjBGPUY5LUY2Ni1RMCZBcHBseUZ1bmN0aW9uO0YnRjlGO0Y+RkBGQkZERkZGSEZnbkZpbi1GW282JC1GIzYmLUYsNiVRJXFKMnNGJ0YvRjIvJStmb3JlZ3JvdW5kR1EoWzAsMCwwXUYnLyUpcmVhZG9ubHlHRj1GOUY5RjlGWi1GIzYmLUYsNiVRJGNvc0YnRmZvRjlGZ28tRltvNiQtRiM2Ji1GLDYlUScmcGhpOzJGJ0YvRjJGYXBGZHBGOUY5RjlGOS1GNjYtUSgmbWludXM7RidGOUY7Rj5GQEZCRkRGRkZIL0ZLUSwwLjIyMjIyMjJlbUYnL0ZORmZxLUYjNiYtRiM2JkZocEZnb0Zqb0Y5RlotRiM2JkZjb0Znb0ZbcUY5RjlGOUY5RlotRiw2JVEjQUJGJ0YvRjJGWi1GLDYlUSNEQUYnRi9GMkY5RmJxLUklbXN1cEdGJDYlRl5yRlYvJTFzdXBlcnNjcmlwdHNoaWZ0R1EiMEYnRmJxLUZlcjYlRmFyRlZGZ3ItRjY2LVEnJnBsdXM7RidGOUY7Rj5GQEZCRkRGRkZIRmVxRmdxLUZlcjYlLUYsNiVRI0RDRidGL0YyRlZGZ3JGXHMtRmVyNiUtRiw2JVEjQkNGJ0YvRjJGVkZnckY5LUYjNihGVkZaRmFzRlpGZnNGOS8lLmxpbmV0aGlja25lc3NHUSIxRicvJStkZW5vbWFsaWduR1EnY2VudGVyRicvJSludW1hbGlnbkdGYHQvJSliZXZlbGxlZEdGPUY5">LV9JLFR5cGVzZXR0aW5nRzYkJSpwcm90ZWN0ZWRHSShfc3lzbGliRzYiSSxtcHJpbnRzbGFzaEdGKDYkNyM+SStjb3NfZXRhNF9zR0YoLCQqKiMiIiIiIiNGMSwsKipGMkYxLCYqJi1JJHNpbkdGJTYjSSVxSjJzR0YoRjEtSSRjb3NHRiU2I0klcGhpMkdGKEYxRjEqJi1GPEY5RjEtRjhGPUYxISIiRjFJI0FCR0YoRjFJI0RBR0YoRjFGMSokKUZDRjJGMUZCKiQpRkRGMkYxRkIqJClJI0RDR0YoRjJGMUYxKiQpSSNCQ0dGKEYyRjFGMUYxRktGQkZORkJGMTcjRi4=</Equation></Text-field>
-</Output>
 </Group>
 <Group labelreference="L3030" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
 <Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">cos_eta16_s:=cos(phi1)*cos_eta1_s-sin(phi1)*sin_eta1_s:</Text-field>
@@ -668,18 +664,6 @@ end do:</Text-field>
 </Section><Presentation-Block>
 <Group view="code" labelreference="L3004" drawlabel="true">
 <Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"><Font encoding="UTF-8">#printf(&quot;Fertig. %s. CPU-Zeit bis hier: %1.2fs.\134n&quot;, FormatTime(&quot;%Y-%m-%d %H:%M:%S&quot;), time()-st):</Font></Text-field>
-</Input>
-</Group>
-<Group hide-input="false" labelreference="L3015" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">kc_symbols(1...10)</Text-field>
-</Input>
-</Group>
-<Group hide-input="false" labelreference="L3075" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">kc_symbols(11..17)</Text-field>
-</Input>
-</Group>
-<Group labelreference="L3081" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"></Text-field>
 </Input>
 </Group></Presentation-Block>
 </Worksheet>

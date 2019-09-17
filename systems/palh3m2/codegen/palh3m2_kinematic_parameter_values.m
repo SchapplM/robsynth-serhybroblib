@@ -16,8 +16,6 @@ AS = sqrt(T1A^2+T1S^2);
 DS = sqrt(T2S^2+DT2^2);
 DA = AS + DS;
 
-
-
 % konstaner Winkel fuer VGK BEFG
 BT3=sqrt(3);phi79=acos(BT3/BC); 
 phi410=pi/3; phi78=acos(BT3/BE);

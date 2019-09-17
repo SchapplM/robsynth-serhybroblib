@@ -1,4 +1,4 @@
-#KUKA KR700PA
+# KUKA KR700PA
 
 robot_name := "palh3m2":
 
@@ -46,3 +46,5 @@ kintmp_s := Matrix(6, 1, [xi34_s, eta16_s, eta27_s, xi78_s, eta79_s, xi410_s]):
 
 # 0:Parallelorgram, 1: general Closed Loop
 Kettetyp := 1:
+
+codegen_opt := 1:

@@ -29,3 +29,5 @@ kintmp_s := Matrix(3, 1, [rho_s,eta_s,xi_s]);
 
 # 0:Parallelorgram, 1: general Closed Loop
 Kettetyp := 1:
+
+codegen_opt := 1:
