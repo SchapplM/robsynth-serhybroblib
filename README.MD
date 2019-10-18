@@ -78,7 +78,8 @@ Folgende Roboter und Mechanismen wurden bisher erfolgreich getestet:
 | Fünfgelenkkette | fivebar1 | Plausibilität/Visualisierung/Abgleich über TSR | TE, DE, IC |
 | 2T0R-Palettierroboter (2 Parallelogramme, 1 Fünfgelenkkette, Herl. über allgemeine Viergelenkkette) | TSR | Plausibilität/Visualisierung | TE, DE, IC |
 | 2T0R-Palettierroboter (2 Parallelogramme, 1 Fünfgelenkkette, Herl. über Parallelogramm) | TSRm2 | Plausibilität/Visualisierung | TE, DE, IC |
-| 3T1R-Palettierroboter (3 Parallelogramme) | palh1m1 | Plausibilität/Visualisierung, Kinematik | Elim. |
+| 3T1R-Palettierroboter (3 Parallelogramme, Herl. über allgemeine Viergelenkkette) | palh1m1 | Plausibilität/Visualisierung, Kinematik | Elim. |
+| 3T1R-Palettierroboter (3 Parallelogramme, Herl. über Parallelogramm) | palh1m2 | Plausibilität/Visualisierung, Kinematik | TE, DE, IC |
 | 3T1R-Palettierroboter (serielles Ersatzmodell) | palh2m1 | Kinematik, Abgleich Implementierungen DE | Elim. |
 | 3T1R-Palettierroboter (serielles Ersatzmodell, mit anderen Parametern) | palh2m2 | Validiert gegen Lenze-Daten | Elim. |
 | 3T1R-Palettierroboter (2 Parallelogramme, Herleitung über allgemeine Viergelenkkette) | palh3m1 | Plausibilität | TE, DE, IC |
@@ -92,8 +93,7 @@ Folgende Roboter und Mechanismen wurden bisher erfolgreich getestet:
 
 ## Quellen <a name="quellen"></a> 
 
-* [Shan2019_S828] W. Shan: "Reduktion der Modellkomplexität von seriell-hybriden Palettierrobotern
-" (Studienarbeit bei Moritz Schappler)
+* [Shan2019_S828] W. Shan: "Reduktion der Modellkomplexität von seriell-hybriden Palettierrobotern" (Studienarbeit bei Moritz Schappler)
 * [Brünger2019_M832] A. Brünger: "Vergleich der Leistungsmerkmale und Modellierung von parallelen Robotern mit hybriden und seriellen Beinketten" (Masterarbeit bei Moritz Schappler)
 * [Bejaoui2018_S749] A. Bejaoui: "Modellierung kinematischer Zwangsbedingungen für hybride serielle Roboter mit planaren Parallelmechanismen" (Studienarbeit bei Moritz Schappler)
 * [NuelleSchTapLil2017] K. Nülle, M. Schappler et al.: Projektabschlussbericht „3. Arm“ - Handwerker-Kraftassistenzsystem mit adaptiver Mensch-Technik-Interaktion
