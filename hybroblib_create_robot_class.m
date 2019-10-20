@@ -134,7 +134,7 @@ end
 RS = SerRob(PS, [Name,mdlsuffix]);
 
 % Klassen-Instanz vorbereiten
-RS = RS.fill_fcn_handles(false);
+RS.fill_fcn_handles(false);
 
 % Kinematik-Parameter initialisieren
 RS.update_mdh(PS.pkin)
