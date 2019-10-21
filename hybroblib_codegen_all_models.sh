@@ -14,13 +14,15 @@ systems="
 fourbar1
 fourbar2
 fivebar1
+palh1m1
 palh1m2
+palh2m1
+palh2m2
 palh3m1
 palh3m2
 TSR
 TSRm2
 "
-
 
 for mdl in $systems; do
   echo "Starte Code-Generierung für alle Teilmodelle von $mdl"
