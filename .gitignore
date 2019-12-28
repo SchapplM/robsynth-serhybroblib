@@ -5,3 +5,4 @@ slprj
 .~lock.*.csv#
 *.gif
 hybrdyn_repo_path
+*.orig
