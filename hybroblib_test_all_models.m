@@ -20,7 +20,8 @@ run(fullfile(systems_path, 'palh1m1', 'palh1m1_test.m'));
 
 %% Palettierer-Ersatzmodell
 systems_path = fullfile(fileparts(which('hybroblib_path_init.m')), 'systems');
-run(fullfile(systems_path, 'palh2m1', 'palh2m1_test_constr_dynamics_class.m'));
+% TODO: Testskript ist verloren gegangen.
+% run(fullfile(systems_path, 'palh2m1', 'palh2m1_test_constr_dynamics_class.m'));
 
 %% 2D-Delta
 systems_path = fullfile(fileparts(which('hybroblib_path_init.m')), 'systems');
