@@ -14,9 +14,9 @@ if [ "$maplerepopath" == "" ]; then
 fi;
 
 deflist="
-robot_env_TSRm2TE
-robot_env_TSRm2DE1
-robot_env_TSRm2DE2
+robot_env_picker2Dm2TE
+robot_env_picker2Dm2DE1
+robot_env_picker2Dm2DE2
 "
 
 cd $maplerepopath
@@ -26,5 +26,5 @@ for df in $deflist; do
   ./robot_codegen_start.sh --fixb_only -p
 done
 
-cp robot_codegen_definitions/robot_env_TSRm2OL robot_codegen_definitions/robot_env
+cp robot_codegen_definitions/robot_env_picker2Dm2OL robot_codegen_definitions/robot_env
 ./robot_codegen_start.sh --fixb_only --ic -p

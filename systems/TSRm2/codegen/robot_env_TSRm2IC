@@ -1,8 +1,8 @@
 # Name der Viergelenkkette (für impl. kinematische Zwangsbedingungen)
 
-robot_name := "TSRm2IC":
-robot_name_OL := "TSRm2OL":
-robot_name_DE := "TSRm2DE":
-robot_name_TE := "TSRm2TE":
+robot_name := "picker2Dm2IC":
+robot_name_OL := "picker2Dm2OL":
+robot_name_DE := "picker2Dm2DE":
+robot_name_TE := "picker2Dm2TE":
 
 codegen_opt := 1:

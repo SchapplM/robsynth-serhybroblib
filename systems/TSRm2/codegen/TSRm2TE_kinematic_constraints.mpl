@@ -7,7 +7,7 @@
 # Link: http://en.triowin.com/tdr-series2-axisparallelrobot-15268685491267769.html
 # 
 # Die kinematischen Zwangsbedingungen werden als Ersetzungsausdruck für die abhängigen Winkel aufgestellt.
-# TSRm2TE -> modellierung der Zwangsbedingungen mit Ausdrücken für trigonometrische Elimination
+# picker2Dm2TE -> modellierung der Zwangsbedingungen mit Ausdrücken für trigonometrische Elimination
 
 # Voraussetzung
 # Vier- und Fünf gelenkkette muss mit der Toolbox berechnet worden sein (Arbeitsblätter "fourbar1TE_kinematic_constraints.mw" und fivebar1TE_kinematic_constraints.mw)

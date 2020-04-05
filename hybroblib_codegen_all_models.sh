@@ -21,7 +21,7 @@ palh2m2
 palh3m1
 palh3m2
 TSR
-TSRm2
+picker2Dm2
 "
 
 for mdl in $systems; do

@@ -192,7 +192,7 @@ read &quot;../transformation/proc_rotz&quot;:  	# rotation um Z</Text-field>
 </Input>
 </Group>
 <Group view="code" labelreference="L3323" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">read sprintf(&quot;../codeexport/TSRm2TE/tmp/kinematic_constraints_maple_inert.m&quot;):	# von aktuellem Roboter</Text-field>
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">read sprintf(&quot;../codeexport/picker2Dm2TE/tmp/kinematic_constraints_maple_inert.m&quot;):	# von aktuellem Roboter</Text-field>
 </Input>
 </Group>
 <Group view="code" labelreference="L3320" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
