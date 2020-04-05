@@ -18,10 +18,10 @@ run(fullfile(systems_path, 'fivebar1', 'fivebar1_test.m'));
 systems_path = fullfile(fileparts(which('hybroblib_path_init.m')), 'systems');
 run(fullfile(systems_path, 'palh1m1', 'palh1m1_test.m'));
 
-%% Palettierer-Ersatzmodell
-systems_path = fullfile(fileparts(which('hybroblib_path_init.m')), 'systems');
-% TODO: Testskript ist verloren gegangen.
-% run(fullfile(systems_path, 'palh2m1', 'palh2m1_test_constr_dynamics_class.m'));
+%% Modellvergleich für Palettierroboter
+test_path = fullfile(fileparts(which('hybroblib_path_init.m')), 'test');
+addpath(test_path);
+run(fullfile(test_path, 'palletizer_mdlcomp'));
 
 %% 2D-Delta
 systems_path = fullfile(fileparts(which('hybroblib_path_init.m')), 'systems');
