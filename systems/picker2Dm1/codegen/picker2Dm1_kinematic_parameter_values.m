@@ -1,3 +1,5 @@
+% Testparameter. Entnommen aus Beschreibung des Roboters TDR2040:
+% http://en.triowin.com/tdr-series2-axisparallelrobot-15268685491267769.html
 L1=650*1e-3; % Lange Seite Parallelogramm 1: LH, BC
 L2=800*1e-3; % Lange Seite Parallelogramm 2
 L3=400*1e-3; % Gemeinsamer Teil von Fünfgelenkkette und Parallelogramm 2
