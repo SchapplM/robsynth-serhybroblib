@@ -1,11 +1,5 @@
-% Teste Klassendefinition für MPL800-Yaskawa in unterschiedlichen
+% Teste Klassendefinition für KUKA KR-700PA in unterschiedlichen
 % Implementierungen
-%
-% Verfügbare Beispiele: Siehe Tabelle models.csv
-% * Grashoff-Bedingung: Hunt1978, Gl. (3.11) (S. 82)
-
-% Quelle:
-% https://www.motoman.com/industrial-robots/mpl800-ii
 
 % Moritz Schappler, moritz.schappler@imes.uni-hannover.de
 % (C) Institut für Mechatronische Systeme, Universität Hannover
@@ -15,41 +9,26 @@ clc
 
 %% Definition der Roboterklassen
 RS_TE = hybroblib_create_robot_class('palh3m1', 'TE', 'palh3m1KR1');
-%RS_DE1 = hybroblib_create_robot_class('palh3m1', 'DE1', 'palh3m1KR1');
-%RS_DE2 = hybroblib_create_robot_class('palh3m1', 'DE2', 'palh3m1KR1');
+RS_DE1 = hybroblib_create_robot_class('palh3m1', 'DE1', 'palh3m1KR1');
+RS_DE2 = hybroblib_create_robot_class('palh3m1', 'DE2', 'palh3m1KR1');
 
 TSS = RS_TE.gen_testsettings();
 
-%% Iteration Kinematikparameter
-% pkin=[AB,BC,BE,BG,DA,DC,DT2,EP,GH,GP,HW,OT1,T1A,T1T2,phi1,phi2,phi410,phi78,phi79]';
-% Für den Winkel vorm Endeffektor kommen "krumme" Werte heraus, die durch
-% Berechnung der Kinematik bestimmt werden können
-% Winkelfehler mit alten Parametern wird mit direkter Kinematik bestimmt
-
-% q_test = zeros(4,1);
-% T_EE = RS_TE.fkineEE(q_test);
-% phi_diff = r2eulxyz(t2r(T_EE));
-% phi410 = RS_TE.pkin(17);
-% phi410_neu = phi410+phi_diff(2);
-% pkin_it2=RS_TE.pkin;
-% pkin_it2(17) = phi410_neu;
-% RS_TE.pkin= pkin_it2;
-
 %% Vergleich der Implementierungen
-% for i = 1:TSS.n
-%   q=TSS.Q(i,:)';
-%   T_DE1 = RS_DE1.fkine(q);
-%   T_DE2 = RS_DE2.fkine(q);
-%   T_TE = RS_TE.fkine(q);
-%   test1 = T_DE1-T_DE2;
-%   test2 = T_DE1-T_TE;
-%  if any(abs([test1(:); test2(:)]) > 1e-10)
-%    error('Methoden DE1, DE2 und TE stimmen nicht überein');
-%  end
-% end
+for i = 1:TSS.n
+  q=TSS.Q(i,:)';
+  T_DE1 = RS_DE1.fkine(q);
+  T_DE2 = RS_DE2.fkine(q);
+  T_TE = RS_TE.fkine(q);
+  test1 = T_DE1-T_DE2;
+  test2 = T_DE1-T_TE;
+ if any(abs([test1(:); test2(:)]) > 1e-10)
+   error('Methoden DE1, DE2 und TE stimmen nicht überein');
+ end
+end
 
 %% Bahnerzeugung
-fprintf('Kinematik von KUKA für 1000 Kombinationen in unterschiedlichen Implementierungen getestet\n');%% Gelenk-Trajektorie mit einem Umlauf 
+fprintf('Kinematik von KUKA für 1000 Kombinationen in unterschiedlichen Implementierungen getestet\n');
 QE = RS_TE.qlim';
 
 [Q,QD,QDD,t] = traj_trapez2_multipoint(QE, 1, 1e-1, 1e-2, 1e-3, 0.25);

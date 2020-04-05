@@ -1,6 +1,7 @@
 % Teste Klassendefinition für 2FG-Palettierer
 %
 % Verfügbare Beispiele: Siehe Tabelle models.csv
+% TODO: Test picker2Dm1 gegen picker2Dm2 fehlt noch
 
 % Quelle:
 % http://en.triowin.com/tdr-series2-axisparallelrobot-15268685491267769.html

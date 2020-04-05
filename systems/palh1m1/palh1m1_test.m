@@ -2,6 +2,7 @@
 % Implementierungen
 %
 % TODO: Kinematikparameter des Roboters stimmen noch nicht.
+% TODO: Testskript palh1m1 gegen palh1m2 fehlt noch
 
 % Quelle:
 % https://www.motoman.com/industrial-robots/mpl800-ii
@@ -22,13 +23,13 @@ TSS = RS_TE.gen_testsettings();
 for i = 1:TSS.n
   q=TSS.Q(i,:)';
   T_DE1 = RS_DE1.fkine(q);
- % T_DE2 = RS_DE2.fkine(q);
+  T_DE2 = RS_DE2.fkine(q);
   T_TE = RS_TE.fkine(q);
- % test1 = T_DE1-T_DE2;
+  test1 = T_DE1-T_DE2;
   test2 = T_DE1-T_TE;
-%  if any(abs([test1(:); test2(:)]) > 1e-10)
-  %  error('Methoden DE1, DE2 und TE stimmen nicht überein');
- % end
+  if any(abs([test1(:); test2(:)]) > 1e-10)
+    error('Methoden DE1, DE2 und TE stimmen nicht überein');
+  end
 end
 fprintf('Kinematik von MPL800-Yaskawa für 1000 Kombinationen in unterschiedlichen Implementierungen getestet\n');%% Gelenk-Trajektorie mit einem Umlauf 
 QE = RS_TE.qlim';

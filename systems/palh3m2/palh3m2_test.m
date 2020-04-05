@@ -1,11 +1,10 @@
-% Teste Klassendefinition für MPL800-Yaskawa in unterschiedlichen
+% Teste Klassendefinition für KUKA KR-700PA in unterschiedlichen
 % Implementierungen
-%
-% Verfügbare Beispiele: Siehe Tabelle models.csv
-% * Grashoff-Bedingung: Hunt1978, Gl. (3.11) (S. 82)
-
-% Quelle:
-% https://www.motoman.com/industrial-robots/mpl800-ii
+% 
+% TODO: Kinematikparameter stimmen noch nicht mit KR700PA überein
+% TODO: Test palh3m1 gegen palh3m2 fehlt noch. Das ist der Zweck dieses
+% Skripts
+% TODO: Skript ist redundant mit palh3m1_test.m
 
 % Moritz Schappler, moritz.schappler@imes.uni-hannover.de
 % (C) Institut für Mechatronische Systeme, Universität Hannover
@@ -20,36 +19,22 @@ RS_DE2 = hybroblib_create_robot_class('palh3m2', 'DE2', 'palh3m2KR1');
 
 TSS = RS_TE.gen_testsettings();
 
-%% Iteration Kinematikparameter
-% pkin=[AB,BC,BE,BG,DA,DC,DT2,EP,GH,GP,HW,OT1,T1A,T1T2,phi1,phi2,phi410,phi78,phi79]';
-% Für den Winkel vorm Endeffektor kommen "krumme" Werte heraus, die durch
-% Berechnung der Kinematik bestimmt werden können
-% Winkelfehler mit alten Parametern wird mit direkter Kinematik bestimmt
-
-% q_test = zeros(4,1);
-% T_EE = RS_TE.fkineEE(q_test);
-% phi_diff = r2eulxyz(t2r(T_EE));
-% phi410 = RS_TE.pkin(17);
-% phi410_neu = phi410+phi_diff(2);
-% pkin_it2=RS_TE.pkin;
-% pkin_it2(17) = phi410_neu;
-% RS_TE.pkin= pkin_it2;
 
 %% Vergleich der Implementierungen
-% for i = 1:TSS.n
-%   q=TSS.Q(i,:)';
-%   T_DE1 = RS_DE1.fkine(q);
-%   T_DE2 = RS_DE2.fkine(q);
-%   T_TE = RS_TE.fkine(q);
-%   test1 = T_DE1-T_DE2;
-%   test2 = T_DE1-T_TE;
-%  if any(abs([test1(:); test2(:)]) > 1e-10)
-%    error('Methoden DE1, DE2 und TE stimmen nicht überein');
-%  end
-% end
+for i = 1:TSS.n
+  q=TSS.Q(i,:)';
+  T_DE1 = RS_DE1.fkine(q);
+  T_DE2 = RS_DE2.fkine(q);
+  T_TE = RS_TE.fkine(q);
+  test1 = T_DE1-T_DE2;
+  test2 = T_DE1-T_TE;
+ if any(abs([test1(:); test2(:)]) > 1e-10)
+   error('Methoden DE1, DE2 und TE stimmen nicht überein');
+ end
+end
 
 %% Bahnerzeugung
-fprintf('Kinematik von KUKA für 1000 Kombinationen in unterschiedlichen Implementierungen getestet\n');%% Gelenk-Trajektorie mit einem Umlauf 
+fprintf('Kinematik von KUKA für 1000 Kombinationen in unterschiedlichen Implementierungen getestet\n');
 QE = RS_DE2.qlim';
 
 [Q,QD,QDD,t] = traj_trapez2_multipoint(QE, 1, 1e-1, 1e-2, 1e-3, 0.25);
@@ -61,7 +46,7 @@ end
 
 
 %% CAD-Modell plotten
-s_plot = struct( 'ks', [1:RS_DE2.NJ, RS_DE2.NJ+2], 'mode', 2);
+s_plot = struct( 'ks', [1:RS_DE2.NJ, RS_DE2.NJ+2]); % , 'mode', 2
 q = pi/180*[0; -15; 30; 0];
 figure(5);clf;
 hold on;grid on;
@@ -69,6 +54,7 @@ xlabel('x [m]');ylabel('y [m]');
 zlabel('z [m]');view(3);
 cadhdl=RS_DE2.plot( q, s_plot );
 title(sprintf('CAD-Modell (%s)', RS_DE1.descr));
+% return
 %% Gelenkmomentenverlauf berechnen
 nt = size(Q,1);
 TAU = NaN(nt, RS_DE2.NQJ);
