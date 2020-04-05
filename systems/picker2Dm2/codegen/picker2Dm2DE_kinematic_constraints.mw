@@ -89,7 +89,7 @@
 </Task-table>
 <Task/>
 <Group labelreference="L1" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field style="Text" size="28" layout="Normal"><Font size="26">TSR2040 </Font><Font size="28">
+<Input><Text-field style="Text" size="28" layout="Normal"><Font size="26">picker2Dm12040 </Font><Font size="28">
 </Font><Font size="12">Voraussetzung:
 Viergelenkkette muss mit der Toolbox berechnet worden sein (Arbeitsblatt &quot;vgk_kinematic_constraints.mw&quot;)</Font></Text-field>
 </Input>

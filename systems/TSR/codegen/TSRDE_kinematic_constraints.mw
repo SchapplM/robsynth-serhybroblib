@@ -89,7 +89,7 @@
 </Task-table>
 <Task/>
 <Group labelreference="L1" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field style="Text" size="28" layout="Normal"><Font size="26">TSR2040 </Font><Font size="28">
+<Input><Text-field style="Text" size="28" layout="Normal"><Font size="26">picker2Dm1 </Font><Font size="28">
 </Font><Font size="12">Voraussetzung:
 Viergelenkkette muss mit der Toolbox berechnet worden sein (Arbeitsblatt &quot;vgk_kinematic_constraints.mw&quot;)</Font></Text-field>
 </Input>
@@ -192,7 +192,7 @@ read &quot;../transformation/proc_rotz&quot;:  	# rotation um Z</Text-field>
 </Input>
 </Group>
 <Group view="code" labelreference="L3323" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">read sprintf(&quot;../codeexport/TSRTE/tmp/kinematic_constraints_maple_inert.m&quot;):	# von aktuellem Roboter</Text-field>
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">read sprintf(&quot;../codeexport/picker2Dm1TE/tmp/kinematic_constraints_maple_inert.m&quot;):	# von aktuellem Roboter</Text-field>
 </Input>
 </Group>
 <Group view="code" labelreference="L3320" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">

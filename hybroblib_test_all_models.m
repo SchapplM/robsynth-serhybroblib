@@ -25,7 +25,7 @@ systems_path = fullfile(fileparts(which('hybroblib_path_init.m')), 'systems');
 
 %% 2D-Delta
 systems_path = fullfile(fileparts(which('hybroblib_path_init.m')), 'systems');
-run(fullfile(systems_path, 'TSR', 'TSR_test.m'));
+run(fullfile(systems_path, 'picker2Dm1', 'picker2Dm1_test.m'));
 
 return
 %% 3. Arm

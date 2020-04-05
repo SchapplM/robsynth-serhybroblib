@@ -20,7 +20,7 @@ palh2m1
 palh2m2
 palh3m1
 palh3m2
-TSR
+picker2Dm1
 picker2Dm2
 "
 

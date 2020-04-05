@@ -7,10 +7,10 @@
 # (C) Institut für Mechatronische Systeme, Leibniz Universität Hannover
 
 maplerepopath=$1
-mkdir -p ../matlabfcn_TSRTE ../matlabfcn_TSRDE1 ../matlabfcn_TSRDE2 ../matlabfcn_TSROL ../matlabfcn_TSRIC
-cp -u $maplerepopath/codeexport/TSRTE/matlabfcn/*.* ../matlabfcn_TSRTE
-cp -u $maplerepopath/codeexport/TSRDE1/matlabfcn/*.* ../matlabfcn_TSRDE1
-cp -u $maplerepopath/codeexport/TSRDE2/matlabfcn/*.* ../matlabfcn_TSRDE2
-cp -u $maplerepopath/codeexport/TSROL/matlabfcn/*.* ../matlabfcn_TSROL
-cp -u $maplerepopath/codeexport/TSRIC/matlabfcn/*.* ../matlabfcn_TSRIC
+mkdir -p ../matlabfcn_picker2Dm1TE ../matlabfcn_picker2Dm1DE1 ../matlabfcn_picker2Dm1DE2 ../matlabfcn_picker2Dm1OL ../matlabfcn_picker2Dm1IC
+cp -u $maplerepopath/codeexport/picker2Dm1TE/matlabfcn/*.* ../matlabfcn_picker2Dm1TE
+cp -u $maplerepopath/codeexport/picker2Dm1DE1/matlabfcn/*.* ../matlabfcn_picker2Dm1DE1
+cp -u $maplerepopath/codeexport/picker2Dm1DE2/matlabfcn/*.* ../matlabfcn_picker2Dm1DE2
+cp -u $maplerepopath/codeexport/picker2Dm1OL/matlabfcn/*.* ../matlabfcn_picker2Dm1OL
+cp -u $maplerepopath/codeexport/picker2Dm1IC/matlabfcn/*.* ../matlabfcn_picker2Dm1IC
 

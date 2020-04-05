@@ -1,5 +1,5 @@
 
-# TSR2040 
+# picker2Dm12040 
 # Voraussetzung:
 # Viergelenkkette muss mit der Toolbox berechnet worden sein (Arbeitsblatt "vgk_kinematic_constraints.mw")
 # Autor
