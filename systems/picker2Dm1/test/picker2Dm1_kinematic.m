@@ -21,7 +21,7 @@ phi1=90*pi/180; % Winkel zwischen Parallelogrammen
 q_a=[10;45]*pi/180;
 pkin=[L1;L2;L3;L4;L5;L6;e;phi05;phi1];
 %% ------------ Koordinaten-Trafo ----------------------------------------
-T=TSRTE_fkine_fixb_rotmat_mdh_sym_varpar(q_a, pkin);
+T=picker2Dm1TE_fkine_fixb_rotmat_mdh_sym_varpar(q_a, pkin);
 %% Schnittgelenk der F�nfgelenkkette
 if ((abs(T(:,:,11)-T(:,:,14))) < 1.0e-3)
     fprintf('Trafos im Schnittgelenk von Fuenfgelenkkette A-B-C-E-D sind richtig \n');

@@ -12,7 +12,7 @@ clear
 clc
 
 %% Definition der Roboterklassen
-RS = hybroblib_create_robot_class('TSR', 'TE', 'TSR2040');
+RS = hybroblib_create_robot_class('picker2Dm1', 'TE', 'TSR2040');
 RS.fill_fcn_handles(true); % Nutze Mex-Funktionen, damit es schneller geht
 RS.mex_dep();
 TSS = RS.gen_testsettings();
@@ -83,8 +83,8 @@ cadhdl=RS.plot( q, s_plot );
 title(sprintf('CAD-Modell (%s)', RS.descr));
 
 %% Animation der Trajektorie
-resdir = fileparts(which('TSR_test.m'));
-s_anim = struct( 'gif_name', fullfile(resdir, 'TSR_trajvis.gif'));
+resdir = fileparts(which('picker2Dm1_test.m'));
+s_anim = struct( 'gif_name', fullfile(resdir, 'picker2Dm1_trajvis.gif'));
 figure(3);clf;
 hold on;
 plot3(X(:,1), X(:,2), X(:,3));

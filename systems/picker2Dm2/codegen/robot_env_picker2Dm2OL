@@ -1,16 +1,16 @@
-#TSR2040
+#picker2Dm12040
 
-robot_name := "TSRm2":
+robot_name := "picker2Dm2OL":
 
 # Anzahl der verallgemeinerten Gelenkkoordinaten
-NQJ := 2:
+NQJ := 12:
 # Anzahl der Gelenke (mit virtuellen Schnittgelenken, denen kein Körper zugeordnet ist).
 NJ := 15:
 # Anzahl der Starrkörper (mit Basis; also 10 bewegte Körper)
 NL := 11:
                         
 qoffset := Matrix(15, 1, [Pi, 0, Pi, 0, 0, Pi, 3*Pi/2, Pi, Pi, Pi, 0, Pi, 0, 0, 0]):
-theta := <qJ1(t);kintmp_t(1,1);kintmp_t(2,1);kintmp_t(3,1);kintmp_t(4,1);kintmp_t(5,1);qJ2(t);kintmp_t(6,1);kintmp_t(7,1);kintmp_t(8,1);kintmp_t(9,1);kintmp_t(10,1); 0 ; 0; 0> + qoffset:
+theta := <qJ1(t);qJ2(t);qJ3(t);qJ4(t);qJ5(t);qJ6(t);qJ7(t);qJ8(t);qJ9(t);qJ10(t);qJ11(t);qJ12(t); 0; 0; 0> + qoffset:
 alpha := Matrix(15, 1, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]):
 d := Matrix(15, 1, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]):
 a := Matrix(15, 1, [0, L1, L2, L3, L5, 0, e, L1, L6, L4, L5, L6, L3, L1, L2]):
@@ -23,8 +23,6 @@ b := Matrix(15,1,[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]):
 mu:=Matrix(<1,0,0,0,0,0,1,0,0,0,0,0,0,0,0>):
 sigma:=Matrix(<0,0,0,0,0,0,0,0,0,0,0,0,2,2,2>):
 
-# Allgemeine Winkel
-kintmp_t := Matrix(10, 1,[eta12(t),xi23(t),eta24(t),rho05(t),xi26(t),rho18(t),xi39(t),eta410(t),rho811(t),xi612(t)]):
-kintmp_s := Matrix(10, 1,[eta12_s,xi23_s,eta24_s,rho05_s,xi26_s,rho18_s,xi39_s,eta410_s,rho811_s,xi612_s]):
-
 codegen_opt := 1:
+
+

@@ -1,6 +1,6 @@
-#TSR2040
+#picker2Dm1
 
-robot_name := "TSR":
+robot_name := "picker2Dm1":
 
 # Anzahl der verallgemeinerten Gelenkkoordinaten
 NQJ := 2:

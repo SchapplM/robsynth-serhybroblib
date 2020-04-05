@@ -1,5 +1,5 @@
 
-# TSR2040 
+# picker2Dm12040 
 # Voraussetzung:
 # Viergelenkkette muss mit der Toolbox berechnet worden sein (Arbeitsblatt "vgk_kinematic_constraints.mw")
 # Autor
@@ -52,7 +52,7 @@ read sprintf("../codeexport/%s/tmp/tree_floatb_definitions",robot_name):	#von Fo
 #qJ_s:= <qJ1s,qJ2s,qJ3s,qJ4s>:				#konstante variable
 ;
 # Ergebnisse von Trigonometrischer Elimination lesen
-read sprintf("../codeexport/TSRm2TE/tmp/kinematic_constraints_maple_inert.m"):	# von aktuellem Roboter
+read sprintf("../codeexport/picker2Dm2TE/tmp/kinematic_constraints_maple_inert.m"):	# von aktuellem Roboter
 ;
 kin_constraints_exist := kin_constraints_exist:
 kintmp_qs := kintmp_qs:
