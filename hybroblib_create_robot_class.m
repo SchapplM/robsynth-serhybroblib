@@ -149,11 +149,4 @@ RS.descr = descr;
 RS.I_EElink = value_EElink;
 
 %% CAD-Modelle initialisieren, falls vorhanden
-cadinidat = fullfile(robopath, ...
-  sprintf('CAD_%s',RobName), sprintf('%s_init_CAD.m', RobName));
-if exist(cadinidat, 'file')
-  [p,f]=fileparts(cadinidat);
-  addpath(p);
-  eval(sprintf('RS = %s(RS, Name, RobName);', f));
-  rmpath(p);
-end
+% TODO: Anpassung an neues Repo mit CAD-Modelldateien

@@ -1,8 +1,7 @@
 % Teste Klassendefinition für MPL800-Yaskawa in unterschiedlichen
 % Implementierungen
 %
-% Verfügbare Beispiele: Siehe Tabelle models.csv
-% * Grashoff-Bedingung: Hunt1978, Gl. (3.11) (S. 82)
+% TODO: Kinematikparameter des Roboters stimmen noch nicht.
 
 % Quelle:
 % https://www.motoman.com/industrial-robots/mpl800-ii
@@ -42,15 +41,15 @@ for ii = 1:size(Q, 1)
 end
 
 
-%% CAD-Modell plotten
-s_plot = struct( 'ks', [1:RS_TE.NJ, RS_TE.NJ+2], 'mode', 2);
-q = pi/180*[0; -15; 30; 0];
-figure(5);clf;
-hold on;grid on;
-xlabel('x [m]');ylabel('y [m]');
-zlabel('z [m]');view(3);
-cadhdl=RS_TE.plot( q, s_plot );
-title(sprintf('CAD-Modell (%s)', RS_TE.descr));
+%% CAD-Modell plotten (falls vorhanden)
+% s_plot = struct( 'ks', [1:RS_TE.NJ, RS_TE.NJ+2], 'mode', 2);
+% q = pi/180*[0; -15; 30; 0];
+% figure(5);clf;
+% hold on;grid on;
+% xlabel('x [m]');ylabel('y [m]');
+% zlabel('z [m]');view(3);
+% RS_TE.plot( q, s_plot );
+% title(sprintf('CAD-Modell (%s)', RS_TE.descr));
 %% Gelenkmomentenverlauf berechnen
 nt = size(Q,1);
 TAU = NaN(nt, RS_TE.NQJ);
