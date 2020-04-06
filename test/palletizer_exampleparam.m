@@ -3,6 +3,9 @@
 % 
 % TODO: Prüfen, ob mit A3Off funktioniert
 % TODO: Dokumentation ausweiten
+% 
+% Siehe auch Modelldefinitionen (Parameter entstanden aus Standardwerten):
+% * palh1m1/models.csv (palh1m1Bsp1), palh1m2/models.csv
 
 % Moritz Schappler, moritz.schappler@imes.uni-hannover.de, 2018-12
 % (C) Institut für Mechatronische Systeme, Leibniz Universität Hannover

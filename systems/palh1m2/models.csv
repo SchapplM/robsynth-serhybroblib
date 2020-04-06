@@ -1,0 +1,5 @@
+Name/lfdNr;Name2;Langname;Kinematik-Parameter;;;;;;;;;;;;;;;;;;;;;;Minimalkoordinate qJ1;;;;;Minimalkoordinate qJ2;;;;;Minimalkoordinate qJ3;;;;;Minimalkoordinate qJ4;;;;;Allgemein;;
+;;;pkin 1;pkin 2;pkin 3;pkin 4;pkin5;pkin6;pkin7;pkin8;pkin9;pkin10;pkin11;pkin12;pkin13;pkin14;pkin15;pkin16;pkin17;pkin18;pkin19;pkin20;pkin21;pkin22;qmin;qmax;vmax;VZ;just;qmin;qmax;vmax;VZ;just;qmin;qmax;vmax;VZ;just;qmin;qmax;vmax;VZ;just;Nenn-Traglast;Masse;EELink
+;;;AB;AM;BC;BE;BG;BL;DC;EP;GH;GP;HW;ML;OT2;T1D;T2A;T2T1;phi1;phi2;phi312;phi413;phi710;phi711;;;;;;;;;;;;;;;;;;;;;;;
+palh1m2Bsp1;Palettierroboter;Beispielparameter;1.1;0.670820393249937;0.670820393249937;0.282842712474619;1.2;0.670820393249937;1.1;1.2;0.2;0.282842712474619;0;1.1;0;0.3;0.3;-0.3;-0.463647609000806;-0.463647609000806;2.09439510239319;0.624496506019647;0.785398163397448;1.26805037517189;-3.1416;3.1416;NA;1;0;-0.785398163397448;0.261799387799149;NA;1;0;-0.436332312998582;0.261799387799149;NA;1;0;-3.1416;3.1416;NA;1;0;NA;NA;5
+palh1m2YR1;Yaskawa;MPL800 TODO;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;-3.1416;3.1416;NA;1;0;0;1.5708;NA;1;0;0;1.5708;NA;1;0;-3.1416;3.1416;NA;1;0;NA;NA;5
