@@ -1,13 +1,21 @@
-% Teste Klassendefinition für KUKA KR-700PA in unterschiedlichen
-% Implementierungen
-% 
-% TODO: Kinematikparameter stimmen noch nicht mit KR700PA überein
-% TODO: Test palh3m1 gegen palh3m2 fehlt noch. Das ist der Zweck dieses
-% Skripts
-% TODO: Skript ist redundant mit palh3m1_test.m
+% Teste Klassendefinition für Palettierroboter mit zwei Parallelogrammen
+% Modell: Palh3m1 (Herleitung über allgemeine Viergelenkkette)
+% Beispiel: KUKA KR-700PA (Parameter noch nicht validiert)
+% Ergebnis:
+% * Herleitung über Allgemeine Viergelenkkette (palh3m1) und Parallelogramm
+% (palh3m2) stimmt überein
+% * Unterschiedliche Implementierungen haben gleiches Ergebnis
 
-% Moritz Schappler, moritz.schappler@imes.uni-hannover.de
-% (C) Institut für Mechatronische Systeme, Universität Hannover
+% Quelle:
+% * https://www.motoman.com/industrial-robots/mpl800-ii
+% * Vergleich der Implementierungen für diesen Roboter:
+%   Powerpoint-Präsentation der Publikation
+%   "Kinematics and Dynamics Model via Explicit Direct and Trigonometric
+%   Elimination of Kinematic Constraints" (Schappler et al. 2019)
+%   https://www.researchgate.net/publication/337759816_Presentation_Slides_IFToMM_World_Congress
+
+% Moritz Schappler, moritz.schappler@imes.uni-hannover.de, 2020-04
+% (C) Institut für Mechatronische Systeme, Leibniz Universität Hannover
 
 clear
 clc
@@ -18,8 +26,6 @@ RS_DE1 = hybroblib_create_robot_class('palh3m2', 'DE1', 'palh3m2KR1');
 RS_DE2 = hybroblib_create_robot_class('palh3m2', 'DE2', 'palh3m2KR1');
 
 TSS = RS_TE.gen_testsettings();
-
-
 %% Vergleich der Implementierungen
 for i = 1:TSS.n
   q=TSS.Q(i,:)';
@@ -32,93 +38,18 @@ for i = 1:TSS.n
    error('Methoden DE1, DE2 und TE stimmen nicht überein');
  end
 end
+fprintf('Kinematik vom Typ KUKA KR-700PA für 1000 Kombinationen in unterschiedlichen Implementierungen getestet\n');
 
-%% Bahnerzeugung
-fprintf('Kinematik von KUKA für 1000 Kombinationen in unterschiedlichen Implementierungen getestet\n');
-QE = RS_DE2.qlim';
-
-[Q,QD,QDD,t] = traj_trapez2_multipoint(QE, 1, 1e-1, 1e-2, 1e-3, 0.25);
-X = NaN(size(Q, 1), 6);
-for ii = 1:size(Q, 1)
-  T_0_Ei = RS_DE2.fkineEE(Q(ii,:)');
-  X(ii,:) = RS_DE2.t2x(T_0_Ei);
+%% Vergleich von palh3m1 und palh3m2
+% Das Modell palh3m2 ist einfacher zu berechnen. Wird aber gegen palh3m1
+% getestet, weil dieses zuerst erstellt wurde
+RS_palh3m1 = hybroblib_create_robot_class('palh3m1', 'TE', 'palh3m1Bsp1');
+for i = 1:TSS.n
+  q=TSS.Q(i,:)';
+  T_m1 = RS_DE1.fkine(q);
+  T_m2 = RS_palh3m1.fkine(q);
+  test_m1m2 = T_m1-T_m2;
+  if any(abs(test_m1m2(:)) > 1e-4) % grobe Toleranz, da wenige Nachkommastellen in models.csv
+    error('Palettierer palh3m1 stimmt nicht gegen palh3m2');
+  end
 end
-
-
-%% CAD-Modell plotten
-s_plot = struct( 'ks', [1:RS_DE2.NJ, RS_DE2.NJ+2]); % , 'mode', 2
-q = pi/180*[0; -15; 30; 0];
-figure(5);clf;
-hold on;grid on;
-xlabel('x [m]');ylabel('y [m]');
-zlabel('z [m]');view(3);
-cadhdl=RS_DE2.plot( q, s_plot );
-title(sprintf('CAD-Modell (%s)', RS_DE1.descr));
-% return
-%% Gelenkmomentenverlauf berechnen
-nt = size(Q,1);
-TAU = NaN(nt, RS_DE2.NQJ);
-for i = 1:nt
-  q_i = Q(i,:)';
-  qD_i = QD(i,:)';
-  qDD_i = QDD(i,:)';
-  
-  tau_i = RS_DE2.invdyn(q_i, qD_i, qDD_i);
-  TAU(i,:) = tau_i;
-end
-%% Plotten
-figure(1);clf;
-subplot(4,1,1);
-plot(t, 180/pi*Q);
-xlabel('t [s]');
-ylabel('q [deg]');
-grid on;
-subplot(4,1,2);
-plot(t, 180/pi*QD);
-xlabel('t [s]');
-ylabel('qD [deg/s]');
-grid on;
-subplot(4,1,3);
-plot(t, 180/pi*QDD);
-xlabel('t [s]');
-ylabel('qDD [deg/s^2]');
-grid on;
-subplot(4,1,4);
-plot(t, TAU);
-xlabel('t [s]');
-ylabel('tau [Nm]');
-grid on;
-
-figure(20);clf;
-subplot(2,1,1);
-plot(t, X(:,1:3));
-ylabel('EE-Position');
-subplot(2,1,2);
-plot(t, X(:,4:6));
-ylabel('EE-Orientierung');
-legend({'phi_x', 'phi_y', 'phi_z'});
-
-s_plot = struct( 'ks', [1:RS_DE2.NJ, RS_DE2.NJ+2], 'straight', 0);
-q = rand(4,1);
-figure(2);clf;
-hold on;
-grid on;
-xlabel('x [m]');
-ylabel('y [m]');
-zlabel('z [m]');
-view(3);
-title(RS_DE2.descr);
-RS_DE2.plot( q, s_plot );
-
-resdir = fileparts(which('palh3m1_test.m'));
-s_anim = struct( 'gif_name', fullfile(resdir, 'palh3m1.gif'));
-figure(3);clf;
-hold on;
-plot3(X(:,1), X(:,2), X(:,3));
-grid on;
-xlabel('x [m]');
-ylabel('y [m]');
-zlabel('z [m]');
-view(3);
-title(RS_DE2.descr);
-RS_DE2.anim( Q(1:50:end,:), s_anim, s_plot);

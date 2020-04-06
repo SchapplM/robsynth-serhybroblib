@@ -14,11 +14,17 @@ run(fullfile(systems_path, 'fourbar1', 'fourbar1_test.m'));
 systems_path = fullfile(fileparts(which('hybroblib_path_init.m')), 'systems');
 run(fullfile(systems_path, 'fivebar1', 'fivebar1_test.m'));
 
-%% Palettierroboter mit drei geschlossenen Ketten (MPL800-Yaskawa)
+%% Palettierroboter mit drei geschlossenen Ketten (Typ Yaskawa MPL800)
 systems_path = fullfile(fileparts(which('hybroblib_path_init.m')), 'systems');
 run(fullfile(systems_path, 'palh1m1', 'palh1m1_test.m'));
 systems_path = fullfile(fileparts(which('hybroblib_path_init.m')), 'systems');
 run(fullfile(systems_path, 'palh1m2', 'palh1m2_test.m'));
+
+%% Palettierroboter mit zwei geschlossenen Ketten (Typ KUKA KR-700PA)
+systems_path = fullfile(fileparts(which('hybroblib_path_init.m')), 'systems');
+run(fullfile(systems_path, 'palh3m1', 'palh3m1_test.m'));
+systems_path = fullfile(fileparts(which('hybroblib_path_init.m')), 'systems');
+run(fullfile(systems_path, 'palh3m2', 'palh3m2_test.m'));
 
 %% Modellvergleich für Palettierroboter
 test_path = fullfile(fileparts(which('hybroblib_path_init.m')), 'test');

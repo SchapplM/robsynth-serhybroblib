@@ -1,16 +1,28 @@
-% Teste Klassendefinition für KUKA KR-700PA in unterschiedlichen
-% Implementierungen
+% Teste Klassendefinition für Palettierroboter mit zwei Parallelogrammen
+% Modell: Palh3m1 (Herleitung über allgemeine Viergelenkkette)
+% Beispiel: KUKA KR-700PA (Parameter noch nicht validiert)
+% Ergebnis:
+% * Unterschiedliche Implementierungen haben gleiches Ergebnis
+% * Modell sieht plausibel aus
 
-% Moritz Schappler, moritz.schappler@imes.uni-hannover.de
+% Quelle:
+% * Quelle des Modells: [Shan2019_S828]
+% * Vergleich der Implementierungen für diesen Roboter: TE, DE1, DE2
+%   Powerpoint-Präsentation der Publikation
+%   "Kinematics and Dynamics Model via Explicit Direct and Trigonometric
+%   Elimination of Kinematic Constraints" (Schappler et al. 2019)
+%   https://www.researchgate.net/publication/337759816_Presentation_Slides_IFToMM_World_Congress
+
+% Moritz Schappler, moritz.schappler@imes.uni-hannover.de, 2018-11
 % (C) Institut für Mechatronische Systeme, Universität Hannover
 
 clear
 clc
 
 %% Definition der Roboterklassen
-RS_TE = hybroblib_create_robot_class('palh3m1', 'TE', 'palh3m1KR1');
-RS_DE1 = hybroblib_create_robot_class('palh3m1', 'DE1', 'palh3m1KR1');
-RS_DE2 = hybroblib_create_robot_class('palh3m1', 'DE2', 'palh3m1KR1');
+RS_TE = hybroblib_create_robot_class('palh3m1', 'TE', 'palh3m1Bsp1');
+RS_DE1 = hybroblib_create_robot_class('palh3m1', 'DE1', 'palh3m1Bsp1');
+RS_DE2 = hybroblib_create_robot_class('palh3m1', 'DE2', 'palh3m1Bsp1');
 
 TSS = RS_TE.gen_testsettings();
 
@@ -27,8 +39,9 @@ for i = 1:TSS.n
  end
 end
 
-%% Bahnerzeugung
-fprintf('Kinematik von KUKA für 1000 Kombinationen in unterschiedlichen Implementierungen getestet\n');
+fprintf('Kinematik vom Typ KUKA KR-700PA für 1000 Kombinationen in unterschiedlichen Implementierungen getestet\n');
+
+%% Trajektorie zwischen Gelenkwinkelgrenzen erzeugen
 QE = RS_TE.qlim';
 
 [Q,QD,QDD,t] = traj_trapez2_multipoint(QE, 1, 1e-1, 1e-2, 1e-3, 0.25);
@@ -38,16 +51,15 @@ for ii = 1:size(Q, 1)
   X(ii,:) = RS_TE.t2x(T_0_Ei);
 end
 
-
-%% CAD-Modell plotten
-s_plot = struct( 'ks', [1:RS_TE.NJ, RS_TE.NJ+2], 'mode', 2);
-q = pi/180*[0; -15; 30; 0];
-figure(5);clf;
-hold on;grid on;
-xlabel('x [m]');ylabel('y [m]');
-zlabel('z [m]');view(3);
-cadhdl=RS_TE.plot( q, s_plot );
-title(sprintf('CAD-Modell (%s)', RS_TE.descr));
+%% CAD-Modell plotten (falls vorhanden)
+% s_plot = struct( 'ks', [1:RS_TE.NJ, RS_TE.NJ+2], 'mode', 2);
+% q = pi/180*[0; -15; 30; 0];
+% figure(5);clf;
+% hold on;grid on;
+% xlabel('x [m]');ylabel('y [m]');
+% zlabel('z [m]');view(3);
+% cadhdl=RS_TE.plot( q, s_plot );
+% title(sprintf('CAD-Modell (%s)', RS_TE.descr));
 %% Gelenkmomentenverlauf berechnen
 nt = size(Q,1);
 TAU = NaN(nt, RS_TE.NQJ);
@@ -92,7 +104,7 @@ ylabel('EE-Orientierung');
 legend({'phi_x', 'phi_y', 'phi_z'});
 
 s_plot = struct( 'ks', [1:RS_TE.NJ, RS_TE.NJ+2], 'straight', 0);
-q = rand(4,1);
+q = [0;60;60;0]*pi/180;
 figure(2);clf;
 hold on;
 grid on;
