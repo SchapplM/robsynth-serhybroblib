@@ -105,7 +105,7 @@
 <Group labelreference="L3241" drawlabel="true">
 <Input><Text-field style="Heading 2" layout="Heading 2">Einleitung</Text-field><Text-field style="Normal" layout="Normal"><Font encoding="UTF-8">Die kinematischen Zwangsbedingungen werden als Ersetzungsausdruck f\303\274r die abh\303\244ngigen Winkel aufgestellt.</Font>
 
-fourbar3DE -&gt; Viergelenkkette, modellierung der Zwangsbedingungen mit direkter Elimination der Winkel (anstatt der trigonometrischen Elimination)
+fourbar1turnDE -&gt; Viergelenkkette, modellierung der Zwangsbedingungen mit direkter Elimination der Winkel (anstatt der trigonometrischen Elimination)
 kinematic_constraint -&gt; Kinematische Zwangsbedingungen
 </Text-field>
 </Input>
@@ -186,7 +186,7 @@ read &quot;../robot_codegen_constraints/proc_subs_kintmp_exp&quot;:</Text-field>
 </Input>
 </Group>
 <Group view="code" labelreference="L3220" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">read sprintf(&quot;../codeexport/fourbar3TE/tmp/kinematic_constraints_maple_inert.m&quot;):</Text-field>
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">read sprintf(&quot;../codeexport/fourbar1turnTE/tmp/kinematic_constraints_maple_inert.m&quot;):</Text-field>
 </Input>
 </Group>
 <Group view="code" labelreference="L3221" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">

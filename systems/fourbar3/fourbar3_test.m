@@ -15,9 +15,9 @@ clear
 clc
 
 %% Definition der Roboterklassen
-RS_TE = hybroblib_create_robot_class('fourbar3', 'TE', 'fourbar3Bsp1');
-% RS_DE1 = hybroblib_create_robot_class('fourbar3', 'DE1', 'fourbar3Bsp1');
-% RS_DE2 = hybroblib_create_robot_class('fourbar3', 'DE2', 'fourbar3Bsp1');
+RS_TE = hybroblib_create_robot_class('fourbar1turn', 'TE', 'fourbar1turnBsp1');
+% RS_DE1 = hybroblib_create_robot_class('fourbar1turn', 'DE1', 'fourbar1turnBsp1');
+% RS_DE2 = hybroblib_create_robot_class('fourbar1turn', 'DE2', 'fourbar1turnBsp1');
 
 %% Vergleich der Implementierungen
 % for q = linspace(RS_DE1.qlim(1), RS_DE1.qlim(2), 1000)

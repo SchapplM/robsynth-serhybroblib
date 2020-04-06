@@ -15,9 +15,9 @@ if [ "$maplerepopath" == "" ]; then
 fi;
 
 deflist="
-robot_env_fourbar3TE
-robot_env_fourbar3DE1
-robot_env_fourbar3DE2
+robot_env_fourbar1turnTE
+robot_env_fourbar1turnDE1
+robot_env_fourbar1turnDE2
 "
 
 

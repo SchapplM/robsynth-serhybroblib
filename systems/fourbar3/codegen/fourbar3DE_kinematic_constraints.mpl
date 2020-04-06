@@ -3,7 +3,7 @@
 # Einleitung
 # Die kinematischen Zwangsbedingungen werden als Ersetzungsausdruck für die abhängigen Winkel aufgestellt.
 # 
-# fourbar3DE -> Viergelenkkette, modellierung der Zwangsbedingungen mit direkter Elimination der Winkel (anstatt der trigonometrischen Elimination)
+# fourbar1turnDE -> Viergelenkkette, modellierung der Zwangsbedingungen mit direkter Elimination der Winkel (anstatt der trigonometrischen Elimination)
 # kinematic_constraint -> Kinematische Zwangsbedingungen
 
 # Quelle
@@ -41,7 +41,7 @@ with(RealDomain): # Schränkt alle Funktionen auf den reellen Bereich ein. Muss 
 read "../robot_codegen_definitions/robot_env":
 read sprintf("../codeexport/%s/tmp/tree_floatb_definitions",robot_name):
 # Ergebnisse von Trigonometrischer Elimination lesen
-read sprintf("../codeexport/fourbar3TE/tmp/kinematic_constraints_maple_inert.m"):
+read sprintf("../codeexport/fourbar1turnTE/tmp/kinematic_constraints_maple_inert.m"):
 kin_constraints_exist := kin_constraints_exist:
 kintmp_qs := kintmp_qs:
 kintmp_qt := kintmp_qt:

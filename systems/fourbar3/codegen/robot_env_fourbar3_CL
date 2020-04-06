@@ -1,6 +1,6 @@
 # MDH-Definition für Viergelenkkette (geschlossene kinematische Zwangsbedingungen)
 
-robot_name := "fourbar3":
+robot_name := "fourbar1turn":
 
 # Anzahl der verallgemeinerten Gelenkkoordinaten
 NQJ := 2:

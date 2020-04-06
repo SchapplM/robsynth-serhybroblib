@@ -96,7 +96,7 @@
 <Input><Text-field style="Heading 2" layout="Heading 2">Einleitung
 </Text-field><Text-field style="Normal" layout="Normal"><Font encoding="UTF-8">Die kinematischen Zwangsbedingungen werden als Ersetzungsausdruck f\303\274r die abh\303\244ngigen Winkel aufgestellt.</Font>
 
-<Font encoding="UTF-8">fourbar3TE -&gt; Viergelenkkette, modellierung der Zwangsbedingungen mit Ausdr\303\274cken f\303\274r trigonometrische Elimination
+<Font encoding="UTF-8">fourbar1turnTE -&gt; Viergelenkkette, modellierung der Zwangsbedingungen mit Ausdr\303\274cken f\303\274r trigonometrische Elimination
 </Font>kinematic_constraint -&gt; Kinematische Zwangsbedingungen</Text-field>
 </Input>
 </Group>

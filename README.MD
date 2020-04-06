@@ -74,7 +74,7 @@ Folgende Roboter und Mechanismen wurden bisher erfolgreich getestet:
 | ---     |                  |---            |---                  |
 | Viergelenkkette | fourbar1 | Plausibilität/Visualisierung, Abgleich Expl/Impl | TE, DE, IC |
 | Parallelogramm | fourbar2 | Abgleich über palh3m2 | TE, DE, IC |
-| Drehbar aufgerichtete Viergelenkkette | fourbar3 | Validierung SA Shan | nur Elim. |
+| Drehbar aufgerichtete Viergelenkkette | fourbar1turn | Validierung SA Shan | nur Elim. |
 | Fünfgelenkkette | fivebar1 | Plausibilität/Visualisierung/Abgleich über picker2Dm1 | TE, DE, IC |
 | 2T0R-Palettierroboter (2 Parallelogramme, 1 Fünfgelenkkette, Herl. über allgemeine Viergelenkkette) | picker2Dm1 | Plausibilität/Visualisierung | TE, DE, IC |
 | 2T0R-Palettierroboter (2 Parallelogramme, 1 Fünfgelenkkette, Herl. über Parallelogramm) | picker2Dm2 | Plausibilität/Visualisierung | TE, DE, IC |
