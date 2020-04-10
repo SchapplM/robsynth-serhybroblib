@@ -1,6 +1,0 @@
-# Name der Viergelenkkette (für impl. kinematische Zwangsbedingungen)
-
-robot_name := "fourbar3IC":
-robot_name_OL := "fourbar3OL":
-robot_name_DE := "fourbar3DE":
-robot_name_TE := "fourbar3TE":

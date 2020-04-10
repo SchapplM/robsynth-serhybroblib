@@ -15,11 +15,10 @@ if [ "$maplerepopath" == "" ]; then
 fi;
 
 deflist="
-robot_env_fourbar3TE
-robot_env_fourbar3DE1
-robot_env_fourbar3DE2
+robot_env_fourbar1turnTE
+robot_env_fourbar1turnDE1
+robot_env_fourbar1turnDE2
 "
-
 
 cd $maplerepopath
 for df in $deflist; do
@@ -27,3 +26,6 @@ for df in $deflist; do
   cp robot_codegen_definitions/$df robot_codegen_definitions/robot_env
   ./robot_codegen_start.sh -p --fixb_only
 done
+
+cp robot_codegen_definitions/robot_env_fourbar1turnOL robot_codegen_definitions/robot_env
+./robot_codegen_start.sh --fixb_only --ic -p

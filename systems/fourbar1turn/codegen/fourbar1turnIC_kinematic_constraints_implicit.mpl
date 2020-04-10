@@ -9,10 +9,9 @@
 # Quelle
 # SA Bejaoui: Bejaoui2018_S749; "Modellierung kinematischer Zwangsbedingungen für hybride serielle Roboter mit planaren Parallelmechanismen"
 # Autor
-# Abderahman Bejaoui
+# Weipu Shan (Studienarbeit), Abderahman Bejaoui (Vorlage fourbar1), Moritz Schappler (Korrekturen)
 # Studienarbeit bei: Moritz Schappler, schappler@irt.uni-hannover.de, 2018-08
 # (C) Institut fuer Mechatronische Systeme, Leibniz Universitaet Hannover
-# 
 # Initialisierung
 restart:
 kin_constraints_exist := true: # Für Speicherung
@@ -37,27 +36,29 @@ read "../robot_codegen_constraints/proc_subs_kintmp_exp":
 read "../helper/proc_intersect_circle":
 with(RealDomain): # Schränkt alle Funktionen auf den reellen Bereich ein. Muss nach Definition von MatlabExport kommen. Sonst geht dieses nicht.
 ;
-read "../robot_codegen_definitions/robot_env":
-read sprintf("../codeexport/%s/tmp/tree_floatb_definitions", robot_name):
+read "../robot_codegen_definitions/robot_env_IC":
+read sprintf("../codeexport/%s/tmp/tree_floatb_definitions", robot_name_OL):
 # Ergebnisse der Kinematik laden
-read sprintf("../codeexport/%s/tmp/kinematics_floatb_%s_rotmat_maple.m", robot_name, base_method_name);
+read sprintf("../codeexport/%s/tmp/kinematics_floatb_%s_rotmat_maple.m", robot_name_OL, base_method_name);
+read "../robot_codegen_definitions/robot_env_IC": # Neu laden, damit keine Definitionen für den IC-Roboter überschrieben werden
 Trf := Trf:
 Trf_c := Trf_c:
 Trf
 ;
-# Fourbar1 0-1-2-4-5-3-0
-# Schleife 0-1-2-4
-T_0_4 := combine(Matrix(Trf(1..4,1..4, 1)) . Matrix(Trf(1..4,1..4,2)). Matrix(Trf(1..4,1..4, 4)));
-# Schleife 0-3-5
-T_0_5:= combine(Matrix(Trf(1..4,1..4, 3)) . Matrix(Trf(1..4,1..4,5)));
-h1t := T_0_5(1..3,4) - T_0_4(1..3,4);
-tmp := Transpose( Matrix(T_0_5(1..3,1..3)) ) . Matrix(T_0_4(1..3,1..3));  # nur anzeigen lassen für h1r
+# Fourbar1 1-2-3-5-6-4-1
+# Siehe auch: fourbar1IC_kinematic_constraints_implicit.mw (Indizes hier um 1 verschoben
+# Schleife 1-2-3-5
+T_1_5 := combine(Matrix(Trf(1..4,1..4, 2)) . Matrix(Trf(1..4,1..4,3)). Matrix(Trf(1..4,1..4, 5)));
+# Schleife 1-4-6
+T_1_6:= combine(Matrix(Trf(1..4,1..4, 4)) . Matrix(Trf(1..4,1..4,6)));
+h1t := T_1_6(1..3,4) - T_1_5(1..3,4);
+tmp := Transpose( Matrix(T_1_6(1..3,1..3)) ) . Matrix(T_1_5(1..3,1..3));  # nur anzeigen lassen für h1r
 ;
  combine(tmp); # nur anzeigen lassen für h1r
 ;
-h1r:=Pi-(-qJ3(t)+qJ1(t)+qJ2(t)+qJ4(t));
+h1r:=Pi-(-qJ4(t)+qJ2(t)+qJ3(t)+qJ5(t));
 # Zusammenstellen aller Zwangsbedingungen
-implconstr_t := <h1t([1, 2]);h1r>; 
+implconstr_t := <h1t([1, 3]);h1r>; 
 implconstr_s := convert_t_s(implconstr_t):
 # Exportiere Code für folgende Skripte
 kin_constraints_exist:=true:
