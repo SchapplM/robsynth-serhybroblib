@@ -1,4 +1,4 @@
-# Name der Viergelenkkette (für impl. kinematische Zwangsbedingungen)
+# Definition für picker2Dm2 mit impliziten Zwangsbedingungen
 
 robot_name := "picker2Dm2IC":
 robot_name_OL := "picker2Dm2OL":

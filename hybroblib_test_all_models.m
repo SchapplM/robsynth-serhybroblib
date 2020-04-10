@@ -31,10 +31,11 @@ test_path = fullfile(fileparts(which('hybroblib_path_init.m')), 'test');
 addpath(test_path);
 run(fullfile(test_path, 'palletizer_mdlcomp'));
 
-%% 2D-Delta
+%% 2D-Palettierroboter
 systems_path = fullfile(fileparts(which('hybroblib_path_init.m')), 'systems');
 run(fullfile(systems_path, 'picker2Dm1', 'picker2Dm1_test.m'));
-
+systems_path = fullfile(fileparts(which('hybroblib_path_init.m')), 'systems');
+run(fullfile(systems_path, 'picker2Dm2', 'picker2Dm2_test.m'));
 return
 %% 3. Arm
 % TODO: Hier gibt es noch Pfad-Probleme

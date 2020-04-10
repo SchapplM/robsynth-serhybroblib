@@ -1,5 +1,5 @@
 
-# Berechne kinematische Zwangsbedingungen für den picker2Dm12040 aus 2 Parallelogrammen und einer Fünfgelenkkette
+# Berechne kinematische Zwangsbedingungen für den picker2Dm1 aus 2 Parallelogrammen und einer Fünfgelenkkette
 # Einleitung
 # 
 # Herleitung der Kinematischen Zwangsbedingungen für einen 2-FG hybriden Palettier-/Verpackungsroboter mit zwei Parallelogrammen und einer Fünfgelenkkette
