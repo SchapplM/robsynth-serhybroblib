@@ -15,6 +15,7 @@ fourbar1
 fourbar2
 fivebar1
 fourbar1turn
+fourbarpris
 palh1m1
 palh1m2
 palh2m1
