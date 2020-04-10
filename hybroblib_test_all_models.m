@@ -14,6 +14,11 @@ run(fullfile(systems_path, 'fourbar1', 'fourbar1_test.m'));
 systems_path = fullfile(fileparts(which('hybroblib_path_init.m')), 'systems');
 run(fullfile(systems_path, 'fivebar1', 'fivebar1_test.m'));
 
+%% Minimalbeispiele und Testsysteme
+% Als Teil der größeren Roboter zum Testen und zur Entwicklung
+systems_path = fullfile(fileparts(which('hybroblib_path_init.m')), 'systems');
+run(fullfile(systems_path, 'fourbar1turn', 'fourbar1turn_test.m'));
+
 %% Palettierroboter mit drei geschlossenen Ketten (Typ Yaskawa MPL800)
 systems_path = fullfile(fileparts(which('hybroblib_path_init.m')), 'systems');
 run(fullfile(systems_path, 'palh1m1', 'palh1m1_test.m'));
