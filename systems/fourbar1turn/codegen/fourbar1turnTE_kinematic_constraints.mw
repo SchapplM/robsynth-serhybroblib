@@ -189,14 +189,6 @@ read &quot;../helper/proc_intersect_circle&quot;:</Text-field>
 <Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">kintmpD_s:=Matrix(&lt; etaD_s, xiD_s, rhoD_s&gt;):</Text-field>
 </Input>
 </Group>
-<Group view="code" labelreference="L2257" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">qJ_t := Matrix(NQJ, 1, &lt;qJ1(t),qJ2(t)&gt;):</Text-field>
-</Input>
-</Group>
-<Group view="code" hide-input="false" labelreference="L2192" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">qJ_s := Matrix(NQJ, 1, &lt;qJ1s,qJ2s&gt;):</Text-field>
-</Input>
-</Group>
 <Group view="code" labelreference="L1571" drawlabel="true">
 <Input><Text-field style="Text" layout="Normal"><Font encoding="UTF-8">Konstante Winkel bereits hineinschreiben ( Keine f\303\274r Viergelenkkette)</Font></Text-field>
 </Input>

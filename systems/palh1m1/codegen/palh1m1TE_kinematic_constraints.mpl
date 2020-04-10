@@ -7,7 +7,8 @@
 # palh1m1TE -> MPL800 II-Yaskawa, modellierung der Zwangsbedingungen mit Ausdrücken für trigonometrische Elimination
 # kinematic_constraint -> Kinematische Zwangsbedingungen
 # Datenblatt des Roboters unter :   https://www.motoman.com/industrial-robots/mpl800-ii
-# Voraussetzung (sehr wichtig !!!!): Viergelenkkette muss mit der Toolbox berechnet worden sein (Arbeitsblatt "fourbar1TE_kinematic_constraints.mw")
+# Voraussetzung: 
+# Viergelenkkette muss mit der Toolbox berechnet worden sein (Arbeitsblatt "fourbar1TE_kinematic_constraints.mw")
 # Quelle
 # SA Bejaoui: Bejaoui2018_S749; "Modellierung kinematischer Zwangsbedingungen für hybride serielle Roboter mit planaren Parallelmechanismen"
 # Autor

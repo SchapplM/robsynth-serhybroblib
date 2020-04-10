@@ -48,8 +48,6 @@ read sprintf("../codeexport/%s/tmp/tree_floatb_definitions", robot_name):
 kintmp_qs := Matrix(RowDimension(kintmp_s),1):
 kintmpD_t:=diff~(kintmp_t,t):
 kintmpD_s:=Matrix(< etaD_s, xiD_s, rhoD_s>):
-qJ_t := Matrix(NQJ, 1, <qJ1(t),qJ2(t)>):
-qJ_s := Matrix(NQJ, 1, <qJ1s,qJ2s>):
 # Konstante Winkel bereits hineinschreiben ( Keine für Viergelenkkette)
 for i from 1 to RowDimension(kintmp_s) do
   if diff(kintmp_s(i,1), t) = 0 then

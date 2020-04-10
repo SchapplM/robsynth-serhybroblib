@@ -1,5 +1,12 @@
 
-# Vierachsroboter implizit
+# Palettierroboter mit drei geschlossenen kinematischen Ketten
+
+# 
+# Erklärung des Dateinamens:
+# palh1: Hybrider Palettierroboter Variante 1 (drei geschlossene kinematische Ketten)
+# m1: Modellierung der geschlossenen Ketten als allgemeine Viergelenkkette (ohne Parallelogramm-Annahme)
+# IC: Berechnung des Roboters mit impliziten Zwangsbedingungen
+# kinematic_contraints_implizit: Berechnung der kinematischen Zwangsbedingungen (implizite Form)
 # Initialisierung
 restart:
 kin_constraints_exist := true: # Für Speicherung
