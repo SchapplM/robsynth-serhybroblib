@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Worksheet>
-<Version major="2018" minor="0"/>
+<Version major="2019" minor="2"/>
 <Label-Scheme value="2" prefix=""/>
 <View-Properties presentation="false" autoexpanding_sections="true" UserProfileName="Maple Default Profile" NumericFormat-ApplyInteger="true" NumericFormat-ApplyRational="true" NumericFormat-ApplyExponent="false" editable="true">
 </View-Properties>
-<MapleNet-Properties prettyprint="3" warnlevel="3" preplot="" helpbrowser="standard" displayprecision="-1" echo="1" unitattributes="&quot;fontweight&quot; = &quot;bold&quot;" imaginaryunit="I" longdelim="true" elisiontermsthreshold="10000" elisiondigitsafter="100" elisiondigitsbefore="100" plotdevice="inline" errorbreak="1" plotoptions="" plotdriver="opengl" quiet="false" elisiontermsbefore="100" elisiontermsafter="100" screenwidth="79" indentamount="4" plotoutput="terminal" screenpixelheight="1200" rtablesize="10" useclientjvm="true" labelwidth="20" postplot="" typesetting="extended" ansi="false" elisiondigitsthreshold="10000" showassumed="1" errorcursor="false" labelling="true" screenheight="25" prompt="&gt; " verboseproc="1" latexwidth="8.0" ShowLabels="true"/>
+<MapleNet-Properties prettyprint="3" warnlevel="3" compactdisplay="false" preplot="" helpbrowser="standard" displayprecision="-1" echo="1" unitattributes="&quot;fontweight&quot; = &quot;bold&quot;" imaginaryunit="I" longdelim="true" elisiontermsthreshold="10000" elisiondigitsafter="100" elisiondigitsbefore="100" plotdevice="inline" errorbreak="1" plotoptions="" plotdriver="opengl" quiet="false" elisiontermsbefore="100" elisiontermsafter="100" historytimestamp="false" screenwidth="79" indentamount="4" plotoutput="terminal" screenpixelheight="1050" rtablesize="[10, 10]" useclientjvm="true" labelwidth="20" postplot="" typesetting="extended" ansi="false" ansicolor="[]" elisiondigitsthreshold="10000" showassumed="1" ansilprint="false" trailingsemicolon="true" errorcursor="false" labelling="true" screenheight="25" prompt="&gt; " verboseproc="1" latexwidth="8.0" ShowLabels="true"/>
 <Styles>
 <Font name="Heading 1" background="[255,255,255]" bold="true" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="18" subscript="false" superscript="false" underline="false" placeholder="false"/>
 <Font name="Warning" background="[255,255,255]" bold="false" executable="false" family="Courier New" foreground="[0,0,255]" italic="false" opaque="false" readonly="true" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
@@ -104,12 +104,8 @@
 </Input>
 </Group>
 <Group labelreference="L2299" drawlabel="true">
-<Input><Text-field style="Heading 2" layout="Heading 2">Autor</Text-field><Text-field style="Normal" layout="Normal">Abderahman Bejaoui
+<Input><Text-field style="Heading 2" layout="Heading 2">Autor</Text-field><Text-field style="Normal" layout="Normal">Weipu Shan (Studienarbeit), Abderahman Bejaoui (Vorlage fourbar1), Moritz Schappler (Korrekturen)
 Studienarbeit bei: Moritz Schappler, schappler@irt.uni-hannover.de, 2018-08</Text-field><Text-field style="Normal" layout="Normal">(C) Institut fuer Mechatronische Systeme, Leibniz Universitaet Hannover</Text-field>
-</Input>
-</Group></Presentation-Block><Presentation-Block>
-<Group view="code" labelreference="L2284" drawlabel="true">
-<Input><Text-field style="Heading 1" layout="Heading 1"></Text-field>
 </Input>
 </Group></Presentation-Block>
 <Section collapsed="false" isCollapsible="true" drawButton="true" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60"><Title><Text-field style="Heading 1" layout="Heading 1">Initialisierung</Text-field></Title><Presentation-Block>
@@ -157,20 +153,21 @@ read &quot;../helper/proc_intersect_circle&quot;:</Text-field>
 <Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"><Font encoding="UTF-8">with(RealDomain): # Schr\303\244nkt alle Funktionen auf den reellen Bereich ein. Muss nach Definition von MatlabExport kommen. Sonst geht dieses nicht.</Font></Text-field>
 </Input>
 </Group></Presentation-Block><Presentation-Block>
-<Group labelreference="L2289" drawlabel="true">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">read &quot;../robot_codegen_definitions/robot_env&quot;:</Text-field>
+<Group labelreference="L2301" drawlabel="true">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">read &quot;../robot_codegen_definitions/robot_env_IC&quot;:</Text-field>
 </Input>
 </Group>
-<Group view="code" labelreference="L2292" drawlabel="true">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">read sprintf(&quot;../codeexport/%s/tmp/tree_floatb_definitions&quot;, robot_name):</Text-field>
+<Group view="code" labelreference="L2300" drawlabel="true">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">read sprintf(&quot;../codeexport/%s/tmp/tree_floatb_definitions&quot;, robot_name_OL):</Text-field>
 </Input>
-</Group></Presentation-Block><Presentation-Block>
+</Group></Presentation-Block><Presentation-Block></Presentation-Block><Presentation-Block>
 <Group labelreference="L2294" drawlabel="true">
 <Input><Text-field style="Text" layout="Normal">Ergebnisse der Kinematik laden</Text-field>
 </Input>
 </Group>
 <Group hide-input="false" labelreference="L2248" drawlabel="true">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">read sprintf(&quot;../codeexport/%s/tmp/kinematics_floatb_%s_rotmat_maple.m&quot;, robot_name, base_method_name);
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">read sprintf(&quot;../codeexport/%s/tmp/kinematics_floatb_%s_rotmat_maple.m&quot;, robot_name_OL, base_method_name);
+<Font encoding="UTF-8">read &quot;../robot_codegen_definitions/robot_env_IC&quot;: # Neu laden, damit keine Definitionen f\303\274r den IC-Roboter \303\274berschrieben werden</Font>
 Trf := Trf:
 Trf_c := Trf_c:</Text-field>
 </Input>
@@ -179,29 +176,30 @@ Trf_c := Trf_c:</Text-field>
 <Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">Trf</Text-field>
 </Input>
 </Group></Presentation-Block>
-<Section collapsed="false" isCollapsible="true" drawButton="true" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60"><Title><Text-field style="Heading 2" layout="Heading 2">Fourbar1 0-1-2-4-5-3-0</Text-field></Title>
+<Section collapsed="false" isCollapsible="true" drawButton="true" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60"><Title><Text-field style="Heading 2" layout="Heading 2">Fourbar1 1-2-3-5-6-4-1
+<Font style="Text">Siehe auch: fourbar1IC_kinematic_constraints_implicit.mw (Indizes hier um 1 verschoben</Font></Text-field></Title>
 <Group labelreference="L2264" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field style="Text" layout="Normal">Schleife 0-1-2-4</Text-field>
+<Input><Text-field style="Text" layout="Normal">Schleife 1-2-3-5</Text-field>
 </Input>
 </Group>
 <Group hide-input="false" labelreference="L2262" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">T_0_4 := combine(Matrix(Trf(1..4,1..4, 1)) . Matrix(Trf(1..4,1..4,2)). Matrix(Trf(1..4,1..4, 4)));</Text-field>
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">T_1_5 := combine(Matrix(Trf(1..4,1..4, 2)) . Matrix(Trf(1..4,1..4,3)). Matrix(Trf(1..4,1..4, 5)));</Text-field>
 </Input>
 </Group>
 <Group labelreference="L2261" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field style="Text" layout="Normal">Schleife 0-3-5</Text-field>
+<Input><Text-field style="Text" layout="Normal">Schleife 1-4-6</Text-field>
 </Input>
 </Group>
 <Group hide-input="false" labelreference="L2265" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">T_0_5:= combine(Matrix(Trf(1..4,1..4, 3)) . Matrix(Trf(1..4,1..4,5)));</Text-field>
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">T_1_6:= combine(Matrix(Trf(1..4,1..4, 4)) . Matrix(Trf(1..4,1..4,6)));</Text-field>
 </Input>
 </Group>
 <Group hide-input="false" labelreference="L2258" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">h1t := T_0_5(1..3,4) - T_0_4(1..3,4);</Text-field>
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">h1t := T_1_6(1..3,4) - T_1_5(1..3,4);</Text-field>
 </Input>
 </Group>
 <Group hide-input="false" labelreference="L2260" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">tmp := Transpose( Matrix(T_0_5(1..3,1..3)) ) . Matrix(T_0_4(1..3,1..3));  #<Font encoding="UTF-8"> nur anzeigen lassen f\303\274r h1r</Font></Text-field>
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">tmp := Transpose( Matrix(T_1_6(1..3,1..3)) ) . Matrix(T_1_5(1..3,1..3));  #<Font encoding="UTF-8"> nur anzeigen lassen f\303\274r h1r</Font></Text-field>
 </Input>
 </Group>
 <Group hide-input="false" labelreference="L2259" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
@@ -209,7 +207,7 @@ Trf_c := Trf_c:</Text-field>
 </Input>
 </Group>
 <Group hide-input="false" labelreference="L2268" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">h1r:=Pi-(-qJ3(t)+qJ1(t)+qJ2(t)+qJ4(t));</Text-field>
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">h1r:=Pi-(-qJ4(t)+qJ2(t)+qJ3(t)+qJ5(t));</Text-field>
 </Input>
 </Group>
 </Section>
