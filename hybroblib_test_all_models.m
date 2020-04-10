@@ -10,6 +10,8 @@ clear
 systems_path = fullfile(fileparts(which('hybroblib_path_init.m')), 'systems');
 run(fullfile(systems_path, 'fourbar1', 'fourbar1_test.m'));
 systems_path = fullfile(fileparts(which('hybroblib_path_init.m')), 'systems');
+run(fullfile(systems_path, 'fourbar2', 'fourbar2_test.m'));
+systems_path = fullfile(fileparts(which('hybroblib_path_init.m')), 'systems');
 run(fullfile(systems_path, 'fourbarpris', 'fourbarpris_test.m'));
 %% Fünfgelenkkette
 systems_path = fullfile(fileparts(which('hybroblib_path_init.m')), 'systems');
