@@ -1,5 +1,5 @@
-# MDH-Definition für
-#Schubkurbel
+# MDH-Definition für Viergelenkkette mit Schubgelenk
+# Mechanismus: Festes Glied zwischen Drehgelenken. Ist keine klassische Schubkurbel.
 # Zum Aufbau des Modells, siehe Dokumentations-Repo. Zur Bedeutung der Eingaben in dieser Datei, siehe Maple-Repo
 
 robot_name := "fourbarprisOL":
@@ -20,10 +20,10 @@ v := Matrix(NJ,1, <0; 1; 0; 3; 2>):
 b := Matrix(5,1,[0, 0, 0, 0, HP]):
 beta := Matrix(5,1,[0, -Pi/2, 0, 0, 0]):
 
-# Nur Drehgelenke
+# Zweites Gelenk ist (aktives) Schubgelenk
 sigma := Matrix(<0,1,0,0,2>):
 mu:=Matrix(<0,1,0,0,0>):
 
 codegen_kinematics_opt := false:
 
-codegen_opt := 1:
+codegen_opt := 2:

@@ -1,0 +1,4 @@
+Name/lfdNr;Name2;Langname;Kinematik-Parameter;;;Minimalkoordinate qJ1;;;;;Allgemein;;
+;;;pkin 1;pkin 2;pkin 3;qmin;qmax;vmax;VZ;just;Nenn-Traglast;Masse;EELink
+;;;GK;GP;HP;;;;;;;;
+fourbarprisBsp1;Viergelenkkette;aktives Schubgelenk;0.7;0.6;0.2;0;0.5;NA;1;0;NA;NA;3
