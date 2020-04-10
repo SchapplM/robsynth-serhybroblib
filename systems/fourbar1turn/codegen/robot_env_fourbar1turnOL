@@ -11,7 +11,7 @@ NL := 5: # 4 bewegte Körper und Basis
 
 qoffset := Matrix(NJ, 1, [0, 0, Pi, 0, 0, 0]):
 theta:= Matrix(<qJ1(t), qJ2(t), qJ3(t), qJ4(t), qJ5(t), 0>) + qoffset:
-alpha := Matrix(NJ, 1, [Pi/2, 0, 0, 0, 0, 0]):
+alpha := Matrix(NJ, 1, [0, Pi/2, 0, Pi/2, 0, 0]):
 d := Matrix(NJ, 1, [l5, 0, 0, 0, 0, 0]):
 a := Matrix(NJ, 1, <0, 0, l2, l1, l3, l4>):
 v := Matrix(NJ,1, <0; 1; 2; 1; 3; 4>):

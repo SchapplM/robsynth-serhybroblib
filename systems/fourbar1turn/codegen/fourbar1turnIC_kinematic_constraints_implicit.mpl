@@ -38,7 +38,6 @@ with(RealDomain): # Schränkt alle Funktionen auf den reellen Bereich ein. Muss 
 ;
 read "../robot_codegen_definitions/robot_env_IC":
 read sprintf("../codeexport/%s/tmp/tree_floatb_definitions", robot_name_OL):
-
 # Ergebnisse der Kinematik laden
 read sprintf("../codeexport/%s/tmp/kinematics_floatb_%s_rotmat_maple.m", robot_name_OL, base_method_name);
 read "../robot_codegen_definitions/robot_env_IC": # Neu laden, damit keine Definitionen für den IC-Roboter überschrieben werden
@@ -59,7 +58,7 @@ tmp := Transpose( Matrix(T_1_6(1..3,1..3)) ) . Matrix(T_1_5(1..3,1..3));  # nur 
 ;
 h1r:=Pi-(-qJ4(t)+qJ2(t)+qJ3(t)+qJ5(t));
 # Zusammenstellen aller Zwangsbedingungen
-implconstr_t := <h1t([1, 2]);h1r>; 
+implconstr_t := <h1t([1, 3]);h1r>; 
 implconstr_s := convert_t_s(implconstr_t):
 # Exportiere Code für folgende Skripte
 kin_constraints_exist:=true:

@@ -1,5 +1,6 @@
-% Teste Klassendefinition für Viergelenkkette in unterschiedlichen
-% Implementierungen
+% Teste Klassendefinition für drehbar aufgestellte Viergelenkkette in
+% unterschiedlichen Implementierungen.
+% Das System dient zum Testen eines Teils eines Paletierroboters
 %
 % Verfügbare Beispiele: Siehe Tabelle models.csv
 % * Grashoff-Bedingung: Hunt1978, Gl. (3.11) (S. 82)
@@ -8,8 +9,8 @@
 % [Hunt1978] Hunt: Kinematic geometry of mechanisms,1978, Oxford Uni. Press
 % https://de.wikipedia.org/wiki/Kurbelschwinge
 
-% Moritz Schappler, moritz.schappler@imes.uni-hannover.de
-% (C) Institut für mechatronische Systeme, Universität Hannover
+% Moritz Schappler, moritz.schappler@imes.uni-hannover.de, 2020-04
+% (C) Institut für Mechatronische Systeme, Leibniz Universität Hannover
 
 clear
 clc

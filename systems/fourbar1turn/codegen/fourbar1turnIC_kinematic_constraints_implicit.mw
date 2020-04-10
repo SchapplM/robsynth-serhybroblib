@@ -160,7 +160,7 @@ read &quot;../helper/proc_intersect_circle&quot;:</Text-field>
 <Group view="code" labelreference="L2300" drawlabel="true">
 <Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">read sprintf(&quot;../codeexport/%s/tmp/tree_floatb_definitions&quot;, robot_name_OL):</Text-field>
 </Input>
-</Group></Presentation-Block><Presentation-Block></Presentation-Block><Presentation-Block>
+</Group></Presentation-Block><Presentation-Block>
 <Group labelreference="L2294" drawlabel="true">
 <Input><Text-field style="Text" layout="Normal">Ergebnisse der Kinematik laden</Text-field>
 </Input>
@@ -213,7 +213,7 @@ Trf_c := Trf_c:</Text-field>
 </Section>
 <Section collapsed="false" isCollapsible="true" drawButton="true" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60"><Title><Text-field style="Heading 1" layout="Heading 1">Zusammenstellen aller Zwangsbedingungen</Text-field></Title><Presentation-Block>
 <Group view="code" hide-input="false" labelreference="L2254" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">implconstr_t := &lt;h1t([1, 2]);h1r&gt;; </Text-field>
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">implconstr_t := &lt;h1t([1, 3]);h1r&gt;; </Text-field>
 </Input>
 </Group>
 <Group view="code" hide-input="false" labelreference="L2255" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">

@@ -89,14 +89,14 @@
 </Task-table>
 <Task/><Presentation-Block>
 <Group view="code" labelreference="L7" drawlabel="true">
-<Input><Text-field style="Heading 1" layout="Heading 1"><Font encoding="UTF-8">Berechne kinematische Zwangsbedingungen f\303\274r Viergelenkkette</Font></Text-field>
+<Input><Text-field style="Heading 1" layout="Heading 1"><Font encoding="UTF-8">Berechne kinematische Zwangsbedingungen f\303\274r aufgestellte Viergelenkkette</Font></Text-field>
 </Input>
 </Group>
 <Group labelreference="L2266" drawlabel="true">
 <Input><Text-field style="Heading 2" layout="Heading 2">Einleitung
 </Text-field><Text-field style="Normal" layout="Normal"><Font encoding="UTF-8">Die kinematischen Zwangsbedingungen werden als Ersetzungsausdruck f\303\274r die abh\303\244ngigen Winkel aufgestellt.</Font>
 
-<Font encoding="UTF-8">fourbar1turnTE -&gt; Viergelenkkette, modellierung der Zwangsbedingungen mit Ausdr\303\274cken f\303\274r trigonometrische Elimination. Drehbar aufgestellt mit zus\303\244tzlichem Gelenk
+fourbar1turnTE -&gt; Viergelenkkette,<Font encoding="UTF-8"> Modellierung der Zwangsbedingungen mit Ausdr\303\274cken f\303\274r trigonometrische Elimination. Drehbar aufgestellt mit zus\303\244tzlichem Gelenk
 </Font>kinematic_constraint -&gt; Kinematische Zwangsbedingungen
 
 TODO: Fertige Ergebnisse von Viergelenkkette laden und nicht hier neu berechnen.</Text-field>
@@ -107,8 +107,8 @@ TODO: Fertige Ergebnisse von Viergelenkkette laden und nicht hier neu berechnen.
 </Input>
 </Group>
 <Group labelreference="L2267" drawlabel="true">
-<Input><Text-field style="Heading 2" layout="Heading 2">Autor</Text-field><Text-field style="Normal" layout="Normal">Abderahman Bejaoui, Weipu Shan
-Studienarbeit bei: Moritz Schappler, schappler@irt.uni-hannover.de, 2018-08</Text-field><Text-field style="Normal" layout="Normal">(C) Institut fuer Mechatronische Systeme, Leibniz Universitaet Hannover</Text-field><Text-field style="Text" layout="Normal"></Text-field>
+<Input><Text-field style="Heading 2" layout="Heading 2">Autor</Text-field><Text-field style="Normal" layout="Normal">Weipu Shan (Studienarbeit), Abderahman Bejaoui (Vorlage fourbar1), Moritz Schappler (Korrekturen)
+Studienarbeit bei: Moritz Schappler, moritz.schappler@imes.uni-hannover.de, 2018-08</Text-field><Text-field style="Normal" layout="Normal">(C) Institut fuer Mechatronische Systeme, Leibniz Universitaet Hannover</Text-field><Text-field style="Text" layout="Normal"></Text-field>
 </Input>
 </Group></Presentation-Block>
 <Section collapsed="false" isCollapsible="true" drawButton="true" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60"><Title><Text-field style="Heading 1" layout="Heading 1">Initialisierung</Text-field></Title><Presentation-Block>
@@ -168,20 +168,8 @@ read &quot;../helper/proc_intersect_circle&quot;:</Text-field>
 <Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">read sprintf(&quot;../codeexport/%s/tmp/tree_floatb_definitions&quot;, robot_name):</Text-field>
 </Input>
 </Group></Presentation-Block><Presentation-Block>
-<Group view="presentation" inline-output="false" labelreference="L2304" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field style="Text" layout="Normal"></Text-field>
-</Input>
-</Group></Presentation-Block><Presentation-Block>
-<Group view="presentation" inline-output="false" labelreference="L2305" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field style="Text" layout="Normal"></Text-field>
-</Input>
-</Group></Presentation-Block><Presentation-Block>
-<Group view="presentation" inline-output="false" labelreference="L2306" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field style="Text" layout="Normal"></Text-field>
-</Input>
-</Group></Presentation-Block><Presentation-Block>
-<Group view="presentation" inline-output="false" labelreference="L2307" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field style="Text" layout="Normal"></Text-field>
+<Group view="code" labelreference="L2310" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"></Text-field>
 </Input>
 </Group></Presentation-Block>
 </Section><Presentation-Block>

@@ -1,10 +1,10 @@
 
-# Berechne kinematische Zwangsbedingungen für Viergelenkkette
+# Berechne kinematische Zwangsbedingungen für aufgestellte Viergelenkkette
 # Einleitung
 
 # Die kinematischen Zwangsbedingungen werden als Ersetzungsausdruck für die abhängigen Winkel aufgestellt.
 # 
-# fourbar1turnTE -> Viergelenkkette, modellierung der Zwangsbedingungen mit Ausdrücken für trigonometrische Elimination. Drehbar aufgestellt mit zusätzlichem Gelenk
+# fourbar1turnTE -> Viergelenkkette, Modellierung der Zwangsbedingungen mit Ausdrücken für trigonometrische Elimination. Drehbar aufgestellt mit zusätzlichem Gelenk
 # kinematic_constraint -> Kinematische Zwangsbedingungen
 # 
 # TODO: Fertige Ergebnisse von Viergelenkkette laden und nicht hier neu berechnen.
@@ -12,8 +12,8 @@
 # SA Bejaoui: Bejaoui2018_S749; "Modellierung kinematischer Zwangsbedingungen für hybride serielle Roboter mit planaren Parallelmechanismen"
 # SA Shan: Shan2019_S828, "Reduktion der Modellkomplexität von seriell-hybriden Palettierrobotern"
 # Autor
-# Abderahman Bejaoui, Weipu Shan
-# Studienarbeit bei: Moritz Schappler, schappler@irt.uni-hannover.de, 2018-08
+# Weipu Shan (Studienarbeit), Abderahman Bejaoui (Vorlage fourbar1), Moritz Schappler (Korrekturen)
+# Studienarbeit bei: Moritz Schappler, moritz.schappler@imes.uni-hannover.de, 2018-08
 # (C) Institut fuer Mechatronische Systeme, Leibniz Universitaet Hannover
 # 
 # Initialisierung
@@ -43,10 +43,7 @@ with(RealDomain): # Schränkt alle Funktionen auf den reellen Bereich ein. Muss 
 ;
 read "../robot_codegen_definitions/robot_env":
 read sprintf("../codeexport/%s/tmp/tree_floatb_definitions", robot_name):
-# 
-# 
-# 
-# 
+
 # Variable mit Winkeln der Nebenstruktur nur in Abhängigkeit der verallgemeinerten Koordinaten
 kintmp_qs := Matrix(RowDimension(kintmp_s),1):
 kintmpD_t:=diff~(kintmp_t,t):

@@ -1,18 +1,17 @@
 
-# Berechne kinematische Zwangsbedingungen für Viergelenkkette
+# Berechne kinematische Zwangsbedingungen für aufgestellte Viergelenkkette
 # Einleitung
 # Die kinematischen Zwangsbedingungen werden als Ersetzungsausdruck für die abhängigen Winkel aufgestellt.
 # 
-# fourbar1turnDE -> Viergelenkkette, modellierung der Zwangsbedingungen mit direkter Elimination der Winkel (anstatt der trigonometrischen Elimination)
-# kinematic_constraint -> Kinematische Zwangsbedingungen
+# fourbar1turnDE -> aufgestellte Viergelenkkette, Modellierung der Zwangsbedingungen mit direkter Elimination der Winkel (anstatt der trigonometrischen Elimination)
+# kinematic_constraints -> Kinematische Zwangsbedingungen
 
 # Quelle
 # SA Bejaoui: Bejaoui2018_S749; "Modellierung kinematischer Zwangsbedingungen für hybride serielle Roboter mit planaren Parallelmechanismen"
 # Autor
-# Abderahman Bejaoui
-# Studienarbeit bei: Moritz Schappler, schappler@irt.uni-hannover.de, 2018-08
+# Weipu Shan (Studienarbeit), Abderahman Bejaoui (Vorlage fourbar1), Moritz Schappler (Korrekturen)
+# Studienarbeit bei: Moritz Schappler, moritz.schappler@imes.uni-hannover.de, 2018-08
 # (C) Institut fuer Mechatronische Systeme, Leibniz Universitaet Hannover
-
 # Initialisierung
 # Import 
 interface(warnlevel=0): # Unterdrücke die folgende Warnung.
