@@ -45,7 +45,7 @@ if exist(apd, 'file')
 end
 %% Klassen-Instanz initialisieren
 % Strukturinformationen über das Modell holen
-eval(sprintf('[v_mdh, sigma_mdh, mu_mdh, NL, NKP] = %s%s_structural_kinematic_parameters();', Name, mdlsuffix));
+eval(sprintf('[v_mdh, sigma_mdh, mu_mdh, NL, NKP, ~, pkin_names] = %s%s_structural_kinematic_parameters();', Name, mdlsuffix));
 NJ = length(v_mdh);
 NQJ = sum(mu_mdh==1);
 
@@ -64,8 +64,9 @@ PS = struct('beta',  NaN(NJ,1), 'b', NaN(NJ,1), ...
 % In diesem Abschnitt belegte Variablen mit Standardwerten initialisieren:
 descr = '';
 value_EElink = NL-1; % Standardmäßig letztes Segment
+pkin_names_csv = {}; % leer initialisieren
 % Parameter aus Tabelle holen
-if ~isempty(RobName) % Falls Name des Parametrierten Modells gegeben
+if ~isempty(RobName) % Falls Name des parametrierten Modells gegeben
   found = false; % Marker, ob Parametersatz gefunden wurde
   pardat = fullfile(robopath, 'models.csv');
   if ~exist(pardat, 'file')
@@ -74,9 +75,18 @@ if ~isempty(RobName) % Falls Name des Parametrierten Modells gegeben
   % Suche nach gefordertem Roboter in Parameterdatei
   fid = fopen(pardat);
   tline = fgetl(fid); % csv-Datei zeilenweise einlesen
+  lc = 0;
   while ischar(tline)
+    lc = lc + 1;
     % Spaltenweise als Cell-Array
     csvline = strsplit(tline, ';', 'CollapseDelimiters', false);
+    if lc == 2
+      csv_head2 = csvline; % zweite Kopfzeile. Hier steht "pkin1, pkin2, ..."
+    elseif lc == 3
+      csv_head3 = csvline; % dritte Kopfzeile. Hier stehen die Namen der Par.
+      pkin_names_csv = csv_head3(contains(csv_head2, 'pkin'));
+      pkin_table = NaN(length(pkin_names_csv),1);
+    end
     tline = fgetl(fid); % nächste Zeile
     if isempty(csvline) || strcmp(csvline{1}, '')
       continue
@@ -93,8 +103,8 @@ if ~isempty(RobName) % Falls Name des Parametrierten Modells gegeben
     % Daten aus csv-Zeile extrahieren
     c = 3; % erste Drei Zeilen nicht betrachten (sind allgemeine Felder des Roboters)
     descr = sprintf('%s %s', csvline{2}, csvline{3});
-    for kk = 1:length(PS.pkin) % über alle Kinematik-Parameter in pkin
-      c=c+1; PS.pkin(kk) = str2double(csvline{c});
+    for kk = 1:length(pkin_table) % über alle Kinematik-Parameter in pkin
+      c=c+1; pkin_table(kk) = str2double(csvline{c});
     end
     for kk = 1:NQJ % über alle Minimalkoordinaten
       c=c+1; value_qmin   = str2double(csvline{c});
@@ -127,7 +137,35 @@ if ~isempty(RobName) % Falls Name des Parametrierten Modells gegeben
     c=c+1; value_EElink   = str2double(csvline{c});
   end
 end
-
+%% Kinematik-Parameter prüfen
+if ~isempty(RobName) % Falls Name des parametrierten Modells gegeben
+  % Gleiche die Kinematik-Parameter aus der Tabelle mit denen des Roboters ab
+  if length(pkin_names_csv) ~= length(pkin_names) %#ok<USENS>
+    warning('In Matlab-Klasse %d Kinematikparameter, in Tabelle aber %d.', ...
+      length(pkin_names), length(pkin_names_csv));
+  else
+    for i = 1:length(pkin_names_csv)
+      if ~strcmp(pkin_names_csv{i}, pkin_names{i})
+        warning('pkin %d in Tabelle ist %s. In Matlab-Klasse aber %s', ...
+          i, pkin_names_csv{i}, pkin_names{i});
+      end
+    end
+  end
+  % Ordne die Parameter automatisch anhand der Namen zu und trage sie in die
+  % Klasse ein
+  for i = 1:length(pkin_names)
+    I_table = strcmp(pkin_names{i}, pkin_names_csv);
+    if sum(I_table) == 0
+      warning('Kinematik-Parameter %s nicht in Tabelle gefunden', pkin_names{i})
+      continue
+    elseif sum(I_table) > 1
+      warning('Kinematik-Parameter %s mehrfach Tabelle gefunden', pkin_names{i})
+      continue
+    else
+      PS.pkin(i) = pkin_table(I_table);
+    end
+  end
+end
 %% Klasse initialisieren
 
 % Klassen-Instanz erstellen
