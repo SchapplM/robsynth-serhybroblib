@@ -86,10 +86,6 @@ Folgende Roboter und Mechanismen wurden bisher erfolgreich getestet:
 | 3T1R-Palettierroboter (2 Parallelogramme, Herleitung über Parallelogramm) | palh3m2 | Plausibilität | TE, DE, IC |
 | Planare Hybrid-PKM-Beinkette (Parallelogramm-Fünfgelenkkette) | hybBKplanar | MA Brünger | TE |
 | Räumliche Hybrid-PKM-Beinkette (Parallelogramm-Fünfgelenkkette) | hybBKspatial | MA Brünger | TE |
-| 3. Arm KAS5 Modell 5| KAS5m5 | Elim., expl. ZB (noch nicht in neuer Dateistruktur) | Elim. |
-| 3. Arm KAS5 Modell 6| KAS5m6 | Elim., expl. ZB (noch nicht in neuer Dateistruktur) | Elim. |
-| 3. Arm KAS5 Modell 7| KAS5m7 | Elim., expl. ZB, impl. ZB (noch nicht in neuer Dateistruktur) | Elim. |
-| 3. Arm KAS7 Modell 1| KAS7m1 | Elim., expl. ZB (noch nicht in neuer Dateistruktur) | Elim. |
 
 ## Quellen <a name="quellen"></a> 
 
