@@ -156,9 +156,7 @@ read sprintf(&quot;../codeexport/%s/tmp/tree_floatb_definitions&quot;,robot_name
 </Input>
 </Group>
 <Group labelreference="L2320" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">kintmp_qs := Matrix(RowDimension(kintmp_s),1):       	#kintmp_s von aktuellen Roboter, MDH
-<Font encoding="UTF-8">qJ_t := &lt;qJ1(t),qJ2(t),qJ3(t),qJ4(t)&gt;:                                	#zeitabh\303\244ngig Variable
-</Font>qJ_s := &lt;qJ1s,qJ2s,qJ3s,qJ4s&gt;:                                          #konstante Variable</Text-field>
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">kintmp_qs := Matrix(RowDimension(kintmp_s),1):       	#kintmp_s von aktuellen Roboter, MDH</Text-field>
 </Input>
 </Group>
 <Group labelreference="L2321" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
