@@ -24,6 +24,8 @@ palh3m1
 palh3m2
 picker2Dm1
 picker2Dm2
+hybBKplanar
+hybBKspatial
 "
 
 for mdl in $systems; do

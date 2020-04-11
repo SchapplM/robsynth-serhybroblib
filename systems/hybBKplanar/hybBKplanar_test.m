@@ -88,32 +88,24 @@ for i = 1:nt
   q_i = Q(i,:)';
   qD_i = QD(i,:)';
   qDD_i = QDD(i,:)';
-  
-  tau_i = RS.invdyn(q_i, qD_i, qDD_i);
-  TAU(i,:) = tau_i;
 end
 
 %% Plotten
 figure(1);clf;
-subplot(4,1,1);
+subplot(3,1,1);
 plot(t, 180/pi*Q);
 xlabel('t [s]');
 ylabel('q [deg]');
 grid on;
-subplot(4,1,2);
+subplot(3,1,2);
 plot(t, 180/pi*QD);
 xlabel('t [s]');
 ylabel('qD [deg/s]');
 grid on;
-subplot(4,1,3);
+subplot(3,1,3);
 plot(t, 180/pi*QDD);
 xlabel('t [s]');
 ylabel('qDD [deg/s^2]');
-grid on;
-subplot(4,1,4);
-plot(t, TAU);
-xlabel('t [s]');
-ylabel('tau [Nm]');
 grid on;
 
 s_plot = struct( 'ks', [1:RS.NJ, RS.NJ+2], 'straight', 0);
