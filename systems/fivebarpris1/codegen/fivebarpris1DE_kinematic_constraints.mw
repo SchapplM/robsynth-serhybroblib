@@ -178,7 +178,7 @@ read &quot;../robot_codegen_constraints/proc_subs_kintmp_exp&quot;:</Text-field>
 </Input>
 </Group>
 <Group view="code" labelreference="L3220" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">read sprintf(&quot;../codeexport/fivebarpris1TE/tmp/kinematic_constraints_maple_inert.m&quot;):</Text-field>
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">read sprintf(&quot;../codeexport/palh4m1TE/tmp/kinematic_constraints_maple_inert.m&quot;):</Text-field>
 </Input>
 </Group>
 <Group view="code" labelreference="L3221" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">

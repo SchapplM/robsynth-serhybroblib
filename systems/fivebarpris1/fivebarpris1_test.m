@@ -1,4 +1,4 @@
-% Teste fivebarpris1
+% Teste palh4m1
 
 % Quelle:
 
@@ -9,9 +9,9 @@ clear
 clc
 
 %% Definition der Roboterklassen
-RS_TE = hybroblib_create_robot_class('fivebarpris1', 'TE', 'fivebarpris1Bsp1');
-RS_DE1 = hybroblib_create_robot_class('fivebarpris1', 'DE1', 'fivebarpris1Bsp1');
-RS_DE2 = hybroblib_create_robot_class('fivebarpris1', 'DE2', 'fivebarpris1Bsp1');
+RS_TE = hybroblib_create_robot_class('palh4m1', 'TE', 'palh4m1Bsp1');
+RS_DE1 = hybroblib_create_robot_class('palh4m1', 'DE1', 'palh4m1Bsp1');
+RS_DE2 = hybroblib_create_robot_class('palh4m1', 'DE2', 'palh4m1Bsp1');
 
 TSS = RS_TE.gen_testsettings();
 %% Vergleich der Implementierungen
