@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Worksheet>
-<Version major="2017" minor="0"/>
+<Version major="2019" minor="2"/>
 <Label-Scheme value="2" prefix=""/>
-<View-Properties presentation="false" autoexpanding_sections="true" UserProfileName="Maple Default Profile" NumericFormat-ApplyInteger="true" NumericFormat-ApplyRational="true" NumericFormat-ApplyExponent="false">
+<View-Properties presentation="false" autoexpanding_sections="true" UserProfileName="Maple Default Profile" NumericFormat-ApplyInteger="true" NumericFormat-ApplyRational="true" NumericFormat-ApplyExponent="false" editable="true">
 </View-Properties>
-<MapleNet-Properties prettyprint="3" warnlevel="3" preplot="" helpbrowser="standard" contextmenusize="automatic" displayprecision="-1" echo="1" unitattributes="&quot;fontweight&quot; = &quot;bold&quot;" imaginaryunit="I" longdelim="true" elisiontermsthreshold="10000" elisiondigitsafter="100" elisiondigitsbefore="100" plotdevice="inline" errorbreak="1" plotoptions="" plotdriver="opengl" quiet="false" elisiontermsbefore="100" elisiontermsafter="100" screenwidth="79" indentamount="4" plotoutput="terminal" screenpixelheight="1080" rtablesize="10" useclientjvm="true" labelwidth="20" postplot="" typesetting="extended" ansi="false" elisiondigitsthreshold="10000" showassumed="1" errorcursor="false" labelling="true" screenheight="25" prompt="&gt; " verboseproc="1" latexwidth="8.0" ShowLabels="true"/>
+<MapleNet-Properties prettyprint="3" warnlevel="3" compactdisplay="false" preplot="" helpbrowser="standard" displayprecision="-1" echo="1" unitattributes="&quot;fontweight&quot; = &quot;bold&quot;" imaginaryunit="I" longdelim="true" elisiontermsthreshold="10000" elisiondigitsafter="100" elisiondigitsbefore="100" plotdevice="inline" errorbreak="1" plotoptions="" plotdriver="opengl" quiet="false" elisiontermsbefore="100" elisiontermsafter="100" historytimestamp="false" screenwidth="79" indentamount="4" plotoutput="terminal" screenpixelheight="1050" rtablesize="[10, 10]" useclientjvm="true" labelwidth="20" postplot="" typesetting="extended" ansi="false" ansicolor="[]" elisiondigitsthreshold="10000" showassumed="1" ansilprint="false" trailingsemicolon="true" errorcursor="false" labelling="true" screenheight="25" prompt="&gt; " verboseproc="1" latexwidth="8.0" ShowLabels="true"/>
 <Styles>
 <Font name="Heading 1" background="[255,255,255]" bold="true" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="18" subscript="false" superscript="false" underline="false" placeholder="false"/>
 <Font name="Warning" background="[255,255,255]" bold="false" executable="false" family="Courier New" foreground="[0,0,255]" italic="false" opaque="false" readonly="true" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
@@ -91,7 +91,10 @@
 <Group labelreference="L3105" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
 <Input><Text-field style="Text" bold="true" size="28" layout="Normal"><Font size="28" bold="true">MG10HL von Kawasaki
 </Font><Font size="12" bold="false">Voraussetzung:
-Slider_crank muss mit der Toolbox berechnet worden sein (Arbeitsblatt &quot;slcr_kinematic_constraints.mw&quot;)</Font></Text-field><Text-field style="Text" bold="true" size="28" layout="Normal"><Font size="12" bold="false">Viergelenkkette muss mit der Toolbox berechnet worden sein (Arbeitsblatt &quot;vgk_kinematic_constraints.mw&quot;)</Font></Text-field>
+fourbarpris muss mit der Toolbox berechnet worden sein (Arbeitsblatt &quot;fourbarprisTE_kinematic_constraints.mw&quot;)</Font></Text-field><Text-field style="Text" bold="true" size="28" layout="Normal"><Font size="12" bold="false">fourbar1 muss mit der Toolbox berechnet worden sein (Arbeitsblatt &quot;fourbar1TE_kinematic_constraints.mw&quot;)
+
+Offene Punkte / TODO:
+In [Bejaoui2018_S749] wurden die Systeme fourbar1 und <Font encoding="UTF-8">fourbarpris etwas anders definiert. Die \303\204nderung wurde hier noch nicht angepasst. Daher funktioniert das Modell aktuell nicht. Die kinematischen Ketten werden nicht geschlossen.</Font></Font></Text-field>
 </Input>
 </Group><Presentation-Block>
 <Group view="code" labelreference="L3104" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
@@ -99,13 +102,15 @@ Slider_crank muss mit der Toolbox berechnet worden sein (Arbeitsblatt &quot;slcr
 </Input>
 </Group>
 <Group view="code" labelreference="L3101" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field style="Heading 2" layout="Heading 2">Quellen</Text-field><Text-field style="Normal" layout="Normal">TODO</Text-field><Text-field style="Text" layout="Normal"></Text-field>
+<Input><Text-field style="Heading 2" layout="Heading 2">Quellen</Text-field><Text-field style="Normal" layout="Normal">[Bejaoui2018_S749]</Text-field><Text-field style="Text" layout="Normal"></Text-field>
 </Input>
 </Group></Presentation-Block>
 <Section collapsed="false" isCollapsible="true" drawButton="true" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60"><Title><Text-field style="Heading 1" layout="Heading 1">Initialisierung</Text-field></Title>
 <Section collapsed="false" isCollapsible="true" drawButton="true" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60"><Title><Text-field style="Heading 2" layout="Heading 2">Import </Text-field></Title><Presentation-Block>
 <Group view="code" labelreference="L3095" drawlabel="true">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">restart:</Text-field>
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"><Font encoding="UTF-8">interface(warnlevel=0): # Unterdr\303\274cke die folgende Warnung.
+restart: # Gibt eine Warnung, wenn \303\274ber Terminal-Maple mit read gestartet wird.
+</Font>interface(warnlevel=3):</Text-field>
 </Input>
 </Group>
 <Group view="code" labelreference="L3102" drawlabel="true">
@@ -166,14 +171,6 @@ read &quot;../robot_codegen_constraints/proc_subs_kintmp_exp&quot;:</Text-field>
 <Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">kintmp_qs := Matrix(RowDimension(kintmp_s),1):</Text-field>
 </Input>
 </Group>
-<Group view="code" hide-input="false" labelreference="L3096" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">qJ_t:= &lt;qJ1(t),qJ2(t),qJ3(t),qJ4(t),qJ5(t),qJ6(t)&gt;:</Text-field>
-</Input>
-</Group>
-<Group view="code" hide-input="false" labelreference="L3093" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">qJ_s:= &lt;qJ1s,qJ2s,qJ3s,qJ4s,qJ5,qJ6s&gt;:</Text-field>
-</Input>
-</Group>
 <Group view="code" labelreference="L3094" drawlabel="true">
 <Input><Text-field style="Text" layout="Normal">Konstante Winkel bereits hineinschreiben </Text-field>
 </Input>
@@ -213,12 +210,19 @@ Spalte 2: Einzusetzender Ausdruck.
 end do:</Text-field>
 </Input>
 </Group>
+<Group view="code" labelreference="L3217" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field style="Text" layout="Normal">Einlesen der Ergebnisse der allgemeinen Viergelenkkette. TODO: Nehme die Ausgabe von 
+fourbar1TE/tmp/kinematic_constraints_maple_inert.m und nutze kintmp_subsexp direkt von dort.</Text-field>
+</Input>
+</Group>
 <Group view="code" labelreference="L3112" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">read sprintf(&quot;../codeexport/fourbar1TE/tmp/fourbar1TE_angles_trig_elim&quot;):</Text-field>
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">read sprintf(&quot;../codeexport/fourbar1TE/tmp/fourbar1TE_angles_trig_elim&quot;):
+# Liest Variable: &quot;winkel&quot;</Text-field>
 </Input>
 </Group></Presentation-Block>
 <Group labelreference="L3106" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">read sprintf(&quot;../codeexport/fourbarprisTE/tmp/fourbarprisTE_angles_trig_elim&quot;):</Text-field>
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">read sprintf(&quot;../codeexport/fourbarprisTE/tmp/fourbarprisTE_angles_trig_elim&quot;):
+# Liest Variable: &quot;winkel_fourbarpris&quot;</Text-field>
 </Input>
 </Group>
 </Section>
@@ -231,16 +235,16 @@ end do:</Text-field>
 <Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">winkel1:=&lt;&lt;sin_rho910|sin(rho910_s)&gt;;&lt;cos_rho910|cos(rho910_s)&gt;;&lt;sin_rho19|sin(rho19_s)&gt;;&lt;cos_rho19|cos(rho19_s)&gt;;&lt;sin_rho3|sin(rho3_s)&gt;;&lt;cos_rho3|cos(rho3_s)&gt;&gt;:</Text-field>
 </Input>
 </Group>
-</Section><CodeEditor-ExecGroup view="presentation" labelreference="L3116" applyint="true" applyrational="true" display="code"><EC-CodeEditor id="CodeEditRegion0" expanded="true" visible="true" pixel-width="1280" pixel-height="232" code-language="text/maple" autoexpand="true" wrapping="false" show-border="true" code-line-numbers="true">for i from 1 to 6 do
-	winkel1(i,2):=winkel(i,2):  
-     cos_phi_s :=sin(qJ2s)*cos(phi23)+cos(qJ2s)*sin(phi23):
-	sin_phi_s := cos(qJ2s)*cos(phi23)-sin(qJ2s)*sin(phi23):
-	winkel1(i,2):=subs({sin(phi_s)=sin_phi_s},winkel1(i,2)): 
-	winkel1(i,2):=subs({cos(phi_s)=cos_phi_s},winkel1(i,2)):
-     winkel1(i,2) := subs({l1=AC}, winkel1(i,2)):
-     winkel1(i,2) := subs({l2=AE}, winkel1(i,2)):
-     winkel1(i,2) := subs({l3=ED}, winkel1(i,2)):
-     winkel1(i,2) := subs({l4=DC}, winkel1(i,2)):
+</Section><CodeEditor-ExecGroup view="presentation" labelreference="L3116" applyint="true" applyrational="true" display="code"><EC-CodeEditor id="CodeEditRegion0" expanded="true" visible="true" pixel-width="1280" pixel-height="232" code-language="text/maple" autofit="true" wrapping="false" show-border="true" code-line-numbers="true">for i from 1 to 6 do
+  winkel1(i,2):=winkel(i,2):  
+  cos_phi_s := sin(qJ2s)*cos(phi23)+cos(qJ2s)*sin(phi23):
+  sin_phi_s := cos(qJ2s)*cos(phi23)-sin(qJ2s)*sin(phi23):
+  winkel1(i,2):=subs({sin(qJ1s)=sin_phi_s},winkel1(i,2)): # qJ1s in fourbar1TE ist der aktive Winkel
+  winkel1(i,2):=subs({cos(qJ1s)=cos_phi_s},winkel1(i,2)):
+  winkel1(i,2) := subs({l1=AC}, winkel1(i,2)):
+  winkel1(i,2) := subs({l2=AE}, winkel1(i,2)):
+  winkel1(i,2) := subs({l3=ED}, winkel1(i,2)):
+  winkel1(i,2) := subs({l4=DC}, winkel1(i,2)):
 end do:</EC-CodeEditor></CodeEditor-ExecGroup>
 <Group labelreference="L3118" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
 <Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">winkel1(1..6,1):</Text-field>
@@ -283,7 +287,7 @@ end do:</EC-CodeEditor></CodeEditor-ExecGroup>
 <Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">winkel2:=&lt;&lt;sin_eta1112|sin(eta1112_s)&gt;;&lt;cos_eta1112|cos(eta1112_s)&gt;;&lt;sin_eta3|sin(eta3_s)&gt;;&lt;cos_eta3|cos(eta3_s)&gt;;&lt;sin_eta45|sin(eta45_s)&gt;;&lt;cos_eta45|cos(eta45_s)&gt;&gt;:</Text-field>
 </Input>
 </Group>
-</Section><CodeEditor-ExecGroup view="presentation" labelreference="L3132" applyint="true" applyrational="true" display="code"><EC-CodeEditor id="CodeEditRegion1" expanded="true" visible="true" pixel-width="1297" pixel-height="147" code-language="text/maple" autoexpand="true" wrapping="false" show-border="true" code-line-numbers="true">for i from 1 to 6 do
+</Section><CodeEditor-ExecGroup view="presentation" labelreference="L3132" applyint="true" applyrational="true" display="code"><EC-CodeEditor id="CodeEditRegion1" expanded="true" visible="true" pixel-width="1297" pixel-height="147" code-language="text/maple" autofit="true" wrapping="false" show-border="true" code-line-numbers="true">for i from 1 to 6 do
 	winkel2(i,2):=winkel_fourbarpris(i,2):  
 	winkel2(i,2):=subs({qJ1s=qJ6s},winkel2(i,2)): 
 	winkel2(i,2) := subs({GK=GK}, winkel2(i,2)):
@@ -396,7 +400,7 @@ end do:</EC-CodeEditor></CodeEditor-ExecGroup>
 </Input>
 </Group>
 <Group labelreference="L3213" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"><Equation executable="true" style="2D Input" input-equation="" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYlLUkjbWlHRiQ2I1EhRicvJStleGVjdXRhYmxlR1EmZmFsc2VGJy8lLG1hdGh2YXJpYW50R1Enbm9ybWFsRic=">JSFH</Equation></Text-field>
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"><Equation executable="true" style="2D Input" input-equation="" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYlLUkjbWlHRiQ2I1EhRicvJStleGVjdXRhYmxlR1EmZmFsc2VGJy8lLG1hdGh2YXJpYW50R1Enbm9ybWFsRic=">LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYjLUkjbWlHRiQ2I1EhRic=</Equation></Text-field>
 </Input>
 </Group>
 <Section collapsed="false" isCollapsible="true" drawButton="true" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60"><Title><Text-field style="Heading 1" layout="Heading 1">Kintmp_qs</Text-field></Title>
@@ -499,12 +503,8 @@ end do:</Text-field>
 <Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"><Font encoding="UTF-8">#printf(&quot;Fertig. %s. CPU-Zeit bis hier: %1.2fs.\134n&quot;, FormatTime(&quot;%Y-%m-%d %H:%M:%S&quot;), time()-st):</Font></Text-field>
 </Input>
 </Group>
-<Group labelreference="L3212" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"><Equation executable="true" style="2D Input" input-equation="" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYlLUkjbWlHRiQ2I1EhRicvJStleGVjdXRhYmxlR1EmZmFsc2VGJy8lLG1hdGh2YXJpYW50R1Enbm9ybWFsRic=">JSFH</Equation></Text-field>
-</Input>
-</Group>
 <Group view="code" hide-input="false" labelreference="L3214" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">kc_symbols(11)</Text-field>
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">kc_symbols</Text-field>
 </Input>
 </Group>
 <Group labelreference="L3215" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
