@@ -302,27 +302,27 @@ end do:</EC-CodeEditor></CodeEditor-ExecGroup>
 </Input>
 </Group>
 <Group labelreference="L2362" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">sin_eta1_s := sin(Pi-qJ2s):	#eta1 = qJ2s = rho</Text-field>
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">sin_eta1_s := winkel1(1,2):	#eta1 = qJ2s = rho</Text-field>
 </Input>
 </Group>
 <Group labelreference="L2363" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">cos_eta1_s := cos(Pi-qJ2s):	</Text-field>
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">cos_eta1_s := winkel1(2,2):	</Text-field>
 </Input>
 </Group>
 <Group labelreference="L2369" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">sin_eta3_s := sin(qJ2s):	#eta3 = qJ3s = eta</Text-field>
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">sin_eta3_s := winkel1(3,2):	#eta3 = qJ3s = eta</Text-field>
 </Input>
 </Group>
 <Group labelreference="L2368" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">cos_eta3_s := cos(qJ2s):	</Text-field>
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">cos_eta3_s := winkel1(4,2):	</Text-field>
 </Input>
 </Group>
 <Group labelreference="L2371" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">sin_eta4_s := sin(qJ2s):	#eta4 = qJ4s = xi</Text-field>
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">sin_eta4_s := winkel1(5,2):	#eta4 = qJ4s = xi</Text-field>
 </Input>
 </Group>
 <Group labelreference="L2370" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">cos_eta4_s := cos(qJ2s):	</Text-field>
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">cos_eta4_s := winkel1(6,2):	</Text-field>
 </Input>
 </Group>
 <Group labelreference="L2373" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
@@ -386,27 +386,27 @@ end do:</EC-CodeEditor></CodeEditor-ExecGroup>
 </Input>
 </Group>
 <Group labelreference="L2386" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">sin_xi1_s := sin(Pi-qJ3s):	#xi1 = qJ2s = rho</Text-field>
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">sin_xi1_s := winkel2(1,2):	#xi1 = qJ2s = rho</Text-field>
 </Input>
 </Group>
 <Group labelreference="L2387" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">cos_xi1_s := cos(Pi-qJ3s):</Text-field>
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">cos_xi1_s := winkel2(2,2):</Text-field>
 </Input>
 </Group>
 <Group labelreference="L2390" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">sin_xi3_s := sin(qJ3s):		#xi3 = qJ3s = eta</Text-field>
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">sin_xi3_s := winkel2(3,2):		#xi3 = qJ3s = eta</Text-field>
 </Input>
 </Group>
 <Group labelreference="L2389" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">cos_xi3_s := cos(qJ3s):</Text-field>
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">cos_xi3_s := winkel2(4,2):</Text-field>
 </Input>
 </Group>
 <Group labelreference="L2392" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">sin_xi4_s := sin(qJ3s):		#xi4 = qJ4s = xi</Text-field>
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">sin_xi4_s := winkel2(5,2):		#xi4 = qJ4s = xi</Text-field>
 </Input>
 </Group>
 <Group labelreference="L2391" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">cos_xi4_s := cos(qJ3s):</Text-field>
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">cos_xi4_s := winkel2(6,2):</Text-field>
 </Input>
 </Group>
 <Group labelreference="L2394" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
@@ -523,38 +523,6 @@ end do:</EC-CodeEditor></CodeEditor-ExecGroup>
 </Group>
 </Section>
 <Section collapsed="false" isCollapsible="true" drawButton="true" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60"><Title><Text-field style="Heading 1" layout="Heading 1">Export</Text-field></Title>
-<Group labelreference="L3058" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">winkel := &lt;&lt;sin_xi34|sin_xi34_s&gt;; &lt;cos_xi34|cos_xi34_s&gt;; &lt;sin_eta16 | sin_eta16_s&gt;; &lt;cos_eta16 | cos_eta16_s&gt;;&lt;sin_eta27 | sin_eta27_s&gt;; &lt;cos_eta27 | cos_eta27_s&gt;;&lt;sin_xi78|sin_xi78_s&gt;;&lt;cos_xi78|cos_xi78_s&gt;;&lt;sin_eta79|sin_eta79_s&gt;;&lt;cos_eta79|cos_eta79_s&gt;;&lt;sin_xi410|sin_xi410_s&gt;;&lt;cos_xi410|cos_xi410_s&gt;&gt;:</Text-field>
-</Input>
-</Group>
-<Group hide-input="false" labelreference="L3059" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">save winkel, sprintf(&quot;../codeexport/palh3m1TE/tmp/kinematic_constraints_maple_inert&quot;):</Text-field>
-</Input>
-</Group>
-<Group labelreference="L3052" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"></Text-field>
-</Input>
-</Group>
-<Group labelreference="L3053" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"></Text-field>
-</Input>
-</Group>
-<Group labelreference="L3054" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"></Text-field>
-</Input>
-</Group>
-<Group labelreference="L3055" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"></Text-field>
-</Input>
-</Group>
-<Group labelreference="L3056" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"></Text-field>
-</Input>
-</Group>
-<Group labelreference="L3057" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"></Text-field>
-</Input>
-</Group>
 <Group labelreference="L3044" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
 <Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">kintmp_qt := convert_s_t(kintmp_qs):</Text-field>
 </Input>

@@ -130,15 +130,15 @@ for i from 1 to 6 do
 end do:
 winkel1(1..6,1):
 # eta1, eta3, eta4 wird wie rho, eta, xi in Fourbar darstellen
-sin_eta1_s := sin(Pi-qJ2s):	#eta1 = qJ2s = rho
+sin_eta1_s := winkel1(1,2):	#eta1 = qJ2s = rho
 ;
-cos_eta1_s := cos(Pi-qJ2s):	
-sin_eta3_s := sin(qJ2s):	#eta3 = qJ3s = eta
+cos_eta1_s := winkel1(2,2):	
+sin_eta3_s := winkel1(3,2):	#eta3 = qJ3s = eta
 ;
-cos_eta3_s := cos(qJ2s):	
-sin_eta4_s := sin(qJ2s):	#eta4 = qJ4s = xi
+cos_eta3_s := winkel1(4,2):	
+sin_eta4_s := winkel1(5,2):	#eta4 = qJ4s = xi
 ;
-cos_eta4_s := cos(qJ2s):	
+cos_eta4_s := winkel1(6,2):	
 # eta16, eta79, eta27, abhängige Winkeln von aktuellem Roboter
 cos_eta16_s := cos_eta1_s*cos(phi1) + sin_eta1_s*sin(phi1):	#eta16 = eta1 - phi1
 ;
@@ -169,15 +169,15 @@ for i from 1 to 6 do
 end do:
 winkel2(1..6,1):
 # xi1, xi3, xi4 wird wie rho, eta, xi in Fourbar darstellen
-sin_xi1_s := sin(Pi-qJ3s):	#xi1 = qJ2s = rho
+sin_xi1_s := winkel2(1,2):	#xi1 = qJ2s = rho
 ;
-cos_xi1_s := cos(Pi-qJ3s):
-sin_xi3_s := sin(qJ3s):		#xi3 = qJ3s = eta
+cos_xi1_s := winkel2(2,2):
+sin_xi3_s := winkel2(3,2):		#xi3 = qJ3s = eta
 ;
-cos_xi3_s := cos(qJ3s):
-sin_xi4_s := sin(qJ3s):		#xi4 = qJ4s = xi
+cos_xi3_s := winkel2(4,2):
+sin_xi4_s := winkel2(5,2):		#xi4 = qJ4s = xi
 ;
-cos_xi4_s := cos(qJ3s):
+cos_xi4_s := winkel2(6,2):
 # xi78, xi34, xi410, abhängige Winkeln von aktuellem Roboter
 cos_xi78_s := cos_xi1_s:				#xi78 = xi1
 ;
@@ -211,14 +211,6 @@ kintmp_qs(4,1) := %arctan(sin_xi78_s,cos_xi78_s):
 kintmp_qs(5,1) := %arctan(sin_eta79_s,cos_eta79_s):
 kintmp_qs(6,1) := %arctan(sin_xi410_s,cos_xi410_s):
 # Export
-winkel := <<sin_xi34|sin_xi34_s>; <cos_xi34|cos_xi34_s>; <sin_eta16 | sin_eta16_s>; <cos_eta16 | cos_eta16_s>;<sin_eta27 | sin_eta27_s>; <cos_eta27 | cos_eta27_s>;<sin_xi78|sin_xi78_s>;<cos_xi78|cos_xi78_s>;<sin_eta79|sin_eta79_s>;<cos_eta79|cos_eta79_s>;<sin_xi410|sin_xi410_s>;<cos_xi410|cos_xi410_s>>:
-save winkel, sprintf("../codeexport/palh3m1TE/tmp/kinematic_constraints_maple_inert"):
-
-
-
-
-
-
 kintmp_qt := convert_s_t(kintmp_qs):
 save kintmp_subsexp, sprintf("../codeexport/%s/tmp/kinematic_constraints_kintmp_subsexp_maple", robot_name):
 save kintmp_subsexp, sprintf("../codeexport/%s/tmp/kinematic_constraints_kintmp_subsexp_maple.m", robot_name):
