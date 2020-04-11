@@ -102,8 +102,9 @@ q = [0 ; ...% Karussel / erste Achse
   75; ... % letzte Achse
   NaN]*pi/180;
 q(6) = 0.2; % Schubachse
-Tc_1 = mg10hlTE_fkine_fixb_rotmat_mdh_sym_varpar(q, pkin);
-T_1 = mg10hlTE_joint_trafo_rotmat_mdh_sym_varpar(q, pkin);
+% Testweise berechnen der Kinematik
+Tc_TE = mg10hlTE_fkine_fixb_rotmat_mdh_sym_varpar(q, pkin);
+T_TE = mg10hlTE_joint_trafo_rotmat_mdh_sym_varpar(q, pkin);
 % Roboter in Grundstellung zeichnen
 s_plot = struct( 'ks', [1:RS_TE.NJ, RS_TE.NJ+2], 'straight', 0);
 Tc_test = RS_TE.fkine(q);
@@ -117,8 +118,7 @@ title('Nullstellung TE');
 RS_TE.plot( q, s_plot );
 view([0 0])
 
-% Debugge die Gelenkwinkel und die Zwangsbedingungen mit der offenen
-% Struktur
+%% Debugge Zwangsbedingungen mit der offenen Struktur
 figure(3);clf;
 hold on;
 grid on;
@@ -138,5 +138,36 @@ q_OL = q_jv(RS_TE.MDH.sigma~=2);
 q_OL(3) = q_OL(3) + 45*pi/180;
 q_OL(11) = q_OL(11) + 125*pi/180;
 q_OL(10) = q_OL(10) - 15*pi/180;
+Tc_OL = RS_OL.fkine(q_OL);
 RS_OL.plot( q_OL, s_plot );
+view([0 0])
+
+% Prüfe die Viergelenkkette als ein Teil des Roboters
+% TODO: Das ist noch nicht fertig:
+RS_fb1 = hybroblib_create_robot_class('fourbar1', 'TE');
+s_plot_fb1 = struct( 'ks', [1:RS_fb1.NJ, RS_fb1.NJ+2], 'straight', 0);
+RS_fb1.pkin_names
+pkin_fb1 = [TA+TE;AC; DC ; ED];
+RS_fb1.update_mdh(pkin_fb1);
+RS_fb1.update_base([0;0;OT], [-pi/2;0;pi]);
+figure(101);clf;
+hold on; grid on;
+xlabel('x in m'); ylabel('y in m'); zlabel('z in m');
+view(3); title('Viergelenkkette');
+RS_fb1.plot(115*pi/180, s_plot_fb1);
+view([0 0])
+
+% Prüfe die Schubkurbel als ein Teil des Roboters
+% TODO: Das ist noch nicht fertig:
+RS_sc = hybroblib_create_robot_class('fourbarpris', 'TE');
+s_plot_sc = struct( 'ks', [1:RS_fb1.NJ, RS_fb1.NJ+2], 'straight', 0);
+RS_sc.pkin_names
+pkin_sc = [GK; GP; HP];
+RS_sc.update_mdh(pkin_sc);
+RS_sc.update_base(Tc_OL(1:3,4,10), r2eulxyz(Tc_OL(1:3,1:3,10)));
+figure(102);clf;
+hold on; grid on;
+xlabel('x in m'); ylabel('y in m'); zlabel('z in m');
+view(3); title('Schubkurbel');
+RS_sc.plot(q(6)); % 
 view([0 0])
