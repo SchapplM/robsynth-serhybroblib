@@ -168,14 +168,6 @@ read &quot;../robot_codegen_constraints/proc_subs_kintmp_exp&quot;:</Text-field>
 <Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">kintmp_qs := Matrix(RowDimension(kintmp_s),1):</Text-field>
 </Input>
 </Group>
-<Group view="code" hide-input="false" labelreference="L2465" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">qJ_t:= &lt;qJ1(t),qJ2(t),qJ3(t),qJ4(t)&gt;:</Text-field>
-</Input>
-</Group>
-<Group view="code" hide-input="false" labelreference="L2464" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">qJ_s:= &lt;qJ1s,qJ2s,qJ3s,qJ4s&gt;:</Text-field>
-</Input>
-</Group>
 <Group view="code" labelreference="L2266" drawlabel="true">
 <Input><Text-field style="Text" layout="Normal">Konstante Winkel bereits hineinschreiben </Text-field>
 </Input>

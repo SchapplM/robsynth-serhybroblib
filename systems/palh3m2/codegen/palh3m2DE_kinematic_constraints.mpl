@@ -7,24 +7,24 @@
 # Studienarbeit bei: Moritz Schappler, moritz.schappler@imes.uni-hannover.de, 2018-08
 # (C) Institut fuer mechatronische Systeme, Leibniz Universitaet Hannover
 # Quellen
-# TODO
+# SA Shan: Shan2019_S828, "Reduktion der Modellkomplexit√§t von seriell-hybriden Palettierrobotern"
 # 
 # 
 # Initialisierung
 # Import (Library)
-interface(warnlevel=0): 		# Unterdr®πcke die folgende Warnung.
-restart: 				# Gibt eine Warnung, wenn ®πber Terminal-Maple mit read gestartet wird.
+interface(warnlevel=0): 		# Unterdr√ºcke die folgende Warnung.
+restart: 				# Gibt eine Warnung, wenn √ºber Terminal-Maple mit read gestartet wird.
 interface(warnlevel=3):
-kin_constraints_exist := true: 		# F®πr Speicherung
+kin_constraints_exist := true: 		# F√ºr Speicherung
 ;
-with(StringTools): 			# F®πr Zeitausgabe
+with(StringTools): 			# F√ºr Zeitausgabe
 with(LinearAlgebra):
 with(codegen):
 with(CodeGeneration):
 #with(ListTools):
 codegen_act := true:
 codegen_opt := 1: # Geringerer Optimierungsgrad. Sonst zu lange.
-codegen_debug := 0: # Zur Code-Generierung auch f®πr Nicht-Inert-Ausdr®πcke
+codegen_debug := 0: # Zur Code-Generierung auch f√ºr Nicht-Inert-Ausdr√ºcke
 ;
 
 # Import (hybriddyn)
@@ -33,22 +33,18 @@ read "../transformation/proc_rotx":  	# rotation um X
 read "../transformation/proc_roty":  	# rotation um Y
 read "../transformation/proc_rotz":  	# rotation um Z
 ;
-read "../helper/proc_convert_s_t":   	# zeitabh‰ngige Variable f®πr Ableitung
+read "../helper/proc_convert_s_t":   	# zeitabh√§ngige Variable f√ºr Ableitung
 read "../helper/proc_convert_t_s":   	# konstante Variable 
-read "../robot_codegen_constraints/proc_subs_kintmp_exp": #substitute f®πr Spalte 1 mit Spalte 2
+read "../robot_codegen_constraints/proc_subs_kintmp_exp": #substitute f√ºr Spalte 1 mit Spalte 2
 ;
-with(RealDomain): 			# Schr‰nkt alle Funktionen auf den reellen Bereich ein. Muss nach Definition von MatlabExport kommen. Sonst geht dieses nicht.
+with(RealDomain): 			# Schr√§nkt alle Funktionen auf den reellen Bereich ein. Muss nach Definition von MatlabExport kommen. Sonst geht dieses nicht.
 ;
 read "../robot_codegen_definitions/robot_env":			#aktuelle Roboter, MDH-Tabelle
 ;
 read sprintf("../codeexport/%s/tmp/tree_floatb_definitions",robot_name):	
 
 # Variable Initialisierung
-# Variable mit Winkeln der Nebenstruktur nur in Abh‰ngigkeit der verallgemeinerten Koordinaten
-qJ_t:= <qJ1(t),qJ2(t),qJ3(t),qJ4(t)>:			#zeitabh‰ngige Variable
-;
-qJ_s:= <qJ1s,qJ2s,qJ3s,qJ4s>:				#konstante variable
-;
+# Variable mit Winkeln der Nebenstruktur nur in Abh√§ngigkeit der verallgemeinerten Koordinaten
 # Ergebnisse von Trigonometrischer Elimination lesen
 read sprintf("../codeexport/palh3m2TE/tmp/kinematic_constraints_maple_inert.m"):	# von aktuellem Roboter
 ;
@@ -62,7 +58,7 @@ kintmp_subsexp:= Matrix(2*RowDimension(kintmp_s),2):
 kintmp_qt := convert_s_t(kintmp_qs):
 save kintmp_subsexp, sprintf("../codeexport/%s/tmp/kinematic_constraints_kintmp_subsexp_maple", robot_name):
 save kintmp_subsexp, sprintf("../codeexport/%s/tmp/kinematic_constraints_kintmp_subsexp_maple.m", robot_name):
-#printf("Ausdr®πcke f®πr kintmp_subsexp gespeichert (Maple). %s. CPU-Zeit bis hier: %1.2fs.\n", FormatTime("%Y-%m-%d %H:%M:%S"), time()-st):
+#printf("Ausdr√ºcke f√ºr kintmp_subsexp gespeichert (Maple). %s. CPU-Zeit bis hier: %1.2fs.\n", FormatTime("%Y-%m-%d %H:%M:%S"), time()-st):
 for i from 1 to RowDimension(kintmp_s) do
   tmp := kintmp_qs(i):
   save tmp, sprintf("../codeexport/%s/tmp/kinematic_constraints_maple_inert_kintmpq_%d",robot_name, i):
@@ -71,8 +67,8 @@ end do:
 save kin_constraints_exist, kintmp_qs, kintmp_qt,kintmp_subsexp, sprintf("../codeexport/%s/tmp/kinematic_constraints_maple_inert" ,robot_name):
 save kin_constraints_exist, kintmp_qs, kintmp_qt, kintmp_subsexp, sprintf("../codeexport/%s/tmp/kinematic_constraints_maple_inert.m", robot_name):
 save kintmp_qs, sprintf("../codeexport/%s/tmp/kinematic_constraints_kintmp_qs_maple_inert", robot_name):
-#printf("Ausdr®πcke mit Inert-Arctan exportiert (Matlab). %s. CPU-Zeit bis hier: %1.2fs.\n", FormatTime("%Y-%m-%d %H:%M:%S"), time()-st):
-# Liste mit abh‰ngigen konstanten Kinematikparametern erstellen (wichtig f®πr Matlab-Funktionsgenerierung)
+#printf("Ausdr√ºcke mit Inert-Arctan exportiert (Matlab). %s. CPU-Zeit bis hier: %1.2fs.\n", FormatTime("%Y-%m-%d %H:%M:%S"), time()-st):
+# Liste mit abh√§ngigen konstanten Kinematikparametern erstellen (wichtig f√ºr Matlab-Funktionsgenerierung)
 read "../helper/proc_list_constant_expressions";
 kc_symbols := Matrix(list_constant_expressions( kintmp_qs ));
 #kc_symbols :=Transpose(kc_symbols);
@@ -83,15 +79,4 @@ MatlabExport(kc_symbols, sprintf("../codeexport/%s/tmp/kinematic_constraints_sym
 kintmp_qs(1,1):
 kc_symbols(1,1):
 kintmp_qs(2,1):
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# 
 

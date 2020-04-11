@@ -160,3 +160,4 @@ save kc_symbols, sprintf("../codeexport/%s/tmp/kinematic_constraints_symbols_lis
 MatlabExport(kc_symbols, sprintf("../codeexport/%s/tmp/kinematic_constraints_symbols_list_matlab.m",robot_name),2);
 printf("Fertig. %s. CPU-Zeit bis hier: %1.2fs.\n", FormatTime("%Y-%m-%d %H:%M:%S"), time()-st):
 
+

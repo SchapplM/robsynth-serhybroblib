@@ -2,16 +2,16 @@
 # Slider Crank / Schubkurbel
 # Initialisierung
 restart:
-kin_constraints_exist := true: # Für Speicherung
+kin_constraints_exist := true: # FÃ¼r Speicherung
 ;
-with(StringTools): # Für Zeitausgabe
+with(StringTools): # FÃ¼r Zeitausgabe
 with(LinearAlgebra):
 with(codegen):
 with(CodeGeneration):
 #with(ListTools):
 codegen_act := true:
 codegen_opt := 1: # Geringerer Optimierungsgrad. Sonst zu lange.
-codegen_debug := 0: # Zur Code-Generierung auch für Nicht-Inert-Ausdrücke
+codegen_debug := 0: # Zur Code-Generierung auch fÃ¼r Nicht-Inert-AusdrÃ¼cke
 ;
 read "../helper/proc_MatlabExport":
 read "../transformation/proc_rotx":
@@ -21,35 +21,31 @@ read "../helper/proc_convert_s_t":
 read "../helper/proc_convert_t_s":
 read "../robot_codegen_constraints/proc_subs_kintmp_exp":
 read "../helper/proc_intersect_circle":
-with(RealDomain): # Schränkt alle Funktionen auf den reellen Bereich ein. Muss nach Definition von MatlabExport kommen. Sonst geht dieses nicht.
+with(RealDomain): # SchrÃ¤nkt alle Funktionen auf den reellen Bereich ein. Muss nach Definition von MatlabExport kommen. Sonst geht dieses nicht.
 ;
 read "../robot_codegen_definitions/robot_env":
 read sprintf("../codeexport/%s/tmp/tree_floatb_definitions", robot_name):
-# Variable mit Winkeln der Nebenstruktur nur in Abhängigkeit der verallgemeinerten Koordinaten
+# Variable mit Winkeln der Nebenstruktur nur in AbhÃ¤ngigkeit der verallgemeinerten Koordinaten
 kintmp_qs := Matrix(RowDimension(kintmp_s),1):
-kintmpD_t:=diff~(kintmp_t,t):
-kintmpD_s:=Matrix(< etaD_s, xiD_s, rhoD_s>):
-qJ_t := Matrix(NQJ, 1, qJ1(t)):
-qJ_s := Matrix(NQJ, 1, qJ1s):
-# Konstante Winkel bereits hineinschreiben ( Keine für Viergelenkkette)
+# Konstante Winkel bereits hineinschreiben ( Keine fÃ¼r Viergelenkkette)
 for i from 1 to RowDimension(kintmp_s) do
   if diff(kintmp_s(i,1), t) = 0 then
     kintmp_qs(i,1) := kintmp_s(i,1):
   end if:
 end do:
-# Variablen definieren für die Hilfswinkel
+# Variablen definieren fÃ¼r die Hilfswinkel
 # 
-# Ersetzungsausdrücke definieren.
+# ErsetzungsausdrÃ¼cke definieren.
 # Speichere Sinus und Cosinus der Winkel direkt ab, da diese in den Rotationsmatrizen direkt auftreten.
 # Spalte 1: Zu suchender Ausdruck (sin oder cos eines Winkels)
 # Spalte 2: Einzusetzender Ausdruck.
-# Dadurch werden arctan-Ausdrücke in der direkten Kinematik reduziert.
-# Ähnliches Vorgehen wie in [1].
+# Dadurch werden arctan-AusdrÃ¼cke in der direkten Kinematik reduziert.
+# Ã„hnliches Vorgehen wie in [1].
 kintmp_subsexp := Matrix(2*RowDimension(kintmp_s),2):
 for i from 1 to RowDimension(kintmp_s) do
   kintmp_subsexp(2*i-1, 1) := sin(kintmp_s(i,1)):
   kintmp_subsexp(2*i,   1) := cos(kintmp_s(i,1)):
-  # Initialisierung der rechten Spalte mit gleichen Werten. Später nur Ersetzung, wenn Vorteilhaft.
+  # Initialisierung der rechten Spalte mit gleichen Werten. SpÃ¤ter nur Ersetzung, wenn Vorteilhaft.
   kintmp_subsexp(2*i-1, 2) := kintmp_subsexp(2*i-1, 1):
   kintmp_subsexp(2*i,   2) := kintmp_subsexp(2*i,   1):
 end do:
@@ -74,7 +70,7 @@ f1:=r_s1x-r_agx=0:# GL1
 ;
 f2:=r_s1y-r_agy=0: # GL2
 ;
-# Zwangsbedingungen für eta , zweiter Weg zum Kreisschnittpunkt G
+# Zwangsbedingungen fÃ¼r eta , zweiter Weg zum Kreisschnittpunkt G
 r_agx2:=qJ1s+HP+GP*cos(xi_s):
 r_agy2:=-GP*sin(xi_s):
 f11:=r_s1x-r_agx2=0: # GL3
@@ -113,13 +109,13 @@ winkel_fourbarpris := <<sin_rho|sin(rho_s)>; <cos_rho|cos(rho_s)>; <sin_eta | si
 #mkdir(sprintf("../codeexport/slcr/tmp/")): falls Ordner noch nicht vorhanden
 ;
 save winkel_fourbarpris, sprintf("../codeexport/%s/tmp/%s_angles_trig_elim", robot_name, robot_name):
-# Exportiere Code für folgende Skripte
+# Exportiere Code fÃ¼r folgende Skripte
 kintmp_qt := convert_s_t(kintmp_qs):
 #kintmp_subsexp:=convert_s_t(kintmp_subsexp):
 # Speichere Maple-Ausdruck (Eingabe-Format und internes Format)
 save kintmp_subsexp, sprintf("../codeexport/%s/tmp/kinematic_constraints_kintmp_subsexp_maple", robot_name):
 save kintmp_subsexp, sprintf("../codeexport/%s/tmp/kinematic_constraints_kintmp_subsexp_maple.m", robot_name):
-printf("Ausdrücke für kintmp_subsexp gespeichert (Maple). %s. CPU-Zeit bis hier: %1.2fs.\n", FormatTime("%Y-%m-%d %H:%M:%S"), time()-st):
+printf("AusdrÃ¼cke fÃ¼r kintmp_subsexp gespeichert (Maple). %s. CPU-Zeit bis hier: %1.2fs.\n", FormatTime("%Y-%m-%d %H:%M:%S"), time()-st):
 for i from 1 to RowDimension(kintmp_s) do
   tmp := kintmp_qs(i):
   save tmp, sprintf("../codeexport/%s/tmp/kinematic_constraints_maple_inert_kintmpq_%d", robot_name, i):
@@ -128,8 +124,8 @@ end do:
 save kin_constraints_exist, kintmp_qs, kintmp_qt,kintmp_subsexp, sprintf("../codeexport/%s/tmp/kinematic_constraints_maple_inert", robot_name):
 save kin_constraints_exist, kintmp_qs, kintmp_qt, kintmp_subsexp, sprintf("../codeexport/%s/tmp/kinematic_constraints_maple_inert.m", robot_name):
 save kintmp_qs, sprintf("../codeexport/%s/tmp/kinematic_constraints_kintmp_qs_maple_inert", robot_name):
-printf("Ausdrücke mit Inert-Arctan exportiert (Matlab). %s. CPU-Zeit bis hier: %1.2fs.\n", FormatTime("%Y-%m-%d %H:%M:%S"), time()-st):
-# Liste mit abhängigen konstanten Kinematikparametern erstellen (wichtig für Matlab-Funktionsgenerierung)
+printf("AusdrÃ¼cke mit Inert-Arctan exportiert (Matlab). %s. CPU-Zeit bis hier: %1.2fs.\n", FormatTime("%Y-%m-%d %H:%M:%S"), time()-st):
+# Liste mit abhÃ¤ngigen konstanten Kinematikparametern erstellen (wichtig fÃ¼r Matlab-Funktionsgenerierung)
 read "../helper/proc_list_constant_expressions";
 kc_symbols := Matrix(list_constant_expressions( kintmp_subsexp ));
 #kc_symbols :=Transpose(kc_symbols);

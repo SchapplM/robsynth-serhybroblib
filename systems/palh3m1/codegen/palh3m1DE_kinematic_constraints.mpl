@@ -7,24 +7,25 @@
 # Studienarbeit bei: Moritz Schappler, moritz.schappler@imes.uni-hannover.de, 2018-08
 # (C) Institut fuer mechatronische Systeme, Leibniz Universitaet Hannover
 # Quellen
-# TODO
+# SA Bejaoui: Bejaoui2018_S749; "Modellierung kinematischer Zwangsbedingungen fÃ¼r hybride serielle Roboter mit planaren Parallelmechanismen"
+# SA Shan: Shan2019_S828, "Reduktion der ModellkomplexitÃ¤t von seriell-hybriden Palettierrobotern"
 # 
 # 
 # Initialisierung
 # Import (Library)
-interface(warnlevel=0): 		# Unterdrücke die folgende Warnung.
-restart: 				# Gibt eine Warnung, wenn über Terminal-Maple mit read gestartet wird.
+interface(warnlevel=0): 		# UnterdrÃ¼cke die folgende Warnung.
+restart: 				# Gibt eine Warnung, wenn Ã¼ber Terminal-Maple mit read gestartet wird.
 interface(warnlevel=3):
-kin_constraints_exist := true: 		# Für Speicherung
+kin_constraints_exist := true: 		# FÃ¼r Speicherung
 ;
-with(StringTools): 			# Für Zeitausgabe
+with(StringTools): 			# FÃ¼r Zeitausgabe
 with(LinearAlgebra):
 with(codegen):
 with(CodeGeneration):
 #with(ListTools):
 codegen_act := true:
 codegen_opt := 1: # Geringerer Optimierungsgrad. Sonst zu lange.
-codegen_debug := 0: # Zur Code-Generierung auch für Nicht-Inert-Ausdrücke
+codegen_debug := 0: # Zur Code-Generierung auch fÃ¼r Nicht-Inert-AusdrÃ¼cke
 ;
 
 # Import (hybriddyn)
@@ -33,11 +34,11 @@ read "../transformation/proc_rotx":  	# rotation um X
 read "../transformation/proc_roty":  	# rotation um Y
 read "../transformation/proc_rotz":  	# rotation um Z
 ;
-read "../helper/proc_convert_s_t":   	# zeitabhängige Variable für Ableitung
+read "../helper/proc_convert_s_t":   	# zeitabhÃ¤ngige Variable fÃ¼r Ableitung
 read "../helper/proc_convert_t_s":   	# konstante Variable 
-read "../robot_codegen_constraints/proc_subs_kintmp_exp": #substitute für Spalte 1 mit Spalte 2
+read "../robot_codegen_constraints/proc_subs_kintmp_exp": #substitute fÃ¼r Spalte 1 mit Spalte 2
 ;
-with(RealDomain): 			# Schränkt alle Funktionen auf den reellen Bereich ein. Muss nach Definition von MatlabExport kommen. Sonst geht dieses nicht.
+with(RealDomain): 			# SchrÃ¤nkt alle Funktionen auf den reellen Bereich ein. Muss nach Definition von MatlabExport kommen. Sonst geht dieses nicht.
 ;
 read "../robot_codegen_definitions/robot_env":			#aktuelle Roboter, MDH-Tabelle
 ;
@@ -45,11 +46,7 @@ read sprintf("../codeexport/%s/tmp/tree_floatb_definitions",robot_name):	#von Fo
 ;
 
 # Variable Initialisierung
-# Variable mit Winkeln der Nebenstruktur nur in Abhängigkeit der verallgemeinerten Koordinaten
-qJ_t:= <qJ1(t),qJ2(t),qJ3(t),qJ4(t)>:			#zeitabhängige Variable
-;
-qJ_s:= <qJ1s,qJ2s,qJ3s,qJ4s>:				#konstante variable
-;
+# Variable mit Winkeln der Nebenstruktur nur in AbhÃ¤ngigkeit der verallgemeinerten Koordinaten
 # Ergebnisse von Trigonometrischer Elimination lesen
 read sprintf("../codeexport/palh3m1TE/tmp/kinematic_constraints_maple_inert.m"):	# von aktuellem Roboter
 ;
@@ -58,13 +55,12 @@ kintmp_qs := kintmp_qs:
 kintmp_qt := kintmp_qt:
 kintmp_subsexp := kintmp_subsexp:
 # Variable entfernen
-kintmp_subsexp:= Matrix(2*RowDimension(kintmp_s),2):# 
-;
+kintmp_subsexp:= Matrix(2*RowDimension(kintmp_s),2):
 # Export
 kintmp_qt := convert_s_t(kintmp_qs):
 save kintmp_subsexp, sprintf("../codeexport/%s/tmp/kinematic_constraints_kintmp_subsexp_maple", robot_name):
 save kintmp_subsexp, sprintf("../codeexport/%s/tmp/kinematic_constraints_kintmp_subsexp_maple.m", robot_name):
-#printf("Ausdrücke für kintmp_subsexp gespeichert (Maple). %s. CPU-Zeit bis hier: %1.2fs.\n", FormatTime("%Y-%m-%d %H:%M:%S"), time()-st):
+#printf("AusdrÃ¼cke fÃ¼r kintmp_subsexp gespeichert (Maple). %s. CPU-Zeit bis hier: %1.2fs.\n", FormatTime("%Y-%m-%d %H:%M:%S"), time()-st):
 for i from 1 to RowDimension(kintmp_s) do
   tmp := kintmp_qs(i):
   save tmp, sprintf("../codeexport/%s/tmp/kinematic_constraints_maple_inert_kintmpq_%d",robot_name, i):
@@ -73,8 +69,8 @@ end do:
 save kin_constraints_exist, kintmp_qs, kintmp_qt,kintmp_subsexp, sprintf("../codeexport/%s/tmp/kinematic_constraints_maple_inert" ,robot_name):
 save kin_constraints_exist, kintmp_qs, kintmp_qt, kintmp_subsexp, sprintf("../codeexport/%s/tmp/kinematic_constraints_maple_inert.m", robot_name):
 save kintmp_qs, sprintf("../codeexport/%s/tmp/kinematic_constraints_kintmp_qs_maple_inert", robot_name):
-#printf("Ausdrücke mit Inert-Arctan exportiert (Matlab). %s. CPU-Zeit bis hier: %1.2fs.\n", FormatTime("%Y-%m-%d %H:%M:%S"), time()-st):
-# Liste mit abhängigen konstanten Kinematikparametern erstellen (wichtig für Matlab-Funktionsgenerierung)
+#printf("AusdrÃ¼cke mit Inert-Arctan exportiert (Matlab). %s. CPU-Zeit bis hier: %1.2fs.\n", FormatTime("%Y-%m-%d %H:%M:%S"), time()-st):
+# Liste mit abhÃ¤ngigen konstanten Kinematikparametern erstellen (wichtig fÃ¼r Matlab-Funktionsgenerierung)
 read "../helper/proc_list_constant_expressions";
 kc_symbols := Matrix(list_constant_expressions( kintmp_qs ));
 #kc_symbols :=Transpose(kc_symbols);
@@ -85,15 +81,3 @@ MatlabExport(kc_symbols, sprintf("../codeexport/%s/tmp/kinematic_constraints_sym
 kintmp_qs(1,1):
 kc_symbols(1,1):
 kintmp_qs(2,1):
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-

@@ -47,10 +47,6 @@ read sprintf("../codeexport/%s/tmp/tree_floatb_definitions",robot_name):	#von Fo
 
 # Variable Initialisierung
 # Variable mit Winkeln der Nebenstruktur nur in Abhängigkeit der verallgemeinerten Koordinaten
-#qJ_t:= <qJ1(t),qJ2(t),qJ3(t),qJ4(t)>:			#zeitabhängige Variable
-;
-#qJ_s:= <qJ1s,qJ2s,qJ3s,qJ4s>:				#konstante variable
-;
 # Ergebnisse von Trigonometrischer Elimination lesen
 read sprintf("../codeexport/picker2Dm2TE/tmp/kinematic_constraints_maple_inert.m"):	# von aktuellem Roboter
 ;

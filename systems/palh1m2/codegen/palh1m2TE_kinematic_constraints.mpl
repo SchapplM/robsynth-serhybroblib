@@ -7,7 +7,8 @@
 # palh1m2TE -> MPL800 II-Yaskawa, modellierung der Zwangsbedingungen mit Ausdrücken für trigonometrische Elimination
 # kinematic_constraint -> Kinematische Zwangsbedingungen
 # Datenblatt des Roboters unter :   https://www.motoman.com/industrial-robots/mpl800-ii
-# Voraussetzung (sehr wichtig !!!!): Parallelogram muss mit der Toolbox berechnet worden sein (Arbeitsblatt "fourbar2TE_kinematic_constraints.mw")
+# Voraussetzung
+# Parallelogram muss mit der Toolbox berechnet worden sein (Arbeitsblatt "fourbar2TE_kinematic_constraints.mw")
 # Quelle
 # SA Bejaoui: Bejaoui2018_S749; "Modellierung kinematischer Zwangsbedingungen für hybride serielle Roboter mit planaren Parallelmechanismen"
 # Autor
@@ -43,8 +44,6 @@ read "../robot_codegen_definitions/robot_env":
 read sprintf("../codeexport/%s/tmp/tree_floatb_definitions",robot_name):
 # Variable mit Winkeln der Nebenstruktur nur in Abhängigkeit der verallgemeinerten Koordinaten
 kintmp_qs := Matrix(RowDimension(kintmp_s),1):
-qJ_t:= <qJ1(t),qJ2(t),qJ3(t),qJ4(t)>:
-qJ_s:= <qJ1s,qJ2s,qJ3s,qJ4s>:
 # Konstante Winkel bereits hineinschreiben 
 for i from 1 to RowDimension(kintmp_s) do
   if diff(kintmp_s(i,1), t) = 0 then

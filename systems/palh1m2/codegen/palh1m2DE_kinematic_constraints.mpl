@@ -34,10 +34,6 @@ with(RealDomain): # Schränkt alle Funktionen auf den reellen Bereich ein. Muss 
 ;
 read "../robot_codegen_definitions/robot_env":
 read sprintf("../codeexport/%s/tmp/tree_floatb_definitions",robot_name):
-# Variable mit Winkeln der Nebenstruktur nur in Abhängigkeit der verallgemeinerten Koordinaten
-
-qJ_t:= <qJ1(t),qJ2(t),qJ3(t),qJ4(t)>:
-qJ_s:= <qJ1s,qJ2s,qJ3s,qJ4s>:
 # Ergebnisse von Trigonometrischer Elimination lesen
 read sprintf("../codeexport/palh1m2TE/tmp/kinematic_constraints_maple_inert.m"):
 kin_constraints_exist := kin_constraints_exist:

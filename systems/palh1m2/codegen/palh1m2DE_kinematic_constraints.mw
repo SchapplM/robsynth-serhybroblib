@@ -158,22 +158,6 @@ read &quot;../robot_codegen_constraints/proc_subs_kintmp_exp&quot;:</Text-field>
 </Input>
 </Group></Presentation-Block>
 </Section><Presentation-Block>
-<Group view="code" labelreference="L2285" drawlabel="true">
-<Input><Text-field style="Text" layout="Normal"><Font encoding="UTF-8">Variable mit Winkeln der Nebenstruktur nur in Abh\303\244ngigkeit der verallgemeinerten Koordinaten</Font></Text-field>
-</Input>
-</Group>
-<Group view="code" hide-input="false" labelreference="L2268" drawlabel="true">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"></Text-field>
-</Input>
-</Group>
-<Group view="code" hide-input="false" labelreference="L2465" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">qJ_t:= &lt;qJ1(t),qJ2(t),qJ3(t),qJ4(t)&gt;:</Text-field>
-</Input>
-</Group>
-<Group view="code" hide-input="false" labelreference="L2464" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">qJ_s:= &lt;qJ1s,qJ2s,qJ3s,qJ4s&gt;:</Text-field>
-</Input>
-</Group>
 <Group view="code" labelreference="L3224" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
 <Input><Text-field style="Text" layout="Normal">Ergebnisse von Trigonometrischer Elimination lesen</Text-field>
 </Input>

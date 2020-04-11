@@ -1,53 +1,51 @@
 
-# Berechne kinematische Zwangsbedingungen f®πr den Palettierroboter KUKA KR700PA aus 2 Viergelenkketten
+# Berechne kinematische Zwangsbedingungen f√ºr den Palettierroboter KUKA KR700PA aus 2 Viergelenkketten
 # Einleitung
-# Die kinematischen Zwangsbedingungen werden als Ersatzungsausdruck f®πr die abh‰ngigen Winkel aufgestellt.
+# Die kinematischen Zwangsbedingungen werden als Ersatzungsausdruck f√ºr die abh√§ngigen Winkel aufgestellt.
 # 
-# palh3m1TE->KUKA KR700PA, modellierung der Zwangsbedingungen mit Ausdr®πcken f®πr trigonometrische Elimination
+# palh3m1TE->KUKA KR700PA, modellierung der Zwangsbedingungen mit Ausdr√ºcken f√ºr trigonometrische Elimination
 # kinematic_constraint->Kinematische Zwangsbedingungen
 # Datenblatt des Roboters:
 # unter :   https://www.kuka.com/en-de/products/robot-systems/industrial-robots/kr-700-pa
 # Voraussetzung(sehr wichtig!!!!!): 
 # Viergelenkkette muss mit der Toolbox berechnet worden sein (Arbeitsblatt "fourbar1TE_kinematic_constrains.mv")
 # Quelle:
-# TODO
+# SA Shan: Shan2019_S828, "Reduktion der Modellkomplexit√§t von seriell-hybriden Palettierrobotern"
 # Autor:
 # Weipu Shan
 # Studienarbeit bei: Moritz Schappler, moritz.schappler@imes.uni-hannover.de, 2018-08
 # (C) Institut fuer mechatronische Systeme, Leibniz Universitaet Hannover
 # Initialisierung
 # Import (Library)
-interface(warnlevel=0): 		# Unterdr®πcke die folgende Warnung.
-restart: 				# Gibt eine Warnung, wenn ®πber Terminal-Maple mit read gestartet wird.
+interface(warnlevel=0): 		# Unterdr√ºcke die folgende Warnung.
+restart: 				# Gibt eine Warnung, wenn √ºber Terminal-Maple mit read gestartet wird.
 interface(warnlevel=3):
-kin_constraints_exist := true:               # f®πr Speicherung
+kin_constraints_exist := true:               # f√ºr Speicherung
 ;
-with(StringTools):                                  # f®πr Zeitausgabe
+with(StringTools):                                  # f√ºr Zeitausgabe
 with(LinearAlgebra):
 with(codegen):
 with(CodeGeneration):
 #with(ListTools):
 codegen_act := true:
 codegen_opt := 1:      # Geringerer Optimierungsgrad. Sonst zu lange.
-codegen_debug := 0:    # Zur Code-Generierung auch f®πr Nicht-Inert Ausdr®πcke
+codegen_debug := 0:    # Zur Code-Generierung auch f√ºr Nicht-Inert Ausdr√ºcke
 ;
 # Import(hybriddyn)
 read "../helper/proc_MatlabExport":    #Matlab Export
 read "../transformation/proc_rotx":      #Rotation um X
 read "../transformation/proc_roty":      #Rotation um Y
 read "../transformation/proc_rotz":      #Rotation um Z
-read "../helper/proc_convert_s_t":        #zeitabh‰ngige Variable f®πr Ableitung
+read "../helper/proc_convert_s_t":        #zeitabh√§ngige Variable f√ºr Ableitung
 read "../helper/proc_convert_t_s":        #konstante Variable
 read "../robot_codegen_constraints/proc_subs_kintmp_exp": #substitute Spalte 1 mit Spalte 2
-with (RealDomain):            # Schr‰nkt alle Funktionen auf den reellen Bereich ein. Muss nach Definition von MatlabExport kommen. Sonst geht dieses nicht.
+with (RealDomain):            # Schr√§nkt alle Funktionen auf den reellen Bereich ein. Muss nach Definition von MatlabExport kommen. Sonst geht dieses nicht.
 ;
 read "../robot_codegen_definitions/robot_env":                                                      #aktuelle Roboter, MDH-Tabelle
 read sprintf("../codeexport/%s/tmp/tree_floatb_definitions",robot_name):        
 # Variable Initialisierung
-# Variable mit Winkeln der Nebenstruktur nur in Abh‰ngigkeit der verallgemeinerten Koordinaten  (Nur Aktive Gelenke)
+# Variable mit Winkeln der Nebenstruktur nur in Abh√§ngigkeit der verallgemeinerten Koordinaten  (Nur Aktive Gelenke)
 kintmp_qs := Matrix(RowDimension(kintmp_s),1):       	#kintmp_s von aktuellen Roboter, MDH
-qJ_t := <qJ1(t),qJ2(t),qJ3(t),qJ4(t)>:                                	#zeitabh‰ngig Variable
-qJ_s := <qJ1s,qJ2s,qJ3s,qJ4s>:                                          #konstante Variable
 ;
 # 
 # Konstante Winkel bereits hineinschreiben (Passive Gelenk)
@@ -59,42 +57,42 @@ for i from 1 to RowDimension(kintmp_s) do
 end do
 ;
 # 
-# Variable definieren f®πr die Hilfswinkel
-# Ersetzungsausdr®πcke definieren
+# Variable definieren f√ºr die Hilfswinkel
+# Ersetzungsausdr√ºcke definieren
 # Speichere Sinus und Cosinus der Winkel direkt ab, da diese in den Rotationsmatrizen direkt auftreten.
-# Spalte 1: Zusuchender Ausdruck (sin oder cos eines Winkels)	#µ⁄“ª¡– «“™’“µΩµƒ»˝Ω«∫Ø ˝±Ì¥Ô
-# Spalte 2: Einzusetzender Ausdruck			#µ⁄∂˛¡– «¥˙ÃÊµƒ±Ì¥Ô
-# Dadurch werden arctan-Ausdr®πcke in der direkten Kinematik reduziert.
-# ƒhnliches Vorgehen wie in [1].
+# Spalte 1: Zusuchender Ausdruck (sin oder cos eines Winkels)	#Á¨¨‰∏ÄÂàóÊòØË¶ÅÊâæÂà∞ÁöÑ‰∏âËßíÂáΩÊï∞Ë°®Ëææ
+# Spalte 2: Einzusetzender Ausdruck			#Á¨¨‰∫åÂàóÊòØ‰ª£ÊõøÁöÑË°®Ëææ
+# Dadurch werden arctan-Ausdr√ºcke in der direkten Kinematik reduziert.
+# √Ñhnliches Vorgehen wie in [1].
 # 
-# #–¬Ω®kintmp_subsexp 12X2, µ⁄“ª¡–±ª∂Ø÷· «sin cos –Œ Ω£¨µ⁄∂˛¡–≥ı ºªØ∫Õµ⁄“ª¡–œ‡Õ¨£¨µ±«∞ª˙∆˜»Àµƒsin cos
+# #Êñ∞Âª∫kintmp_subsexp 12X2, Á¨¨‰∏ÄÂàóË¢´Âä®ËΩ¥ÊòØsin cos ÂΩ¢ÂºèÔºåÁ¨¨‰∫åÂàóÂàùÂßãÂåñÂíåÁ¨¨‰∏ÄÂàóÁõ∏ÂêåÔºåÂΩìÂâçÊú∫Âô®‰∫∫ÁöÑsin cos
 kintmp_subsexp := Matrix(2*RowDimension(kintmp_s),2):
 for i from 1 to RowDimension(kintmp_s) do 			#kintmp_s von aktuellen Roboter
 	kintmp_subsexp(2*i-1,1) := sin(kintmp_s(i,1)):
 	kintmp_subsexp(2*i,  1) := cos(kintmp_s(i,1)):
-	# Initialisierung der rechten Spalte mit gleichen Werten. Sp‰ter nur Ersetzung, wenn Vorteilhaft.
+	# Initialisierung der rechten Spalte mit gleichen Werten. Sp√§ter nur Ersetzung, wenn Vorteilhaft.
 	kintmp_subsexp(2*i-1,2) := kintmp_subsexp(2*i-1, 1):
 	kintmp_subsexp(2*i,  2) := kintmp_subsexp(2*i,   1):
 end do:
 # 
 # Sicherung der aktuelle Daten
 backup_kintmp_qs := kintmp_qs:		#Backup von aktuellem Roboter, konstante Variable
-backup_kintmp_qt := kintmp_qt:		#Backup von aktuellem Roboter, zeitabh‰ngige Variable
+backup_kintmp_qt := kintmp_qt:		#Backup von aktuellem Roboter, zeitabh√§ngige Variable
 backup_kintmp_subsexp := kintmp_subsexp:   	#Backup von aktuellem Roboter, sin, cos von 4 Winkeln
  
 ;
-# Daten von Fourbar ®πbernehmen
+# Daten von Fourbar √ºbernehmen
 read sprintf("../codeexport/fourbar1TE/tmp/kinematic_constraints_maple_inert.m"): 	
-# Winkeln von Fourbarª·œ»∏≤∏«‘≠œ»µƒ±‰¡ø kintmp_subsexp, kintmp_qs, kintmp_qt,À˘“‘“ªø™ º–Ë“™±∏∑›
+# Winkeln von Fourbar‰ºöÂÖàË¶ÜÁõñÂéüÂÖàÁöÑÂèòÈáè kintmp_subsexp, kintmp_qs, kintmp_qt,ÊâÄ‰ª•‰∏ÄÂºÄÂßãÈúÄË¶ÅÂ§á‰ªΩ
 
 ;
 # Speichern WInkeln von Fourbar, mit Fourbar Variable
 kintmp_subsexp_fourbar := kintmp_subsexp:  	#sin,cos von 4 Winkeln, Fourbar
 kintmp_qs_fourbar := kintmp_qs:		#konstante Variable, Fourbar
-kintmp_qt_fourbar := kintmp_qt:		#zeitabh‰ngige Variable, Fourbar
+kintmp_qt_fourbar := kintmp_qt:		#zeitabh√§ngige Variable, Fourbar
 ;
 # 
-# “‘œ¬ƒ⁄»›”–“…Œ  Was ist der Sinn darunten
+# ‰ª•‰∏ãÂÜÖÂÆπÊúâÁñëÈóÆ Was ist der Sinn darunten
 #kintmp_subsexp_fourbar:
 #winkel(6,2):
 #kintmp_subsexp_fourbar(6,2):
@@ -107,9 +105,9 @@ winkel_neu(4,2) := subs({qJ1s=phi_s}, kintmp_subsexp_fourbar(2,2)):
 winkel_neu(5,2) := subs({qJ1s=phi_s}, kintmp_subsexp_fourbar(5,2)):
 winkel_neu(6,2) := subs({qJ1s=phi_s}, kintmp_subsexp_fourbar(6,2)):
 # 
-# Vorherige Werte f®πr dieses System wieder herstellen
+# Vorherige Werte f√ºr dieses System wieder herstellen
 kintmp_qs := backup_kintmp_qs:		#aktuellem Roboter, konstante Variable
-kintmp_qt := backup_kintmp_qt:		#aktuellem Roboter, zeitabh‰ngige Variable
+kintmp_qt := backup_kintmp_qt:		#aktuellem Roboter, zeitabh√§ngige Variable
 kintmp_subsexp := backup_kintmp_subsexp:		#aktuellem Roboter, sin, cos von 4 Winkeln
 
 ;
@@ -117,12 +115,12 @@ winkel_neu(1..6,1);
 # Viergelenkkette 1: A-B-C-D
 # Von ABCD: eta1, eta3, eta4  -----> Von Fourbar: rho, eta, xi
 winkel1 := <<sin_eta1|sin(eta1_s)>;<cos_eta1|cos(eta1_s)>;<sin_eta3|sin(eta3_s)>;<cos_eta3|cos(eta3_s)>;<sin_eta4|sin(eta4_s)>;<cos_eta4|cos(eta4_s)>>:
-# Ausdr®πcke von Fourbar in aktuellem Roboter mitbringen
+# Ausdr√ºcke von Fourbar in aktuellem Roboter mitbringen
 for i from 1 to 6 do
-	winkel1(i,2) := kintmp_subsexp_fourbar(i,2):       		#Subsexpress von Fourbar ®πbernehmen
-	cos_phi_s := sin(qJ2s)*sin(phi2) - cos(qJ2s)*cos(phi2):	#phi_s ist unabh‰ngige Winkel von VGK, hier ist phi_s = eta2_s
+	winkel1(i,2) := kintmp_subsexp_fourbar(i,2):       		#Subsexpress von Fourbar √ºbernehmen
+	cos_phi_s := sin(qJ2s)*sin(phi2) - cos(qJ2s)*cos(phi2):	#phi_s ist unabh√§ngige Winkel von VGK, hier ist phi_s = eta2_s
 	sin_phi_s := sin(qJ2s)*cos(phi2) + cos(qJ2s)*sin(phi2):	#qJ2s ist echte aktive Winkel von Roboter, eta2 ^= phi = Pi - qJ2 - phi2
-	winkel1(i,2) := subs({sin(qJ1s)=sin_phi_s},winkel1(i,2)):	#’‚¿ÔqJ1s  «fourbar÷˜∂Ø÷·£¨”√…œ√Êµƒ±Ì¥Ô Ω¿¥¥˙ÃÊ£¨‘Úƒ‹”√¿¥±Ì¥Ôµ±«∞roboter
+	winkel1(i,2) := subs({sin(qJ1s)=sin_phi_s},winkel1(i,2)):	
 	winkel1(i,2) := subs({cos(qJ1s)=cos_phi_s},winkel1(i,2)):
 	winkel1(i,2) := subs({l1=AB}, winkel1(i,2)):
 	winkel1(i,2) := subs({l2=DA}, winkel1(i,2)):
@@ -140,7 +138,7 @@ cos_eta3_s := winkel1(4,2):
 sin_eta4_s := winkel1(5,2):	#eta4 = qJ4s = xi
 ;
 cos_eta4_s := winkel1(6,2):	
-# eta16, eta79, eta27, abh‰ngige Winkeln von aktuellem Roboter
+# eta16, eta79, eta27, abh√§ngige Winkeln von aktuellem Roboter
 cos_eta16_s := cos_eta1_s*cos(phi1) + sin_eta1_s*sin(phi1):	#eta16 = eta1 - phi1
 ;
 sin_eta16_s := sin_eta1_s*cos(phi1) - cos_eta1_s*sin(phi1):
@@ -153,14 +151,14 @@ sin_eta27_s := sin_eta3_s*cos(phi79) - cos_eta3_s*sin(phi79):
 # Viergelenkkette 2: B-E-F-G
 winkel2 := <<sin_xi1|sin(xi1_s)>;<cos_xi1|cos(xi1_s)>;<sin_xi3|sin(xi3_s)>;<cos_xi3|cos(xi3_s)>;
 <sin_xi4|sin(xi4_s)>;<cos_xi4|cos(xi4_s)>>:
-# Ausdr®πcke von Fourbar in aktuellem Roboter mitbringen
+# Ausdr√ºcke von Fourbar in aktuellem Roboter mitbringen
 for i from 1 to 6 do
-	winkel2(i,2) := kintmp_subsexp_fourbar(i,2):       			#Subsexpress von Fourbar ®πbernehmen
-	#phi_s ist unabh‰ngige Winkel von VGK, hier ist phi_s = xi2_s
+	winkel2(i,2) := kintmp_subsexp_fourbar(i,2):       			#Subsexpress von Fourbar √ºbernehmen
+	#phi_s ist unabh√§ngige Winkel von VGK, hier ist phi_s = xi2_s
 	#qJ3s ist echte aktive Winkel von Roboter, xi2 ^= phi = Pi - qJ3 - (phi78-eta27)
 	cos_phi_s := -cos(phi78+phi79)*(cos_eta3_s*cos(qJ3s)+sin_eta3_s*sin(qJ3s))-sin(phi78+phi79)*(sin_eta3_s*cos(qJ3s)-cos_eta3_s*sin(qJ3s)):
 	sin_phi_s := sin(phi78+phi79)*(cos_eta3_s*cos(qJ3s)+sin_eta3_s*sin(qJ3s))-cos(phi78+phi79)*(sin_eta3_s*cos(qJ3s)-cos_eta3_s*sin(qJ3s)):
-	#’‚¿ÔqJ1s  «fourbar÷˜∂Ø÷·£¨”√…œ√Êµƒ±Ì¥Ô Ω¿¥¥˙ÃÊ£¨‘Úƒ‹”√¿¥±Ì¥Ôµ±«∞roboter
+	#
 	winkel2(i,2) := subs({sin(qJ1s)=sin_phi_s},winkel2(i,2)):	
 	winkel2(i,2) := subs({cos(qJ1s)=cos_phi_s},winkel2(i,2)):
 	winkel2(i,2) := subs({l1=BG}, winkel2(i,2)):
@@ -179,7 +177,7 @@ cos_xi3_s := winkel2(4,2):
 sin_xi4_s := winkel2(5,2):	#xi4 = qJ4s = xi
 ;
 cos_xi4_s := winkel2(6,2):
-# xi78, xi34, xi410, abh‰ngige Winkeln von aktuellem Roboter
+# xi78, xi34, xi410, abh√§ngige Winkeln von aktuellem Roboter
 cos_xi78_s := cos_xi1_s:				#xi78 = xi1
 ;
 sin_xi78_s := sin_xi1_s:
@@ -224,7 +222,7 @@ save kintmp_subsexp, sprintf("../codeexport/%s/tmp/kinematic_constraints_kintmp_
 ;
 save kintmp_subsexp, sprintf("../codeexport/%s/tmp/kinematic_constraints_kintmp_subsexp_maple.m", robot_name)
 ;
-#printf("Ausdr®πcke f®πr kintmp_subsexp gespeichert (Maple). %s. CPU-Zeit bis hier: %1.2fs.\n", FormatTime("%Y-%m-%d %H:%M:%S"), time()-st):
+#printf("Ausdr√ºcke f√ºr kintmp_subsexp gespeichert (Maple). %s. CPU-Zeit bis hier: %1.2fs.\n", FormatTime("%Y-%m-%d %H:%M:%S"), time()-st):
 for i from 1 to RowDimension(kintmp_s) do
   tmp := kintmp_qs(i):
   save tmp, sprintf("../codeexport/%s/tmp/kinematic_constraints_maple_inert_kintmpq_%d",robot_name, i):
@@ -233,8 +231,8 @@ end do:
 save kin_constraints_exist, kintmp_qs, kintmp_qt,kintmp_subsexp, sprintf("../codeexport/%s/tmp/kinematic_constraints_maple_inert" ,robot_name):
 save kin_constraints_exist, kintmp_qs, kintmp_qt, kintmp_subsexp, sprintf("../codeexport/%s/tmp/kinematic_constraints_maple_inert.m", robot_name):
 save kintmp_qs, sprintf("../codeexport/%s/tmp/kinematic_constraints_kintmp_qs_maple_inert", robot_name):
-#printf("Ausdr®πcke mit Inert-Arctan exportiert (Matlab). %s. CPU-Zeit bis hier: %1.2fs.\n", FormatTime("%Y-%m-%d %H:%M:%S"), time()-st):
-# Liste mit abh‰ngigen konstanten Kinematikparametern erstellen (wichtig f®πr Matlab-Funktionsgenerierung)
+#printf("Ausdr√ºcke mit Inert-Arctan exportiert (Matlab). %s. CPU-Zeit bis hier: %1.2fs.\n", FormatTime("%Y-%m-%d %H:%M:%S"), time()-st):
+# Liste mit abh√§ngigen konstanten Kinematikparametern erstellen (wichtig f√ºr Matlab-Funktionsgenerierung)
 read "../helper/proc_list_constant_expressions";
 interface(rtablesize=20):
 kc_symbols := Matrix(list_constant_expressions( kintmp_subsexp ));
