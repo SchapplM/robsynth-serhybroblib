@@ -4,3 +4,5 @@ robot_name := "mg10hlIC":
 robot_name_OL := "mg10hlOL":
 robot_name_DE := "mg10hlDE":
 robot_name_TE := "mg10hlTE":
+
+codegen_opt := 1:

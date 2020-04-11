@@ -25,3 +25,4 @@ sigma:=Matrix(<0,0,0,0,0,0,0,0,0,0,0,0,1,2,2>):
 # Kinematik-Optimierung für parallele Gelenke deaktivieren
 codegen_kinematics_opt := false:
 
+codegen_opt := 1:
