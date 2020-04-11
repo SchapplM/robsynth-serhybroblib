@@ -44,3 +44,12 @@ systems_path = fullfile(fileparts(which('hybroblib_path_init.m')), 'systems');
 run(fullfile(systems_path, 'picker2Dm1', 'picker2Dm1_test.m'));
 systems_path = fullfile(fileparts(which('hybroblib_path_init.m')), 'systems');
 run(fullfile(systems_path, 'picker2Dm2', 'picker2Dm2_test.m'));
+
+%% Beinketten für hybride PKM
+% Aus MA Brünger
+systems_path = fullfile(fileparts(which('hybroblib_path_init.m')), 'systems');
+run(fullfile(systems_path, 'hybBKplanar', 'hybBKplanar_test.m'));
+systems_path = fullfile(fileparts(which('hybroblib_path_init.m')), 'systems');
+run(fullfile(systems_path, 'hybBKplanar', 'hybBKplanar_test_Bsp1.m'));
+systems_path = fullfile(fileparts(which('hybroblib_path_init.m')), 'systems');
+run(fullfile(systems_path, 'hybBKspatial', 'hybBKspatial_test.m'));

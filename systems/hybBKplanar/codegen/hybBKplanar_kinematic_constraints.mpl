@@ -1,26 +1,30 @@
 
-# Berechne kinematische Zwangsbedingungen für Fünfgelenkkette
+# Berechne kinematische Zwangsbedingungen fÃ¼r FÃ¼nfgelenkkette
 
 # Einleitung
-# Die kinematischen Zwangsbedingungen werden als Ersetzungsausdruck für die abhängigen Winkel aufgestellt.
+# Die kinematischen Zwangsbedingungen werden als Ersetzungsausdruck fÃ¼r die abhÃ¤ngigen Winkel aufgestellt.
 # 
-# fivebar1TE -> Fünfgelenkkette, Modellierung der Zwangsbedingungen mit trigonometrischer Elimination der Winkel
+# hybBKplanar -> Beinkette fÃ¼r hybride PKM; FÃ¼nfgelenkkette, Modellierung der Zwangsbedingungen mit trigonometrischer Elimination der Winkel
 # kinematic_constraint -> Berechnungen zu kinematischen Zwangsbedingungen
+# 
+# TODO: Dieses System unterscheidet sich nur minimal von der reinen FÃ¼nfgelenkkette (Drehgelenk am Ende). Lade die Ergebnisse der FÃ¼nfgelenkkette statt alles identisch neu zu berechnen.
 
 # Quelle
-# SA Bejaoui: Bejaoui2018_S749; "Modellierung kinematischer Zwangsbedingungen für hybride serielle Roboter mit planaren Parallelmechanismen"
-# (Fünfgelenkkette S. 23 in [Bejaoui2018_S749])
+# MA BrÃ¼nger: BrÃ¼nger2019_M832, "Vergleich der Leistungsmerkmale und Modellierung von parallelen Robotern mit hybriden und seriellen Beinketten"
+# SA Bejaoui: Bejaoui2018_S749; "Modellierung kinematischer Zwangsbedingungen fÃ¼r hybride serielle Roboter mit planaren Parallelmechanismen"
+# (FÃ¼nfgelenkkette S. 23 in [Bejaoui2018_S749])
+# Haruhiko Asada;  Kamal Youcef-Toumi: "Analysis and design of a direct-drive arm with a five-bar-link parallel drive mechanism" (1984)
 # Autor
-# Abderahman Bejaoui, Moritz Schappler
-# Studienarbeit bei: Moritz Schappler, moritz.schappler@imes.uni-hannover.de, 2019-01
+# AndrÃ© BrÃ¼nger, Moritz Schappler
+# Masterarbeit bei: Moritz Schappler, moritz.schappler@imes.uni-hannover.de, 2019-01
 # (C) Institut fuer Mechatronische Systeme, Leibniz Universitaet Hannover
 # Initialisierung
-interface(warnlevel=0): # Unterdrücke die folgende Warnung.
-restart: # Gibt eine Warnung, wenn über Terminal-Maple mit read gestartet wird.
+interface(warnlevel=0): # UnterdrÃ¼cke die folgende Warnung.
+restart: # Gibt eine Warnung, wenn Ã¼ber Terminal-Maple mit read gestartet wird.
 interface(warnlevel=3):
-kin_constraints_exist := true: # Für Speicherung
+kin_constraints_exist := true: # FÃ¼r Speicherung
 ;
-with(StringTools): # Für Zeitausgabe
+with(StringTools): # FÃ¼r Zeitausgabe
 with(LinearAlgebra):
 with(codegen):
 with(CodeGeneration):
@@ -32,27 +36,27 @@ read "../helper/proc_convert_s_t":
 read "../helper/proc_convert_t_s":
 read "../robot_codegen_constraints/proc_subs_kintmp_exp":
 read "../helper/proc_intersect_circle":
-with(RealDomain): # Schränkt alle Funktionen auf den reellen Bereich ein. Muss nach Definition von MatlabExport kommen. Sonst geht dieses nicht.
+with(RealDomain): # SchrÃ¤nkt alle Funktionen auf den reellen Bereich ein. Muss nach Definition von MatlabExport kommen. Sonst geht dieses nicht.
 ;
 read "../robot_codegen_definitions/robot_env":
 read sprintf("../codeexport/%s/tmp/tree_floatb_definitions",robot_name):
-# Variable mit Winkeln der Nebenstruktur nur in Abhängigkeit der verallgemeinerten Koordinaten
+# Variable mit Winkeln der Nebenstruktur nur in AbhÃ¤ngigkeit der verallgemeinerten Koordinaten
 kintmp_qs := Matrix(RowDimension(kintmp_s),1):
 for i from 1 to RowDimension(kintmp_s) do
   if diff(kintmp_s(i,1), t) = 0 then
     kintmp_qs(i,1) := kintmp_s(i,1):
   end if:
 end do:
-# Ersetzungsausdrücke definieren.
+# ErsetzungsausdrÃ¼cke definieren.
 # Speichere Sinus und Cosinus der Winkel direkt ab, da diese in den Rotationsmatrizen direkt auftreten.
 # Spalte 1: Zu suchender Ausdruck (sin oder cos eines Winkels)
 # Spalte 2: Einzusetzender Ausdruck.
-# Dadurch werden arctan-Ausdrücke in der direkten Kinematik reduziert.
+# Dadurch werden arctan-AusdrÃ¼cke in der direkten Kinematik reduziert.
 kintmp_subsexp := Matrix(2*RowDimension(kintmp_s),2):
 for i from 1 to RowDimension(kintmp_s) do
   kintmp_subsexp(2*i-1, 1) := sin(kintmp_s(i,1)):
   kintmp_subsexp(2*i,   1) := cos(kintmp_s(i,1)):
-  # Initialisierung der rechten Spalte mit gleichen Werten. Später nur Ersetzung, wenn Vorteilhaft.
+  # Initialisierung der rechten Spalte mit gleichen Werten. SpÃ¤ter nur Ersetzung, wenn Vorteilhaft.
   kintmp_subsexp(2*i-1, 2) := kintmp_subsexp(2*i-1, 1):
   kintmp_subsexp(2*i,   2) := kintmp_subsexp(2*i,   1):
 end do:
@@ -64,18 +68,18 @@ r_p2:=<AB+BC*cos(qJ2s), BC*sin(qJ2s)>:
 r1:=ED:
 r2:=CD:
 A:=intersect_circle(r_p1, r_p2, r1, r2):
-# Es gibt zwei Lösungen für den Kreisschnittpunkt. Bei der gewählten Definition der Kreise ist die erste Lösung in der Fünfgelenkkette und die zweite außen (für die gewählten Beispiel-Parameter).
-# Die zweite Lösung entspricht der gewählten Lösung in [Bejaoui2018_S749]
+# Es gibt zwei LÃ¶sungen fÃ¼r den Kreisschnittpunkt. Bei der gewÃ¤hlten Definition der Kreise ist die erste LÃ¶sung in der FÃ¼nfgelenkkette und die zweite auÃŸen (fÃ¼r die gewÃ¤hlten Beispiel-Parameter).
+# Die zweite LÃ¶sung entspricht der gewÃ¤hlten LÃ¶sung in [Bejaoui2018_S749]
 r_s1x:=simplify(A(1,2),trig):
 r_s1y:=simplify(A(2,2),trig):
-# Zwangsbedingungen für eta, zweiter Weg zum Kreisschnittpunkt D über B
+# Zwangsbedingungen fÃ¼r eta, zweiter Weg zum Kreisschnittpunkt D Ã¼ber B
 radx1:=AB+BC*cos(qJ2s)+CD*(cos(qJ2s)*cos(eta_s)-sin(qJ2s)*sin(eta_s)):
 rady1:=BC*sin(qJ2s)+CD*(sin(qJ2s)*cos(eta_s)+cos(qJ2s)*sin(eta_s)):
 f11:=r_s1x-radx1=0: #GL3
 ;
 f12:=r_s1y-rady1=0: #GL4
 ;
-# Zwangsbedingungen für xi , zwei Wege Punkt E
+# Zwangsbedingungen fÃ¼r xi , zwei Wege Punkt E
 racx1:=AE*cos(qJ1s):
 racy1:=AE*sin(qJ1s):
 racx2:=AB+BC*cos(qJ2s)+CD*(cos(qJ2s)*cos(eta_s)-sin(qJ2s)*sin(eta_s))+ED*(cos(qJ2s)*(cos(eta_s)*cos(xi_s)-sin(eta_s)*sin(xi_s))-sin(qJ2s)*(cos(xi_s)*sin(eta_s)+cos(eta_s)*sin(xi_s))):
@@ -117,7 +121,7 @@ kintmp_subsexp(6,2):=cos_xi_s:
 kintmp_qs(1,1):=%arctan(sin_rho_s,cos_rho_s):
 kintmp_qs(2,1):=%arctan(sin_eta_s,cos_eta_s):
 kintmp_qs(3,1):=%arctan(sin_xi_s,cos_xi_s):
-# Exportiere Code für folgende Skripte
+# Exportiere Code fÃ¼r folgende Skripte
 # 
 # Die Annahmen sind im Ausdruck bereits in den Variablen gespeichert. Ersetze das "~"-Zeichen.
 # Quelle: http://www.mapleprimes.com/questions/207601-Remove-Assumptions
@@ -127,7 +131,7 @@ kintmp_qt := convert_s_t(kintmp_qs):
 # Speichere Maple-Ausdruck (Eingabe-Format und internes Format)
 save kintmp_subsexp, sprintf("../codeexport/%s/tmp/kinematic_constraints_kintmp_subsexp_maple", robot_name):
 save kintmp_subsexp, sprintf("../codeexport/%s/tmp/kinematic_constraints_kintmp_subsexp_maple.m", robot_name):
-printf("Ausdrücke für kintmp_subsexp gespeichert (Maple). %s. CPU-Zeit bis hier: %1.2fs.\n", FormatTime("%Y-%m-%d %H:%M:%S"), time()-st):
+printf("AusdrÃ¼cke fÃ¼r kintmp_subsexp gespeichert (Maple). %s. CPU-Zeit bis hier: %1.2fs.\n", FormatTime("%Y-%m-%d %H:%M:%S"), time()-st):
 for i from 1 to RowDimension(kintmp_s) do
   tmp := kintmp_qs(i):
   save tmp, sprintf("../codeexport/%s/tmp/kinematic_constraints_maple_inert_kintmpq_%d", robot_name, i):
@@ -135,8 +139,8 @@ for i from 1 to RowDimension(kintmp_s) do
 end do:
 save kin_constraints_exist, kintmp_qs, kintmp_qt,kintmp_subsexp, sprintf("../codeexport/%s/tmp/kinematic_constraints_maple_inert", robot_name):
 save kin_constraints_exist, kintmp_qs, kintmp_qt, kintmp_subsexp, sprintf("../codeexport/%s/tmp/kinematic_constraints_maple_inert.m", robot_name):
-printf("Ausdrücke mit Inert-Arctan exportiert (Matlab). %s. CPU-Zeit bis hier: %1.2fs.\n", FormatTime("%Y-%m-%d %H:%M:%S"), time()-st):
-# Liste mit abhängigen konstanten Kinematikparametern erstellen (wichtig für Matlab-Funktionsgenerierung)
+printf("AusdrÃ¼cke mit Inert-Arctan exportiert (Matlab). %s. CPU-Zeit bis hier: %1.2fs.\n", FormatTime("%Y-%m-%d %H:%M:%S"), time()-st):
+# Liste mit abhÃ¤ngigen konstanten Kinematikparametern erstellen (wichtig fÃ¼r Matlab-Funktionsgenerierung)
 read "../helper/proc_list_constant_expressions";
 kc_symbols := Matrix(list_constant_expressions( kintmp_subsexp ));
 save kc_symbols, sprintf("../codeexport/%s/tmp/kinematic_constraints_symbols_list_maple", robot_name):

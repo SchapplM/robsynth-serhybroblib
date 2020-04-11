@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Worksheet>
-<Version major="2018" minor="1"/>
+<Version major="2019" minor="2"/>
 <Label-Scheme value="2" prefix=""/>
 <View-Properties presentation="false" autoexpanding_sections="true" UserProfileName="Maple Default Profile" NumericFormat-ApplyInteger="true" NumericFormat-ApplyRational="true" NumericFormat-ApplyExponent="false" editable="true">
 </View-Properties>
-<MapleNet-Properties prettyprint="3" warnlevel="3" preplot="" helpbrowser="standard" displayprecision="-1" echo="1" unitattributes="&quot;fontweight&quot; = &quot;bold&quot;" imaginaryunit="I" longdelim="true" elisiontermsthreshold="10000" elisiondigitsafter="100" elisiondigitsbefore="100" plotdevice="inline" errorbreak="1" plotoptions="" plotdriver="opengl" quiet="false" elisiontermsbefore="100" elisiontermsafter="100" screenwidth="79" indentamount="4" plotoutput="terminal" screenpixelheight="1080" rtablesize="10" useclientjvm="true" labelwidth="20" postplot="" typesetting="extended" ansi="false" ansicolor="[]" elisiondigitsthreshold="10000" showassumed="1" ansilprint="false" errorcursor="false" labelling="true" screenheight="25" prompt="&gt; " verboseproc="1" latexwidth="8.0" ShowLabels="true"/>
+<MapleNet-Properties prettyprint="3" warnlevel="3" compactdisplay="false" preplot="" helpbrowser="standard" displayprecision="-1" echo="1" unitattributes="&quot;fontweight&quot; = &quot;bold&quot;" imaginaryunit="I" longdelim="true" elisiontermsthreshold="10000" elisiondigitsafter="100" elisiondigitsbefore="100" plotdevice="inline" errorbreak="1" plotoptions="" plotdriver="opengl" quiet="false" elisiontermsbefore="100" elisiontermsafter="100" historytimestamp="false" screenwidth="79" indentamount="4" plotoutput="terminal" screenpixelheight="1050" rtablesize="[10, 10]" useclientjvm="true" labelwidth="20" postplot="" typesetting="extended" ansi="false" ansicolor="[]" elisiondigitsthreshold="10000" showassumed="1" ansilprint="false" trailingsemicolon="true" errorcursor="false" labelling="true" screenheight="25" prompt="&gt; " verboseproc="1" latexwidth="8.0" ShowLabels="true"/>
 <Styles>
 <Font name="Heading 1" background="[255,255,255]" bold="true" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="18" subscript="false" superscript="false" underline="false" placeholder="false"/>
 <Font name="Warning" background="[255,255,255]" bold="false" executable="false" family="Courier New" foreground="[0,0,255]" italic="false" opaque="false" readonly="true" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
@@ -89,26 +89,29 @@
 </Task-table>
 <Task/><Presentation-Block>
 <Group view="code" labelreference="L2471" drawlabel="true">
-<Input><Text-field style="Heading 1" layout="Heading 1"><Font encoding="UTF-8">Berechne kinematische Zwangsbedingungen f\303\274r F\303\274nfgelenkkette
+<Input><Text-field style="Heading 1" layout="Heading 1"><Font encoding="UTF-8">Berechne kinematische Zwangsbedingungen f\303\274r hybride PKM-Beinkette (planar)
 </Font></Text-field>
 </Input>
 </Group></Presentation-Block><Presentation-Block>
 <Group labelreference="L3244" drawlabel="true">
 <Input><Text-field style="Heading 2" layout="Heading 2">Einleitung</Text-field><Text-field style="Normal" layout="Normal"><Font encoding="UTF-8">Die kinematischen Zwangsbedingungen werden als Ersetzungsausdruck f\303\274r die abh\303\244ngigen Winkel aufgestellt.</Font>
+<Font encoding="UTF-8">
+hybBKplanar -&gt; Beinkette f\303\274r hybride PKM; F\303\274nfgelenkkette, Modellierung der Zwangsbedingungen mit trigonometrischer Elimination der Winkel
+kinematic_constraint -&gt; Berechnungen zu kinematischen Zwangsbedingungen
 
-<Font encoding="UTF-8">fivebar1TE -&gt; F\303\274nfgelenkkette, Modellierung der Zwangsbedingungen mit trigonometrischer Elimination der Winkel
-</Font>kinematic_constraint -&gt; Berechnungen zu kinematischen Zwangsbedingungen
-</Text-field>
+TODO: Dieses System unterscheidet sich nur minimal von der reinen F\303\274nfgelenkkette (Drehgelenk am Ende). Lade die Ergebnisse der F\303\274nfgelenkkette statt alles identisch neu zu berechnen.
+</Font></Text-field>
 </Input>
 </Group>
 <Group labelreference="L3243" drawlabel="true">
-<Input><Text-field style="Heading 2" layout="Heading 2">Quelle</Text-field><Text-field style="Normal" layout="Normal"><Font encoding="UTF-8">SA Bejaoui: Bejaoui2018_S749; &quot;Modellierung kinematischer Zwangsbedingungen f\303\274r hybride serielle Roboter mit planaren Parallelmechanismen&quot;
-(F\303\274nfgelenkkette S. 23 in [</Font>Bejaoui2018_S749])</Text-field>
+<Input><Text-field style="Heading 2" layout="Heading 2">Quelle</Text-field><Text-field style="Normal" layout="Normal"><Font encoding="UTF-8">MA Br\303\274nger: Br\303\274nger2019_M832, &quot;Vergleich der Leistungsmerkmale und Modellierung von parallelen Robotern mit hybriden und seriellen Beinketten&quot;
+SA Bejaoui: Bejaoui2018_S749; &quot;Modellierung kinematischer Zwangsbedingungen f\303\274r hybride serielle Roboter mit planaren Parallelmechanismen&quot;
+(F\303\274nfgelenkkette S. 23 in [</Font>Bejaoui2018_S749])</Text-field><Text-field style="Normal" layout="Normal">Haruhiko Asada;  Kamal Youcef-Toumi: &quot;Analysis and design of a direct-drive arm with a five-bar-link parallel drive mechanism&quot; (1984)</Text-field>
 </Input>
 </Group></Presentation-Block><Presentation-Block>
 <Group view="code" labelreference="L2560" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field style="Heading 2" layout="Heading 2">Autor</Text-field><Text-field style="Normal" layout="Normal">Abderahman Bejaoui, Moritz Schappler
-Studienarbeit bei: Moritz Schappler, moritz.schappler@imes.uni-hannover.de, 2019-01</Text-field><Text-field style="Normal" layout="Normal">(C) Institut fuer Mechatronische Systeme, Leibniz Universitaet Hannover</Text-field>
+<Input><Text-field style="Heading 2" layout="Heading 2">Autor</Text-field><Text-field style="Normal" layout="Normal"><Font encoding="UTF-8">Andr\303\251 Br\303\274nger, Moritz Schappler
+</Font>Masterarbeit bei: Moritz Schappler, moritz.schappler@imes.uni-hannover.de, 2019-01</Text-field><Text-field style="Normal" layout="Normal">(C) Institut fuer Mechatronische Systeme, Leibniz Universitaet Hannover</Text-field>
 </Input>
 </Group></Presentation-Block>
 <Section collapsed="false" isCollapsible="true" drawButton="true" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60"><Title><Text-field style="Heading 1" layout="Heading 1">Initialisierung</Text-field></Title><Presentation-Block>

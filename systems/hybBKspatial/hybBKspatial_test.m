@@ -1,4 +1,5 @@
-% Teste Klassendefinition für Fünfgelenkkette
+% Teste Klassendefinition für hybrBKspatial (räumliche Hybrid-Beinkette für
+% PKM)
 %
 % Verfügbare Beispiele: Siehe Tabelle models.csv
 
@@ -6,6 +7,7 @@
 % [Brünger2019_M832]
 % [Bejaoui2018_S749] S. 23
 
+% André Brünger, Masterarbeit bei Moritz Schappler
 % Moritz Schappler, moritz.schappler@imes.uni-hannover.de, 2019-02
 % (C) Institut für Mechatronische Systeme, Universität Hannover
 
@@ -30,14 +32,7 @@ QE = [RS.qlim(1,1),RS.qlim(2,1), RS.qlim(3,1),0,0,0; ...
       RS.qlim(1,2),RS.qlim(2,1), RS.qlim(3,2),0,0,0; ...
       RS.qlim(1,1),RS.qlim(2,1), RS.qlim(3,1),0,0,0; ...
       RS.qlim(1,2),RS.qlim(2,2), RS.qlim(3,2),0,0,0];
-  
-% QE = [0,RS.qlim(1,1), RS.qlim(2,1),0,0,0; ...
-%       0,RS.qlim(1,2), RS.qlim(2,1),0,0,0; ...
-%       0,RS.qlim(1,2), RS.qlim(2,2),0,0,0; ...
-%       0,RS.qlim(1,1), RS.qlim(2,2),0,0,0; ...
-%       0,RS.qlim(1,1), RS.qlim(2,1),0,0,0; ...
-%       0,RS.qlim(1,2), RS.qlim(2,2),0,0,0];
-  
+
 [Q,QD,QDD,t] = traj_trapez2_multipoint(QE, 1, 1e-1, 1e-2, 1e-3, 0.25);
 X = NaN(size(Q, 1), 6);
 for ii = 1:size(Q, 1)
@@ -111,19 +106,6 @@ for i = 1:RS.NL
   fprintf('%d -> %d: Abstand %1.1f\n', iv,i,r);
 end
 
-% %% Gelenkmomentenverlauf berechnen
-% 
-% nt = size(Q,1);
-% TAU = NaN(nt, RS.NQJ);
-% for i = 1:nt
-%   q_i = Q(i,:)';
-%   qD_i = QD(i,:)';
-%   qDD_i = QDD(i,:)';
-%   
-%   tau_i = RS.invdyn(q_i, qD_i, qDD_i);
-%   TAU(i,:) = tau_i;
-% end
-% 
 %% Plotten
 figure(1);clf;
 subplot(4,1,1);
@@ -141,13 +123,6 @@ plot(t, 180/pi*QDD);
 xlabel('t [s]');
 ylabel('qDD [deg/s^2]');
 grid on;
-% subplot(4,1,4);
-% plot(t, TAU);
-% xlabel('t [s]');
-% ylabel('tau [Nm]');
-% grid on;
-
-%%
 
 s_plot = struct( 'ks', [1:RS.NJ, RS.NJ+2], 'straight', 0);
 q = [0;180;90;0;0;0]*pi/180;
@@ -160,8 +135,6 @@ zlabel('z [m]');
 view(3);
 title(RS.descr);
 RS.plot( q, s_plot );
-
-%%
 
 s_anim = struct( 'gif_name', '');
 figure(3);clf;
