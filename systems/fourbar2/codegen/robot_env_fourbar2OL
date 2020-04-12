@@ -29,9 +29,6 @@ mu:=Matrix(<1,0,0,0,0>):
 
 codegen_kinematics_opt := true:
 
-# 0:Parallelorgram, 1: general Closed Loop
-Kettetyp := 0:
-
 codegen_opt := 1:
 
 
