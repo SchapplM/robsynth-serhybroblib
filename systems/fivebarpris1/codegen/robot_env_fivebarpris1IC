@@ -1,8 +1,0 @@
-# Name der Viergelenkkette (für impl. kinematische Zwangsbedingungen)
-
-robot_name := "fivebarpris1IC":
-robot_name_OL := "fivebarpris1OL":
-robot_name_DE := "fivebarpris1DE":
-robot_name_TE := "fivebarpris1TE":
-
-codegen_opt := 1:

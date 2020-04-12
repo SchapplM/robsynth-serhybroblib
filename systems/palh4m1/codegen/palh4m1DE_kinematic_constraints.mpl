@@ -38,7 +38,7 @@ read sprintf("../codeexport/%s/tmp/tree_floatb_definitions",robot_name):
 qJ_t:= <qJ1(t),qJ2(t),qJ3(t),qJ4(t),qJ5(t)>:
 qJ_s:= <qJ1s,qJ2s,qJ3s,qJ4s,qJ5s>:
 # Ergebnisse von Trigonometrischer Elimination lesen
-read sprintf("../codeexport/fivebarpris1TE/tmp/kinematic_constraints_maple_inert.m"):
+read sprintf("../codeexport/palh4m1TE/tmp/kinematic_constraints_maple_inert.m"):
 kin_constraints_exist := kin_constraints_exist:
 kintmp_qs := kintmp_qs:
 kintmp_qt := kintmp_qt:

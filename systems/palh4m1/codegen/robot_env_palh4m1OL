@@ -1,6 +1,6 @@
 #Roboter aus Viergelenkkette und Schubgelenk
 
-robot_name := "fivebarpris1OL":
+robot_name := "palh4m1OL":
 
 # Anzahl der verallgemeinerten Gelenkkoordinaten
 NQJ := 8:
