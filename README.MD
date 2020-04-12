@@ -91,7 +91,7 @@ Die Tabelle enthält Zahlenwerte für die einzelnen Kinematik-Parameter aus der 
 Folgende Roboter und Mechanismen wurden bisher erfolgreich getestet:
 
 | Roboter | Name des Ordners | Art des Tests | Implementierte Methoden |
-| ---     |                  |---            |---                  |
+| ---     | ---              | ---           | ---                     |
 | [Viergelenkkette aus Drehgelenken](#system_fourbar1) | fourbar1 | Plausibilität/Visualisierung, Abgleich Expl/Impl | TE, DE, IC |
 | [Parallelogramm](#system_fourbar2) | fourbar2 | Abgleich über palh3m2 | TE, DE, IC |
 | [Viergelenkkette mit Schubgelenk](#system_fourbarpris) | fourbarpris | Plausibilität/Visualisierung, Abgleich Expl/Impl | TE, DE, IC |
@@ -109,7 +109,7 @@ Folgende Roboter und Mechanismen wurden bisher erfolgreich getestet:
 Die Viergelenkkette (mit Drehgelenken) dient als allgemeines Beispiel und als Komponente komplexerer Roboter.
 
 | Viergelenkkette |  |
-| ---     | |
+| ---     | --- |
 | Modell-Name | fourbar1 |
 | Minimalkoordinaten / Freiheitsgrad | 1 |
 | Anzahl geschlossener Ketten | 1 |
@@ -119,7 +119,7 @@ Die Viergelenkkette (mit Drehgelenken) dient als allgemeines Beispiel und als Ko
 Das Parallelogramm dient als allgemeines Beispiel und als Komponente komplexerer Roboter.
 
 | Parallelogramm |  |
-| ---     | |
+| ---     | ---  |
 | Modell-Name | fourbar2 |
 | Minimalkoordinaten / Freiheitsgrad | 1 |
 | Anzahl geschlossener Ketten | 1 |
@@ -129,7 +129,7 @@ Das Parallelogramm dient als allgemeines Beispiel und als Komponente komplexerer
 Diese Viergelenkkette (mit einem Schubgelenk) dient als Komponente komplexerer Roboter. Es handelt sich bei dem Mechanismus nicht um eine allgemeine Schubkurbel, da das feststehende Glied zwischen den Drehgelenken liegt.
 
 | Viergelenkkette |  |
-| ---     | |
+| ---     | ---  |
 | Modell-Name | fourbarpris |
 | Minimalkoordinaten / Freiheitsgrad | 1 |
 | Anzahl geschlossener Ketten | 1 |
@@ -139,7 +139,7 @@ Diese Viergelenkkette (mit einem Schubgelenk) dient als Komponente komplexerer R
 Die Fünfgelenkkette (mit Drehgelenken) dient als allgemeines Beispiel und als Komponente komplexerer Roboter. Die symbolische Lösung ist noch sehr rechenaufwändig und damit auch die daraus berechneten Roboter.
 
 | Fünfgelenkkette |  |
-| ---     | |
+| ---     | ---  |
 | Modell-Name | fivebar1 |
 | Minimalkoordinaten / Freiheitsgrad | 2 |
 | Anzahl geschlossener Ketten | 1 |
@@ -150,7 +150,7 @@ Die Fünfgelenkkette (mit Drehgelenken) dient als allgemeines Beispiel und als K
 Die allgemeine Viergelenkkette wird senkrecht mit einem zusätzlichen Drehgelenk aufgestellt. Dieses Modell dient zum Testen kinematischer Zwangsbedingungen des Teils eines räumlichen Palettierroboters.
 
 | Drehbar aufgerichtete Viergelenkkette |  |
-| ---     | |
+| ---     | ---  |
 | Modell-Name | fourbar1turn |
 | Minimalkoordinaten / Freiheitsgrad | 2 |
 | Anzahl geschlossener Ketten | 1 |
@@ -161,7 +161,7 @@ Die allgemeine Viergelenkkette wird senkrecht mit einem zusätzlichen Drehgelenk
 Dieser planare Palettierroboter ("Picker") hat zwei kartesische FG mit fester Orientierung.
 
 | 2T0R-Palettierer |  | Anmerkung |
-| ---     | | |
+| ---     | ---  | ---  |
 | Modell-Name | picker2Dm1 | Basierend auf allgemeiner Viergelenkkette `fourbar1` |
 | Modell-Name | picker2Dm2 | Basierend auf Parallelogramm `fourbar2` |
 | Minimalkoordinaten / Freiheitsgrad | 2 |
@@ -178,7 +178,7 @@ Diese Kinematik wird u.a. in den folgenden realen Robotern eingesetzt:
 Dieser Palettierroboter hat vier kartesische FG (drei Translationen, eine Rotation um die Hochachse). Die Konstruktion mit drei Parallelogrammen wird überwiegend im Bereich großer Traglasten eingesetzt.
 
 | 3T1R-Palettierer |  | Anmerkung |
-| ---     | | |
+| ---     | --- | --- |
 | Modell-Name | palh1m1 | Basierend auf allgemeiner Viergelenkkette `fourbar1` |
 | Modell-Name | palh1m2 | Basierend auf Parallelogramm `fourbar2` |
 | Minimalkoordinaten / Freiheitsgrad | 4 |
@@ -195,7 +195,7 @@ Diese Kinematik wird u.a. in den folgenden realen Robotern eingesetzt:
 Dieser Palettierroboter hat vier kartesische FG (drei Translationen, eine Rotation um die Hochachse). Die Konstruktion mit zwei Parallelogrammen wird überwiegend im mittleren Traglastbereich eingesetzt.
 
 | 3T1R-Palettierer |  | Anmerkung |
-| ---     | | |
+| ---     | --- | --- |
 | Modell-Name | palh3m1 | Basierend auf allgemeiner Viergelenkkette `fourbar1` |
 | Modell-Name | palh3m2 | Basierend auf Parallelogramm `fourbar2` |
 | Minimalkoordinaten / Freiheitsgrad | 4 |
@@ -214,7 +214,7 @@ Für Palettierroboter ohne parallele Zwangsführung durch Parallelogramme existi
 Durch diese Annahme lassen sich auch Ersatzmodelle für die komplexeren Palettierroboter mit Parallelogrammen definieren.
 
 | 3T1R-Palettierer |  | Anmerkung |
-| ---     | | |
+| ---     | --- | --- |
 | Modell-Name | palh2m1 | Direkte Einsetzung eines Gelenkwinkels als abhängig |
 | Modell-Name | palh2m2 | Mit Zusätzlichem Gelenk |
 | Minimalkoordinaten / Freiheitsgrad | 4 |
@@ -230,7 +230,7 @@ Diese Ersatzmodelle werden in folgendem Testskript gegen die vollständigen Mode
 Für PKM mit Beinketten, die ihrerseits aus seriell-hybriden Kinematiken bestehen, gibt es zwei Modelle:
 
 | Hybrid-PKM Beinketten |  | Anmerkung |
-| ---     | | |
+| ---     | --- | --- |
 | Modell-Name | hybBKplanar | Planare Beinkette |
 | Modell-Name | hybBKspatial | Räumliche Beinkette |
 | Anzahl geschlossener Ketten | 1 |  |
@@ -245,7 +245,7 @@ Dieser Palettierroboter stammt aus einem Beispiel von Khalil und Bennis ([Khalil
 Dieses Modell ist noch unfertig und die Kinematik ist noch nicht richtig implementiert.
 
 | Palettierroboter |  | Anmerkung |
-| ---     | | |
+| ---     | --- | --- |
 | Modell-Name | palh4m1 | Modellierung noch falsch|
 | Anzahl geschlossener Ketten | 1 |  |
 | Minimalkoordinaten / Freiheitsgrad | 5 |  |
@@ -259,7 +259,7 @@ Durch zusätzliche geschlossene Ketten wird die Kraftübertragung der Antriebe f
 Dieses Modell ist noch unfertig und die Kinematik ist noch nicht richtig implementiert.
 
 | Schwerlastroboter |  | Anmerkung |
-| ---     | | |
+| ---     | --- | --- |
 | Modell-Name | mg10hl | Modellierung noch falsch|
 | Minimalkoordinaten / Freiheitsgrad | 6 |  |
 | Anzahl geschlossener Ketten | 2 | eine Viergelenkkette mit Drehgelenken und eine mit Schubgelenk |
