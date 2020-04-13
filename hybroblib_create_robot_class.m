@@ -35,8 +35,9 @@ end
 %% Initialisierung
 repopath=fileparts(which('hybroblib_path_init.m'));
 robopath=fullfile(repopath, 'systems', Name);
-addpath(robopath);
-
+if exist(robopath, 'file')
+  addpath(robopath);
+end
 % Pfad für gewünschte Modellimplementierung hinzufügen
 % Viergelenkkette
 apd = fullfile(robopath, sprintf('matlabfcn_%s%s',Name, mdlsuffix));
