@@ -58,8 +58,8 @@ cp $this_path/fourbar1turn_kinematic_parameter_values.m $constrpath/fourbar1turn
 cp $this_path/fourbar1turn_kinematic_parameter_values.m $constrpath/fourbar1turnDE1_kinematic_parameter_values.m
 cp $this_path/fourbar1turn_kinematic_parameter_values.m $constrpath/fourbar1turnDE2_kinematic_parameter_values.m
 
-# Winkelgrenzen für die Modultests
-cp $this_path/fourbar1turn_kinematic_constraints_matlab.m $constrpath/fourbar1turnIC_kinematic_constraints_matlab.m
+# Winkelgrenzen für die Modultests (nur für Modelle mit Elimination,
+# Nicht für OL- oder IC-Modell. Dort reichen Zufallswerte)
 cp $this_path/fourbar1turn_kinematic_constraints_matlab.m $constrpath/fourbar1turnTE_kinematic_constraints_matlab.m
 cp $this_path/fourbar1turn_kinematic_constraints_matlab.m $constrpath/fourbar1turnDE1_kinematic_constraints_matlab.m
 cp $this_path/fourbar1turn_kinematic_constraints_matlab.m $constrpath/fourbar1turnDE2_kinematic_constraints_matlab.m

@@ -40,7 +40,6 @@ cp $this_path/robot_env_fourbarprisOL $defpath/robot_env_fourbarprisOL
 cp $this_path/robot_env_fourbarprisIC $defpath/robot_env_IC
 
 # Maple-Skripte (Kinematische Zwangsbedingungen)
-
 cp $this_path/fourbarprisTE_kinematic_constraints.mpl $constrpath/fourbarprisTE_kinematic_constraints.mpl
 cp $this_path/fourbarprisTE_kinematic_constraints.mw $constrpath/fourbarprisTE_kinematic_constraints.mw
 cp $this_path/fourbarprisDE_kinematic_constraints.mpl $constrpath/fourbarprisDE1_kinematic_constraints.mpl
@@ -58,8 +57,8 @@ cp $this_path/fourbarpris_kinematic_parameter_values.m $constrpath/fourbarprisTE
 cp $this_path/fourbarpris_kinematic_parameter_values.m $constrpath/fourbarprisDE1_kinematic_parameter_values.m
 cp $this_path/fourbarpris_kinematic_parameter_values.m $constrpath/fourbarprisDE2_kinematic_parameter_values.m
 
-# Winkelgrenzen für die Modultests
-cp $this_path/fourbarpris_kinematic_constraints_matlab.m $constrpath/fourbarprisIC_kinematic_constraints_matlab.m
+# Winkelgrenzen für die Modultests (nur für Modelle mit Elimination,
+# Nicht für OL- oder IC-Modell. Dort reichen Zufallswerte)
 cp $this_path/fourbarpris_kinematic_constraints_matlab.m $constrpath/fourbarprisTE_kinematic_constraints_matlab.m
 cp $this_path/fourbarpris_kinematic_constraints_matlab.m $constrpath/fourbarprisDE1_kinematic_constraints_matlab.m
 cp $this_path/fourbarpris_kinematic_constraints_matlab.m $constrpath/fourbarprisDE2_kinematic_constraints_matlab.m

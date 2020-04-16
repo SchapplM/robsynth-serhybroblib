@@ -40,7 +40,6 @@ cp $this_path/robot_env_mg10hlOL $defpath/robot_env_mg10hlOL
 cp $this_path/robot_env_mg10hlIC $defpath/robot_env_IC
 
 # Maple-Skripte (Kinematische Zwangsbedingungen)
-
 cp $this_path/mg10hlTE_kinematic_constraints.mpl $constrpath/mg10hlTE_kinematic_constraints.mpl
 cp $this_path/mg10hlTE_kinematic_constraints.mw $constrpath/mg10hlTE_kinematic_constraints.mw
 cp $this_path/mg10hlDE_kinematic_constraints.mpl $constrpath/mg10hlDE1_kinematic_constraints.mpl
@@ -58,8 +57,8 @@ cp $this_path/mg10hl_kinematic_parameter_values.m $constrpath/mg10hlTE_kinematic
 cp $this_path/mg10hl_kinematic_parameter_values.m $constrpath/mg10hlDE1_kinematic_parameter_values.m
 cp $this_path/mg10hl_kinematic_parameter_values.m $constrpath/mg10hlDE2_kinematic_parameter_values.m
 
-# Winkelgrenzen für die Modultests
-cp $this_path/mg10hl_kinematic_constraints_matlab.m $constrpath/mg10hlIC_kinematic_constraints_matlab.m
+# Winkelgrenzen für die Modultests (nur für Modelle mit Elimination,
+# Nicht für OL- oder IC-Modell. Dort reichen Zufallswerte)
 cp $this_path/mg10hl_kinematic_constraints_matlab.m $constrpath/mg10hlTE_kinematic_constraints_matlab.m
 cp $this_path/mg10hl_kinematic_constraints_matlab.m $constrpath/mg10hlDE1_kinematic_constraints_matlab.m
 cp $this_path/mg10hl_kinematic_constraints_matlab.m $constrpath/mg10hlDE2_kinematic_constraints_matlab.m
