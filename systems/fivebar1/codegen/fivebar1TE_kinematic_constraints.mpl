@@ -28,6 +28,7 @@ with(CodeGeneration):
 codegen_act := true:
 codegen_opt := 2:
 read "../helper/proc_MatlabExport":
+read "../helper/proc_simplify2":
 read "../helper/proc_convert_s_t":
 read "../helper/proc_convert_t_s":
 read "../robot_codegen_constraints/proc_subs_kintmp_exp":
@@ -36,6 +37,8 @@ with(RealDomain): # Schränkt alle Funktionen auf den reellen Bereich ein. Muss 
 ;
 read "../robot_codegen_definitions/robot_env":
 read sprintf("../codeexport/%s/tmp/tree_floatb_definitions",robot_name):
+use_simplify := 0: # keine zusätzlichen simplify-Befehle
+;
 # Variable mit Winkeln der Nebenstruktur nur in Abhängigkeit der verallgemeinerten Koordinaten
 kintmp_qs := Matrix(RowDimension(kintmp_s),1):
 for i from 1 to RowDimension(kintmp_s) do
@@ -56,7 +59,7 @@ for i from 1 to RowDimension(kintmp_s) do
   kintmp_subsexp(2*i-1, 2) := kintmp_subsexp(2*i-1, 1):
   kintmp_subsexp(2*i,   2) := kintmp_subsexp(2*i,   1):
 end do:
-printf("Beginn der Berechnungen. %s\n", FormatTime("%Y-%m-%d %H:%M:%S")):
+printf("%s. Beginn der Berechnungen.\n", FormatTime("%Y-%m-%d %H:%M:%S")):
 st := time():
 # Zwangsbedingungen mit Kreisschnittpunkt D zur Bestimmung von rho
 r_p1:=<AE*cos(qJ1s), AE*sin(qJ1s)>:
@@ -107,12 +110,35 @@ sin_eta_xi:=sin_eta_s*cos_xi_s+cos_eta_s*sin_xi_s: #sin(eta+xi)
 cos_rho_s:=cos_psi_phi*cos_eta_xi-sin_psi_phi*sin_eta_xi:
 sin_rho_s:=sin_psi_phi*cos_eta_xi+cos_psi_phi*sin_eta_xi:
 # Cos-und Sinus-Terme zuweisen
+
 kintmp_subsexp(1,2):=sin_rho_s:
 kintmp_subsexp(2,2):=cos_rho_s:
 kintmp_subsexp(3,2):=sin_eta_s:
 kintmp_subsexp(4,2):=cos_eta_s:
 kintmp_subsexp(5,2):=sin_xi_s:
 kintmp_subsexp(6,2):=cos_xi_s:
+# Terme vereinfachen
+
+if use_simplify>=1 then # bringt leider nichts
+  tmp_t0 := time():
+  tmp_l0 := length(kintmp_subsexp):
+  printf("%s: Vereinfache Ersetzungsausdrücke für Zwangsbedingungen. Länge: %d.\n", \
+    FormatTime("%Y-%m-%d %H:%M:%S"), tmp_l0):
+  for i from 1 to RowDimension(kintmp_subsexp) do
+    tmp_t1 := time():
+    tmp_l1 := length(kintmp_subsexp(i,2)): # es kann sowieso nur einer der beiden Informationen enthalten
+    printf("%s: Vereinfache Ersetzungsausdruck %d (%s). Länge: %d.\n", \
+      FormatTime("%Y-%m-%d %H:%M:%S"), i, String(kintmp_subsexp(i,1)), tmp_l1):
+    kintmp_subsexp(i,2) := simplify2(kintmp_subsexp(i,2)):
+    tmp_t2 := time():
+    tmp_l2 := length(kintmp_subsexp(i,2)):
+    printf("%s: Ersetzungsausdruck %d (%s) vereinfacht. Länge: %d->%d. Rechenzeit %1.1fs.\n", \
+      FormatTime("%Y-%m-%d %H:%M:%S"), i, String(kintmp_subsexp(i,1)), tmp_l1, tmp_l2, tmp_t2-tmp_t1):
+  end do:
+  tmp_l3 := length(kintmp_subsexp):
+  printf("%s: Ersetzungsausdrücke vereinfacht. Länge: %d->%d. Rechenzeit %1.1fs.\n", \
+    FormatTime("%Y-%m-%d %H:%M:%S"), tmp_l0, tmp_l3, tmp_t2-tmp_t0):
+end if:
 # Winkel zuweisen:
 kintmp_qs(1,1):=%arctan(sin_rho_s,cos_rho_s):
 kintmp_qs(2,1):=%arctan(sin_eta_s,cos_eta_s):
@@ -127,7 +153,7 @@ kintmp_qt := convert_s_t(kintmp_qs):
 # Speichere Maple-Ausdruck (Eingabe-Format und internes Format)
 save kintmp_subsexp, sprintf("../codeexport/%s/tmp/kinematic_constraints_kintmp_subsexp_maple", robot_name):
 save kintmp_subsexp, sprintf("../codeexport/%s/tmp/kinematic_constraints_kintmp_subsexp_maple.m", robot_name):
-printf("Ausdrücke für kintmp_subsexp gespeichert (Maple). %s. CPU-Zeit bis hier: %1.2fs.\n", FormatTime("%Y-%m-%d %H:%M:%S"), time()-st):
+printf("%s. Ausdrücke für kintmp_subsexp gespeichert (Maple). CPU-Zeit bis hier: %1.2fs.\n", FormatTime("%Y-%m-%d %H:%M:%S"), time()-st):
 for i from 1 to RowDimension(kintmp_s) do
   tmp := kintmp_qs(i):
   save tmp, sprintf("../codeexport/%s/tmp/kinematic_constraints_maple_inert_kintmpq_%d", robot_name, i):
@@ -135,12 +161,13 @@ for i from 1 to RowDimension(kintmp_s) do
 end do:
 save kin_constraints_exist, kintmp_qs, kintmp_qt,kintmp_subsexp, sprintf("../codeexport/%s/tmp/kinematic_constraints_maple_inert", robot_name):
 save kin_constraints_exist, kintmp_qs, kintmp_qt, kintmp_subsexp, sprintf("../codeexport/%s/tmp/kinematic_constraints_maple_inert.m", robot_name):
-printf("Ausdrücke mit Inert-Arctan exportiert (Matlab). %s. CPU-Zeit bis hier: %1.2fs.\n", FormatTime("%Y-%m-%d %H:%M:%S"), time()-st):
+printf("%s. Ausdrücke mit Inert-Arctan exportiert (Matlab). CPU-Zeit bis hier: %1.2fs.\n", FormatTime("%Y-%m-%d %H:%M:%S"), time()-st):
 # Liste mit abhängigen konstanten Kinematikparametern erstellen (wichtig für Matlab-Funktionsgenerierung)
 read "../helper/proc_list_constant_expressions";
 kc_symbols := Matrix(list_constant_expressions( kintmp_subsexp ));
 save kc_symbols, sprintf("../codeexport/%s/tmp/kinematic_constraints_symbols_list_maple", robot_name):
 MatlabExport(kc_symbols, sprintf("../codeexport/%s/tmp/kinematic_constraints_symbols_list_matlab.m",robot_name),2);
-printf("Fertig. %s. CPU-Zeit bis hier: %1.2fs.\n", FormatTime("%Y-%m-%d %H:%M:%S"), time()-st):
+printf("%s. Zwangsbedingungen berechnet. CPU-Zeit bis hier: %1.2fs.\n", FormatTime("%Y-%m-%d %H:%M:%S"), time()-st):
 
 # 
+

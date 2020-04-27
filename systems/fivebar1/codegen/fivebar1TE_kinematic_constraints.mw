@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Worksheet>
-<Version major="2018" minor="0"/>
+<Version major="2019" minor="2"/>
 <Label-Scheme value="2" prefix=""/>
 <View-Properties presentation="false" autoexpanding_sections="true" UserProfileName="Maple Default Profile" NumericFormat-ApplyInteger="true" NumericFormat-ApplyRational="true" NumericFormat-ApplyExponent="false" editable="true">
 </View-Properties>
-<MapleNet-Properties prettyprint="3" warnlevel="3" preplot="" helpbrowser="standard" displayprecision="-1" echo="1" unitattributes="&quot;fontweight&quot; = &quot;bold&quot;" imaginaryunit="I" longdelim="true" elisiontermsthreshold="10000" elisiondigitsafter="100" elisiondigitsbefore="100" plotdevice="inline" errorbreak="1" plotoptions="" plotdriver="opengl" quiet="false" elisiontermsbefore="100" elisiontermsafter="100" screenwidth="79" indentamount="4" plotoutput="terminal" screenpixelheight="1200" rtablesize="10" useclientjvm="true" labelwidth="20" postplot="" typesetting="extended" ansi="false" elisiondigitsthreshold="10000" showassumed="1" errorcursor="false" labelling="true" screenheight="25" prompt="&gt; " verboseproc="1" latexwidth="8.0" ShowLabels="true"/>
+<MapleNet-Properties prettyprint="3" warnlevel="3" compactdisplay="false" preplot="" helpbrowser="standard" displayprecision="-1" echo="1" unitattributes="&quot;fontweight&quot; = &quot;bold&quot;" imaginaryunit="I" longdelim="true" elisiontermsthreshold="10000" elisiondigitsafter="100" elisiondigitsbefore="100" plotdevice="inline" errorbreak="1" plotoptions="" plotdriver="opengl" quiet="false" elisiontermsbefore="100" elisiontermsafter="100" historytimestamp="false" screenwidth="79" indentamount="4" plotoutput="terminal" screenpixelheight="1050" rtablesize="[10, 10]" useclientjvm="true" labelwidth="20" postplot="" typesetting="extended" ansi="false" ansicolor="[]" elisiondigitsthreshold="10000" showassumed="1" ansilprint="false" trailingsemicolon="true" errorcursor="false" labelling="true" screenheight="25" prompt="&gt; " verboseproc="1" latexwidth="8.0" ShowLabels="true"/>
 <Styles>
 <Font name="Heading 1" background="[255,255,255]" bold="true" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="18" subscript="false" superscript="false" underline="false" placeholder="false"/>
 <Font name="Warning" background="[255,255,255]" bold="false" executable="false" family="Courier New" foreground="[0,0,255]" italic="false" opaque="false" readonly="true" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
@@ -139,7 +139,8 @@ codegen_opt := 2:</Text-field>
 </Input>
 </Group></Presentation-Block><Presentation-Block>
 <Group labelreference="L2467" drawlabel="true">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">read &quot;../helper/proc_MatlabExport&quot;:</Text-field>
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">read &quot;../helper/proc_MatlabExport&quot;:
+read &quot;../helper/proc_simplify2&quot;:</Text-field>
 </Input>
 </Group></Presentation-Block><Presentation-Block>
 <Group labelreference="L2462" drawlabel="true">
@@ -159,6 +160,10 @@ read &quot;../helper/proc_intersect_circle&quot;:</Text-field>
 </Group>
 <Group view="code" labelreference="L2468" drawlabel="true">
 <Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">read sprintf(&quot;../codeexport/%s/tmp/tree_floatb_definitions&quot;,robot_name):</Text-field>
+</Input>
+</Group>
+<Group view="code" labelreference="L3257" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"><Font encoding="UTF-8">use_simplify := 0: # keine zus\303\244tzlichen simplify-Befehle</Font></Text-field>
 </Input>
 </Group></Presentation-Block>
 </Section><Presentation-Block>
@@ -201,7 +206,7 @@ end do:</Text-field>
 </Input>
 </Group></Presentation-Block><Presentation-Block>
 <Group view="code" labelreference="L2493" drawlabel="true">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"><Font encoding="UTF-8">printf(&quot;Beginn der Berechnungen. %s\134n&quot;, FormatTime(&quot;%Y-%m-%d %H:%M:%S&quot;)):
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"><Font encoding="UTF-8">printf(&quot;%s. Beginn der Berechnungen.\134n&quot;, FormatTime(&quot;%Y-%m-%d %H:%M:%S&quot;)):
 </Font>st := time():</Text-field>
 </Input>
 </Group></Presentation-Block>
@@ -359,6 +364,10 @@ Die zweite L\303\266sung entspricht der gew\303\244hlten L\303\266sung in [</Fon
 </Group>
 </Section>
 <Section collapsed="false" isCollapsible="true" drawButton="true" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60"><Title><Text-field style="Heading 1" layout="Heading 1">Cos-und Sinus-Terme zuweisen</Text-field></Title><Presentation-Block>
+<Group view="code" labelreference="L3248" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"></Text-field>
+</Input>
+</Group>
 <Group view="code" hide-input="false" labelreference="L2427" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
 <Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">kintmp_subsexp(1,2):=sin_rho_s:</Text-field>
 </Input>
@@ -382,7 +391,34 @@ Die zweite L\303\266sung entspricht der gew\303\244hlten L\303\266sung in [</Fon
 <Group view="code" hide-input="false" labelreference="L2429" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
 <Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">kintmp_subsexp(6,2):=cos_xi_s:</Text-field>
 </Input>
-</Group></Presentation-Block>
+</Group>
+<Group view="code" labelreference="L3252" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field style="Text" layout="Normal">Terme vereinfachen</Text-field>
+</Input>
+</Group>
+<Group view="code" labelreference="L3253" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"></Text-field>
+</Input>
+</Group></Presentation-Block><Presentation-Block><CodeEditor-ExecGroup view="presentation" inline-output="false" labelreference="L3255" drawlabel="true" applyint="true" applyrational="true" display="code"><EC-CodeEditor id="CodeEditRegion0" expanded="true" visible="true" pixel-width="500" pixel-height="200" code-language="text/maple" autofit="true" wrapping="true" show-border="true" code-line-numbers="true">if use_simplify&gt;=1 then # bringt leider nichts
+  tmp_t0 := time():
+  tmp_l0 := length(kintmp_subsexp):
+  printf(&quot;%s: Vereinfache Ersetzungsausdr\303\274cke f\303\274r Zwangsbedingungen. L\303\244nge: %d.\134n&quot;, \134
+    FormatTime(&quot;%Y-%m-%d %H:%M:%S&quot;), tmp_l0):
+  for i from 1 to RowDimension(kintmp_subsexp) do
+    tmp_t1 := time():
+    tmp_l1 := length(kintmp_subsexp(i,2)): # es kann sowieso nur einer der beiden Informationen enthalten
+    printf(&quot;%s: Vereinfache Ersetzungsausdruck %d (%s). L\303\244nge: %d.\134n&quot;, \134
+      FormatTime(&quot;%Y-%m-%d %H:%M:%S&quot;), i, String(kintmp_subsexp(i,1)), tmp_l1):
+    kintmp_subsexp(i,2) := simplify2(kintmp_subsexp(i,2)):
+    tmp_t2 := time():
+    tmp_l2 := length(kintmp_subsexp(i,2)):
+    printf(&quot;%s: Ersetzungsausdruck %d (%s) vereinfacht. L\303\244nge: %d-&gt;%d. Rechenzeit %1.1fs.\134n&quot;, \134
+      FormatTime(&quot;%Y-%m-%d %H:%M:%S&quot;), i, String(kintmp_subsexp(i,1)), tmp_l1, tmp_l2, tmp_t2-tmp_t1):
+  end do:
+  tmp_l3 := length(kintmp_subsexp):
+  printf(&quot;%s: Ersetzungsausdr\303\274cke vereinfacht. L\303\244nge: %d-&gt;%d. Rechenzeit %1.1fs.\134n&quot;, \134
+    FormatTime(&quot;%Y-%m-%d %H:%M:%S&quot;), tmp_l0, tmp_l3, tmp_t2-tmp_t0):
+end if:</EC-CodeEditor></CodeEditor-ExecGroup></Presentation-Block>
 <Section collapsed="false" isCollapsible="true" drawButton="true" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60"><Title><Text-field style="Heading 2" layout="Heading 2">Winkel zuweisen:</Text-field></Title>
 <Group labelreference="L2529" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
 <Input>
@@ -433,7 +469,7 @@ Quelle: http://www.mapleprimes.com/questions/207601-Remove-Assumptions</Text-fie
 </Input>
 </Group></Presentation-Block><Presentation-Block>
 <Group view="code" labelreference="L2548" drawlabel="true">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"><Font encoding="UTF-8">printf(&quot;Ausdr\303\274cke f\303\274r kintmp_subsexp gespeichert (Maple). %s. CPU-Zeit bis hier: %1.2fs.\134n&quot;, FormatTime(&quot;%Y-%m-%d %H:%M:%S&quot;), time()-st):</Font></Text-field>
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"><Font encoding="UTF-8">printf(&quot;%s. Ausdr\303\274cke f\303\274r kintmp_subsexp gespeichert (Maple). CPU-Zeit bis hier: %1.2fs.\134n&quot;, FormatTime(&quot;%Y-%m-%d %H:%M:%S&quot;), time()-st):</Font></Text-field>
 </Input>
 </Group>
 <Group view="code" labelreference="L2550" drawlabel="true">
@@ -453,7 +489,7 @@ end do:</Text-field>
 </Input>
 </Group></Presentation-Block><Presentation-Block>
 <Group view="code" labelreference="L2538" drawlabel="true">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"><Font encoding="UTF-8">printf(&quot;Ausdr\303\274cke mit Inert-Arctan exportiert (Matlab). %s. CPU-Zeit bis hier: %1.2fs.\134n&quot;, FormatTime(&quot;%Y-%m-%d %H:%M:%S&quot;), time()-st):</Font></Text-field>
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"><Font encoding="UTF-8">printf(&quot;%s. Ausdr\303\274cke mit Inert-Arctan exportiert (Matlab). CPU-Zeit bis hier: %1.2fs.\134n&quot;, FormatTime(&quot;%Y-%m-%d %H:%M:%S&quot;), time()-st):</Font></Text-field>
 </Input>
 </Group>
 <Group view="code" labelreference="L2544" drawlabel="true">
@@ -478,7 +514,7 @@ end do:</Text-field>
 </Group></Presentation-Block>
 </Section><Presentation-Block>
 <Group view="code" labelreference="L2553" drawlabel="true">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"><Font encoding="UTF-8">printf(&quot;Fertig. %s. CPU-Zeit bis hier: %1.2fs.\134n&quot;, FormatTime(&quot;%Y-%m-%d %H:%M:%S&quot;), time()-st):</Font></Text-field>
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"><Font encoding="UTF-8">printf(&quot;%s. Zwangsbedingungen berechnet. CPU-Zeit bis hier: %1.2fs.\134n&quot;, FormatTime(&quot;%Y-%m-%d %H:%M:%S&quot;), time()-st):</Font></Text-field>
 </Input>
 </Group>
 <Group hide-input="false" labelreference="L2557" drawlabel="true">
@@ -490,5 +526,9 @@ end do:</Text-field>
 </Input>
 </Group></Presentation-Block>
 </Section>
+<Group labelreference="L3256" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"></Text-field>
+</Input>
+</Group>
 </Section>
 </Worksheet>
