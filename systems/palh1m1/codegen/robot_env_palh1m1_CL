@@ -29,5 +29,5 @@ kintmp_s := Matrix(9, 1,[xi34_s,eta16_s,eta27_s,rho28_s,rho89_s,xi1016_s,eta711_
 
 codegen_opt := 2:
 
-
+simplify_options := Vector(10,0): # Keine Vereinfachungen. Rechnet viel zu lange.
 
