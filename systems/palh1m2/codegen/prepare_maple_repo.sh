@@ -23,6 +23,9 @@ cp $this_path/robot_env_palh1m2_CL $defpath/robot_env_palh1m2TE
 sed -i "s/palh1m2/palh1m2TE/g" $defpath/robot_env_palh1m2TE
 echo "# Bei Trigonometrischer Elimination können die Additionstheoreme nicht angewendet werden" >> $defpath/robot_env_palh1m2TE
 echo "codegen_kinematics_opt := false:" >> $defpath/robot_env_palh1m2TE
+echo "# Bei TE sind die Terme für den simplify-Befehl geeignet." >> $defpath/robot_env_palh1m2TE
+echo "simplify_options := Vector(10,3):" >> $defpath/robot_env_palh1m2TE
+echo "simplify_options(8):=1: # Lagrange kaum vereinfachen" >> $defpath/robot_env_palh1m2TE
 
 cp $this_path/robot_env_palh1m2_CL $defpath/robot_env_palh1m2DE1
 sed -i "s/palh1m2/palh1m2DE1/g" $defpath/robot_env_palh1m2DE1
@@ -35,6 +38,8 @@ sed -i "s/palh1m2/palh1m2DE2/g" $defpath/robot_env_palh1m2DE2
 echo "# Anwendung der Additionstheoreme für parallele Drehachsen und dann Ersetzung der Abhängigen Winkel" >> $defpath/robot_env_palh1m2DE2
 echo "codegen_kinematics_opt := true:" >> $defpath/robot_env_palh1m2DE2
 echo "codegen_kinematics_subsorder:=2:" >> $defpath/robot_env_palh1m2DE2
+echo "simplify_options := Vector(10,-1): # Term-Vereinfachungen mit Standard-Werten" >> $defpath/robot_env_palh1m2DE2
+echo "simplify_options(9) := 0: # Hängt sich bei Massenmatrix auf" >> $defpath/robot_env_palh1m2DE2
 
 cp $this_path/robot_env_palh1m2OL $defpath/robot_env_palh1m2OL
 

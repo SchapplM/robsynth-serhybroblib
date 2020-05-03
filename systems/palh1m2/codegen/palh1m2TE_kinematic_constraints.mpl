@@ -42,6 +42,11 @@ with(RealDomain): # Schränkt alle Funktionen auf den reellen Bereich ein. Muss 
 ;
 read "../robot_codegen_definitions/robot_env":
 read sprintf("../codeexport/%s/tmp/tree_floatb_definitions",robot_name):
+if not assigned(simplify_options) then
+  use_simplify := 0: # standardmäßig keine simplify-Befehle anwenden. Annahme: Vereinfachungen nicht sinnvoll.
+else
+  use_simplify := simplify_options(1): # zweiter Eintrag ist für Zwangsbedingungen
+end if:
 # Variable mit Winkeln der Nebenstruktur nur in Abhängigkeit der verallgemeinerten Koordinaten
 kintmp_qs := Matrix(RowDimension(kintmp_s),1):
 # Konstante Winkel bereits hineinschreiben 
@@ -184,6 +189,7 @@ sin_xi34_s:=-cos_xi3_s*sin(phi413)+sin_xi3_s*cos(phi413): # am 20.11 der neuen f
 cos_xi413_s:=-cos_xi2_s:
 sin_xi413_s:=sin_xi2_s:
 # Kintmp_subsexp
+
 kintmp_subsexp(1,2):=sin_xi34_s:
 kintmp_subsexp(2,2):=cos_xi34_s:
 kintmp_subsexp(3,2):=sin_eta16_s:
@@ -203,7 +209,10 @@ kintmp_subsexp(16,2):=cos_rho312_s:
 kintmp_subsexp(17,2):=sin_xi413_s:
 kintmp_subsexp(18,2):=cos_xi413_s:
 kintmp_subsexp(11..18,1):
+
+
 # Kintmp_qs
+
 kintmp_qs(1,1):=%arctan(sin_xi34_s,cos_xi34_s):
 kintmp_qs(2,1):=%arctan(sin_eta16_s,cos_eta16_s):
 kintmp_qs(3,1):=%arctan(sin_eta27_s,cos_eta27_s):
@@ -213,7 +222,28 @@ kintmp_qs(6,1):=%arctan(sin_xi1016_s,cos_xi1016_s):
 kintmp_qs(7,1):=%arctan(sin_eta711_s,cos_eta711_s):
 kintmp_qs(8,1):=%arctan(sin_rho312_s,cos_rho312_s):
 kintmp_qs(9,1):=%arctan(sin_xi413_s,cos_xi413_s):
+
+
 # Export
+
+if use_simplify>=1 then
+  # Term kintmp_qs
+  t1:=time(): l1 := length(kintmp_qs):
+  kintmp_qs := simplify(kintmp_qs):
+  t2:=time(): l2 := length(kintmp_qs):
+  printf("%s. Term kintmp_qs vereinfacht. Länge: %d->%d. Rechenzeit %1.1fs.\n", \
+    FormatTime("%Y-%m-%d %H:%M:%S"), l1, l2, t2-t1):
+  # Term kintmp_subsexp
+  t1:=time(): l1 := length(kintmp_subsexp):
+  kintmp_subsexp := simplify(kintmp_subsexp):
+  t2:=time(): l2 := length(kintmp_subsexp):
+  printf("%s. Term kintmp_subsexp vereinfacht. Länge: %d->%d. Rechenzeit %1.1fs.\n", \
+    FormatTime("%Y-%m-%d %H:%M:%S"), l1, l2, t2-t1):
+end if:
+
+use_simplify
+;
+
 kintmp_qt := convert_s_t(kintmp_qs):
 save kintmp_subsexp, sprintf("../codeexport/%s/tmp/kinematic_constraints_kintmp_subsexp_maple", robot_name):
 save kintmp_subsexp, sprintf("../codeexport/%s/tmp/kinematic_constraints_kintmp_subsexp_maple.m", robot_name):
@@ -233,4 +263,5 @@ kc_symbols := Matrix(list_constant_expressions( kintmp_subsexp ));
 #kc_symbols :=Transpose(kc_symbols);
 save kc_symbols, sprintf("../codeexport/%s/tmp/kinematic_constraints_symbols_list_maple", robot_name):
 MatlabExport(kc_symbols, sprintf("../codeexport/%s/tmp/kinematic_constraints_symbols_list_matlab.m",robot_name),2);
-#printf("Fertig. %s. CPU-Zeit bis hier: %1.2fs.\n", FormatTime("%Y-%m-%d %H:%M:%S"), time()-st):
+
+# printf("Fertig. %s. CPU-Zeit bis hier: %1.2fs.\n", FormatTime("%Y-%m-%d %H:%M:%S"), time()-st):
