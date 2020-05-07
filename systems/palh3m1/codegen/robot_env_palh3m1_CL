@@ -46,3 +46,4 @@ kintmp_s := Matrix(6, 1, [xi34_s, eta16_s, eta27_s, xi78_s, eta79_s, xi410_s]):
 
 codegen_opt := 2:
 
+simplify_options := Vector(10,0): # Keine Vereinfachungen. Rechnet viel zu lange (siehe palh1m1)

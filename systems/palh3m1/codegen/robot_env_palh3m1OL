@@ -42,3 +42,4 @@ sigma:=Matrix(<0,0,0,0,0,0,0,0,2,2,0,0>):
 
 codegen_opt := 2:
 
+simplify_options := Vector(10,0): # ungeprüft übernommen von palh1m1OL
