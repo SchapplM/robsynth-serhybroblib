@@ -27,4 +27,7 @@ sigma:=Matrix(<0,0,0,0,0,0,0,0,0,0,0,0,2,2,2>):
 kintmp_t := Matrix(10, 1,[eta12(t),xi23(t),eta24(t),rho05(t),xi26(t),rho18(t),xi39(t),eta410(t),rho811(t),xi612(t)]):
 kintmp_s := Matrix(10, 1,[eta12_s,xi23_s,eta24_s,rho05_s,xi26_s,rho18_s,xi39_s,eta410_s,rho811_s,xi612_s]):
 
-codegen_opt := 1:
+codegen_opt := 2:
+
+# Hinweise von fivebar1 übernommen. Term-Vereinfachung lohnt sich nicht bzw. friert ein.
+simplify_options := Vector(10,0): # Keine Vereinfachungen.
