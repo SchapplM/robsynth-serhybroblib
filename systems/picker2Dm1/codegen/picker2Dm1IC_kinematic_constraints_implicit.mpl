@@ -1,7 +1,25 @@
 
-# Vierachsroboter implizit
+# Implizite kinematische Zwangsbedingungen für 2D-Picker
+
+# 
+# Erklärung des Dateinamens
+# picker2D: 2D-Roboter für Pick&Place
+# m1: Modellierung der geschlossenen Ketten als allgemeine Viergelenkkette
+# IC: Modellierung des Roboters mit impliziten Zwangsbedingungen
+# kinematic_contraints_implizit: Berechnung der kinematischen Zwangsbedingungen (implizite Form)
+# 
+# Quelle
+# Aufzeichnungen Schappler, 6.5.2019
+# Ursprüngliche Notizen von Abderahman Bejaoui (Hiwi bei Moritz Schappler)
+# 
+# Autor
+# Abderahman Bejaoui
+# Hiwi bei: Moritz Schappler, moritz.schappler@imes.uni-hannover.de, 2019-03
+# (C) Institut fuer mechatronische Systeme, Leibniz Universitaet Hannover
 # Initialisierung
-restart:
+interface(warnlevel=0): # Unterdrücke die folgende Warnung.
+restart: # Gibt eine Warnung, wenn über Terminal-Maple mit read gestartet wird.
+interface(warnlevel=3):
 kin_constraints_exist := true: # Für Speicherung
 ;
 with(StringTools): # Für Zeitausgabe
@@ -31,8 +49,6 @@ read sprintf("../codeexport/%s/tmp/kinematics_floatb_%s_rotmat_maple.m", robot_n
 read "../robot_codegen_definitions/robot_env_IC":
 Trf := Trf:
 Trf_c := Trf_c:
-Trf
-;
 # VGK Gelb 0-7-13-10-4-2-1-0
 # Schleife (0-7)-(7-13)
 T_1_13 := combine( Matrix(Trf(1..4,1..4, 7)) . Matrix(Trf(1..4,1..4,13))):
@@ -68,7 +84,8 @@ h3t := T_2_12(1..3,4) - T_2_15(1..3,4):
 ;
 h3r:= qJ6(t) + qJ12(t) - qJ3(t) - qJ9(t):
 # Zusätzliche Zwangsbedingung (6 und 8 sind gleiche Körper)
-h4:=pi/2 - qJ8(t) - qJ9(t) + qJ2(t):
+# TODO: In einer neuen Modellierung sollten beide Körper zusammengefasst werden.
+h4:=Pi/2 - qJ8(t) - qJ9(t) + qJ2(t):
 # Zusammenstellen aller Zwangsbedingungen
 implconstr_t := <h1t([1, 2],1);h2t([1, 2],1);h3t([1, 2],1); h1r; h2r; h3r; h4>; # TODO: In h1r, h2r, h3r muss das richtige drinstehen.
 implconstr_s := convert_t_s(implconstr_t):
