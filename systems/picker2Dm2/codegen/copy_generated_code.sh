@@ -7,10 +7,10 @@
 # (C) Institut für Mechatronische Systeme, Leibniz Universität Hannover
 
 maplerepopath=$1
-mkdir -p ../matlabfcn_picker2Dm2TE ../matlabfcn_picker2Dm2DE1 ../matlabfcn_picker2Dm2DE2 ../matlabfcn_picker2Dm2OL ../matlabfcn_picker2Dm2IC
-cp -u $maplerepopath/codeexport/picker2Dm2TE/matlabfcn/*.* ../matlabfcn_picker2Dm2TE
-cp -u $maplerepopath/codeexport/picker2Dm2DE1/matlabfcn/*.* ../matlabfcn_picker2Dm2DE1
-cp -u $maplerepopath/codeexport/picker2Dm2DE2/matlabfcn/*.* ../matlabfcn_picker2Dm2DE2
-cp -u $maplerepopath/codeexport/picker2Dm2OL/matlabfcn/*.* ../matlabfcn_picker2Dm2OL
-cp -u $maplerepopath/codeexport/picker2Dm2IC/matlabfcn/*.* ../matlabfcn_picker2Dm2IC
-
+mdlext="DE1 DE2 TE OL IC"
+for ext in $mdlext; do
+  echo "Kopiere Code für picker2Dm2$ext"
+  mkdir -p ../matlabfcn_picker2Dm2${ext}
+  cp -u $maplerepopath/codeexport/picker2Dm2${ext}/matlabfcn/*.* ../matlabfcn_picker2Dm2${ext}
+  cp -u $maplerepopath/codeexport/picker2Dm2${ext}/tmp/robot*.sh ../matlabfcn_picker2Dm2${ext}
+done

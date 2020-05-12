@@ -7,10 +7,10 @@
 # (C) Institut für Mechatronische Systeme, Leibniz Universität Hannover
 
 maplerepopath=$1
-mkdir -p ../matlabfcn_fivebar1TE ../matlabfcn_fivebar1DE1 ../matlabfcn_fivebar1DE2 ../matlabfcn_fivebar1OL ../matlabfcn_fivebar1IC
-cp -u $maplerepopath/codeexport/fivebar1TE/matlabfcn/*.* ../matlabfcn_fivebar1TE
-cp -u $maplerepopath/codeexport/fivebar1DE1/matlabfcn/*.* ../matlabfcn_fivebar1DE1
-cp -u $maplerepopath/codeexport/fivebar1DE2/matlabfcn/*.* ../matlabfcn_fivebar1DE2
-cp -u $maplerepopath/codeexport/fivebar1OL/matlabfcn/*.* ../matlabfcn_fivebar1OL
-cp -u $maplerepopath/codeexport/fivebar1IC/matlabfcn/*.* ../matlabfcn_fivebar1IC
-
+mdlext="DE1 DE2 TE OL IC"
+for ext in $mdlext; do
+  echo "Kopiere Code für fivebar1${ext}"
+  mkdir -p ../matlabfcn_fivebar1${ext}
+  cp -u $maplerepopath/codeexport/fivebar1${ext}/matlabfcn/*.* ../matlabfcn_fivebar1${ext}
+  cp -u $maplerepopath/codeexport/fivebar1${ext}/tmp/robot*.sh ../matlabfcn_fivebar1${ext}
+done

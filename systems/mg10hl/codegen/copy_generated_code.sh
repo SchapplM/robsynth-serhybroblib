@@ -7,10 +7,10 @@
 # (C) Institut für Mechatronische Systeme, Leibniz Universität Hannover
 
 maplerepopath=$1
-mkdir -p ../matlabfcn_mg10hlTE ../matlabfcn_mg10hlDE1 ../matlabfcn_mg10hlDE2 ../matlabfcn_mg10hlOL ../matlabfcn_mg10hlIC
-cp -u $maplerepopath/codeexport/mg10hlTE/matlabfcn/*.* ../matlabfcn_mg10hlTE
-cp -u $maplerepopath/codeexport/mg10hlDE1/matlabfcn/*.* ../matlabfcn_mg10hlDE1
-cp -u $maplerepopath/codeexport/mg10hlDE2/matlabfcn/*.* ../matlabfcn_mg10hlDE2
-cp -u $maplerepopath/codeexport/mg10hlOL/matlabfcn/*.* ../matlabfcn_mg10hlOL
-cp -u $maplerepopath/codeexport/mg10hlIC/matlabfcn/*.* ../matlabfcn_mg10hlIC
-
+mdlext="DE1 DE2 TE OL IC"
+for ext in $mdlext; do
+  echo "Kopiere Code für mg10hl$ext"
+  mkdir -p ../matlabfcn_mg10hl${ext}
+  cp -u $maplerepopath/codeexport/mg10hl${ext}/matlabfcn/*.* ../matlabfcn_mg10hl${ext}
+  cp -u $maplerepopath/codeexport/mg10hl${ext}/tmp/robot*.sh ../matlabfcn_mg10hl${ext}
+done

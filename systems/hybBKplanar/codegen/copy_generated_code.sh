@@ -8,5 +8,6 @@
 
 maplerepopath=$1
 mkdir -p ../matlabfcn_hybBKplanar
+echo "Kopiere Code für hybBKplanar"
 cp -u $maplerepopath/codeexport/hybBKplanar/matlabfcn/*.* ../matlabfcn_hybBKplanar
-
+cp $maplerepopath/codeexport/hybBKplanar/tmp/robot_env.sh ../matlabfcn_hybBKplanar
