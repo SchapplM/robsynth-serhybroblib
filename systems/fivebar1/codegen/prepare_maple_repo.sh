@@ -17,7 +17,7 @@ fi;
 defpath=$maplerepopath/robot_codegen_definitions
 constrpath=$maplerepopath/robot_codegen_constraints
 
-## Definitionen für Unterschiedliche Modellierungen kopieren
+## Definitionen für Unterschiedliche Modellierungen kopieren (und leicht anpassen)
 cp $this_path/robot_env_fivebar1_CL $defpath/robot_env_fivebar1TE
 sed -i "s/fivebar1/fivebar1TE/g" $defpath/robot_env_fivebar1TE
 echo "# Bei Trigonometrischer Elimination können die Additionstheoreme nicht angewendet werden" >> $defpath/robot_env_fivebar1TE
@@ -36,11 +36,9 @@ echo "codegen_kinematics_opt := true:" >> $defpath/robot_env_fivebar1DE2
 echo "codegen_kinematics_subsorder:=2:" >> $defpath/robot_env_fivebar1DE2
 
 cp $this_path/robot_env_fivebar1OL $defpath/robot_env_fivebar1OL
-
 cp $this_path/robot_env_fivebar1IC $defpath/robot_env_IC
 
 # Maple-Skripte (Kinematische Zwangsbedingungen)
-
 cp $this_path/fivebar1TE_kinematic_constraints.mpl $constrpath/fivebar1TE_kinematic_constraints.mpl
 cp $this_path/fivebar1TE_kinematic_constraints.mw $constrpath/fivebar1TE_kinematic_constraints.mw
 cp $this_path/fivebar1DE_kinematic_constraints.mpl $constrpath/fivebar1DE1_kinematic_constraints.mpl
@@ -58,8 +56,8 @@ cp $this_path/fivebar1_kinematic_parameter_values.m $constrpath/fivebar1TE_kinem
 cp $this_path/fivebar1_kinematic_parameter_values.m $constrpath/fivebar1DE1_kinematic_parameter_values.m
 cp $this_path/fivebar1_kinematic_parameter_values.m $constrpath/fivebar1DE2_kinematic_parameter_values.m
 
-# Winkelgrenzen für die Modultests
-cp $this_path/fivebar1_kinematic_constraints_matlab.m $constrpath/fivebar1IC_kinematic_constraints_matlab.m
+# Winkelgrenzen für die Modultests (nur für Modelle mit Elimination,
+# Nicht für OL- oder IC-Modell. Dort reichen Zufallswerte)
 cp $this_path/fivebar1_kinematic_constraints_matlab.m $constrpath/fivebar1TE_kinematic_constraints_matlab.m
 cp $this_path/fivebar1_kinematic_constraints_matlab.m $constrpath/fivebar1DE1_kinematic_constraints_matlab.m
 cp $this_path/fivebar1_kinematic_constraints_matlab.m $constrpath/fivebar1DE2_kinematic_constraints_matlab.m

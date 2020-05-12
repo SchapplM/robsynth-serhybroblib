@@ -45,7 +45,6 @@ cp $this_path/robot_env_fourbar2IC $defpath/robot_env_IC
 ##echo "codegen_kinematics_opt := true:" >> $defpath/robot_env_fourbar2IC
 
 # Maple-Skripte (Kinematische Zwangsbedingungen)
-
 cp $this_path/fourbar2TE_kinematic_constraints.mpl $constrpath/fourbar2TE_kinematic_constraints.mpl
 cp $this_path/fourbar2TE_kinematic_constraints.mw $constrpath/fourbar2TE_kinematic_constraints.mw
 cp $this_path/fourbar2DE_kinematic_constraints.mpl $constrpath/fourbar2DE1_kinematic_constraints.mpl
@@ -63,8 +62,8 @@ cp $this_path/fourbar2_kinematic_parameter_values.m $constrpath/fourbar2TE_kinem
 cp $this_path/fourbar2_kinematic_parameter_values.m $constrpath/fourbar2DE1_kinematic_parameter_values.m
 cp $this_path/fourbar2_kinematic_parameter_values.m $constrpath/fourbar2DE2_kinematic_parameter_values.m
 
-# Winkelgrenzen für die Modultests
-cp $this_path/fourbar2_kinematic_constraints_matlab.m $constrpath/fourbar2IC_kinematic_constraints_matlab.m
+# Winkelgrenzen für die Modultests (nur für Modelle mit Elimination,
+# Nicht für OL- oder IC-Modell. Dort reichen Zufallswerte)
 cp $this_path/fourbar2_kinematic_constraints_matlab.m $constrpath/fourbar2TE_kinematic_constraints_matlab.m
 cp $this_path/fourbar2_kinematic_constraints_matlab.m $constrpath/fourbar2DE1_kinematic_constraints_matlab.m
 cp $this_path/fourbar2_kinematic_constraints_matlab.m $constrpath/fourbar2DE2_kinematic_constraints_matlab.m

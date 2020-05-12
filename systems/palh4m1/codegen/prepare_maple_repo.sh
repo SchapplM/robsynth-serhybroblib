@@ -58,8 +58,8 @@ cp $this_path/palh4m1_kinematic_parameter_values.m $constrpath/palh4m1TE_kinemat
 cp $this_path/palh4m1_kinematic_parameter_values.m $constrpath/palh4m1DE1_kinematic_parameter_values.m
 cp $this_path/palh4m1_kinematic_parameter_values.m $constrpath/palh4m1DE2_kinematic_parameter_values.m
 
-# Winkelgrenzen für die Modultests
-cp $this_path/palh4m1_kinematic_constraints_matlab.m $constrpath/palh4m1IC_kinematic_constraints_matlab.m
+# Winkelgrenzen für die Modultests (nur für Modelle mit Elimination,
+# Nicht für OL- oder IC-Modell. Dort reichen Zufallswerte)
 cp $this_path/palh4m1_kinematic_constraints_matlab.m $constrpath/palh4m1TE_kinematic_constraints_matlab.m
 cp $this_path/palh4m1_kinematic_constraints_matlab.m $constrpath/palh4m1DE1_kinematic_constraints_matlab.m
 cp $this_path/palh4m1_kinematic_constraints_matlab.m $constrpath/palh4m1DE2_kinematic_constraints_matlab.m

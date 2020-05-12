@@ -158,6 +158,14 @@ read &quot;../robot_codegen_constraints/proc_subs_kintmp_exp&quot;:</Text-field>
 <Group view="code" labelreference="L2282" drawlabel="true">
 <Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">read sprintf(&quot;../codeexport/%s/tmp/tree_floatb_definitions&quot;,robot_name):</Text-field>
 </Input>
+</Group>
+<Group view="code" labelreference="L3281" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">if not assigned(simplify_options) then
+<Font encoding="UTF-8">  use_simplify := 0: # standardm\303\244\303\237ig keine simplify-Befehle anwenden. Annahme: Vereinfachungen nicht sinnvoll.
+</Font>else
+  use_simplify := simplify_options(1)<Font encoding="UTF-8">: # zweiter Eintrag ist f\303\274r Zwangsbedingungen
+</Font>end if:</Text-field>
+</Input>
 </Group></Presentation-Block>
 </Section><Presentation-Block>
 <Group view="code" labelreference="L2285" drawlabel="true">
@@ -486,122 +494,90 @@ end do:</EC-CodeEditor></CodeEditor-ExecGroup>
 </Group>
 </Section>
 <Section collapsed="false" isCollapsible="true" drawButton="true" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60"><Title><Text-field style="Heading 1" layout="Heading 1">Kintmp_subsexp</Text-field></Title>
+<Group labelreference="L3289" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"></Text-field>
+</Input>
+</Group><CodeEditor-ExecGroup view="presentation" labelreference="L3291" drawlabel="true" applyint="true" applyrational="true" display="code"><EC-CodeEditor id="CodeEditRegion4" expanded="true" visible="true" pixel-width="500" pixel-height="200" code-language="text/maple" autofit="true" wrapping="true" show-border="true" code-line-numbers="true">kintmp_subsexp(1,2):=sin_xi34_s:
+kintmp_subsexp(2,2):=cos_xi34_s:
+kintmp_subsexp(3,2):=sin_eta16_s:
+kintmp_subsexp(4,2):=cos_eta16_s:
+kintmp_subsexp(5,2):=sin_eta27_s:
+kintmp_subsexp(6,2):=cos_eta27_s:
+kintmp_subsexp(7,2):=sin_rho28_s:
+kintmp_subsexp(8,2):=cos_rho28_s:
+kintmp_subsexp(9,2):=sin_rho89_s:
+kintmp_subsexp(10,2):=cos_rho89_s:
+kintmp_subsexp(11,2):=sin_xi1016_s:
+kintmp_subsexp(12,2):=cos_xi1016_s:
+kintmp_subsexp(13,2):=sin_eta711_s:
+kintmp_subsexp(14,2):=cos_eta711_s:
+kintmp_subsexp(15,2):=sin_rho312_s:
+kintmp_subsexp(16,2):=cos_rho312_s:
+kintmp_subsexp(17,2):=sin_xi413_s:
+kintmp_subsexp(18,2):=cos_xi413_s:
+kintmp_subsexp(11..18,1):
+</EC-CodeEditor></CodeEditor-ExecGroup>
 <Group hide-input="false" labelreference="L3057" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">kintmp_subsexp(1,2):=sin_xi34_s:</Text-field>
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"></Text-field>
 </Input>
 </Group>
-<Group labelreference="L3058" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">kintmp_subsexp(2,2):=cos_xi34_s:</Text-field>
-</Input>
-</Group>
-<Group labelreference="L3059" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">kintmp_subsexp(3,2):=sin_eta16_s:</Text-field>
-</Input>
-</Group>
-<Group labelreference="L3060" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">kintmp_subsexp(4,2):=cos_eta16_s:</Text-field>
-</Input>
-</Group>
-<Group labelreference="L3061" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">kintmp_subsexp(5,2):=sin_eta27_s:</Text-field>
-</Input>
-</Group>
-<Group labelreference="L3062" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">kintmp_subsexp(6,2):=cos_eta27_s:</Text-field>
-</Input>
-</Group>
-<Group labelreference="L3063" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">kintmp_subsexp(7,2):=sin_rho28_s:</Text-field>
-</Input>
-</Group>
-<Group labelreference="L3064" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">kintmp_subsexp(8,2):=cos_rho28_s:</Text-field>
-</Input>
-</Group>
-<Group labelreference="L3065" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">kintmp_subsexp(9,2):=sin_rho89_s:</Text-field>
-</Input>
-</Group>
-<Group labelreference="L3066" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">kintmp_subsexp(10,2):=cos_rho89_s:</Text-field>
-</Input>
-</Group>
-<Group labelreference="L3067" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">kintmp_subsexp(11,2):=sin_xi1016_s:</Text-field>
-</Input>
-</Group>
-<Group labelreference="L3068" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">kintmp_subsexp(12,2):=cos_xi1016_s:</Text-field>
-</Input>
-</Group>
-<Group labelreference="L3069" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">kintmp_subsexp(13,2):=sin_eta711_s:</Text-field>
-</Input>
-</Group>
-<Group labelreference="L3070" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">kintmp_subsexp(14,2):=cos_eta711_s:</Text-field>
-</Input>
-</Group>
-<Group labelreference="L3071" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">kintmp_subsexp(15,2):=sin_rho312_s:</Text-field>
-</Input>
-</Group>
-<Group labelreference="L3072" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">kintmp_subsexp(16,2):=cos_rho312_s:</Text-field>
-</Input>
-</Group>
-<Group labelreference="L3073" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">kintmp_subsexp(17,2):=sin_xi413_s:</Text-field>
-</Input>
-</Group>
-<Group labelreference="L3074" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">kintmp_subsexp(18,2):=cos_xi413_s:</Text-field>
-</Input>
-</Group>
-<Group hide-input="false" labelreference="L3056" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">kintmp_subsexp(11..18,1):</Text-field>
+<Group labelreference="L3292" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"></Text-field>
 </Input>
 </Group>
 </Section>
 <Section collapsed="false" isCollapsible="true" drawButton="true" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60"><Title><Text-field style="Heading 1" layout="Heading 1">Kintmp_qs</Text-field></Title>
+<Group labelreference="L3285" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"></Text-field>
+</Input>
+</Group><CodeEditor-ExecGroup view="presentation" labelreference="L3287" drawlabel="true" applyint="true" applyrational="true" display="code"><EC-CodeEditor id="CodeEditRegion3" expanded="true" visible="true" pixel-width="500" pixel-height="200" code-language="text/maple" autofit="true" wrapping="true" show-border="true" code-line-numbers="true">kintmp_qs(1,1):=%arctan(sin_xi34_s,cos_xi34_s):
+kintmp_qs(2,1):=%arctan(sin_eta16_s,cos_eta16_s):
+kintmp_qs(3,1):=%arctan(sin_eta27_s,cos_eta27_s):
+kintmp_qs(4,1):=%arctan(sin_rho28_s,cos_rho28_s):
+kintmp_qs(5,1):=%arctan(sin_rho89_s,cos_rho89_s):
+kintmp_qs(6,1):=%arctan(sin_xi1016_s,cos_xi1016_s):
+kintmp_qs(7,1):=%arctan(sin_eta711_s,cos_eta711_s):
+kintmp_qs(8,1):=%arctan(sin_rho312_s,cos_rho312_s):
+kintmp_qs(9,1):=%arctan(sin_xi413_s,cos_xi413_s):</EC-CodeEditor></CodeEditor-ExecGroup>
 <Group labelreference="L3218" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">kintmp_qs(1,1):=%arctan(sin_xi34_s,cos_xi34_s):</Text-field>
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"></Text-field>
 </Input>
 </Group>
-<Group labelreference="L3215" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">kintmp_qs(2,1):=%arctan(sin_eta16_s,cos_eta16_s):</Text-field>
-</Input>
-</Group>
-<Group labelreference="L3216" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">kintmp_qs(3,1):=%arctan(sin_eta27_s,cos_eta27_s):</Text-field>
-</Input>
-</Group>
-<Group labelreference="L3217" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">kintmp_qs(4,1):=%arctan(sin_rho28_s,cos_rho28_s):</Text-field>
-</Input>
-</Group>
-<Group labelreference="L3213" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">kintmp_qs(5,1):=%arctan(sin_rho89_s,cos_rho89_s):</Text-field>
-</Input>
-</Group>
-<Group labelreference="L3214" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">kintmp_qs(6,1):=%arctan(sin_xi1016_s,cos_xi1016_s):</Text-field>
-</Input>
-</Group>
-<Group labelreference="L3212" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">kintmp_qs(7,1):=%arctan(sin_eta711_s,cos_eta711_s):</Text-field>
-</Input>
-</Group>
-<Group labelreference="L3219" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">kintmp_qs(8,1):=%arctan(sin_rho312_s,cos_rho312_s):</Text-field>
-</Input>
-</Group>
-<Group labelreference="L3086" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">kintmp_qs(9,1):=%arctan(sin_xi413_s,cos_xi413_s):</Text-field>
+<Group labelreference="L3288" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"></Text-field>
 </Input>
 </Group>
 </Section>
 <Section collapsed="false" isCollapsible="true" drawButton="true" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60"><Title><Text-field style="Heading 1" layout="Heading 1">Export</Text-field></Title>
+<Group labelreference="L3293" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"></Text-field>
+</Input>
+</Group><CodeEditor-ExecGroup view="presentation" labelreference="L3295" drawlabel="true" applyint="true" applyrational="true" display="code"><EC-CodeEditor id="CodeEditRegion5" expanded="true" visible="true" pixel-width="500" pixel-height="200" code-language="text/maple" autofit="true" wrapping="true" show-border="true" code-line-numbers="true">if use_simplify&gt;=1 then
+  # Term kintmp_qs
+  t1:=time(): l1 := length(kintmp_qs):
+  kintmp_qs := simplify(kintmp_qs):
+  t2:=time(): l2 := length(kintmp_qs):
+  printf(&quot;%s. Term kintmp_qs vereinfacht. L\303\244nge: %d-&gt;%d. Rechenzeit %1.1fs.\134n&quot;, \134
+    FormatTime(&quot;%Y-%m-%d %H:%M:%S&quot;), l1, l2, t2-t1):
+  # Term kintmp_subsexp
+  t1:=time(): l1 := length(kintmp_subsexp):
+  kintmp_subsexp := simplify(kintmp_subsexp):
+  t2:=time(): l2 := length(kintmp_subsexp):
+  printf(&quot;%s. Term kintmp_subsexp vereinfacht. L\303\244nge: %d-&gt;%d. Rechenzeit %1.1fs.\134n&quot;, \134
+    FormatTime(&quot;%Y-%m-%d %H:%M:%S&quot;), l1, l2, t2-t1):
+end if:</EC-CodeEditor></CodeEditor-ExecGroup>
+<Group labelreference="L3284" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"></Text-field>
+</Input>
+</Group>
+<Group labelreference="L3283" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">use_simplify</Text-field>
+</Input>
+</Group>
+<Group labelreference="L3282" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"></Text-field>
+</Input>
+</Group>
 <Group labelreference="L2999" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
 <Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">kintmp_qt := convert_s_t(kintmp_qs):</Text-field>
 </Input>
@@ -666,9 +642,13 @@ end do:</Text-field>
 <Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">MatlabExport(kc_symbols, sprintf(&quot;../codeexport/%s/tmp/kinematic_constraints_symbols_list_matlab.m&quot;,robot_name),2);</Text-field>
 </Input>
 </Group></Presentation-Block>
+<Group labelreference="L3296" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"></Text-field>
+</Input>
+</Group>
 </Section><Presentation-Block>
 <Group view="code" labelreference="L3004" drawlabel="true">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"><Font encoding="UTF-8">#printf(&quot;Fertig. %s. CPU-Zeit bis hier: %1.2fs.\134n&quot;, FormatTime(&quot;%Y-%m-%d %H:%M:%S&quot;), time()-st):</Font></Text-field>
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"><Font encoding="UTF-8"># printf(&quot;Fertig. %s. CPU-Zeit bis hier: %1.2fs.\134n&quot;, FormatTime(&quot;%Y-%m-%d %H:%M:%S&quot;), time()-st):</Font></Text-field>
 </Input>
 </Group></Presentation-Block>
 </Worksheet>

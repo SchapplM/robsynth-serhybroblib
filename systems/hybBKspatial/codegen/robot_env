@@ -29,3 +29,6 @@ kintmp_t := Matrix(3, 1, [rho(t),eta(t),xi(t)]);
 kintmp_s := Matrix(3, 1, [rho_s,eta_s,xi_s]);
 
 codegen_kinematics_opt := false:
+
+# Hinweise von fivebar1 übernommen. Term-Vereinfachung lohnt sich nicht bzw. friert ein.
+simplify_options := Vector(10,0): # Keine Vereinfachungen.

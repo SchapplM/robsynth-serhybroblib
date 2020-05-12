@@ -5,4 +5,3 @@ robot_name_OL := "fivebar1OL":
 robot_name_DE := "fivebar1DE":
 robot_name_TE := "fivebar1TE":
 
-codegen_opt := 1:

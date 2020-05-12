@@ -8,8 +8,8 @@ robot_name := "fivebar1":
 NQJ := 2:
 # Anzahl der Gelenke
 NJ := 6:
-# Anzahl der Köper(5 mit Basis) 
-NL:=6:
+# Anzahl der Köper (5 mit Basis) 
+NL:=5: # das letzte KS entspricht nur der statischen Transformation für die Schließbedingung.
 qoffset := Matrix(NJ, 1, [0, Pi, 0, 0, Pi, 0]):
 theta:= Matrix(< qJ1(t), kintmp_t(1,1), qJ2(t), kintmp_t(2,1), kintmp_t(3,1),0>) + qoffset:
 alpha := Matrix(NJ, 1, [0, 0, 0, 0, 0, 0]):
@@ -28,4 +28,9 @@ sigma:=Matrix(<0,0,0,0,0,2>):
 kintmp_t := Matrix(3, 1, [rho(t),eta(t),xi(t)]);
 kintmp_s := Matrix(3, 1, [rho_s,eta_s,xi_s]);
 
-codegen_opt := 1:
+# Die Implementierung der Fünfgelenkkette ist sehr ineffizient.
+# Keine Code-Vereinfachung. Überschreibe damit alle Standard-Werte
+# Selbst wenn die Ausdrucke in Maple etwas gekürzt sind (nur bei TE-Modus und Kinematik),
+# der generierte Matlab-Code verschlechtert sich.
+simplify_options := Vector(10,0): # Keine Vereinfachungen.
+

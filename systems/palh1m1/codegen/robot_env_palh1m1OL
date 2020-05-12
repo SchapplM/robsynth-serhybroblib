@@ -23,5 +23,6 @@ b := Matrix(16,1,[0, 0, 0, 0, 0, -T2T1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]):
 sigma:=Matrix(<0,0,0,0,0,0,0,0,0,0,0,0,0,2,2,2>):
 mu:=Matrix(<1,1,1,0,1,0,0,0,0,0,0,0,0,0,0,0>):
 
-codegen_opt := 1:
+codegen_opt := 2:
 
+simplify_options := Vector(10,0): # Keine Vereinfachungen. Bringt Verschlechterung.

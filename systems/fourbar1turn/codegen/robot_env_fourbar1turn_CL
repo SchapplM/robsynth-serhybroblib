@@ -28,3 +28,5 @@ mu:=Matrix(<1,1,0,0,0,0>):
 kintmp_t := Matrix(3, 1, [rho(t),eta(t),xi(t)]);
 kintmp_s := Matrix(3, 1, [rho_s,eta_s,xi_s]);
 
+# Term-Vereinfachung lohnt sich nicht
+simplify_options := Vector(10,0): # Keine Vereinfachungen.

@@ -21,9 +21,9 @@ constrpath=$maplerepopath/robot_codegen_constraints
 cp $this_path/robot_env_palh2m1_CL $defpath/robot_env_palh2m1DE
 sed -i "s/palh2m1/palh2m1DE/g" $defpath/robot_env_palh2m1DE
 
- cp $this_path/robot_env_palh2m1OL $defpath/robot_env_palh2m1OL
+cp $this_path/robot_env_palh2m1OL $defpath/robot_env_palh2m1OL
 
- cp $this_path/robot_env_palh2m1IC $defpath/robot_env_IC
+cp $this_path/robot_env_palh2m1IC $defpath/robot_env_IC
 
 # Maple-Skripte (Kinematische Zwangsbedingungen)
 cp $this_path/palh2m1_kinematic_constraints.mpl $constrpath/palh2m1DE_kinematic_constraints.mpl
