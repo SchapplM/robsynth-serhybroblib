@@ -44,6 +44,12 @@ apd = fullfile(robopath, sprintf('matlabfcn_%s%s',Name, mdlsuffix));
 if exist(apd, 'file')
   addpath(apd);
 end
+tpd = fullfile(robopath, sprintf('tplfcn_%s%s',Name, mdlsuffix));
+if ~exist(tpd, 'file')
+  % Template-Funktionen existieren nicht. Erzeuge neu.
+  hybroblib_create_template_functions({Name, mdlsuffix});
+end
+addpath(tpd);
 %% Klassen-Instanz initialisieren
 % Strukturinformationen über das Modell holen
 eval(sprintf('[v_mdh, sigma_mdh, mu_mdh, NL, NKP, ~, pkin_names] = %s%s_structural_kinematic_parameters();', Name, mdlsuffix));
