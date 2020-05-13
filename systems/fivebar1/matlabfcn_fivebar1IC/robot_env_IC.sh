@@ -1,0 +1,5 @@
+robot_name="fivebar1IC"
+robot_name_OL="fivebar1OL"
+robot_name_TE="fivebar1TE"
+robot_name_DE="fivebar1DE"
+robot_NAJ="2"

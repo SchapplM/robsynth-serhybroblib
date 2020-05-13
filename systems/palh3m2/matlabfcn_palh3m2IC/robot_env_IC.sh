@@ -1,0 +1,5 @@
+robot_name="palh3m2IC"
+robot_name_OL="palh3m2OL"
+robot_name_TE="palh3m2TE"
+robot_name_DE="palh3m2DE"
+robot_NAJ="4"

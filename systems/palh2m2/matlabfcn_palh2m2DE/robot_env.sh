@@ -1,0 +1,13 @@
+robot_NQJ=4
+robot_NJ=6
+robot_name="palh2m2DE"
+robot_NL=7
+robot_gVec=1,1,1
+robot_NKP=5
+robot_KP="A2Off A3Off A4Off L1 L2"
+robot_kinconstr_exist=1
+robot_NKCP=0
+robot_KCP=""
+robot_NMPVFIXB=22
+robot_NMPVFLOATB=NOTDEFINED
+robot_NTAUJFIXBREGNN=46

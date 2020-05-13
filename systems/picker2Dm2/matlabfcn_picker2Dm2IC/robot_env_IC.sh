@@ -1,0 +1,5 @@
+robot_name="picker2Dm2IC"
+robot_name_OL="picker2Dm2OL"
+robot_name_TE="picker2Dm2TE"
+robot_name_DE="picker2Dm2DE"
+robot_NAJ="2"

@@ -1,0 +1,13 @@
+robot_NQJ=4
+robot_NJ=16
+robot_name="palh1m2TE"
+robot_NL=11
+robot_gVec=1,1,1
+robot_NKP=22
+robot_KP="AB AM BC BE BG BL DC EP GH GP HW ML OT2 T1D T2A T2T1 phi1 phi2 phi312 phi413 phi710 phi711"
+robot_kinconstr_exist=1
+robot_NKCP=6
+robot_KCP="phi1 phi2 phi312 phi413 phi710 phi711"
+robot_NMPVFIXB=60
+robot_NMPVFLOATB=NOTDEFINED
+robot_NTAUJFIXBREGNN=136

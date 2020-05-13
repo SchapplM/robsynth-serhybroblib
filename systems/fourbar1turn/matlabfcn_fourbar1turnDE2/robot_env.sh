@@ -1,0 +1,13 @@
+robot_NQJ=2
+robot_NJ=6
+robot_name="fourbar1turnDE2"
+robot_NL=5
+robot_gVec=1,1,1
+robot_NKP=5
+robot_KP="l1 l2 l3 l4 l5"
+robot_kinconstr_exist=1
+robot_NKCP=4
+robot_KCP="l1 l2 l3 l4"
+robot_NMPVFIXB=24
+robot_NMPVFLOATB=NOTDEFINED
+robot_NTAUJFIXBREGNN=42

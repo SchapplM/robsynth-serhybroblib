@@ -1,0 +1,13 @@
+robot_NQJ=6
+robot_NJ=10
+robot_name="hybBKspatial"
+robot_NL=9
+robot_gVec=1,1,1
+robot_NKP=7
+robot_KP="AB AE BC CD ED L1 L2"
+robot_kinconstr_exist=1
+robot_NKCP=5
+robot_KCP="AB AE BC CD ED"
+robot_NMPVFIXB=NOTDEFINED
+robot_NMPVFLOATB=NOTDEFINED
+robot_NTAUJFIXBREGNN=NOTDEFINED

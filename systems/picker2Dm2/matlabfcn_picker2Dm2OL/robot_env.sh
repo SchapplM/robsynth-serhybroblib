@@ -1,0 +1,13 @@
+robot_NQJ=12
+robot_NJ=15
+robot_name="picker2Dm2OL"
+robot_NL=11
+robot_gVec=1,1,1
+robot_NKP=8
+robot_KP="L1 L2 L3 L4 L5 L6 e phi05"
+robot_kinconstr_exist=0
+robot_NKCP=0
+robot_KCP=""
+robot_NMPVFIXB=30
+robot_NMPVFLOATB=NOTDEFINED
+robot_NTAUJFIXBREGNN=72

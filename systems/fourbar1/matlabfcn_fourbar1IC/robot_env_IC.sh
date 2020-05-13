@@ -1,0 +1,5 @@
+robot_name="fourbar1IC"
+robot_name_OL="fourbar1OL"
+robot_name_TE="fourbar1TE"
+robot_name_DE="fourbar1DE"
+robot_NAJ="1"

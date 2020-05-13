@@ -1,0 +1,13 @@
+robot_NQJ=1
+robot_NJ=5
+robot_name="fourbarprisDE2"
+robot_NL=4
+robot_gVec=1,1,1
+robot_NKP=3
+robot_KP="GK GP HP"
+robot_kinconstr_exist=1
+robot_NKCP=3
+robot_KCP="GK GP HP"
+robot_NMPVFIXB=9
+robot_NMPVFLOATB=NOTDEFINED
+robot_NTAUJFIXBREGNN=9

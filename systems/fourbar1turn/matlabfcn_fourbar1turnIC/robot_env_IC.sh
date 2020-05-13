@@ -1,0 +1,5 @@
+robot_name="fourbar1turnIC"
+robot_name_OL="fourbar1turnOL"
+robot_name_TE="fourbar1turnTE"
+robot_name_DE="fourbar1turnDE2"
+robot_NAJ="2"

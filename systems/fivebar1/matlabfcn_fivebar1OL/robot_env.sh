@@ -1,0 +1,13 @@
+robot_NQJ=5
+robot_NJ=6
+robot_name="fivebar1OL"
+robot_NL=5
+robot_gVec=1,1,1
+robot_NKP=5
+robot_KP="AB AE BC CD ED"
+robot_kinconstr_exist=0
+robot_NKCP=0
+robot_KCP=""
+robot_NMPVFIXB=12
+robot_NMPVFLOATB=NOTDEFINED
+robot_NTAUJFIXBREGNN=18
