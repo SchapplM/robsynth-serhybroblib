@@ -1,6 +1,6 @@
 ﻿Name/lfdNr;Name2;Langname;Kinematik-Parameter;;;;;;Minimalkoordinate qJ1;;;;;Minimalkoordinate qJ2;;;;;Minimalkoordinate qJ3;;;;;Allgemein;;
 ;;;pkin 1;pkin 2;pkin 3;pkin 4;pkin 5;pkin 6;qmin;qmax;vmax;VZ;just;qmin;qmax;vmax;VZ;just;qmin;qmax;vmax;VZ;just;Nenn-Traglast;Masse;EELink
-;;;AB;AE;BC;CF;CD;ED;;;;;;;;;;;;;
+;;;AB;AE;BC;CD;CF;ED;;;;;;;;;;;;;
 hybBKplanarBsp1;hybBkplanar;Fünfgelenkkette AB gleich 0;0;2;4;2;2;4;2.5;3;NA;1;0;1.0;1.5;NA;1;0;-1.5;1.5;NA;1;0;NA;NA;5
-hybBKplanarBsp2;hybBkplanar;Fünfgelenkkette vom picker2Dm1 0;0.17;0.65;0.4;0.3;0.82;0.4;-1.0472;-3.141;NA;1;0;0;2.618;NA;1;0;-1.5;1.5;NA;1;0;NA;NA;5
+hybBKplanarBsp2;hybBkplanar;Fünfgelenkkette vom picker2Dm1;0.17;0.65;0.4;0.3;0.82;0.4;-1.0472;-3.141;NA;1;0;0;2.618;NA;1;0;-1.5;1.5;NA;1;0;NA;NA;5
 

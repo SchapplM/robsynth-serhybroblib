@@ -8,8 +8,8 @@ robot_name := "hybBKplanar":
 NQJ := 3:
 # Anzahl der Gelenke
 NJ := 7:
-# Anzahl der Köper(5 mit Basis) 
-NL:=7:
+# Anzahl der Körper (6 mit Basis) 
+NL:=6:
 qoffset := Matrix(NJ, 1, [0, Pi, 0, Pi, 0, 0, 0]):
 theta:= Matrix(< qJ1(t), kintmp_t(1,1), qJ2(t), kintmp_t(2,1), qJ3(t), kintmp_t(3,1),0>) + qoffset:
 alpha := Matrix(NJ, 1, [0, 0, 0, 0, 0, 0, 0]):
