@@ -19,13 +19,14 @@ Die Matlab-Testskripte der Robotermodelle setzen folgende Toolboxen mit initiali
 
 * Trajektorien-Toolbox: [github](https://github.com/SchapplM/robotics-dep-traj), [Uni Hannover intern](https://gitlab.projekt.uni-hannover.de/imes-material/trajektorien-toolbox)
 * Robotik-Toolbox: [github](https://github.com/SchapplM/robotics-toolbox), [Uni Hannover intern](https://gitlab.projekt.uni-hannover.de/imes-gruppe-robotik/matlab-robotik-toolbox) 
-  * Matlab-Toolbox: [github](https://github.com/SchapplM/matlab_toolbox), [Uni Hannover intern](https://gitlab.projekt.uni-hannover.de/imes-material/matlab-toolbox)
-  * Externe Abhängigkeiten: [github](https://github.com/SchapplM/robotics-dep-ext), [Uni Hannover intern](https://gitlab.projekt.uni-hannover.de/imes-material/matlab-ext)
-  * Geometrie: [github](https://github.com/SchapplM/robotics-dep-geometry), [Uni Hannover intern](https://gitlab.projekt.uni-hannover.de/imes-material/geometrie-toolbox)
+* Matlab-Toolbox: [github](https://github.com/SchapplM/matlab_toolbox), [Uni Hannover intern](https://gitlab.projekt.uni-hannover.de/imes-material/matlab-toolbox)
+* Externe Abhängigkeiten: [github](https://github.com/SchapplM/robotics-dep-ext), [Uni Hannover intern](https://gitlab.projekt.uni-hannover.de/imes-material/matlab-ext)
+* Geometrie-Toolbox: [github](https://github.com/SchapplM/robotics-dep-geometry), [Uni Hannover intern](https://gitlab.projekt.uni-hannover.de/imes-material/geometrie-toolbox)
 
 Zur Generierung der Modelle mit Maple sind folgende Schritte notwendig
-* Einrichtung der Modelgenerierungs-Toolbox: [github](https://github.com/SchapplM/robsynth-modelgen), [Uni Hannover intern](https://gitlab.projekt.uni-hannover.de/imes-gruppe-robotik/hybriddyn)
+* Einrichtung der Modellgenerierungs-Toolbox: [github](https://github.com/SchapplM/robsynth-modelgen), [Uni Hannover intern](https://gitlab.projekt.uni-hannover.de/imes-gruppe-robotik/hybriddyn)
 * Erstellung der Pfad-Definition in der Datei `hybrdyn_repo_path` (ohne Endung) gemäß Hinweisen in `hybrdyn_repo_path.template`
+* Die Generierung ist unter Linux einfacher, der Ablauf ist aber auch mit einer Bash unter Windows möglich (z.B. Windows-Linux-Subsystem).
 
 Hinweis: Der symbolisch generierte Code selbst ist ohne Abhängigkeiten ausführbar.
 
@@ -54,6 +55,8 @@ Das Skript `hybroblib_test_all_models.m` ruft alle Testfunktionen nacheinander a
 
 ### Code-Generierung
 
+Die komplette Code-Generierung für alle Roboter wird durch `hybroblib_codegen_all_models.sh` gestartet. Durch Modifikation dort ist die Auswahl eines einzelnen Roboters möglich.
+
 Für jedes Robotermodell gibt es den Unterordner `codegen` mit manuell erstellten Definitionen und Herleitungen der kinematischen Zwangsbedingungen. Für jeden Roboter gibt es die Bash-Skripte
 * `prepare_maple_repo.sh` zum Kopieren der Definitionsdateien in die Toolbox `HybrDyn`,
 * `generate_maple_code.sh` zum Erzeugen des Codes in der HybrDyn-Toolbox für alle Implementierungen,
@@ -73,6 +76,7 @@ Die Maple-Arbeitsblätter `...TE_kinematic_constraints.mw`, `...DE_kinematic_con
 Benutzung der Datenbank:
 
 * `hybroblib_create_robot_class.m`: Instanz einer Matlab-Klasse für einen Roboter erstellen, damit sind dann weitere Berechnungen mit dem Modell des Roboters möglich
+* `hybroblib_create_template_functions.m`: Funktionsdateien aus Vorlagen erstellen, für die nicht direkt symbolische Berechnungen notwendig sind (z.B. gradientenbasierte inverse Kinematik).
 
 ### Übersichtsdateien
 
@@ -238,6 +242,7 @@ Für PKM mit Beinketten, die ihrerseits aus seriell-hybriden Kinematiken bestehe
 | Endeffektor-FG | 3 bzw. 6 |  |
 
 Die Beinketten eignen sich zum Aufbau einer planaren PKM (2T1R) oder einer räumlichen PKM (3T3R). Die Beinketten basieren jeweils auf einer Fünfgelenkkette mit einem zusätzlichen Plattform-Koppelgelenk. Für Details siehe [MA Brünger](#quellen).
+Die PKM sind als Beispiel-Testskripte im [Robotik-Toolbox-Repo](https://github.com/SchapplM/robotics-toolbox) unter `examples_tests/ParRob` abgelegt.
 
 ### Palettierroboter mit einer geschlossenen Kette und Schubgelenk <a name="system_palh4"></a> 
 
