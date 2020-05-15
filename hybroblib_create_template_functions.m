@@ -44,6 +44,10 @@ if nargin < 1 || isempty(Names)
       Names = [Names; {roblist(i).name, mdlext}]; %#ok<AGROW>
     end
   end
+else
+  if size(Names,2) ~= 2
+    error('Es muss ein cell-Array mit zwei Spalten übergeben werden');
+  end
 end
 if nargin < 2
   skip_existing = true;
@@ -64,10 +68,10 @@ end
 %% Alle Vorlagen-Funktionen aus HybrDyn-Repo kopieren
 % Alle Funktionen dieser Liste werden roboterspezifisch aus der Liste
 % erstellt. Die Anpassung sind nur geringfügig und ermöglichen Kompilierung
-function_list_copy_hybrdyn = {...
-  'constr2.m', ...
-  'constr2grad.m'};
+function_list_copy_hybrdyn = {};
 function_list_copy_robotics = {...
+  {'kinematics', 'constr2.m'}, ...
+  {'kinematics', 'constr2grad.m'}, ...
   {'kinematics', 'invkin_traj.m'}, ...
   {'kinematics', 'invkin_eulangresidual.m'}};
 
