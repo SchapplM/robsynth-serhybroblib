@@ -201,11 +201,11 @@ for i = 1:size(Names,1)
     fclose(fid2);
     if function_invalid
       fprintf('%d/%d: Datei %s konnte nicht erzeugt werden (Einige Variablen nicht definiert)\n', ...
-        i, length(Names), tplf);
+        i, size(Names,1), tplf);
       delete(file2);
     end
   end
-  fprintf('%d/%d: Vorlagen-Funktionen für %s erstellt.\n', i, length(Names), Name_i);
+  fprintf('%d/%d: Vorlagen-Funktionen für %s erstellt.\n', i, size(Names,1), Name_i);
   
   % Testen: Kompilieren aller Funktionen im Zielordner
   if mex_results
