@@ -24,7 +24,7 @@
 % Moritz Schappler, moritz.schappler@imes.uni-hannover.de
 % (C) Institut für Mechatronische Systeme, Universität Hannover
 
-function T_c_mdh = fivebar1TE_fkine_fixb_rotmat_mdh_sym_varpar(qJ, pkin)
+function [T_c_mdh, Tc_stack] = fivebar1TE_fkine_fixb_rotmat_mdh_sym_varpar(qJ, pkin)
 %% Coder Information
 %#codegen
 %$cgargs {zeros(2,1),zeros(5,1)}
@@ -266,3 +266,5 @@ else,                         T_c_mdh = sym('xx', [4,4,6+1]); end % symbolisch
 for i = 1:6+1
   T_c_mdh(:,:,i) = T_ges((i-1)*4+1 : 4*i, :);
 end
+Tc_stack = NaN(3*size(T_c_mdh,3),4);
+for i = 1:size(T_c_mdh,3), Tc_stack((i-1)*3+1:3*i,1:4) = T_c_mdh(1:3,1:4,i); end
