@@ -127,7 +127,7 @@ grid on;
 xlabel('x in m'); ylabel('y in m'); zlabel('z in m');
 view(3);
 title(RS.descr);
-RS.anim( Q(1:50:end,:), s_anim, s_plot);
+RS.anim( Q(1:50:end,:), [], s_anim, s_plot);
 
 %% Beispiel-Trajektorie Arbeitsraum
 XE_2DoF = 1e-3* [ ... % Rechteck im gefundenen Arbeitsraum von oben
@@ -154,4 +154,4 @@ grid on;
 xlabel('x in m'); ylabel('y in m'); zlabel('z in m');
 view([0 90]);
 title(RS.descr);
-RS.anim( Q(1:50:end,:), s_anim, s_plot);
+RS.anim( Q(1:50:end,:), [], s_anim, s_plot);

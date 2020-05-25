@@ -92,4 +92,4 @@ ylabel('y [m]');
 zlabel('z [m]');
 view(3);
 title(RS.descr);
-RS.anim( Q(1:50:end,:), s_anim, s_plot);
+RS.anim( Q(1:50:end,:), [], s_anim, s_plot);

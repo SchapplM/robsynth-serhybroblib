@@ -115,4 +115,4 @@ ylabel('y [m]');
 zlabel('z [m]');
 view(3);
 title(RS_DE1.descr);
-RS_TE.anim( Q(1:50:end,:), s_anim, s_plot);
+RS_TE.anim( Q(1:50:end,:), [], s_anim, s_plot);
