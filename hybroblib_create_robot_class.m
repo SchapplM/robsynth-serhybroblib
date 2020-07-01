@@ -52,9 +52,8 @@ end
 addpath(tpd);
 %% Klassen-Instanz initialisieren
 % Strukturinformationen über das Modell holen
-eval(sprintf('[v_mdh, sigma_mdh, mu_mdh, NL, NKP, ~, pkin_names] = %s%s_structural_kinematic_parameters();', Name, mdlsuffix));
+eval(sprintf('[v_mdh, sigma_mdh, mu_mdh, NL, NKP, NQJ, pkin_names] = %s%s_structural_kinematic_parameters();', Name, mdlsuffix));
 NJ = length(v_mdh);
-NQJ = sum(mu_mdh==1);
 
 % Dummy-Parameterstruktur erstellen
 PS = struct('beta',  NaN(NJ,1), 'b', NaN(NJ,1), ...
