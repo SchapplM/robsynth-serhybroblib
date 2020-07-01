@@ -11,8 +11,8 @@
 %   vector of non-Null entries of the input matrix. (columns, then rows).
 
 % Quelle: HybrDyn-Toolbox
-% Datum: 2020-05-03 00:53
-% Revision: 702b02ffee4f47164fa6a11b998f1d39ead3f7a6 (2020-05-02)
+% Datum: 2020-06-30 17:46
+% Revision: b9e8aa5c608190a7b43c48aaebfd2074f0379b0d (2020-06-30)
 % Moritz Schappler, moritz.schappler@imes.uni-hannover.de
 % (C) Institut für Mechatronische Systeme, Universität Hannover
 
