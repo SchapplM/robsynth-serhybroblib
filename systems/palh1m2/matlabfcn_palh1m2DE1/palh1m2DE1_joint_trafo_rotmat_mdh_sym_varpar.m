@@ -13,15 +13,17 @@
 % T_mdh [4x4x16]
 %   homogenous transformation matrices for joint transformation (MDH)
 %   Transformation matrices from one joint to the next (not: from base to joints)
+% T_stack [(16+1)*3 x 4]
+%   stacked matrices from T_mdh into one 2D array, last row left out.
+%   Last row only contains [0 0 0 1].
 
 % Quelle: HybrDyn-Toolbox
-% Datum: 2020-05-01 21:04
-% Revision: 970157063c8b7bcb25458a457551a083b21abdbd (2020-04-26)
+% Datum: 2020-06-29 18:44
+% Revision: bc59515823ab4a8d0fec19bf3bf92c32c39a66b0 (2020-06-27)
 % Moritz Schappler, moritz.schappler@imes.uni-hannover.de
 % (C) Institut für Mechatronische Systeme, Universität Hannover
 
-function T_mdh = palh1m2DE1_joint_trafo_rotmat_mdh_sym_varpar(qJ, ...
-  pkin)
+function [T_mdh, T_stack] = palh1m2DE1_joint_trafo_rotmat_mdh_sym_varpar(qJ, pkin)
 %% Coder Information
 %#codegen
 %$cgargs {zeros(4,1),zeros(22,1)}
@@ -33,9 +35,9 @@ assert(isreal(pkin) && all(size(pkin) == [22 1]), ...
 %% Symbolic Calculation
 % From joint_transformation_mdh_rotmat_matlab.m
 % OptimizationMode: 2
-% StartTime: 2020-05-01 20:55:34
-% EndTime: 2020-05-01 20:55:34
-% DurationCPUTime: 0.25s
+% StartTime: 2020-06-29 17:17:25
+% EndTime: 2020-06-29 17:17:25
+% DurationCPUTime: 0.21s
 % Computational Cost: add. (206->43), mult. (336->44), div. (0->0), fcn. (552->24), ass. (0->43)
 t156 = sin(pkin(20));
 t159 = cos(pkin(20));
@@ -49,8 +51,8 @@ t135 = t141 * t168 - t162 * t145;
 t138 = t162 * t141 + t145 * t168;
 t163 = sin(qJ(2));
 t169 = cos(qJ(2));
-t132 = t135 * t169 - t138 * t163;
-t133 = t135 * t163 + t138 * t169;
+t132 = t135 * t169 - t163 * t138;
+t133 = t163 * t135 + t138 * t169;
 t154 = pkin(22) + pkin(21);
 t152 = sin(t154);
 t153 = cos(t154);
@@ -79,8 +81,8 @@ t142 = -t162 * t157 + t168 * t160;
 t140 = t168 * t157 + t162 * t160;
 t139 = t146 * t169 - t147 * t163;
 t136 = t163 * t143 + t144 * t169;
-t1 = [t170, -t164, 0, 0; t164, t170, 0, 0; 0, 0, 1, pkin(13); 0, 0, 0, 1; -t163, -t169, 0, pkin(15); 0, 0, -1, 0; t169, -t163, 0, 0; 0, 0, 0, 1; t162, t168, 0, pkin(1); -t168, t162, 0, 0; 0, 0, 1, 0; 0, 0, 0, 1; -t130, t128, 0, pkin(5); -t128, -t130, 0, 0; 0, 0, 1, 0; 0, 0, 0, 1; t167, -t161, 0, pkin(9); 0, 0, -1, -pkin(11); t161, t167, 0, 0; 0, 0, 0, 1; t139, -t173, 0, -pkin(14); 0, 0, -1, 0; t173, t139, 0, -pkin(16); 0, 0, 0, 1; t136, -t137, 0, pkin(1); t137, t136, 0, 0; 0, 0, 1, 0; 0, 0, 0, 1; t140, t142, 0, 0; -t142, t140, 0, 0; 0, 0, 1, 0; 0, 0, 0, 1; t140, -t142, 0, pkin(2); t142, t140, 0, 0; 0, 0, 1, 0; 0, 0, 0, 1; -t149, -t148, 0, cos(pkin(21)) * pkin(4); t148, -t149, 0, -sin(pkin(21)) * pkin(4); 0, 0, 1, 0; 0, 0, 0, 1; t136, t137, 0, t158 * pkin(3); -t137, t136, 0, t155 * pkin(3); 0, 0, 1, 0; 0, 0, 0, 1; t162, -t168, 0, t160 * pkin(6); t168, t162, 0, t157 * pkin(6); 0, 0, 1, 0; 0, 0, 0, 1; t130, t128, 0, t159 * pkin(10); -t128, t130, 0, t156 * pkin(10); 0, 0, 1, 0; 0, 0, 0, 1; 1, 0, 0, pkin(7); 0, 1, 0, 0; 0, 0, 1, 0; 0, 0, 0, 1; 1, 0, 0, pkin(12); 0, 1, 0, 0; 0, 0, 1, 0; 0, 0, 0, 1; -1, 0, 0, pkin(8); 0, -1, 0, 0; 0, 0, 1, 0; 0, 0, 0, 1;];
-T_ges = t1;
+t1 = [t170, -t164, 0, 0; t164, t170, 0, 0; 0, 0, 1, pkin(13); -t163, -t169, 0, pkin(15); 0, 0, -1, 0; t169, -t163, 0, 0; t162, t168, 0, pkin(1); -t168, t162, 0, 0; 0, 0, 1, 0; -t130, t128, 0, pkin(5); -t128, -t130, 0, 0; 0, 0, 1, 0; t167, -t161, 0, pkin(9); 0, 0, -1, -pkin(11); t161, t167, 0, 0; t139, -t173, 0, -pkin(14); 0, 0, -1, 0; t173, t139, 0, -pkin(16); t136, -t137, 0, pkin(1); t137, t136, 0, 0; 0, 0, 1, 0; t140, t142, 0, 0; -t142, t140, 0, 0; 0, 0, 1, 0; t140, -t142, 0, pkin(2); t142, t140, 0, 0; 0, 0, 1, 0; -t149, -t148, 0, cos(pkin(21)) * pkin(4); t148, -t149, 0, -sin(pkin(21)) * pkin(4); 0, 0, 1, 0; t136, t137, 0, t158 * pkin(3); -t137, t136, 0, t155 * pkin(3); 0, 0, 1, 0; t162, -t168, 0, t160 * pkin(6); t168, t162, 0, t157 * pkin(6); 0, 0, 1, 0; t130, t128, 0, t159 * pkin(10); -t128, t130, 0, t156 * pkin(10); 0, 0, 1, 0; 1, 0, 0, pkin(7); 0, 1, 0, 0; 0, 0, 1, 0; 1, 0, 0, pkin(12); 0, 1, 0, 0; 0, 0, 1, 0; -1, 0, 0, pkin(8); 0, -1, 0, 0; 0, 0, 1, 0;];
+T_stack = t1;
 %% Postprocessing: Reshape Output
 % Convert Maple format (2-dimensional tensor) to Matlab format (3-dimensional tensor)
 % Fallunterscheidung der Initialisierung für symbolische Eingabe
@@ -88,5 +90,5 @@ if isa([qJ; pkin], 'double'), T_mdh = NaN(4,4,16);             % numerisch
 else,                         T_mdh = sym('xx', [4,4,16]); end % symbolisch
 
 for i = 1:16
-  T_mdh(:,:,i) = T_ges((i-1)*4+1 : 4*i, :);
+  T_mdh(:,:,i) = [T_stack((i-1)*3+1 : 3*i, :);[0 0 0 1]];
 end

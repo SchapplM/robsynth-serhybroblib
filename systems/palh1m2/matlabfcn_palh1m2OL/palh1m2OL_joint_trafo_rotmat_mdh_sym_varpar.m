@@ -13,15 +13,17 @@
 % T_mdh [4x4x16]
 %   homogenous transformation matrices for joint transformation (MDH)
 %   Transformation matrices from one joint to the next (not: from base to joints)
+% T_stack [(16+1)*3 x 4]
+%   stacked matrices from T_mdh into one 2D array, last row left out.
+%   Last row only contains [0 0 0 1].
 
 % Quelle: HybrDyn-Toolbox
-% Datum: 2020-05-02 23:30
-% Revision: 702b02ffee4f47164fa6a11b998f1d39ead3f7a6 (2020-05-02)
+% Datum: 2020-06-29 20:34
+% Revision: bc59515823ab4a8d0fec19bf3bf92c32c39a66b0 (2020-06-27)
 % Moritz Schappler, moritz.schappler@imes.uni-hannover.de
 % (C) Institut für Mechatronische Systeme, Universität Hannover
 
-function T_mdh = palh1m2OL_joint_trafo_rotmat_mdh_sym_varpar(qJ, ...
-  pkin)
+function [T_mdh, T_stack] = palh1m2OL_joint_trafo_rotmat_mdh_sym_varpar(qJ, pkin)
 %% Coder Information
 %#codegen
 %$cgargs {zeros(13,1),zeros(20,1)}
@@ -33,9 +35,9 @@ assert(isreal(pkin) && all(size(pkin) == [20 1]), ...
 %% Symbolic Calculation
 % From joint_transformation_mdh_rotmat_matlab.m
 % OptimizationMode: 2
-% StartTime: 2020-05-02 21:16:38
-% EndTime: 2020-05-02 21:16:38
-% DurationCPUTime: 0.19s
+% StartTime: 2020-06-29 20:25:06
+% EndTime: 2020-06-29 20:25:06
+% DurationCPUTime: 0.13s
 % Computational Cost: add. (33->29), mult. (40->24), div. (0->0), fcn. (108->34), ass. (0->43)
 t130 = cos(qJ(1));
 t129 = cos(qJ(2));
@@ -79,8 +81,8 @@ t92 = -t100 * t110 - t104 * t106;
 t91 = t103 * t105 + t99 * t109;
 t90 = -t102 * t108 + t98 * t112;
 t89 = -t101 * t107 - t97 * t111;
-t1 = [t130, -t121, 0, 0; t121, t130, 0, 0; 0, 0, 1, pkin(13); 0, 0, 0, 1; -t120, -t129, 0, pkin(15); 0, 0, -1, 0; t129, -t120, 0, 0; 0, 0, 0, 1; t119, t128, 0, pkin(1); -t128, t119, 0, 0; 0, 0, 1, 0; 0, 0, 0, 1; t127, -t118, 0, pkin(5); t118, t127, 0, 0; 0, 0, 1, 0; 0, 0, 0, 1; t126, -t117, 0, pkin(9); 0, 0, -1, -pkin(11); t117, t126, 0, 0; 0, 0, 0, 1; t125, -t116, 0, -pkin(14); 0, 0, -1, 0; t116, t125, 0, -pkin(16); 0, 0, 0, 1; t124, -t115, 0, pkin(1); t115, t124, 0, 0; 0, 0, 1, 0; 0, 0, 0, 1; t123, -t114, 0, 0; t114, t123, 0, 0; 0, 0, 1, 0; 0, 0, 0, 1; -t122, t113, 0, pkin(2); -t113, -t122, 0, 0; 0, 0, 1, 0; 0, 0, 0, 1; t94, -t90, 0, t102 * pkin(4); t90, t94, 0, -t98 * pkin(4); 0, 0, 1, 0; 0, 0, 0, 1; t93, -t89, 0, t101 * pkin(3); t89, t93, 0, t97 * pkin(3); 0, 0, 1, 0; 0, 0, 0, 1; t96, -t92, 0, t104 * pkin(6); t92, t96, 0, t100 * pkin(6); 0, 0, 1, 0; 0, 0, 0, 1; t95, -t91, 0, t103 * pkin(10); t91, t95, 0, t99 * pkin(10); 0, 0, 1, 0; 0, 0, 0, 1; 1, 0, 0, pkin(7); 0, 1, 0, 0; 0, 0, 1, 0; 0, 0, 0, 1; 1, 0, 0, pkin(12); 0, 1, 0, 0; 0, 0, 1, 0; 0, 0, 0, 1; -1, 0, 0, pkin(8); 0, -1, 0, 0; 0, 0, 1, 0; 0, 0, 0, 1;];
-T_ges = t1;
+t1 = [t130, -t121, 0, 0; t121, t130, 0, 0; 0, 0, 1, pkin(13); -t120, -t129, 0, pkin(15); 0, 0, -1, 0; t129, -t120, 0, 0; t119, t128, 0, pkin(1); -t128, t119, 0, 0; 0, 0, 1, 0; t127, -t118, 0, pkin(5); t118, t127, 0, 0; 0, 0, 1, 0; t126, -t117, 0, pkin(9); 0, 0, -1, -pkin(11); t117, t126, 0, 0; t125, -t116, 0, -pkin(14); 0, 0, -1, 0; t116, t125, 0, -pkin(16); t124, -t115, 0, pkin(1); t115, t124, 0, 0; 0, 0, 1, 0; t123, -t114, 0, 0; t114, t123, 0, 0; 0, 0, 1, 0; -t122, t113, 0, pkin(2); -t113, -t122, 0, 0; 0, 0, 1, 0; t94, -t90, 0, t102 * pkin(4); t90, t94, 0, -t98 * pkin(4); 0, 0, 1, 0; t93, -t89, 0, t101 * pkin(3); t89, t93, 0, t97 * pkin(3); 0, 0, 1, 0; t96, -t92, 0, t104 * pkin(6); t92, t96, 0, t100 * pkin(6); 0, 0, 1, 0; t95, -t91, 0, t103 * pkin(10); t91, t95, 0, t99 * pkin(10); 0, 0, 1, 0; 1, 0, 0, pkin(7); 0, 1, 0, 0; 0, 0, 1, 0; 1, 0, 0, pkin(12); 0, 1, 0, 0; 0, 0, 1, 0; -1, 0, 0, pkin(8); 0, -1, 0, 0; 0, 0, 1, 0;];
+T_stack = t1;
 %% Postprocessing: Reshape Output
 % Convert Maple format (2-dimensional tensor) to Matlab format (3-dimensional tensor)
 % Fallunterscheidung der Initialisierung für symbolische Eingabe
@@ -88,5 +90,5 @@ if isa([qJ; pkin], 'double'), T_mdh = NaN(4,4,16);             % numerisch
 else,                         T_mdh = sym('xx', [4,4,16]); end % symbolisch
 
 for i = 1:16
-  T_mdh(:,:,i) = T_ges((i-1)*4+1 : 4*i, :);
+  T_mdh(:,:,i) = [T_stack((i-1)*3+1 : 3*i, :);[0 0 0 1]];
 end
