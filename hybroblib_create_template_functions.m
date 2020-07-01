@@ -209,7 +209,7 @@ for i = 1:size(Names,1)
       delete(file2);
     end
   end
-  fprintf('%d/%d: Vorlagen-Funktionen für %s erstellt.\n', i, size(Names,1), Name_i);
+  fprintf('%d/%d: Vorlagen-Funktionen für %s erstellt (%s).\n', i, size(Names,1), Name_i, mdlsuffix_i);
   
   % Testen: Kompilieren aller Funktionen im Zielordner
   if mex_results
