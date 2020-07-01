@@ -34,3 +34,6 @@ kintmp_s := Matrix(3, 1, [rho_s,eta_s,xi_s]);
 # der generierte Matlab-Code verschlechtert sich.
 simplify_options := Vector(10,0): # Keine Vereinfachungen.
 
+# Reduzierung der Dynamikparameter mit LinearSolve ist nicht möglich
+# aufgrund der Komplexität der Ausdrücke.
+dynpar_minimization_linsolve:=false:

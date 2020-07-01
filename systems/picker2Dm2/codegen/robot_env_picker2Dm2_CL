@@ -31,3 +31,7 @@ codegen_opt := 2:
 
 # Hinweise von fivebar1 übernommen. Term-Vereinfachung lohnt sich nicht bzw. friert ein.
 simplify_options := Vector(10,0): # Keine Vereinfachungen.
+
+# Reduzierung der Dynamikparameter mit LinearSolve ist nicht möglich
+# aufgrund der Komplexität der Ausdrücke.
+dynpar_minimization_linsolve:=false:
